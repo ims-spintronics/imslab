@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .contact-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .contact-card.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .card-header {
+            background: #f1f5f9;
+            padding: 1.25rem 1.75rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .card-header i {
+            color: #002b49;
+            font-size: 1.2rem;
+        }
+
+        .card-header h3 {
+            color: #002b49;
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .card-body {
+            padding: 1.75rem;
+        }
+
+        .info-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            padding: 0;
+            margin: 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .info-item i {
+            color: #2563eb;
+            font-size: 1.1rem;
+            margin-top: 0.25rem;
+            width: 20px;
+            text-align: center;
+        }
+
+        .info-content {
+            font-size: 0.95rem;
+        }
+
+        .info-content strong {
+            display: block;
+            color: #1e293b;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-content a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .info-content a:hover {
+            text-decoration: underline;
+        }
+
+        .labs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .lab-box {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem;
+        }
+
+        .lab-box h4 {
+            color: #002b49;
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .map-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+        }
+
+        .map-container {
+            width: 100%;
+            height: 450px;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Contact Us</h2>
+                <p>Get in touch with our principal investigator, research laboratories, and office locations.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <div class="contact-grid">
+            
+            <!-- Principal Investigator Card -->
+            <div class="contact-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-user-gear"></i>
+                    <h3>Dr. Lew Wen Siang</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <i class="fa-solid fa-door-open"></i>
+                            <div class="info-content">
+                                <strong>Office Room</strong>
+                                SPMS-PAP-03-04
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div class="info-content">
+                                <strong>E-mail</strong>
+                                <a href="mailto:wensiang@ntu.edu.sg">wensiang@ntu.edu.sg</a>
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fa-solid fa-building-columns"></i>
+                            <div class="info-content">
+                                <strong>Address</strong>
+                                Division of Physics and Applied Physics<br>
+                                School of Physical and Mathematical Sciences<br>
+                                Nanyang Technological University<br>
+                                21 Nanyang Link, Singapore 637371
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fa-solid fa-phone"></i>
+                            <div class="info-content">
+                                <strong>Telephone</strong>
+                                +65 6316 2963
+                            </div>
+                        </li>
+                        <li class="info-item">
+                            <i class="fa-solid fa-fax"></i>
+                            <div class="info-content">
+                                <strong>Fax</strong>
+                                +65 6795 7981
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Student & Staff Offices Card -->
+            <div class="contact-card">
+                <div class="card-header">
+                    <i class="fa-solid fa-id-card-clip"></i>
+                    <h3>Research Student & Staff Offices</h3>
+                </div>
+                <div class="card-body">
+                    <ul class="info-list">
+                        <li class="info-item">
+                            <i class="fa-solid fa-door-closed"></i>
+                            <div class="info-content">
+                                <strong>Office Room 1</strong>
+                                SPMS-PAP-03-06
+                                <span style="display: block; color: #64748b; font-size: 0.9rem; margin-top: 0.2rem;">
+                                    <i class="fa-solid fa-phone" style="font-size: 0.8rem; width: auto; margin: 0 4px 0 0;"></i> +65 6513 7421
+                                </span>
+                            </div>
+                        </li>
+  <li class="info-item">
+                            <i class="fa-solid fa-door-closed"></i>
+                            <div class="info-content">
+                                <strong>Office Room 2</strong>
+                                SPMS-PAP-03-07
+                                <span style="display: block; color: #64748b; font-size: 0.9rem; margin-top: 0.2rem;">
+                                    <i class="fa-solid fa-phone" style="font-size: 0.8rem; width: auto; margin: 0 4px 0 0;"></i> +65 6513 7421
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="info-item">
+                            <i class="fa-solid fa-door-closed"></i>
+                            <div class="info-content">
+                                <strong>Office Room 3</strong>
+                                SPMS-CBC-02-03
+                                <span style="display: block; color: #64748b; font-size: 0.9rem; margin-top: 0.2rem;">
+                                    <i class="fa-solid fa-phone" style="font-size: 0.8rem; width: auto; margin: 0 4px 0 0;"></i> +65 6908 1972
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Laboratories Card (Full Width) -->
+            <div class="contact-card full-width">
+                <div class="card-header">
+                    <i class="fa-solid fa-microscope"></i>
+                    <h3>Research Laboratories</h3>
+                </div>
+                <div class="card-body">
+                    <div class="labs-grid">
+                        
+                        <div class="lab-box">
+                            <h4><i class="fa-solid fa-atom"></i> Spintronics Device Laboratory I</h4>
+                            <ul class="info-list" style="gap: 0.75rem;">
+                                <li class="info-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div class="info-content"><strong>Location:</strong> SPMS-PAP-01-01</div>
+                                </li>
+                                <li class="info-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div class="info-content"><strong>Tel:</strong> +65 6513 8476</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="lab-box">
+                            <h4><i class="fa-solid fa-vial-virus"></i> Spintronics Device Lab II (Cleanroom)</h4>
+                            <ul class="info-list" style="gap: 0.75rem;">
+                                <li class="info-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div class="info-content"><strong>Location:</strong> SPMS-CBC-02-03</div>
+                                </li>
+                                <li class="info-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div class="info-content"><strong>Tel:</strong> +65 6908 1972</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="lab-box">
+                            <h4><i class="fa-solid fa-bolt"></i> Micro- & Nanofabrication Lab (Cleanroom)</h4>
+                            <ul class="info-list" style="gap: 0.75rem;">
+                                <li class="info-item">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                    <div class="info-content"><strong>Location:</strong> SPMS-PAP-01-06</div>
+                                </li>
+                                <li class="info-item">
+                                    <i class="fa-solid fa-phone"></i>
+                                    <div class="info-content"><strong>Tel:</strong> +65 6513 8482</div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Google Map Section Card -->
+        <div class="map-card">
+            <div class="card-header">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <h3>Location Map</h3>
+            </div>
+            <div class="map-container">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1994.361938544912!2d103.68051185814289!3d1.342046681229984!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da0f75e5959153%3A0xb7733367b023ab1!2sDivision%20of%20Physics%20and%20Applied%20Physics!5e0!3m2!1sen!2ssg!4v1608085150827!5m2!1sen!2ssg" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

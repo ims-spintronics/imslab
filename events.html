@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Gallery | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Card & Interactive Component Styling matching site design */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .event-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+            border-color: #cbd5e1;
+        }
+
+        .card-image-box {
+            position: relative;
+            height: 200px;
+            overflow: hidden;
+            background: #f1f5f9;
+        }
+
+        .card-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .event-card:hover .card-image-box img {
+            transform: scale(1.05);
+        }
+
+        .event-date-badge {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            background: #002b49;
+            color: #ffffff;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            justify-content: space-between;
+        }
+
+        .card-content h3 {
+            font-size: 1.15rem;
+            color: #002b49;
+            margin: 0 0 0.5rem 0;
+            line-height: 1.4;
+        }
+
+        .card-content p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0 0 1.25rem 0;
+        }
+
+        .card-action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: #2563eb;
+            font-weight: 700;
+            font-size: 0.88rem;
+            margin-top: auto;
+        }
+
+        /* Timeline Card Section */
+        .timeline-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .timeline-card h3 {
+            color: #002b49;
+            font-size: 1.25rem;
+            margin-top: 0;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 0.5rem;
+        }
+
+        .timeline-list {
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 2px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .timeline-item {
+            position: relative;
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: background-color 0.2s ease;
+        }
+
+        .timeline-item:hover {
+            background-color: #f8fafc;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -1.95rem;
+            top: 0.7rem;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2563eb;
+            border: 2px solid #ffffff;
+        }
+
+        .timeline-date {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: #c8102e;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 0.2rem;
+        }
+
+        .timeline-title {
+            font-size: 1.05rem;
+            color: #002b49;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .timeline-link:hover .timeline-title {
+            color: #2563eb;
+        }
+
+        .timeline-desc {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .timeline-action {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+            color: #2563eb;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 12px;
+            max-width: 750px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 2rem;
+            position: relative;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: #f1f5f9;
+            border: none;
+            color: #64748b;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all 0.2s ease;
+        }
+
+        .modal-close:hover {
+            background: #c8102e;
+            color: #ffffff;
+        }
+
+        .modal-body h3 {
+            font-size: 1.35rem;
+            color: #002b49;
+            margin: 0.5rem 0;
+        }
+
+        .modal-body img {
+            width: 100%;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .modal-body p {
+            color: #475569;
+            line-height: 1.6;
+            font-size: 0.92rem;
+        }
+
+        .modal-agenda-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.25rem 0;
+        }
+
+        .modal-agenda-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.85rem;
+        }
+
+        .modal-agenda-card h5 {
+            color: #2563eb;
+            margin: 0.4rem 0 0.2rem;
+            font-size: 0.9rem;
+        }
+
+        .modal-agenda-card ul {
+            padding-left: 1.1rem;
+            color: #64748b;
+            font-size: 0.82rem;
+            margin: 0;
+        }
+
+        .resource-links {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-top: 1.25rem;
+        }
+
+        .btn-link {
+            background: rgba(37, 99, 235, 0.08);
+            border: 1px solid rgba(37, 99, 235, 0.15);
+            color: #2563eb;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background: #2563eb;
+            color: #ffffff;
+        }
+
+        @media (max-width: 768px) {
+            .events-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Events & Symposia</h2>
+                <p>Highlights of our academic workshops, national consortium milestones, research exchanges, and group activities.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Featured Major Events -->
+        <h3 style="color: #002b49; font-size: 1.25rem; margin-top: 0; margin-bottom: 1.25rem;"><i class="fa-solid fa-star" style="color: #2563eb;"></i> Major Events & Highlights</h3>
+        
+        <div class="events-grid">
+            
+            <!-- Event 1: Group Outing -->
+            <div class="event-card" onclick="openModal('modal-outing')">
+                <div class="card-image-box">
+                    <img src="images/events/group-outing-dec2016.jpg" alt="Group Outing Dinner">
+                    <span class="event-date-badge"><i class="fa-regular fa-calendar"></i> 17 Dec 2016</span>
+                </div>
+                <div class="card-content">
+                    <h3>Group Gathering & Celebration</h3>
+                    <p>Group's annual gathering for dinner held at Marché Mövenpick 313@somerset to celebrate year-end achievements.</p>
+                    <div class="card-action-btn">
+                        <span>View Photo & Details</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 2: SG-SPIN Consortium -->
+            <div class="event-card" onclick="openModal('modal-sgspin')">
+                <div class="card-image-box">
+                    <img src="images/events/sg-spin-dec2014.jpg" alt="SG-SPIN MOU Signing">
+                    <span class="event-date-badge"><i class="fa-regular fa-calendar"></i> 5 Dec 2014</span>
+                </div>
+                <div class="card-content">
+                    <h3>Singapore Spintronics Consortium (SG-SPIN) MOU Signing</h3>
+                    <p>Official signing ceremony at NUS Shaw Foundation Alumni House, establishing national spintronics initiatives.</p>
+                    <div class="card-action-btn">
+                        <span>View News Releases & Gallery</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Event 3: 1st Workshop -->
+            <div class="event-card" onclick="openModal('modal-workshop1')">
+                <div class="card-image-box">
+                    <img src="images/events/1stworkshop-group-photo.jpg" alt="1st Workshop Group Photo">
+                    <span class="event-date-badge"><i class="fa-regular fa-calendar"></i> 1 Aug 2013</span>
+                </div>
+                <div class="card-content">
+                    <h3>1st Workshop on Non-Volatile Logic and Magnetic Devices</h3>
+                    <p>Inaugural academic symposium featuring 9 research paper presentations on spintronics and magnetic logic.</p>
+                    <div class="card-action-btn">
+                        <span>Explore Agenda & Presentations</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Complete Clickable Events Timeline Section -->
+        <div class="timeline-card">
+            <h3><i class="fa-solid fa-clock-rotate-left" style="color: #2563eb;"></i> Complete Events & Seminars Chronology</h3>
+            
+            <div class="timeline-list">
+			
+                 <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-celebrate')" class="timeline-link">
+                        <div class="timeline-date">24 March 2026</div>
+                        <div class="timeline-title">Celebrations</div>
+                        <div class="timeline-desc">Research group celebration.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+				
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-group')" class="timeline-link">
+                        <div class="timeline-date">16 December 2022</div>
+                        <div class="timeline-title">Group Gathering</div>
+                        <div class="timeline-desc">Annual group gathering to celebrate research achievements and team milestones.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+				
+				<div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-outing')" class="timeline-link">
+                        <div class="timeline-date">17 December 2016</div>
+                        <div class="timeline-title">Group Gathering & Celebration</div>
+                        <div class="timeline-desc">Annual group dinner held at Marché Mövenpick 313@somerset to celebrate year-end research achievements and team milestones.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-seminar-july2016')" class="timeline-link">
+                        <div class="timeline-date">15 July 2016</div>
+                        <div class="timeline-title">Industry Networking Seminar</div>
+                        <div class="timeline-desc">Special session on <em>"Advanced Memory and Sensor for Embedded Systems"</em> connecting academic researchers with industry partners.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-sgspin-tech2016')" class="timeline-link">
+                        <div class="timeline-date">15 July 2016</div>
+                        <div class="timeline-title">SG-SPIN Technical Seminar</div>
+                        <div class="timeline-desc">Consortium update meeting discussing recent breakthroughs in spin-torque memory architectures and material characterization.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-sgspin-symp2015')" class="timeline-link">
+                        <div class="timeline-date">5 May 2015</div>
+                        <div class="timeline-title">SG-SPIN Research Symposium</div>
+                        <div class="timeline-desc">Joint research exchange session hosted with participating Singapore university and institute partners.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-sgspin')" class="timeline-link">
+                        <div class="timeline-date">5 December 2014</div>
+                        <div class="timeline-title">Singapore Spintronics Consortium (SG-SPIN) MOU Signing</div>
+                        <div class="timeline-desc">Official signing ceremony at NUS Shaw Foundation Alumni House, inaugurating the national spintronics initiative alongside guest of honor DPM.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-workshop2')" class="timeline-link">
+                        <div class="timeline-date">May 2014</div>
+                        <div class="timeline-title">2nd Workshop on Non-Volatile Logic and Magnetic Devices</div>
+                        <div class="timeline-desc">Follow-up academic workshop focusing on domain wall dynamics, spin torques, and magnetic computing integrated circuits.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+                <div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-workshop1')" class="timeline-link">
+                        <div class="timeline-date">1 August 2013</div>
+                        <div class="timeline-title">1st Workshop on Non-Volatile Logic and Magnetic Devices</div>
+                        <div class="timeline-desc">Inaugural symposium gathering regional researchers to present on spin transport, skyrmions, and non-volatile logic.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+	
+	
+	<!-- Modal :Celebrate -->
+<div id="modal-celebrate" class="modal">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeModal('modal-celebrate')"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-body">
+            <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Annual Event</span>
+            <h3>Annual Celebration</h3>
+            <p><strong>Date:</strong> 24th March 2026</p>
+			 <img src="images/events/group-mar2026.jpg" alt="Group Gathering">
+            <p>Birthday Celebrations</p>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal :Group -->
+<div id="modal-group" class="modal">
+    <div class="modal-card">
+        <button class="modal-close" onclick="closeModal('modal-group')"><i class="fa-solid fa-xmark"></i></button>
+        <div class="modal-body">
+            <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Annual Event</span>
+            <h3>Annual Meeting</h3>
+            <p><strong>Date:</strong> 17th December 2022</p>
+			 <img src="images/events/group-dec2022.jpg" alt="Group Gathering">
+            <p>Annual group gathering to celebrate research achievements and team milestones.</p>
+        </div>
+    </div>
+</div>
+
+    <!-- Modal 1: Group Outing -->
+    <div id="modal-outing" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-outing')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-utensils"></i> Social Event</span>
+                <h3>Group Social & Celebration Gathering</h3>
+                <p><strong>Date:</strong> 17th December 2016</p>
+                <img src="images/events/group-outing-dec2016.jpg" alt="Group Outing Dinner">
+                <p>The Intelligent Materials and Systems Laboratory team gathered for a year-end celebration dinner at <strong>Marché Mövenpick 313@somerset</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 2: SG-SPIN -->
+    <div id="modal-sgspin" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-sgspin')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-handshake"></i> Consortium Milestone</span>
+                <h3>Singapore Spintronics Consortium (SG-SPIN) MOU Signing</h3>
+                <p><strong>Date:</strong> 5th December 2014</p>
+                <img src="images/events/sg-spin-dec2014.jpg" alt="MOU Signing Ceremony">
+                <p>MOU signing ceremony at NUS Shaw Foundation Alumni House (5 Dec 2014).<br><br>Front row: Mr Russell Tham, President, Applied Materials South East Asia; Mr Rajesh Nair, Vice President, GLOBALFOUNDRIES Singapore; Prof Barry Halliwell, Deputy President (Research & Technology), NUS; Dr Lim Jui, CEO NTUitive of NTU and Mr Patrick Chang, Director, Delta Electronics International (Singapore). Back row: Prof Ding Jun (NUS); Prof Teo Kie Leong (NUS); Prof Adeyeye Adekunle (NUS); Mr George Loh, Program Director of NRF ; Prof Low Teck Seng, CEO of NRF; Prof Wu Yihong (NUS); Irene Cheong, Director ILO of NUS;Mr David Toh, CTO NTUitive of NTU; Prof Lew Wen Siang (NTU).<br><br>The event brought together executive leadership, key researchers, and principal investigators from NTU, NUS, A*STAR, and industry partners to push spintronics innovation forward.</p>
+                
+                <div class="resource-links">
+                    <a href="http://media.ntu.edu.sg/NewsReleases/Pages/newsdetail.aspx?news=954a6d38-667f-4a92-a2e8-89d75566bcae#" target="_blank" class="btn-link">
+                        <i class="fa-solid fa-newspaper"></i> NTU News Release
+                    </a>
+                    <a href="https://personal.ntu.edu.sg/wensiang/Gallery/workshop/DPM%20news.pdf" target="_blank" class="btn-link">
+                        <i class="fa-solid fa-file-pdf"></i> DPM Speech Citing SG-SPIN (PDF)
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 3: 1st Workshop -->
+    <div id="modal-workshop1" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-workshop1')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-chalkboard-user"></i> Academic Workshop</span>
+                <h3>1st Workshop on Non-Volatile Logic and Magnetic Devices</h3>
+                <p><strong>Date:</strong> 1st August 2013</p>
+                
+                <p>Organized as part of the flagship research programme <em>"Magnetic logic and memory integrated circuit devices"</em>, gathering regional researchers to discuss spin transport, skyrmion spin textures, and logic-in-memory architectures.</p>
+
+                <h4 style="color: #002b49; margin-top: 1rem;">Workshop Photo Highlights</h4>
+                <div class="modal-agenda-grid">
+                    <div class="modal-agenda-card">
+                        <img src="images/events/1stworkshop-arrival.jpg" alt="Arrival of invited researchers">
+                        <h5>09:45 AM - Arrival</h5>
+                        <ul>
+                            <li>Prof. Ding Jun (NUS)</li>
+                            <li>Assoc. Prof. Mansoor (NUS)</li>
+                            <li>Asst. Prof. Quek Su Ying (IHPC-NUS)</li>
+                            <li>Dr. Tan Seng Ghee (DSI)</li>
+                            <li>Asst. Prof. Yu Hao (NTU)</li>
+                        </ul>
+                    </div>
+                    <div class="modal-agenda-card">
+                        <img src="images/events/1stworkshop-opening.jpg" alt="Opening ceremony">
+                        <h5>10:00 AM - Opening</h5>
+                        <p style="font-size: 0.82rem; color: #64748b;">Welcome address by workshop host, Asst. Prof. Lew Wen Siang.</p>
+                    </div>
+                    <div class="modal-agenda-card">
+                        <img src="images/events/prof-mansoor.jpg" alt="Keynote talk">
+                        <h5>10:15 AM - Keynote</h5>
+                        <p style="font-size: 0.82rem; color: #64748b;">Assoc. Prof. Mansoor on <em>"Topological Hall Effect in Vortex and Skyrmion Spin Textures"</em>.</p>
+                    </div>
+                    <div class="modal-agenda-card">
+                        <img src="images/events/mr-indra.jpg" alt="Afternoon Session">
+                        <h5>02:00 PM - Research Talk</h5>
+                        <p style="font-size: 0.82rem; color: #64748b;">Mr. Indra Purnama presented on <em>“Coupled Domain Wall Systems”</em>.</p>
+                    </div>
+                </div>
+
+                <img src="images/events/1stworkshop-group-photo.jpg" alt="Group Photo">
+                <p style="text-align: center; font-size: 0.85rem; color: #64748b;"><em>Official group photo of participants at the conclusion of the workshop.</em></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 4: Industry Networking Seminar -->
+    <div id="modal-seminar-july2016" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-seminar-july2016')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-briefcase"></i> Industry Seminar</span>
+                <h3>Industry Networking Seminar</h3>
+                <p><strong>Date:</strong> 15th July 2016</p>
+                <p>Special collaborative session focused on <em>"Advanced Memory and Sensor for Embedded Systems"</em>, fostering direct interactions between researchers, postgraduate scholars, and microelectronics industry leaders.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 5: SG-SPIN Tech Seminar 2016 -->
+    <div id="modal-sgspin-tech2016" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-sgspin-tech2016')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-flask"></i> Technical Seminar</span>
+                <h3>SG-SPIN Technical Seminar</h3>
+                <p><strong>Date:</strong> 15th July 2016</p>
+                <p>Consortium update seminar presenting technological progress in spin-torque magnetic logic and spin transfer torque MRAM (STT-MRAM) devices.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 6: SG-SPIN Symposium 2015 -->
+    <div id="modal-sgspin-symp2015" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-sgspin-symp2015')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-users"></i> Research Symposium</span>
+                <h3>SG-SPIN Research Symposium</h3>
+                <p><strong>Date:</strong> 5th May 2015</p>
+                <p>Annual consortium research symposium hosting exchange presentations among researchers from NTU, NUS, A*STAR, and industrial partners.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal 7: 2nd Workshop -->
+    <div id="modal-workshop2" class="modal">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('modal-workshop2')"><i class="fa-solid fa-xmark"></i></button>
+            <div class="modal-body">
+                <span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-chalkboard-user"></i> Academic Workshop</span>
+                <h3>2nd Workshop on Non-Volatile Logic and Magnetic Devices</h3>
+                <p><strong>Date:</strong> May 2014</p>
+                <p>The 2nd edition of the workshop series, continuing discussions on spin dynamics, domain wall memory, and low-power magnetic IC design.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Script -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

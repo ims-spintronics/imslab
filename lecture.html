@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lecture Courses | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Table Styling Enhancements -->
+    <style>
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+			transition: background 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .text-muted-cell {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Lecture Courses</h2>
+                <p>Undergraduate and postgraduate courses offered by our group faculty members.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <div class="section-header">
+            <h2><i class="fa-solid fa-chalkboard-user" style="color: var(--ntu-red, #c8102e);"></i> Course Offerings</h2>
+        </div>
+
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">#</th>
+                        <th style="width: 170px;text-align: center;">Semester</th>
+                        <th style="width: 150px;text-align: center;">Course Code</th>
+                        <th style="text-align: center;">Course Title</th>
+                        <th style="width: 150px; text-align: center;">Resources</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align: center;">48</td><td>SEM 2 2026/2027</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">47</td><td>SEM 2 2026/2027</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">46</td><td>SEM 1 2026/2027</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+					<tr><td style="text-align: center;">45</td><td>SEM 2 2025/2026</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">44</td><td>SEM 2 2025/2026</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">43</td><td>SEM 1 2025/2026</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+					<tr><td style="text-align: center;">42</td><td>SEM 2 2024/2025</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">41</td><td>SEM 2 2024/2025</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">40</td><td>SEM 1 2024/2025</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+					<tr><td style="text-align: center;">39</td><td>SEM 2 2023/2024</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">38</td><td>SEM 2 2023/2024</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">37</td><td>SEM 1 2023/2024</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+							
+					<tr><td style="text-align: center;">36</td><td>SEM 2 2022/2023</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">35</td><td>SEM 2 2022/2023</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">34</td><td>SEM 1 2022/2023</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+										
+					
+					<tr><td style="text-align: center;">33</td><td>SEM 2 2021/2022</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">32</td><td>SEM 2 2021/2022</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">31</td><td>SEM 1 2021/2022</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+					
+					<tr><td style="text-align: center;">30</td><td>SEM 2 2020/2021</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">29</td><td>SEM 2 2020/2021</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">28</td><td>SEM 1 2020/2021</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					
+					<tr><td style="text-align: center;">27</td><td>SEM 2 2019/2020</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">26</td><td>SEM 2 2019/2020</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+ 					<tr><td style="text-align: center;">25</td><td>SEM 1 2019/2020</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">24</td><td>SEM 2 2018/2019</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+					<tr><td style="text-align: center;">23</td><td>SEM 1 2018/2019</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">22</td><td>SEM 2 2017/2018</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">21</td><td>SEM 2 2017/2018</td><td><span class="code-badge">PH4418</span></td><td>Physics in Industry</td><td style="text-align: center;"><a href="PH4418.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">20</td><td>SEM 1 2017/2018</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">19</td><td>SEM 2 2016/2017</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">18</td><td>SEM 1 2016/2017</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><a href="PH3601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">17</td><td>SEM 2 2015/2016</td><td><span class="code-badge">PH4601</span></td><td>Physics of Semiconductor and Spintronics Devices</td><td style="text-align: center;"><a href="PH4601.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">16</td><td>SEM 1 2015/2016</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">15</td><td>SEM 1 2014/2015</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">14</td><td>SEM 2 2013/2014</td><td><span class="code-badge">PH2102</span></td><td>Electromagnetism</td><td style="text-align: center;"><a href="PH2102.html" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Course Details</a></td></tr>
+                    <tr><td style="text-align: center;">13</td><td>SEM 1 2013/2014</td><td><span class="code-badge">PH3601</span></td><td>Fabrication of Micro- and Nano-electronic Devices</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">12</td><td>SEM 2 2012/2013</td><td><span class="code-badge">PH1103</span></td><td>Optics and Waves</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">11</td><td>SEM 1 2012/2013</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">10</td><td>SEM 2 2011/2012</td><td><span class="code-badge">PAP113</span></td><td>Optics and Waves</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">9</td><td>SEM 1 2011/2012</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">8</td><td>SEM 2 2010/2011</td><td><span class="code-badge">PAP113</span></td><td>Optics and Waves</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">7</td><td>SEM 1 2010/2011</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">6</td><td>SEM 2 2009/2010</td><td><span class="code-badge">PAP461</span></td><td>Semiconductor and Device Physics</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">5</td><td>SEM 1 2009/2010</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">4</td><td>SEM 2 2008/2009</td><td><span class="code-badge">PAP461</span></td><td>Semiconductor and Device Physics</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">3</td><td>SEM 1 2008/2009</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">2</td><td>SEM 2 2007/2008</td><td><span class="code-badge">PAP461</span></td><td>Semiconductor and Device Physics</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                    <tr><td style="text-align: center;">1</td><td>SEM 1 2007/2008</td><td><span class="code-badge">PAP361</span></td><td>Semiconductor Processing</td><td style="text-align: center;"><span class="text-muted-cell">Course Details</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

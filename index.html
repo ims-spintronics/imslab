@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Page Enhancement Styles -->
+    <style>
+        /* Vision & Mission Grid */
+        .vm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .vm-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-left: 4px solid var(--ntu-red, #c8102e);
+            border-radius: 12px;
+            padding: 1.75rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .vm-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .vm-card h3 {
+            color: #0f172a;
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+        }
+
+        .vm-card p {
+            color: #475569;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* 4 Separate Impact Stats Cards Grid */
+        .stats-grid-separate {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.25rem;
+            margin: 2.5rem 0;
+        }
+
+        .stat-card-item {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            border-radius: 12px;
+            padding: 1.75rem 1.25rem;
+            text-align: center;
+            color: #ffffff;
+            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .stat-card-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+        }
+
+        .stat-card-item .number {
+            font-size: 2.25rem;
+            font-weight: 800;
+            color: #60a5fa;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-card-item .label {
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Enhanced Research Cards */
+        .grid .card {
+            display: flex;
+            flex-direction: column;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .grid .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.09);
+        }
+
+        .card-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .pill-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(4px);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.3rem 0.65rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        /* Call To Action Box */
+        .cta-banner {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 2.5rem 2rem;
+            margin: 3rem 0 1rem;
+            text-align: center;
+        }
+
+        .cta-banner h3 {
+            color: #0f172a;
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+        }
+
+        .cta-banner p {
+            color: #475569;
+            max-width: 650px;
+            margin: 0 auto 1.5rem;
+            font-size: 0.98rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--ntu-red, #c8102e);
+            color: #ffffff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-primary:hover {
+            background: #a00c24;
+        }
+
+        .btn-secondary {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1px solid #cbd5e1;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn-secondary:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html" class="active"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                       <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li><a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+               
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Intelligent Materials and Systems Laboratory</h2>
+                <p>Pioneering emerging non-volatile memory & sensory technology, intelligent computing architectures, and micro/nano-electromechanical magnetic sensing for bio-applications.</p>
+                <div class="hero-tags">
+                    <span class="tag"><i class="fa-solid fa-gear"></i> Spintronics</span>
+                    <span class="tag"><i class="fa-solid fa-microchip"></i> Non-Volatile Memory</span>
+                    <span class="tag"><i class="fa-solid fa-atom"></i> Intelligent Materials</span>
+                    <span class="tag"><i class="fa-solid fa-magnet"></i> Magnetic Sensing</span>
+                </div>
+            </div>
+            <div class="hero-card">
+                <img src="images/sputtering-system.jpg" alt="Laboratory Overview" class="section-img">
+                <h3><i class="fa-solid fa-circle-info" style="color: #60a5fa;"></i> Laboratory Highlights</h3>
+                <ul>
+                    <li><i class="fa-solid fa-check"></i> Advanced Micro- and Nano-Fabrication Facilities</li>
+                    <li><i class="fa-solid fa-check"></i> Device & Circuit Level Simulations for Intelligent Systems</li>
+                    <li><i class="fa-solid fa-check"></i> State-of-the-art Film Deposition and Characterisation</li>
+                    <li><i class="fa-solid fa-check"></i> Industry & Academic Research Collaborations</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Vision & Mission Section -->
+        <div class="vm-grid">
+            <div class="vm-card">
+                <h3><i class="fa-solid fa-eye" style="color: var(--ntu-red, #c8102e);"></i> Our Vision</h3>
+                <p>To pioneer next-generation spintronic and intelligent memory technologies that power energy-efficient computing architectures and advanced biomedical sensing systems worldwide.</p>
+            </div>
+            <div class="vm-card" style="border-left-color: #2563eb;">
+                <h3><i class="fa-solid fa-bullseye" style="color: #2563eb;"></i> Our Mission</h3>
+                <p>Bridging fundamental physics with industrial innovation through micro- and nano-fabrication, advanced device modeling, and interdisciplinary collaboration to deliver transformative technologies.</p>
+            </div>
+        </div>
+
+        <!-- About Section -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-microscope" style="color: var(--ntu-red, #c8102e);"></i> About The Laboratory</h2>
+        </div>
+        
+        <div class="about-card about-layout">
+            <div class="about-text">
+                <p>The <strong>Laboratory of Intelligent Materials and Systems (IMS Lab)</strong> at Nanyang Technological University pioneers cutting-edge research in emerging non-volatile memory, spintronics, and advanced sensory hardware. Our primary objective is to accelerate the development of energy-efficient intelligent technologies.</p>
+                <p>Our multidisciplinary team conducts comprehensive simulations for multi-scale device and circuit designs, accompanied by hands-on fabrication using advanced micro- and nano-engineering techniques. The laboratory hosts state-of-the-art facilities for thin-film deposition, lithography, and precision magnetic/electronic characterization.</p>
+                <p>Extending beyond computing hardware, our research encompasses micro- and nano-electromechanical systems (NEMS/MEMS) engineered for precision magnetic sensing in biological and diagnostic applications. We actively work with global industry leaders for technology translational solutions while driving fundamental discoveries alongside top international research institutions.</p>
+            </div>
+            <div class="about-image">
+                <img src="images/about-lab.jpg" alt="About NTU Laboratory" class="responsive-img">
+            </div>
+        </div>
+
+        <!-- 4 Separate Impact Stats Cards Section -->
+        <div class="stats-grid-separate">
+            <div class="stat-card-item">
+                <div class="number">200+</div>
+                <div class="label">Journal Papers</div>
+            </div>
+            <div class="stat-card-item">
+                <div class="number">50+</div>
+                <div class="label">Patents & IP</div>
+            </div>
+            <div class="stat-card-item">
+                <div class="number">S$40M+</div>
+                <div class="label">Research Grants</div>
+            </div>
+            <div class="stat-card-item">
+                <div class="number">10+</div>
+                <div class="label">Advanced Lab Tools</div>
+            </div>
+        </div>
+
+        <!-- Core Research Areas Section -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-cubes" style="color: var(--ntu-red, #c8102e);"></i> Core Research Areas</h2>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="images/sem1.jpg" alt="Non-Volatile Memory" class="card-img">
+                    <span class="pill-badge">Spintronics</span>
+                </div>
+                <div style="padding: 1.25rem;">
+                    <h3>Non-Volatile Memory</h3>
+                    <p>Development and characterisation of next-generation spin-based non-volatile memory devices for energy-efficient computing architectures.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="images/neuromorphic-computing.jpg" alt="Intelligent Systems" class="card-img">
+                    <span class="pill-badge">AI Hardware</span>
+                </div>
+                <div style="padding: 1.25rem;">
+                    <h3>Intelligent Systems</h3>
+                    <p>Integrating emerging memory devices into novel hardware for neuromorphic computing and intelligent sensor processing.</p>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-img-wrapper">
+                    <img src="images/biomedical-sensing.jpg" alt="Biomedical Sensing" class="card-img">
+                    <span class="pill-badge">Bio-MEMS</span>
+                </div>
+                <div style="padding: 1.25rem;">
+                    <h3>Biomedical Sensing</h3>
+                    <p>Micro- and nano-electromechanical magnetic sensing systems engineered for biological diagnostic and biomedical applications.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action Banner -->
+        <div class="cta-banner">
+            <h3>Interested in Collaborating or Joining Our Research Team?</h3>
+            <p>We are constantly looking for passionate PhD candidates, postdoctoral researchers, and industrial partners to join our mission in pushing the boundaries of spintronics and intelligent systems.</p>
+            <div class="cta-buttons">
+                <a href="opportunity.html" class="btn-primary"><i class="fa-solid fa-user-plus"></i> Explore Opportunities</a>
+                <a href="contact.html" class="btn-secondary"><i class="fa-solid fa-envelope"></i> Contact Laboratory</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

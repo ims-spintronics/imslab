@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Opportunities | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .opportunity-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+
+        .opportunity-header {
+            background: #f1f5f9;
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .opportunity-header h3 {
+            color: #002b49;
+            font-size: 1.35rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin: 0;
+        }
+
+        .badge-status {
+            background: rgba(37, 99, 235, 0.1);
+            color: #2563eb;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .opportunity-body {
+            padding: 2rem;
+        }
+
+        .opportunity-banner-img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: contain;
+            background: #f1f5f9;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            border: 1px solid #e2e8f0;
+        }
+
+        .opportunity-body p {
+            color: #1e293b;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+
+        .preferred-title {
+            font-weight: 700;
+            color: #0f172a;
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+        }
+
+        .skills-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin-bottom: 2rem;
+            padding: 0;
+        }
+
+        .skills-list li {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1rem 1.25rem;
+            border-radius: 10px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .skills-list li i {
+            color: #2563eb;
+            font-size: 1.1rem;
+        }
+
+        .application-box {
+            background: #f8fafc;
+            border-left: 4px solid #c8102e;
+            padding: 1.5rem;
+            border-radius: 0 12px 12px 0;
+            margin-top: 1.5rem;
+        }
+
+        .application-box p {
+            margin-bottom: 0.5rem;
+        }
+
+        .application-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        .application-box a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .application-box a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Opportunities</h2>
+                <p>Join our team and explore research openings in experimental spintronics and intelligent devices.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Card 1: Research Positions -->
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <h3><i class="fa-solid fa-briefcase"></i> Senior Research Fellow / Research Associate / Project Officer</h3>
+                <span class="badge-status"><i class="fa-solid fa-clock"></i> Open Until Filled</span>
+            </div>
+            <div class="opportunity-body">
+                <img src="images/new RRAM position.jpg" alt="RRAM Open Position" class="opportunity-banner-img" onerror="this.style.display='none';">
+
+                <p>Research positions in experimental spintronics are available. The appointments are initially for one year with a possibility of renewal for another year.</p>
+
+                <div class="preferred-title">Preferred candidate experience (in at least two of the following areas):</div>
+                <ul class="skills-list">
+                    <li><i class="fa-solid fa-microchip"></i> Resistive switching memory materials and device</li>
+                    <li><i class="fa-solid fa-brain"></i> Neuromorphic computing</li>
+                    <li><i class="fa-solid fa-atom"></i> Spin orbit torques</li>
+                </ul>
+
+                <p>A qualified PhD degree in Physics, Engineering, or Material Science is required for the Research Fellow position. A qualified Master's degree in a similar discipline is required for the Research Associate position, while a first degree holder can be considered for the Project Officer position. Only motivated candidates with team spirit and an ability for independent work will be considered.</p>
+
+                <div class="application-box">
+                    <p><strong><i class="fa-solid fa-paper-plane"></i> How to Apply:</strong></p>
+                    <p>Interested applicants please send your curriculum vitae, full list of publications, and contact details for references to <strong>Dr. Wen Siang Lew</strong> at <a href="mailto:wensiang@ntu.edu.sg">wensiang@ntu.edu.sg</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 2: PhD Scholarship Opportunities -->
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <h3><i class="fa-solid fa-graduation-cap"></i> PhD Scholarships</h3>
+                <span class="badge-status"><i class="fa-solid fa-award"></i> Full Funding Available</span>
+            </div>
+            <div class="opportunity-body">
+                <p>PhD research opportunities are available at the Spintronics Device Laboratory, School of Physical and Mathematical Sciences (Physics Division), Nanyang Technological University, Singapore. Students will have the opportunity to work on key research topics including non-volatile memory devices, spintronics, and ReRAM devices.</p>
+
+                <div class="preferred-title">Key Requirements & Guidelines:</div>
+                <ul class="skills-list">
+                    <li><i class="fa-solid fa-user-graduate"></i> Bachelor's degree in Physics, Engineering, or Materials Science</li>
+                    <li><i class="fa-solid fa-language"></i> Proficiency in spoken and written English is a must</li>
+                    <li><i class="fa-solid fa-file-signature"></i> GRE & TOEFL required (or pass NTU's EPT & TPT exams)</li>
+                </ul>
+
+                <p>Several full scholarships are available for qualified students. Additional special funding programs include:</p>
+                
+                <div class="application-box">
+                    <p><strong><i class="fa-solid fa-link"></i> Application Links</strong></p>
+                    <p>• <strong>Graduate Scholarships:</strong> <a href="https://www.ntu.edu.sg/spms/admissions/grad/scholarships" target="_blank">NTU Graduate Scholarships</a></p>
+                    <p>• <strong>Singapore Citizens & PRs (EDB-IPP):</strong> Support available under the Industrial Postgraduate Programme. <a href="https://www.ntu.edu.sg/graduate-college/admissions/programme/industrial-postgraduate-programme-(ipp)?print=1" target="_blank">Details on EDB-IPP</a></p>
+                    <p>• <strong>SINGA Award:</strong> International students can apply online at <a href="https://www.a-star.edu.sg/scholarships/for-graduate-studies/singapore-international-graduate-award-singa" target="_blank">SINGA Scholarship Portal</a></p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card 3: Internship Opportunities -->
+        <div class="opportunity-card">
+            <div class="opportunity-header">
+                <h3><i class="fa-solid fa-globe"></i> Research Internships</h3>
+                <span class="badge-status"><i class="fa-solid fa-handshake"></i> Student Exchange</span>
+            </div>
+            <div class="opportunity-body">
+                <div class="preferred-title">NTU-India Connect Program</div>
+                <p>NTU features the NTU-India Connect program, which supports eligible students from India to undergo intensive research training at NTU. Limited financial support is provided for accepted candidates.</p>
+
+                <div class="application-box">
+                    <p><strong><i class="fa-solid fa-circle-info"></i> More Details:</strong></p>
+                    <p>Further information on guidelines and applications can be obtained at <a href="https://www.ntu.edu.sg/education/student-exchanges" target="_blank">NTU Global Connect Portal</a>.</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

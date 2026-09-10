@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory Courses | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Table Styling Enhancements -->
+    <style>
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-top: 1.5rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.25rem 0.65rem;
+            border-radius: 20px;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .status-available {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .status-unavailable {
+            background: #fee2e2;
+            color: #b91c1c;
+        }
+
+        .btn-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #2563eb;
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            border-radius: 15px;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            white-space: nowrap;
+            transition: background 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background: #1d4ed8;
+            color: #ffffff;
+        }
+
+        .text-muted-cell {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Laboratory Courses</h2>
+                <p>Practical physics laboratory modules, instrumentation, and cleanroom training experiments.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <div class="section-header">
+            <h2><i class="fa-solid fa-flask-vial" style="color: var(--ntu-red, #c8102e);"></i> Experimental & Laboratory Modules</h2>
+        </div>
+
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">#</th>
+                        <th style="width: 170px; text-align: center;">Semester</th>
+                        <th style="width: 150px; text-align: center;">Course Code</th>
+                        <th style="width: 200px; text-align: center;">Laboratory Course</th>
+                        <th style="text-align: center;">Experiment Title</th>
+                        <th style="width: 150px; text-align: center;">Manual</th>
+                        <th style="width: 140px; text-align: center;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align: center;">60</td>
+                        <td style="text-align: center;">Semester I/II 2026-2027</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">59</td>
+                        <td style="text-align: center;">Semester I/II 2026-2027</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">58</td>
+                        <td style="text-align: center;">Semester I/II 2026-2027</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">57</td>
+                        <td style="text-align: center;">Semester I/II 2026-2027</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">56</td>
+                        <td style="text-align: center;">Semester I/II 2026-2027</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">55</td>
+                        <td style="text-align: center;">Semester I/II 2025-2026</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">54</td>
+                        <td style="text-align: center;">Semester I/II 2025-2026</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">53</td>
+                        <td style="text-align: center;">Semester I/II 2025-2026</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">52</td>
+                        <td style="text-align: center;">Semester I/II 2025-2026</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">51</td>
+                        <td style="text-align: center;">Semester I/II 2025-2026</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">50</td>
+                        <td style="text-align: center;">Semester I/II 2024-2025</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">49</td>
+                        <td style="text-align: center;">Semester I/II 2024-2025</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">48</td>
+                        <td style="text-align: center;">Semester I/II 2024-2025</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">47</td>
+                        <td style="text-align: center;">Semester I/II 2024-2025</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">46</td>
+                        <td style="text-align: center;">Semester I/II 2024-2025</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">45</td>
+                        <td style="text-align: center;">Semester I/II 2023-2024</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">44</td>
+                        <td style="text-align: center;">Semester I/II 2023-2024</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">43</td>
+                        <td style="text-align: center;">Semester I/II 2023-2024</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">42</td>
+                        <td style="text-align: center;">Semester I/II 2023-2024</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">41</td>
+                        <td style="text-align: center;">Semester I/II 2023-2024</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">40</td>
+                        <td style="text-align: center;">Semester I/II 2022-2023</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">39</td>
+                        <td style="text-align: center;">Semester I/II 2022-2023</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">38</td>
+                        <td style="text-align: center;">Semester I/II 2022-2023</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">37</td>
+                        <td style="text-align: center;">Semester I/II 2022-2023</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">36</td>
+                        <td style="text-align: center;">Semester I/II 2022-2023</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">35</td>
+                        <td style="text-align: center;">Semester I/II 2021-2022</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">34</td>
+                        <td style="text-align: center;">Semester I/II 2021-2022</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">33</td>
+                        <td style="text-align: center;">Semester I/II 2021-2022</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">32</td>
+                        <td style="text-align: center;">Semester I/II 2021-2022</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">31</td>
+                        <td style="text-align: center;">Semester I/II 2021-2022</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">30</td>
+                        <td style="text-align: center;">Semester I/II 2020-2021</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">29</td>
+                        <td style="text-align: center;">Semester I/II 2020-2021</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">28</td>
+                        <td style="text-align: center;">Semester I/II 2020-2021</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">27</td>
+                        <td style="text-align: center;">Semester I/II 2020-2021</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">26</td>
+                        <td style="text-align: center;">Semester I/II 2020-2021</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">25</td>
+                        <td style="text-align: center;">Semester I/II 2019-2020</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">24</td>
+                        <td style="text-align: center;">Semester I/II 2019-2020</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">23</td>
+                        <td style="text-align: center;">Semester I/II 2019-2020</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">22</td>
+                        <td style="text-align: center;">Semester I/II 2019-2020</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">21</td>
+                        <td style="text-align: center;">Semester I/II 2019-2020</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">20</td>
+                        <td style="text-align: center;">Semester I/II 2018-2019</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">19</td>
+                        <td style="text-align: center;">Semester I/II 2018-2019</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">18</td>
+                        <td style="text-align: center;">Semester I/II 2018-2019</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">17</td>
+                        <td style="text-align: center;">Semester I/II 2018-2019</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">16</td>
+                        <td style="text-align: center;">Semester I/II 2018-2019</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">15</td>
+                        <td style="text-align: center;">Semester I/II 2017-2018</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">14</td>
+                        <td style="text-align: center;">Semester I/II 2017-2018</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">13</td>
+                        <td style="text-align: center;">Semester I/II 2017-2018</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">12</td>
+                        <td style="text-align: center;">Semester I/II 2017-2018</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">11</td>
+                        <td style="text-align: center;">Semester I/II 2017-2018</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+					
+                    <tr>
+                        <td style="text-align: center;">10</td>
+                        <td style="text-align: center;">Semester I/II 2016-2017</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Introduction to PSpice Circuit Designing, Coding and Analysis</td>
+                        <td style="text-align: center;"><a href="https://personal.ntu.edu.sg/wensiang/Manual/PH3399%20-%20Lab%20Manual%20(Introduction%20to%20PSPICE%20Circuit%20Designing,%20Coding%20and%20Analysis).pdf" target="_blank" class="btn-link"><i class="fa-solid fa-file-pdf"></i> Manual</a></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">9</td>
+                        <td style="text-align: center;">Semester I/II 2016-2017</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">8</td>
+                        <td style="text-align: center;">Semester I/II 2016-2017</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Sem 1 Only</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">7</td>
+                        <td style="text-align: center;">Semester I/II 2016-2017</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">6</td>
+                        <td style="text-align: center;">Semester I/II 2016-2017</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">5</td>
+                        <td style="text-align: center;">Semester II 2015-2016</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Usage of Vector Network Analyser for Microwave Signal Measurement</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">New</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">4</td>
+                        <td style="text-align: center;">Semester II 2015-2016</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Introduction to HSPICE &amp; Verilog-A Coding and Graphical Analysis</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">New</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">3</td>
+                        <td style="text-align: center;">Semester II 2015-2016</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3399</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Cleanroom Microfabrication</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">2</td>
+                        <td style="text-align: center;">Semester II 2015-2016</td>
+                        <td style="text-align: center;"><span class="code-badge">PH3199</span></td>
+                        <td>Physics Laboratory IIIa</td>
+                        <td>Atomic and Magnetic Force Microscopy</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-available">Available</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align: center;">1</td>
+                        <td style="text-align: center;">Semester II 2015-2016</td>
+                        <td style="text-align: center;"><span class="code-badge">PAP339</span></td>
+                        <td>Physics Laboratory IIIb</td>
+                        <td>Electrochemical Synthesis and Characterization of 1D Nanostructures</td>
+                        <td style="text-align: center;"><span class="text-muted-cell">Lab Manual</span></td>
+                        <td style="text-align: center;"><span class="status-badge status-unavailable">Not Available</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

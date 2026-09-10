@@ -1,0 +1,2540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Announcements | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Specific Styles for News Timeline & Search Filtering -->
+    <style>
+        .filter-bar {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input-wrapper input:focus {
+            border-color: #2563eb;
+        }
+
+        .news-timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .news-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.25rem 1.75rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            transition: all 0.25s ease;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+        }
+
+        .news-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(37, 99, 235, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .news-date-badge {
+            background: rgba(0, 43, 73, 0.05);
+            border: 1px solid rgba(0, 43, 73, 0.1);
+            color: #002b49;
+            padding: 0.4rem 0.8rem;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            min-width: 110px;
+            justify-content: center;
+        }
+
+        .news-content {
+            flex: 1;
+            font-size: 0.98rem;
+            color: #1e293b;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .news-card {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .news-date-badge {
+                align-self: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Group News & Announcements</h2>
+                <p>Latest updates, research breakthroughs, publication acceptances, grant milestones, and team achievements from our laboratory.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- Interactive Search Bar -->
+        <div class="filter-bar">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="newsSearch" onkeyup="filterNews()" placeholder="Search news by keyword, paper title, or member name...">
+            </div>
+        </div>
+
+        <!-- News Feed List -->
+        <div class="news-timeline" id="newsFeed">
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2026</div>
+                <div class="news-content">Kangjian submitted his PhD thesis "Fabrication and Process Optimization of SiGe HBT on A BiCMOS Platform."</div>
+            </div>
+
+<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2026</div>
+                <div class="news-content">Ryan joins our group as PhD student, Welcome aboard !</div>
+            </div>
+
+<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2026</div>
+                <div class="news-content">Om Sardar joins our group as PhD student, Welcome aboard !</div>
+            </div>
+
+<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2026</div>
+                <div class="news-content">Kangjian's paper, "Mitigating Process-Induced Wafer Distortion for Enhanced Overlay and Thickness Uniformity", is accepted to be published in IEEE Transactions on Semiconductor Manufacturing, Well done !</div>
+		</div>
+
+         <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</div>
+                <div class="news-content">Clifford has passed his PhD qualifying exam, Well done!</div>
+            </div>
+
+<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</div>
+                <div class="news-content">Miss Swetha joins our group as Project Officer, Welcome aboard !</div>
+            </div>
+<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</div>
+                <div class="news-content">Eng Kang's paper, "Operando Thermal Behavior of 1T-1R Memristors and Its Implications on Online and Offline Learning", is accepted to be published in Nanoscale, Well done!</div>
+            </div>
+
+		<div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</div>
+                <div class="news-content">Jun Ken has passed his PhD qualifying exam, Well done!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2026</div>
+                <div class="news-content">Shu Hui has successfully defended her PhD thesis, Congratulations!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2026</div>
+                <div class="news-content">Kangjian's paper, "Suppressing hexagonal defects in ex situ SiCoNi processing", is accepted to be published in <em>IEEE Transactions on Semiconductor Manufacturing</em>, Well done !.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2026</div>
+                <div class="news-content">Eng Kang has successfully defended his PhD thesis, Congratulations!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2026</div>
+                <div class="news-content">Rovins joins our group as PhD student, Welcome onboard!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2026</div>
+                <div class="news-content">Dr Sun Jianxun joins our group as Research Fellow, Welcome aboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2026</div>
+                <div class="news-content">Wu Shuo has successfully defended her PhD thesis, Congratulations!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2025</div>
+                <div class="news-content">We are delighted that the NTU–DVL–ITRI collaboration agreement has been endorsed.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2025</div>
+                <div class="news-content">Dr Zhang Nan joins our group as Research Fellow, Welcome aboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2025</div>
+                <div class="news-content">We have signed an RCA with DorsaVi, marking the start of the ARTEMIS project.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2025</div>
+                <div class="news-content">Yao Yao from Nanjing University of Science and Technology joins us as Visiting PhD Student, Welcome!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2025</div>
+                <div class="news-content">Chenghua from Chongqing University joins us as Visiting PhD Student, Welcome!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2025</div>
+                <div class="news-content">Wu Shuo's paper, "Enhancement of Spin-Orbit Torque in Sputtered BiSb-based Perpendicular Magnetic Tunnel Junctions for Neuromorphic Computing Applications", is accepted to be published in <em>Applied Physics Letters</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2025</div>
+                <div class="news-content">Shu Hui submitted her PhD thesis "Orbital Momentum and Topological Insulator-Based Spin-Orbit Torque Devices".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2025</div>
+                <div class="news-content">Shan Shyan is registered as FYP student with our group, Welcome onboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2025</div>
+                <div class="news-content">Kah Seng has passed his PhD qualifying exam, well done!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2025</div>
+                <div class="news-content">Syahril joins our group as EDB-IPP (GF) PhD student, Welcome aboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2025</div>
+                <div class="news-content">Ryan is registered as FYP student with our group, Welcome onboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2025</div>
+                <div class="news-content">Xuan Kai has passed his PhD qualifying exam, well done!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2025</div>
+                <div class="news-content">Wu Shuo submitted her PhD thesis "Enhancement of Spin-Orbit Torque And Voltage-Controlled Magnetization Switching In Perpendicular Magnetic Tunnel Junctions".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2025</div>
+                <div class="news-content">Dr Yang Qu joins our group as Research Fellow, Welcome aboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2025</div>
+                <div class="news-content">Wu Shuo's paper, "Voltage-Modulated Magnetic Properties and Enhanced Thermal Endurance in Ta/Mo-based Perpendicular Magnetic Tunnel Junctions", is accepted to be published in <em>Journal of Magnetism and Magnetic Materials</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Dr Andhita is promoted to Senior Research Fellow, Congratulations !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Xiao Xiao from Nanjing University joins us as Visiting PhD Student, Welcome!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Lingli's paper, "CMOS-Compatible Protonic Three-Terminal Memristor for Analog Synapse in Neuromorphic Computing", is accepted to be published in <em>Small Methods</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Eng Kang submitted his PhD thesis "Resistive Switching Dynamics In Bimodal Memristors: Enabling Hybrid Digital-Analog Computation For AI Applications".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Yun Ming has successfully defended her PhD thesis, Congratulations!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Shu Hui's paper, "Complementary interactions of orbital momentum and topological spin states in ferromagnet/Cu/Bi0.85Sb0.15 structures", is published in <em>Physical Review Applied</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2025</div>
+                <div class="news-content">Qingguo has passed his PhD qualifying exam, well done!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2025</div>
+                <div class="news-content">Sunzhong joins our group as Project Officer, Welcome aboard !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2025</div>
+                <div class="news-content">Chen Ze's paper, "Voltage-Controlled Half Adder via Magnonic Inverse Design", is accepted to be published in <em>Applied Physics Letters</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2025</div>
+                <div class="news-content">Tianli's paper, "Generation of High and Bidirectional Out-of-Plane Spin-Orbit Torque through Vertical Magnetization Gradient", is accepted to be published in <em>Applied Physics Letters</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2025</div>
+                <div class="news-content">Lingli successfully defended her PhD thesis, Congratulations !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2025</div>
+                <div class="news-content">Calvin Lee's paper, "Enhanced Threshold Switching and Oscillatory Behaviour in Ag-based Diffusive Memristors via Nanoporous Cations Limiter", has been accepted for publication in <em>ACS Applied Electronic Materials</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">Kangjian's paper, "Enhanced Silicon Crystallization on Dielectric Materials at Reduced Temperature", has been accepted for publication in <em>IEEE Transactions on Semiconductor Manufacturing</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">Yun Ming submitted her PhD thesis "Evaluation of Deformable Image Registration for Contour Propagation and Dose Accumulation in Adaptive Radiotherapy for Prostate Cancer".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">Calvin Lee successfully defended his PhD thesis, Congratulations !</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">Jun Ken joins our group as PhD student, working closely with NCCS!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">Hoang Thien joins our group as PhD student!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2025</div>
+                <div class="news-content">We have signed an RCA with Hoya Electronics, marking the start of the EUV Bragg reflector project.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2024</div>
+                <div class="news-content">Chen Ze has passed his PhD qualifying exam, well done!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2024</div>
+                <div class="news-content">Eng Kang's paper, "Leveraging Tunability of Localized-Interfacial Memristors for Efficient Handling of Complex Neural Networks" is published in <em>ACS Nano</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2024</div>
+                <div class="news-content">Gerard's comment paper, "Bridging academia and industry for the future of spintronics" is published in <em>Nature Reviews Electrical Engineering</em>.</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2024</div>
+                <div class="news-content">Jia Rui submitted his PhD thesis "Doping and Performance Enhancement Techniques for Highly Reliable Resistive Switching Memories".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2024</div>
+                <div class="news-content">Clifford joins our group as PhD student, working closely with NCCS!</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2024</div>
+                <div class="news-content">Calvin Lee submitted his PhD thesis "Cation-based Memristors for Memory and Non-Conventional Computing Applications".</div>
+            </div>
+
+            <div class="news-card">
+                <div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2024</div>
+                <div class="news-content">Lingli submitted her PhD thesis "Ionic-based Three-Terminal Memristors for Synaptic and Neuronal Device Applications".</div>
+            </div>
+
+			
+			<!-- August 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2024</div>
+				<div class="news-content">Yun Ming's paper "Machine Learning Prediction of Dice Similarity Coefficient for Validation of Deformable Image Registration" is published in Intelligence-Based Medicine.</div>
+			</div>
+
+			<!-- June 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2024</div>
+				<div class="news-content">Bryan has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2024</div>
+				<div class="news-content">Yun Ming's paper "Deformable Anthropomorphic Pelvis Phantom for Dose Accumulation Verification" is accepted to be published in Physics in Medicine and Biology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2024</div>
+				<div class="news-content">Wu Shuo's paper "Electric field control of spin-orbit torque in annealed Ta/CoFeB/HfOx heterostructures via interfacial oxidation modulation" is accepted to be published in Nanotechnology.</div>
+			</div>
+
+			<!-- May 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2024</div>
+				<div class="news-content">Han Yin successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- April 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2024</div>
+				<div class="news-content">Tianli's paper "Granular Magnetization Switching in Pt/Co/Ti Structure with HfOx Insertion for in-Memory Computing Applications" is accepted to be published in Nano Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2024</div>
+				<div class="news-content">Gerard has taken up a Lecturer position in SPMS, he is now a Principal Investigator in research group, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2024</div>
+				<div class="news-content">Commissioning of a new Picosun 200 mm ALD system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2024</div>
+				<div class="news-content">Eng Kang's paper "Abrupt and gradual switching response in a single 1T-1R Ta2O5-based resistive memory device for storage-class memory and synaptic tuning applications" is published in Nanoscale Horizons.</div>
+			</div>
+
+			<!-- March 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2024</div>
+				<div class="news-content">Lingli won the Women in Technology (Micron) award, Congratulations!</div>
+			</div>
+
+			<!-- February 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2024</div>
+				<div class="news-content">Yun Ming's paper "Effects of modern aesthetic dental fillings on proton therapy" is published in Physics and Imaging in Radiation Oncology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2024</div>
+				<div class="news-content">Mun Yun successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2024</div>
+				<div class="news-content">Kangjian has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2024</div>
+				<div class="news-content">Kunqi successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- January 2024 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2024</div>
+				<div class="news-content">Jia Min successfully defended her PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2024</div>
+				<div class="news-content">Xuan Kai joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- November 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2023</div>
+				<div class="news-content">Samuel successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- October 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2023</div>
+				<div class="news-content">Zhang Bo joins our group as Visiting PhD Student, Welcome!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2023</div>
+				<div class="news-content">Lingli's paper "A Bi-functional Three-Terminal Memristor Applicable as Artificial Synapse and Neurons" is published in Nanoscale.</div>
+			</div>
+
+			<!-- September 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2023</div>
+				<div class="news-content">Jia Min's paper "Strain-induced Degradation and Recovery of Flexible NbOx-based Threshold Switching Device" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2023</div>
+				<div class="news-content">Panke's collaborative paper "Photo-Electric Multilevel Memory Device Based on Covalent Organic Polymer Film with Keto-Enol Tautomerism for Harsh Environments Applications" is published in Advanced Functional Materials.</div>
+			</div>
+
+			<!-- August 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Chen Ze and Kah Seng join our group as PhD students, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Qingguo joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Mun Yin submitted his PhD thesis "Frequency-Dependent Redox-Based 1S1R Synapse With A Short-Term Plasticity TiO2-Based Exponential Selector".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Kunqi submitted his PhD thesis "Investigation of Ionic Doping In All-Solid-State Organic Electrochemical Transistors".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Jia Min submitted her PhD thesis "Investigation of the Dynamics of NbOx-Based Threshold Switching Devices for Next-Generation Computing and Wearable Electronics".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2023</div>
+				<div class="news-content">Han Yin submitted his PhD thesis "Spin Orbit Torque: Spin Accumulation Techniques And Interfacial Investigation Of Topological Insulator".</div>
+			</div>
+
+			<!-- June 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2023</div>
+				<div class="news-content">Birte successfully defended her PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- May 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2023</div>
+				<div class="news-content">Mun Yin's paper "The impact of oxygen vacancy defect density on the nonlinearity and short-term plasticity of TiO2-based exponential selector" is accepted to be published in Nanotechnology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2023</div>
+				<div class="news-content">Dr Vasanthan joins our group as Senior Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2023</div>
+				<div class="news-content">Birte's paper "Investigation of spin-orbit torque performance with W/Cu-multilayers as spin current source" is accepted to be published in Journal of Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2023</div>
+				<div class="news-content">Lingli's paper "Protons-assisted Redox-based Three-terminal Memristor for Synaptic Device Applications" is accepted to be published in ACS Applied Materials and Interfaces.</div>
+			</div>
+
+			<!-- March 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2023</div>
+				<div class="news-content">Kunqi's paper "High performance, flexible and thermally stable all-solid-state organic electrochemical transistor based on thermoplastic polyurethane ion-gel" is accepted to be published in ACS Applied Electronic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2023</div>
+				<div class="news-content">Wu Shuo's paper "Enhancement of spin-orbit torque in Pt/Co/HfOx heterostructures with voltage-controlled oxygen ion migration" is published in Applied Physics Letters.</div>
+			</div>
+
+			<!-- February 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2023</div>
+				<div class="news-content">Han Yin's paper "Crystallinity control of topological insulator BiSb(012) via interfacial engineering for spin orbit torque enhancement" is published in Physical Review Applied.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2023</div>
+				<div class="news-content">Jia Min's paper "Enhancement of Temperature-Modulated NbO2-Based Relaxation Oscillator via Interfacial and Bulk Treatment" is accepted to be published in Nanotechnology.</div>
+			</div>
+
+			<!-- January 2023 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2023</div>
+				<div class="news-content">Samuel submitted his PhD thesis "Investigations of Interfacial Engineering on MgO-based Resistive Switching Memory Devices".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2023</div>
+				<div class="news-content">Birte submitted her PhD thesis "Investigations Of Spin Currents In Elemental, Alloyed And Multilayer Systems Using Spin-Torque Ferromagnetic Resonance Technique".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2023</div>
+				<div class="news-content">Shu Hui passed her PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2023</div>
+				<div class="news-content">Bryan joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- December 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2022</div>
+				<div class="news-content">Eng Kang passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<!-- November 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2022</div>
+				<div class="news-content">Yun Ming passed her PhD qualifying exam, well done!</div>
+			</div>
+
+			<!-- October 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2022</div>
+				<div class="news-content">Samuel's paper "Impact of interfacial engineering on MgO-based resistive switching devices for low-power applications" is published in Applied Surface Science.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2022</div>
+				<div class="news-content">Panke, Kaimin and Shaomin join our group as Visiting PhD Student, Welcome!</div>
+			</div>
+
+			<!-- July 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2022</div>
+				<div class="news-content">Yvan and Kangjian join our group as IPP (GLOBALFOUNDRIES) PhD students, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2022</div>
+				<div class="news-content">Mun Yin's paper "Frequency-dependent synapse weight tuning in 1S1R with short-term plasticity TiOx-based exponential selector" is accepted to be published in ACS Applied Materials &amp; Interfaces.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2022</div>
+				<div class="news-content">Han Yin's paper "Continuous film characterisation of Spin Orbit Torque using Four Probe Measurement" is published in Applied Physics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2022</div>
+				<div class="news-content">Yuanmin is promoted to Senior Research Fellow, Congratulations!</div>
+			</div>
+
+			<!-- May 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2022</div>
+				<div class="news-content">Wu Shuo passed her PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2022</div>
+				<div class="news-content">Calvin Ang successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- February 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2022</div>
+				<div class="news-content">Tianli's paper "Spin Reflection Induced Field-free Magnetization Switching in Perpendicularly Magnetized MgO/Pt/Co Heterostructures" is published in ACS Applied Materials &amp; Interfaces.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2022</div>
+				<div class="news-content">Calvin Koh successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- January 2022 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2022</div>
+				<div class="news-content">Grayson successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- December 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2021</div>
+				<div class="news-content">Calvin Ang becomes a group staff as Project Officer.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2021</div>
+				<div class="news-content">Han Yin's paper "Quantification of spin accumulation magnetoresistance using DC bias harmonic Hall measurement" is published in Physical Review B.</div>
+			</div>
+
+			<!-- November 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2021</div>
+				<div class="news-content">Lingli and Calvin passed their PhD qualifying exams, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2021</div>
+				<div class="news-content">Kunqi's paper "Operando direct observation of filament formation in resistive switching devices enabled by a topological transformation molecule", in collaboration with Prof Leong Wei Ling, is published in Nano Letters.</div>
+			</div>
+
+			<!-- October 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2021</div>
+				<div class="news-content">Eugene joins our group as Project Officer (SGUnited), Welcome aboard!</div>
+			</div>
+
+			<!-- August 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2021</div>
+				<div class="news-content">Calvin Ang submitted his PhD thesis "Magnetic Skyrmion Stabilization, Nucleation, and Dynamics on Magnetic Multilayer Thin Films".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2021</div>
+				<div class="news-content">Calvin Koh submitted his PhD thesis "Radiobiological Studies For A Proton Beam Therapy Monte Carlo Simulation Treatment Planning System".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2021</div>
+				<div class="news-content">Grayson submitted his PhD thesis "Spin-Torque Ferromagnetic Resonance Investigation for Enhancement of Spin-Orbit Torque Efficiency".</div>
+			</div>
+
+			<!-- July 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2021</div>
+				<div class="news-content">Grayson's paper "Reversible strain-induced spin-orbit torque on flexible substrate by mild annealing" is published in Applied Physics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2021</div>
+				<div class="news-content">Yun Ming joins our group as PhD student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2021</div>
+				<div class="news-content">Shu Hui and Eng Kang join our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- June 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2021</div>
+				<div class="news-content">Grayson's paper "Strain-mediated spin-orbit torque enhancement in Pt/Co on flexible substrate" is published in ACS Nano.</div>
+			</div>
+
+			<!-- May 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2021</div>
+				<div class="news-content">Chuen Hang joins our group as Principal Research Fellow, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2021</div>
+				<div class="news-content">Arrival of our new 200 mm CMP system.</div>
+			</div>
+
+			<!-- April 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2021</div>
+				<div class="news-content">Funan joins our group as Research Fellow, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2021</div>
+				<div class="news-content">Calvin's paper "Temperature-modulated magnetic Skyrmion phases and transformations by first-order reversal curve analysis" is published in Physical Review B.</div>
+			</div>
+
+			<!-- March 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2021</div>
+				<div class="news-content">Tianli joins our group as Research Fellow, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2021</div>
+				<div class="news-content">Gerard and Andhita are promoted to Research Fellow, Congratulations!</div>
+			</div>
+
+			<!-- February 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2021</div>
+				<div class="news-content">Construction of our gas bunker is complete and we received NEA and SCDF approval for storage of cylinder flammable gas.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2021</div>
+				<div class="news-content">Xu Zhan's paper "Large spin-orbit torque efficiency enhanced by nitrogen incorporation in Pt films" is published in Applied Physics Letters.</div>
+			</div>
+
+			<!-- January 2021 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2021</div>
+				<div class="news-content">Desmond has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2021</div>
+				<div class="news-content">Our new book "Emerging Non-volatile Memory Technologies: Physics, Engineering and Applications", is published by Springer.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2021</div>
+				<div class="news-content">Andhita has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2021</div>
+				<div class="news-content">Wu Shuo joins our group as PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- December 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Gerard has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Calvin and Birte won silver and bronze prize, respectively, in their presentation in the 10th annual symposium on magnetism (Singapore IEEE Magnetics Society Chapter), well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Birte's paper "Enhanced spin Hall conductivity in tungsten-copper alloys" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Arrival of our new ICP-RIE system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Yuanmin joins our group as Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2020</div>
+				<div class="news-content">Arrival of our new PECVD system.</div>
+			</div>
+
+			<!-- November 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2020</div>
+				<div class="news-content">Arrival of our new spin-coating system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2020</div>
+				<div class="news-content">Calvin's paper "Electrical control of skyrmion density via skyrmion-stripe transformation" is published in Physical Review Applied.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2020</div>
+				<div class="news-content">Jia Min, Kunqi, Jia Rui, Han Yin and Mun Yin passed their PhD qualifying exams, well done!</div>
+			</div>
+
+			<!-- October 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2020</div>
+				<div class="news-content">Desmond's paper "Oxygen Vacancy Density Dependence with Hopping Conduction Mechanism in Multi-Level Switching Behavior of HfO2-Based RRAM Devices" is published in ACS Applied Electronic Materials.</div>
+			</div>
+
+			<!-- September 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2020</div>
+				<div class="news-content">Gerard's paper "Effect of Seed and Interlayer Pt on SOT in Co/Pt Multilayers" is published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2020</div>
+				<div class="news-content">Arrival of our new Raith VOYAGER electron beam lithography system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2020</div>
+				<div class="news-content">Arrival of our new semi-auto probe station.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2020</div>
+				<div class="news-content">Xiaoyang joins our group as Project Officer, Welcome onboard!</div>
+			</div>
+
+			<!-- August 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Shane has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Gerard submitted his PhD thesis "Spin-Orbit Torque Magnetization Switching in Co/Pt Multilayers for Multistate Memory and Logic Devices".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Desmond submitted his PhD thesis "Filamentary Physics and Modelling in Redox-Based Resistive Devices".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">SunZhong and Eugene join our group as RIE Trainee, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Lingli joins our group as PhD student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Calvin joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2020</div>
+				<div class="news-content">Gerard's paper "Effect of Seed and Interlayer Pt on SOT in Co/Pt Multilayers" is accepted to be published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<!-- July 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Weiliang won the inaugural Graduate College Innovation and Entrepreneurship award, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Completion of renovation of our PAP-01-01 Class 1000 cleanroom.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Calvin's paper "Standardizing Monte Carlo Simulation parameters for a reproducible linear energy transfer" is published in British Journal of Radiology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Xu Zhan's paper "Giant Spin Hall Effect in Tb Doped Cu Thin Films" is published in ACS Applied Materials and Interfaces.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Gerard's paper "Spin-Orbit Torque Driven Analog-Like Behaviour in Co/Pt Hall Cross Structures at Elevated Temperatures" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2020</div>
+				<div class="news-content">Laboratory operation is in Phase 2 post-CB period.</div>
+			</div>
+
+			<!-- June 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2020</div>
+				<div class="news-content">Grayson's paper "Thermal behavior of spin-current generation in PtxCu1-x devices characterized through spin-torque ferromagnetic resonance" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2020</div>
+				<div class="news-content">Weng Hong joins our group as Senior Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2020</div>
+				<div class="news-content">Laboratory is partially open in Phase 1 post-CB period.</div>
+			</div>
+
+			<!-- April - May 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April-May 2020</div>
+				<div class="news-content">Laboratory is closed during the COVID-19 "Circuit Breaker" period.</div>
+			</div>
+
+			<!-- March 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2020</div>
+				<div class="news-content">Gerard's paper "Programmable Spin-Orbit Torque Logic Device with Integrated Bipolar Bias Field for Chirality Control" is published in Advanced Electronics Materials.</div>
+			</div>
+
+			<!-- February 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2020</div>
+				<div class="news-content">Completion of renovation of our PAP-01-06 Class 100/1000 cleanroom.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2020</div>
+				<div class="news-content">Arrival of our 300mm ULVAC PVD system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2020</div>
+				<div class="news-content">Completion of renovation of our CBC-02-03 cleanroom.</div>
+			</div>
+
+			<!-- January 2020 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2020</div>
+				<div class="news-content">Andhita submitted his PhD thesis "Redox-Based Memristive Devices: Towards Highly Scalable Synaptic Electronics".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2020</div>
+				<div class="news-content">Shane submitted his PhD thesis "Enhanced Spin Orbit Torque (SOT) and Spin accumulation quantification in perpendicularly magnetised structures".</div>
+			</div>
+
+			<!-- December 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2019</div>
+				<div class="news-content">Shawn's paper "Heating Efficiency of Triple Vortex State Cylindrical Magnetic Nanoparticles" is published in Nanoscale Research Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2019</div>
+				<div class="news-content">Henry joins our group as Project Officer, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2019</div>
+				<div class="news-content">Weiliang has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- November 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2019</div>
+				<div class="news-content">Birte and Samuel have passed their PhD qualifying exams, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2019</div>
+				<div class="news-content">We presented four talks at Las Vegas MMM 2019 conference.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2019</div>
+				<div class="news-content">Shawn has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- October 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Gerard has been awarded a conference travel grant to attend the 2019 MMM conference in Las Vegas.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">A joint research paper with Prof Ma, Nanjing Normal University, "An artificial skyrmion platform with robust tunability in synthetic antiferromagnetic multilayers", is published in Advanced Functional Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Launch of NTU-GFS Research Partnership.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Tianli has successfully defended her PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Funan has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Wai Cheung has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2019</div>
+				<div class="news-content">Sihua has successfully defended his PhD thesis, Congratulations!</div>
+			</div>
+
+			<!-- September 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2019</div>
+				<div class="news-content">Andhita's paper "Unidirectional Threshold Switching Induced by Cu Migration with High Selectivity and Ultralow OFF Current Under Gradual Electroforming Treatment" is accepted to be published in ACS Applied Electronic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2019</div>
+				<div class="news-content">We received Nanyang Award on Innovations and Entrepreneurship.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2019</div>
+				<div class="news-content">Shawn's paper "Heating Efficiency of Triple Vortex State Cylindrical Magnetic Nanoparticles" is accepted to be published in Nanoscale Research Letters.</div>
+			</div>
+
+			<!-- August 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2019</div>
+				<div class="news-content">Weiliang submitted his PhD thesis "Skyrmion dynamics in magnetic thin films".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2019</div>
+				<div class="news-content">Kuan Hong and Yi Ling are registered as FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<!-- July 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2019</div>
+				<div class="news-content">Our group's paper "Dependence of spin-orbit torque effective fields on magnetization uniformity in Ta/Co/Pt structure" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2019</div>
+				<div class="news-content">Mun Yin and Kunqi join our group as PhD students, Welcome onboard!</div>
+			</div>
+
+			<!-- June 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2019</div>
+				<div class="news-content">Funan's paper "Electric field control on single and double Pt/Co heterostructure for enhanced thermal stability" is published in JMMM.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2019</div>
+				<div class="news-content">Elden joins our group as Senior Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2019</div>
+				<div class="news-content">Louis joins our group as Project Officer, Welcome aboard!</div>
+			</div>
+
+			<!-- May 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2019</div>
+				<div class="news-content">Funan's paper "High velocity domain wall propagation using voltage controlled magnetic anisotropy" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2019</div>
+				<div class="news-content">Calvin Koh has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2019</div>
+				<div class="news-content">Dr Chakrabakti joins our group as Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2019</div>
+				<div class="news-content">Dr Dayanand joins our group as Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2019</div>
+				<div class="news-content">Grayson and Calvin Ang have passed their PhD qualifying exams, well done!</div>
+			</div>
+
+			<!-- April 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2019</div>
+				<div class="news-content">Lyu Lanqing is registered as 2019 NRP enrichment project student.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2019</div>
+				<div class="news-content">Funan's paper "Electric field control for energy efficient domain wall injection" is accepted to be published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2019</div>
+				<div class="news-content">Calvin's paper "Bilayer skyrmion dynamics on a magnetic anisotropy gradient" is published in New Journal of Physics.</div>
+			</div>
+
+			<!-- February 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2019</div>
+				<div class="news-content">Shane's paper "Enhanced Spin-orbit Torques in Rare Earth Pt/[CoNi]2/Co/Tb systems" is published in Physical Review Applied.</div>
+			</div>
+
+			<!-- January 2019 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Our invention, "Magnetic Random Number Generator" filing for a US Patent (Application No: 15/411,811) is granted (US Patent No. 10,127,016).</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">A new spin-off company, "Advanced Magnetics Devices Pte Ltd" is formed to commercialise some of our inventions with license from NTUitive.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Shawn submitted his PhD thesis "Engineered cylindrical NiFe magnetic nanoparticles for cancer cell death".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Sihua submitted his PhD thesis "Spin-orbit torque (SOT) effective fields and SOT-induced switching in perpendicularly magnetized multilayers".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Wai Cheung submitted his PhD thesis "Enhancement of Thermal Robustness in Magnetic Tunnel Junctions With Perpendicular Magnetic Anisotropy".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Funan submitted his PhD thesis "Gated Electric Field Control On Multilayered Structures With Perpendicular Magnetic Anisotropy".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Wai Cheung's paper "Perpendicular magnetic anisotropy in Co/Pt multilayers induced by hcp-Ho at 400 °C" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2019</div>
+				<div class="news-content">Namita joins our group as NTU-India Connect research intern, Welcome aboard!</div>
+			</div>
+
+			<!-- November 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2018</div>
+				<div class="news-content">We received Letter of Award from IAF for our ICP program "Advanced ReRAM Technology for Embedded Systems".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2018</div>
+				<div class="news-content">CSS visiting scholar Xu Zhan joins our group, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2018</div>
+				<div class="news-content">Our group's research paper "Spin orbit torque induced effective field modulation in synthetic antiferromagnetic structure" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2018</div>
+				<div class="news-content">Sihua's paper "Tuning the spin-orbit torque effective fields by varying Pt insertion layer thickness in perpendicularly magnetized Pt/Co/Pt(t)/Ta structures" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<!-- October 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2018</div>
+				<div class="news-content">RCA signed with industry partner on IAF-ICP program, "Advanced ReRAM Technology for Embedded Systems".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2018</div>
+				<div class="news-content">Desmond's paper "Conduction Mechanisms on High Retention Annealed MgO-based Resistive Switching Memory Devices" is published in Scientific Reports.</div>
+			</div>
+
+			<!-- August 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2018</div>
+				<div class="news-content">Funan's paper "Electric Field control on Gated Pt/Co/SiO2 Heterostructure with Insulating Polymer" is published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2018</div>
+				<div class="news-content">Wai Cheung's paper "High temperature Ferromagnetic Resonance study on pMTJ stacks with diffusion barrier layers" is published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2018</div>
+				<div class="news-content">Han Yin and Daniel are registered as FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2018</div>
+				<div class="news-content">Birte joins our group as PhD student (SINGA scholar), Welcome onboard!</div>
+			</div>
+
+			<!-- July 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2018</div>
+				<div class="news-content">Jia Min, Han Yin and Jia Rui join our group as IPP (GLOBALFOUNDRIES) PhD students, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2018</div>
+				<div class="news-content">Samuel joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- June 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2018</div>
+				<div class="news-content">Christian has passed his PhD oral defence, Congratulations!</div>
+			</div>
+
+			<!-- May 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2018</div>
+				<div class="news-content">Our second unit of AJA eight-target magnetron sputtering system is delivered.</div>
+			</div>
+
+			<!-- April 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2018</div>
+				<div class="news-content">Li Jiang Rong is registered as 2018 NRP enrichment project student, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2018</div>
+				<div class="news-content">Siew Wei joins our group as Project Officer, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2018</div>
+				<div class="news-content">Shawn's paper "Interplay of cell death signalling pathways mediated by alternating magnetic field gradient" is published in Cell Death Discovery.</div>
+			</div>
+
+			<!-- March 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2018</div>
+				<div class="news-content">We are delighted to have Chandra back in our group!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2018</div>
+				<div class="news-content">Feilong has passed his PhD oral defence, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2018</div>
+				<div class="news-content">Alan joins our group as Project Officer, Welcome aboard!</div>
+			</div>
+
+			<!-- February 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2018</div>
+				<div class="news-content">Roger has passed his PhD oral defence, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2018</div>
+				<div class="news-content">Shane's paper "In-Situ Kerr harmonic measurement in determining current-induced effective fields in MgO/CoFeB/Ta" is published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2018</div>
+				<div class="news-content">Liu Ning has passed his PhD, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2018</div>
+				<div class="news-content">Xiaoliang's paper "Oxide-based RRAM materials for neuromorphic computing" is published in Journal of Materials Science.</div>
+			</div>
+
+			<!-- January 2018 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">Malvin is registered as FYP student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">A paper under collaboration with Prof Jiangwei Cao titled "Spin orbit torques induced magnetization reversal through asymmetric domain wall propagation in Ta/CoFeB/MgO structures" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">Weiliang's paper "Efficient in-line skyrmion injection method for synthetic antiferromagnetic systems" is published in New Journal of Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">Sachin has passed his PhD oral defence, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">Feilong submitted his PhD thesis "Spin-orbit torque effective fields and spin accumulation in Ta/Co/Pt structure with in-plane magnetic anisotropy".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2018</div>
+				<div class="news-content">Wang Xuan's paper "Efficient skyrmion transport mediated by voltage controlled magnetic anisotropy gradient" is published in Nanoscale.</div>
+			</div>
+
+			<!-- December 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2017</div>
+				<div class="news-content">Calvin Koh has been awarded a University Research Scholarship for PhD study with our group. He will be working closely with Prof James Lee at NCCS, Welcome aboard!</div>
+			</div>
+
+			<!-- November 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">Desmond passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">Christian submitted his PhD thesis "Current-induced spin-orbit torque effective fields in multilayer structures with perpendicular magnetic anisotropy".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">Our new Lakeshore 8600 series VSM system is delivered.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">Our proposal for an AME IAF-ICP fund is granted.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">We are awarded a GAP commercialisation fund.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2017</div>
+				<div class="news-content">We gave 4 presentations at Pittsburgh MMM 2017 conference.</div>
+			</div>
+
+			<!-- October 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2017</div>
+				<div class="news-content">Shane and Funan were awarded overseas conference travel grants by Lee Foundation.</div>
+			</div>
+
+			<!-- September 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2017</div>
+				<div class="news-content">Pankaj has passed his PhD oral defence, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2017</div>
+				<div class="news-content">Sachin's paper "Role of RKKY torque on domain wall motion in synthetic antiferromagnetic nanowires with opposite spin Hall angles" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2017</div>
+				<div class="news-content">Kevin is registered as 2nd year URECA project student and Angus is registered as PH2999 project student.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2017</div>
+				<div class="news-content">Shawn's paper "Magneto-actuated cell apoptosis by biaxial pulsed magnetic field" is published in Scientific Reports.</div>
+			</div>
+
+			<!-- August 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">Sherilyn, Wei Kiat and Joycelyn are registered as FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">We receive the delivery of our new GMW rotational electromagnet.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">We receive the delivery of our new Keithley 4200A-SCS Semiconductor Parameter Analyzer Characterization System.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">Liu Ning submitted his PhD thesis "Microfluidic Devices For Cell Separation And Sample Concentration".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">Christian's paper "Quantitative characterization of spin-orbit torques in Pt/Co/Pt/Co/Ta/BTO heterostructure on the magnetization azimuthal angle dependence" is published in Physical Review B.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2017</div>
+				<div class="news-content">Christian's paper "Effect of geometrical modulation on pMTJ magnetization reversal" is accepted to be published in IEEE Transactions on Magnetics.</div>
+			</div>
+
+			<!-- July 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Liu Ning's paper "Direct Spraying Method for Fabrication of Paper-based Microfluidic Sensors" is accepted to be published in Journal of Micromechanics and Microengineering.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Calvin has been awarded a University Research Scholarship for PhD study with our group, Welcome back!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Grayson joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Liu Ning's paper "An enclosed paper microfluidic chip as a sample pre-concentrator based on ion concentration polarization" is accepted to be published in IEEE Transactions on Biomedical Circuits and Systems.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Pankaj's paper "Bi-directional high speed domain wall motion in perpendicular magnetic anisotropy Co/Pt double stack nanowires" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2017</div>
+				<div class="news-content">Roger submitted his PhD thesis "Monte Carlo simulation and dosimetric studies for small fields in lung stereotactic body radiation therapy".</div>
+			</div>
+
+			<!-- June 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2017</div>
+				<div class="news-content">We hosted the visit of Prof Mathias Kläui from Johannes Gutenberg-University Mainz. Prof Kläui gave a talk on "Topological Spin Dynamics".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2017</div>
+				<div class="news-content">Sachin submitted his PhD thesis "Current Induced Domain Wall Dynamics in Perpendicular Magnetic Anisotropy Based Nanostructured Materials".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2017</div>
+				<div class="news-content">Jaesuk's paper "Asymmetrical domain wall propagation in bifurcated PMA wire structure due to the Dzyaloshinskii-Moriya interaction" is published in Applied Physics Letters.</div>
+			</div>
+
+			<!-- May 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2017</div>
+				<div class="news-content">Our NRP students Melissa, Yi Yang and Justin received gold award for their projects in Nanyang Research Programme 2016, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2017</div>
+				<div class="news-content">Pankaj submitted his PhD thesis "Magnetization Dynamics Of Domain Wall Based Devices For Logic And Memory Applications".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2017</div>
+				<div class="news-content">We hosted the visit of Prof Cherif Mourad from Université Paris-Sud, ORSAY Cedex, France.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2017</div>
+				<div class="news-content">Christian's paper "Characterizing angular dependence of spin-orbit torque effective fields in Pt/(Co/Ni)2/IrMn structure" is published in IEEE Transactions on Magnetics.</div>
+			</div>
+
+			<!-- April 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Sihua's paper "Deterministic Spin Orbit Torque Induced Magnetization Reversal In Pt/[Co/Ni]n/Co/Ta Multilayer Hall Bars" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Shane has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">We have given 10 presentations at Dublin INTERMAG 2017 conference.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Ramu passed his PhD oral defense, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Feilong's paper "Simultaneous determination of effective spin-orbit torque fields in magnetic structures with in-plane anisotropy" is accepted to be published in Physical Review B.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Jiao Yuyang is registered as 2017 NRP enrichment project student, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Ramu's paper "Spin orbit torque induced asymmetric depinning of chiral Néel domain wall in Co/Ni heterostructures" is published in Applied Physics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2017</div>
+				<div class="news-content">Christian's paper "Spin-orbit torque induced magnetization anisotropy modulation in Pt/(Co/Ni)4/Co/IrMn heterostructure" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<!-- March 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2017</div>
+				<div class="news-content">A joint venture, Vertisis Technology Pte Ltd is formed to commercialise our imaging technology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2017</div>
+				<div class="news-content">Our NRP students, Melissa and Yi Yang have won a Gold Award in the Singapore Science and Engineering Fair 2017, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2017</div>
+				<div class="news-content">Sachin and Sihua have been awarded IEEE Travel grants to attend the 2017 INTERMAG conference in Dublin.</div>
+			</div>
+
+			<!-- February 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2017</div>
+				<div class="news-content">Shawn has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2017</div>
+				<div class="news-content">Our invention “Magnetic random number generator” is submitted for PCT patent application.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2017</div>
+				<div class="news-content">Our invention “An apparatus and method for Kerr imaging” is submitted for PCT patent application.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2017</div>
+				<div class="news-content">Our US patent 9,502,090 is granted.</div>
+			</div>
+
+			<!-- January 2017 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2017</div>
+				<div class="news-content">Ramu submitted his PhD thesis "Domain wall dynamics in ferromagnetic nanostructures" for examination.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2017</div>
+				<div class="news-content">Hayden joins our group as Research Fellow, Welcome aboard!</div>
+			</div>
+
+			<!-- December 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2016</div>
+				<div class="news-content">Andhita has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2016</div>
+				<div class="news-content">Han Kheng won a URECA publication award, well done!</div>
+			</div>
+
+			<!-- November 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">We have filed a know-how "A Ferromagnetic Resonance Spectrometer".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">Pankaj's paper "Modulation of spin-orbit torque efficiency by thickness control of heavy metal layers in Co/Pt multilayers" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">Weiliang has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">The construction of our new class 1000 cleanroom (SPMS-CBC-02-03) is now complete.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">Han Kheng's paper "Dzyaloshinskii-Moriya interaction induced domain wall de-pinning anomaly in notched nanowire with perpendicular anisotropy" is published in Journal of Physics D: Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">Jae Suk's paper "Cyclic resistance change in perpendicularly magnetized Co/Ni nanowire induced by alternating current pulse injection" is published in Current Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">We gave four presentations in the 61st MMM 2016 conference.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2016</div>
+				<div class="news-content">Our IP "Magnetic Memory Devices And Methods Of Operating The Same" is filed for a PCT patent application.</div>
+			</div>
+
+			<!-- October 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2016</div>
+				<div class="news-content">Fusheng's paper "Emergent geometric frustration of artificial magnetic skyrmion crystals" is published in Physical Review B.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2016</div>
+				<div class="news-content">Andhita's TD "Anti-Serially Connected Resistive Random Access Memory Cell" is now converted to Singapore Provisional Patent.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2016</div>
+				<div class="news-content">Shane's paper "Isolation of magnetically tagged cancer cell through an integrated magnetofluidic device" is published in Microfluidics and Nanofluidics.</div>
+			</div>
+
+			<!-- September 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2016</div>
+				<div class="news-content">Shawn won the best student presentation award in the Singapore Magnetics Symposium, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2016</div>
+				<div class="news-content">Our US patent "Non-Volatile Logic Device" (Patent No. 9,431,599) is granted.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2016</div>
+				<div class="news-content">Dr Wang Xuan joins our group as CSC Visiting Scholar, Welcome onboard!</div>
+			</div>
+
+			<!-- August 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2016</div>
+				<div class="news-content">Arifa is registered as URECA student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2016</div>
+				<div class="news-content">Calvin is registered as URECA-FYP student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2016</div>
+				<div class="news-content">Feilong's paper "Measuring the field-like term of spin-orbit torque in Ta/Co/Pt in-plane magnetization structure by planar Hall effect" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2016</div>
+				<div class="news-content">Pankaj is shortlisted as a finalist for the APS GMAG-sponsored Best Student Presentation Award in 2016 MMM Conference, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2016</div>
+				<div class="news-content">We gave six presentations in the IcAUMS 2016 conference.</div>
+			</div>
+
+			<!-- July 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2016</div>
+				<div class="news-content">An industry networking seminar on "Advanced Memory and Sensor for Embedded Systems" and a SG-SPIN quarterly seminar was successfully held at Nanyang Executive Centre.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2016</div>
+				<div class="news-content">Sachin's paper "Observation of ice-rule violation and monopole dynamics via edge nucleation of domain walls in artificial spin ice lattice" is published in Journal of Magnetism and Magnetic Materials.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2016</div>
+				<div class="news-content">Wai Cheung has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2016</div>
+				<div class="news-content">Our FYP student, Tony, has won a URECA publication award, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2016</div>
+				<div class="news-content">Industry networking seminar on "Advanced Memory and Sensor for Embedded Systems" and SG-SPIN seminar to be held on 15 July 2016 at Nanyang Executive Centre.</div>
+			</div>
+
+			<!-- May 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2016</div>
+				<div class="news-content">Shawn won a URECA publication award, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2016</div>
+				<div class="news-content">Our NRP students Dinh and Rayhan received gold award for their projects in Nanyang Research Programme 2015, well done!</div>
+			</div>
+			
+			
+			<!-- April 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Funan has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">ITQ of our new cleanroom at CBC-02-03 has been awarded. Construction work will be carried out soon.</div>
+			</div>
+
+
+			<!-- April 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Weiliang's TD "Dichromatic Differential Imaging Technique for Kerr Imaging" is filed for Singapore Provisional Patent.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Melissa, Yi Yang, and Justin are registered as 2016 NRP enrichment project students while Xinyi is registered as H3 project student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Desmond won a second prize in 2016 DISCOVER URECA @ NTU poster competition, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Senfu and Weiliang's paper "Highly efficient domain walls injection in perpendicular magnetic anisotropy memory devices" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2016</div>
+				<div class="news-content">Shawn's paper "Current-induced three-dimensional domain wall propagation in cylindrical NiFe nanowires" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<!-- March 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2016</div>
+				<div class="news-content">Desmond receives job offer from GLOBALFOUNDRIES and stays on as IPP PhD student, Congratulations!</div>
+			</div>
+
+			<!-- February 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2016</div>
+				<div class="news-content">Tony's paper "Gated skyrmion transport via field-induced potential barrier modulation" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2016</div>
+				<div class="news-content">Chandra's paper "Reconfigurable logic via gate controlled domain wall trajectory in magnetic network structure" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2016</div>
+				<div class="news-content">Tianli joins our group as co-supervised PhD student, Welcome aboard!</div>
+			</div>
+
+			<!-- January 2016 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2016</div>
+				<div class="news-content">Weiliang has successfully developed a Kerr imaging system, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2016</div>
+				<div class="news-content">We have given nine presentations in the 2016 MMM-Intermag conference.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2016</div>
+				<div class="news-content">We hosted the visit of Prof Cao Jiangwei from Lanzhou University. Prof Cao delivered a talk on "Spin Orbit Torque Induced Magnetization Switching and Spin Hall Resistance in Ta/CoFeB/MgO structures".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2016</div>
+				<div class="news-content">Pankaj's TD "Magnetic random number generator" is filed for Singapore provisional patent.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2016</div>
+				<div class="news-content">Pankaj's paper "Direct observation of deterministic domain wall trajectory in magnetic network structures" is published in Scientific Reports.</div>
+			</div>
+
+			<!-- December 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2015</div>
+				<div class="news-content">We hosted the visit of Prof Hywel Morgan from the University of Southampton. Prof Morgan gave a seminar on "From Smartphones to Diagnostics: programmable droplet microfluidics".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2015</div>
+				<div class="news-content">Shane stays on as IPP (GLOBALFOUNDRIES) PhD student.</div>
+			</div>
+
+			<!-- November 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2015</div>
+				<div class="news-content">Sihua passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2015</div>
+				<div class="news-content">Pankaj's paper "In-plane current induced domain wall nucleation and oscillations in perpendicular anisotropy Hall cross structures" is published in Applied Physics Letters.</div>
+			</div>
+
+			<!-- October 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2015</div>
+				<div class="news-content">Jae Suk's paper "Low field domain wall dynamics in artificial spin-ice basis structure" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2015</div>
+				<div class="news-content">Our TD "Low-Power Bit Writing In Perpendicular Magnetic Anisotropy Memory Devices" has been converted to Singapore Provisional Patent.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> October 2015</div>
+				<div class="news-content">Pankaj won a prize in the 6th Annual Symposium for Magnetics 2015, well done!</div>
+			</div>
+
+			<!-- September 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2015</div>
+				<div class="news-content">Senfu has completed his one year visiting PhD program at our group.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2015</div>
+				<div class="news-content">Wai Cheung has completed the setup of a home-built VNA FMR system, well done!</div>
+			</div>
+
+			<!-- August 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2015</div>
+				<div class="news-content">Indra passed his PhD oral defense, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2015</div>
+				<div class="news-content">Han Kheng won a URECA publication award, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2015</div>
+				<div class="news-content">Li Zhen, Hamzah, Yee Yen, Alina and Glenn are registered as 2015/2016 FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2015</div>
+				<div class="news-content">Tony, Han Kheng and Desmond are registered as 2015/2016 URECA-FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<!-- July 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2015</div>
+				<div class="news-content">Gerard and Funan have completed the setup of a home-built perpendicular magnetic field probe station, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2015</div>
+				<div class="news-content">Chandra won the "2015 MRSS Gold Medal for Best PhD Thesis in Physics" award sponsored by Materials Research Society Singapore (MRSS), Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2015</div>
+				<div class="news-content">We have given 12 presentations at the 20th International Conference of Magnetism, Barcelona.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2015</div>
+				<div class="news-content">We hosted the visit of Prof Bethanie Stadler from University of Minnesota. Prof Stadler delivered a 2015 IEEE Distinguished Lecture on "Magnetic Nanowires: Revolutionizing Hard Drives, RAM and Cancer Treatment".</div>
+			</div>
+
+			<!-- June 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">We hosted the visit of Dr Chang Cu-Zu from MIT. Dr Chang gave a talk on "Quantum anomalous Hall effect in magnetically doped topological insulators".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">Shane joins our group as project officer, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">We hosted the visit of Prof Sara Majetich from Carnegie Mellon University. Prof Majetich gave a talk on "Magnetic Tunnel Junction and Interface Anisotropy".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">Pankaj won a Silver prize in poster competition at the IEEE Magnetics Society Summer School 2015 (Minneapolis, USA), well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">Tony won a prize in the 2015 DISCOVER URECA@NTU Poster Competition, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">Farhan joins our group as project officer, Welcome aboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2015</div>
+				<div class="news-content">Fusheng joins our group as senior research fellow, Welcome aboard!</div>
+			</div>
+
+			<!-- May 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">We have given 16 presentations at Beijing INTERMAG 2015 conference, including two from our collaborators.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">Indra submitted his PhD thesis "Dynamics of Current-Driven Magnetic Domain Walls and Skyrmions" for examination, and he stays on as Project Officer.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">Han Kheng's paper "Programmable logic operation via domain wall profile manipulation" is accepted to be published in IEEE Magnetics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">Tony's paper "Mitigation of Magnus force in current-induced skyrmion dynamics" is accepted to be published in IEEE Transactions on Magnetics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">Andhita has been awarded a University Research Scholarship for PhD study, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2015</div>
+				<div class="news-content">Christian has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<!-- April 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Feilong has passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Weiliang has been awarded a Nanyang President Graduate Scholarship for PhD study, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Indra's paper "Guided current-induced skyrmion motion in 1D potential well" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Shawn stays on as IPP (GLOBALFOUNDRIES) PhD student.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Shawn's paper "Dynamics of three-dimensional helical domain wall in cylindrical NiFe nanowires" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">We hosted the visit of Prof Jian-Ping Wang from University of Minnesota, who is also the Director of the C-SPIN center. Prof Wang gave a seminar on "Opportunities and Challenges of Magnetoresistive Based Logic and Memory and their Integration".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2015</div>
+				<div class="news-content">Our TD "Non-uniform spatial current distribution for logic operations in perpendicular magnetic tunnel junction" has been converted to Singapore provisional patent.</div>
+			</div>
+
+			<!-- March 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2015</div>
+				<div class="news-content">We hosted the visit of Prof Charles Smith from Cambridge University. Prof Smith gave a seminar on "Investigating Graphene and Carbon Nanotubes For Metrology and Quantum Technology Applications".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2015</div>
+				<div class="news-content">Goolaup's paper "Transverse domain wall profile for logic applications" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2015</div>
+				<div class="news-content">Liu Ning passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2015</div>
+				<div class="news-content">Dr Xuanyao Fong from Purdue University will give a talk on "Towards Beyond-CMOS with Spintronics".</div>
+			</div>
+
+			<!-- February 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2015</div>
+				<div class="news-content">We hosted the first SG-SPIN seminar series. Talks were given by speakers from core members' groups. Representatives from NRF and Delta Electronics were present.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2015</div>
+				<div class="news-content">Roger passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2015</div>
+				<div class="news-content">Indra's paper "Coupled Néel domain wall motion in sandwiched perpendicular magnetic anisotropy nanowires" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2015</div>
+				<div class="news-content">Our TD "Logic Operation Based On Magnetic Domain Wall Profile" has been converted to US provisional patent.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2015</div>
+				<div class="news-content">Chandra's paper "Coupled domain wall oscillations in magnetic cylindrical nanowires" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<!-- January 2015 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Wen Siang received 2013/14 SPMS Excellence Teaching Award!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Chor Boon is registered as 2014/2015 FYP student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Wai Cheung stays on as IPP (GLOBALFOUNDRIES) PhD student, Welcome back!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Weinan passed his PhD oral defense, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Sachin, Pankaj and Gerard passed their PhD qualifying exams, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Weiliang has completed his B.Sc study and stays on in the group as Project Officer, Welcome back!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2015</div>
+				<div class="news-content">Funan joins our group as IPP (GLOBALFOUNDRIES) PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- December 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">We hosted the visit of Prof Hideo Ohno from Tohoku University. Prof Ohno gave a seminar on "Nanoscale Magnetic Tunnel Junctions".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">We hosted the visit of Prof Geoffrey Beach from MIT. Prof Beach gave a seminar on "Spin-Orbitronics: Interfacial Design of Spintronic Materials and Devices".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">We hosted the visit of Prof Teruo Ono from Kyoto University. Prof Ono gave a seminar on "Current-induced Domain Wall Motion and Its Application".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">Official establishment of the Singapore Spintronics Consortium (SG-SPIN).</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">Lun's paper "All-electrical single domain wall generation for on-chip applications" is published in Scientific Reports.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> December 2014</div>
+				<div class="news-content">Weiliang has won a URECA Journal Publication Award, well done!</div>
+			</div>
+
+			<!-- November 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> November 2014</div>
+				<div class="news-content">We have given five presentations in the 59th MMM conference, with an additional two from our collaborators.</div>
+			</div>
+
+			<!-- September 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">Weiliang's paper "Multi-vortex states in magnetic nanoparticles" is published in Applied Physics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">Chandra's paper on the "Direct observation of domain wall evolution at a bifurcation in magnetic network structures" is published in Applied Physics Express.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">Wai Cheung joined our group as Project Officer, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">Shawn has been selected by the MMM 2014 Steering Committee for a Student Travel Grant to give a presentation at the MMM conference, Hawaii.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">We have given six presentations in the Singapore IEEE Magnetics Symposium 2014, and Weiliang was given a Commendation Award.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> September 2014</div>
+				<div class="news-content">Senfu joined our group as visiting PhD student, Welcome onboard!</div>
+			</div>
+
+			<!-- August 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Josephine, Michelle, Soo Kuan, Ee Liang, Jun Xiang, Chin Sheng and Shane are registered as 2014/2015 FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Shawn and Andhita are registered as 2014/2015 URECA-FYP students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Calvin, Han Kheng, Tony and Desmond are registered as 2014/2015 URECA students with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Chandra passed his PhD oral defense, Congratulations!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">We are appointed by NRF as a member of the Singapore Spintronics Consortium technology management committee.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Shawn won a prize in the 2014 DISCOVER URECA@NTU Poster Competition, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> August 2014</div>
+				<div class="news-content">Prof Xiangrong Wang from The Hong Kong University of Science and Technology gave a talk on "Domain wall motion and Spin wave".</div>
+			</div>
+
+			<!-- July 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Dr Kwon Jae Suk is attached to our group for several months for the "Ultra low power neuromorphic computing with spin devices" project, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Gerard completed three Technology Disclosures for a joint-venture commercial development of physical vapour system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Sachin and Indra's paper on the "Remote walker breakdown and coupling breaking in parallel nanowire systems" is published in Applied Physics Letters.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Sihua joined our group as graduate student, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Shawn, Weiliang and Gerard hosted lab visit for undergraduate and postgraduate students from the Eindhoven University of Technology.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Prof Roy Kaushik from Purdue University gave a talk on "Spin as State Variable for Computation: Prospects and Perspectives".</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> July 2014</div>
+				<div class="news-content">Gerard hosted lab visit for undergraduate student from La Trobe University.</div>
+			</div>
+
+			<!-- June 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2014</div>
+				<div class="news-content">We are now a member of NTU's Silicon Technology, Centre of Excellence.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2014</div>
+				<div class="news-content">Successful commissioning of our Park's System AFM/MFM.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> June 2014</div>
+				<div class="news-content">Successful commissioning of our AJA ion milling system.</div>
+			</div>
+
+			<!-- May 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2014</div>
+				<div class="news-content">Ramu passed his PhD qualifying exam, well done!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2014</div>
+				<div class="news-content">Successful commissioning of our AJA 8-target magnetron sputtering system.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2014</div>
+				<div class="news-content">Ramu's paper on the "Investigation of dominant spin wave modes by domain walls collision" is now published in Journal of Applied Physics.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2014</div>
+				<div class="news-content">2nd Workshop on Non-volatile Magnetic Memory and Logic Devices was successfully held.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> May 2014</div>
+				<div class="news-content">We have given five presentations in the Dresden Intermag conference, Germany.</div>
+			</div>
+
+			<!-- April 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2014</div>
+				<div class="news-content">We have given four presentations in the Antalya ICSM conference, Turkey.</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> April 2014</div>
+				<div class="news-content">Dr Huang Xiaohu joined our group as senior research fellow, Welcome onboard!</div>
+			</div>
+
+			<!-- March 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> March 2014</div>
+				<div class="news-content">Indra's paper on the "Remote driving of multiple magnetic domain walls due to topological interaction" is published in Applied Physics Letters.</div>
+			</div>
+
+			<!-- February 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> February 2014</div>
+				<div class="news-content">Chandra's paper on the "Depinning assisted by domain wall deformation in cylindrical NiFe nanowires" is published in Journal of Applied Physics.</div>
+			</div>
+
+			<!-- January 2014 -->
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2014</div>
+				<div class="news-content">Weiliang is registered as 2013/2014 URECA-FYP student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2014</div>
+				<div class="news-content">Xiaolei is registered as 2013/2014 FYP student with our group, Welcome onboard!</div>
+			</div>
+
+			<div class="news-card">
+				<div class="news-date-badge"><i class="fa-regular fa-calendar"></i> January 2014</div>
+				<div class="news-content">Christian and Feilong joined our group as graduate students, Welcome onboard!</div>
+			</div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+    <!-- Search Filtering Script -->
+    <script>
+        function filterNews() {
+            var input = document.getElementById("newsSearch");
+            var filter = input.value.toLowerCase();
+            var feed = document.getElementById("newsFeed");
+            var cards = feed.getElementsByClassName("news-card");
+
+            for (var i = 0; i < cards.length; i++) {
+                var content = cards[i].getElementsByClassName("news-content")[0];
+                var date = cards[i].getElementsByClassName("news-date-badge")[0];
+                if (content || date) {
+                    var txtValue = content.textContent || content.innerText;
+                    var dateValue = date.textContent || date.innerText;
+                    if (txtValue.toLowerCase().indexOf(filter) > -1 || dateValue.toLowerCase().indexOf(filter) > -1) {
+                        cards[i].style.display = "";
+                    } else {
+                        cards[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

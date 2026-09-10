@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funding Support | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* Table & Interactive Component Styling */
+        .filter-bar {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+        }
+
+        .search-input-wrapper {
+            position: relative;
+            flex: 1;
+        }
+
+        .search-input-wrapper i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+        }
+
+        .search-input-wrapper input {
+            width: 100%;
+            padding: 0.65rem 1rem 0.65rem 2.5rem;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .search-input-wrapper input:focus {
+            border-color: #2563eb;
+        }
+
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            overflow: hidden;
+            margin-bottom: 2rem;
+        }
+
+        .table-wrapper {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table.support-table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            font-size: 0.95rem;
+        }
+
+table.support-table td img {
+    max-height: 120px; /* Adjust this value to increase or decrease logo size */
+    width: auto;
+    object-fit: contain;
+}
+        table.support-table th {
+            background-color: #f1f5f9;
+            color: #002b49;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        table.support-table td {
+            padding: 1.25rem;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: middle;
+        }
+
+        table.support-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        table.support-table tbody tr:hover {
+            background-color: #f8fafc;
+        }
+
+        .index-badge {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            background: #f1f5f9;
+            color: #002b49;
+            font-weight: 700;
+            border-radius: 50%;
+            font-size: 0.85rem;
+        }
+
+        .grant-badge {
+            display: inline-block;
+            background: rgba(37, 99, 235, 0.08);
+            color: #2563eb;
+            padding: 0.3rem 0.75rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        .agency-logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .agency-logo-container img {
+            max-height: 60px;
+            width: auto;
+            max-width: 140px;
+            object-fit: contain;
+            filter: grayscale(10%);
+            transition: filter 0.2s ease, transform 0.2s ease;
+        }
+
+        .agency-logo-container img:hover {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .agency-logo-container {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Funding Support</h2>
+                <p>We gratefully acknowledge the support of government agencies, industry partners, and academic institutions for our research.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- Interactive Search Bar -->
+        <div class="filter-bar">
+            <div class="search-input-wrapper">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="grantSearch" onkeyup="filterGrants()" placeholder="Search by research scope, grant scheme, or funding agency...">
+            </div>
+        </div>
+
+        <!-- Table Container Card -->
+        <div class="table-card">
+            <div class="table-wrapper">
+                <table class="support-table" id="grantTable">
+                    <thead>
+                        <tr>
+                            <th style="width: 5%; text-align: center;">#</th>
+                            <th style="width: 35%;">Research Scope</th>
+                            <th style="width: 25%;">Grant Scheme</th>
+                            <th style="width: 35%;">Funding Agency / Company</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">19</span></td>
+                            <td><strong>Advaced ReRAM Technology for Embedded Systems</strong></td>
+                            <td><span class="grant-badge">IAF-ICP</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/nrf-logo.jpg" alt="NRF">
+                                    <img src="images/astar-logo.jpg" alt="A*STAR">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                    <img src="images/edb-logo.jpg" alt="EDB">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">18</span></td>
+                            <td><strong>ReRAM devices development</strong></td>
+                            <td><span class="grant-badge">Industry Postgraduate Program</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">17</span></td>
+                            <td><strong>ST-FMR development</strong></td>
+                            <td><span class="grant-badge">Industry Postgraduate Program</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">16</span></td>
+                            <td><strong>Imaging System</strong></td>
+                            <td><span class="grant-badge">NTU-GAP</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/ntu-logo.jpg" alt="NTU">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">15</span></td>
+                            <td><strong>Neuromorphic Computing</strong></td>
+                            <td><span class="grant-badge">ASTAR- Programmatic</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/astar-logo.jpg" alt="A*STAR">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">14</span></td>
+                            <td><strong>Imaging System</strong></td>
+                            <td><span class="grant-badge">NTU-GAP Ignition</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/ntu-logo.jpg" alt="NTU">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">13</span></td>
+                            <td><strong>STT-MRAM material characterisation</strong></td>
+                            <td><span class="grant-badge">Industry-IHL Partnership</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/nrf-logo.jpg" alt="NRF">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">12</span></td>
+                            <td><strong>Developent of RRAM devices</strong></td>
+                            <td><span class="grant-badge">Industry Postgraduate Program</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">11</span></td>
+                            <td><strong>4 projects on perpendicular STT-MRAM developments</strong></td>
+                            <td><span class="grant-badge">Industry Postgraduate Program</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/gf-logo.jpg" alt="GlobalFoundries">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">10</span></td>
+                            <td><strong>Non-volatile magnetic logic and memory integrated circuit devices</strong></td>
+                            <td><span class="grant-badge">Competitive Research Programme</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/nrf-logo.jpg" alt="NRF">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">9</span></td>
+                            <td><strong>Multifunctional spintronics materials and devices (Co-PI)</strong></td>
+                            <td><span class="grant-badge">Competitive Research Programme</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/nrf-logo.jpg" alt="NRF">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">8</span></td>
+                            <td><strong>Spintronic devices for magnetic immunoassay applications</strong></td>
+                            <td><span class="grant-badge">Public Sector Funding</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/astar-logo.jpg" alt="A*STAR">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">7</span></td>
+                            <td><strong>Ultra low power nueromorphic computing with spin devices (Collaborator)</strong></td>
+                            <td><span class="grant-badge">Academic Research Fund Tier 2</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/moe-logo.jpg" alt="MOE">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">6</span></td>
+                            <td><strong>Spin engineering in patterned magnetic structures</strong></td>
+                            <td><span class="grant-badge">Academic Research Fund Tier 1</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/moe-logo.jpg" alt="MOE">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">5</span></td>
+                            <td><strong>Magnetic domain wall devices</strong></td>
+                            <td><span class="grant-badge">Scientist Exchange Programme</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/jsps-logo.jpg" alt="JSPS">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">4</span></td>
+                            <td><strong>Spintronic based lab-on-a-chip for bio-detection applications</strong></td>
+                            <td><span class="grant-badge">Merlion</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/merlion-logo.jpg" alt="Merlion">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">3</span></td>
+                            <td><strong>Energy dissipation-less spin-based devices</strong></td>
+                            <td><span class="grant-badge">ASPIRE Consortium</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/tokyoinstitute-logo.jpg" alt="Tokyo Institute of Technology">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">2</span></td>
+                            <td><strong>An integrated magneto-fluidic chip for cancer cell sorting</strong></td>
+                            <td><span class="grant-badge">CoS Research Collaboration Award</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/ntu-logo.jpg" alt="NTU">
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="text-align: center;"><span class="index-badge">1</span></td>
+                            <td><strong>Bio spintronics devices</strong></td>
+                            <td><span class="grant-badge">Start-up</span></td>
+                            <td>
+                                <div class="agency-logo-container">
+                                    <img src="images/ntu-logo.jpg" alt="NTU">
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+    <!-- Search Filtering Script -->
+    <script>
+        function filterGrants() {
+            var input = document.getElementById("grantSearch");
+            var filter = input.value.toLowerCase();
+            var table = document.getElementById("grantTable");
+            var tr = table.getElementsByTagName("tr");
+
+            for (var i = 1; i < tr.length; i++) {
+                var rowText = tr[i].textContent || tr[i].innerText;
+                var imgAltText = "";
+                
+                var imgs = tr[i].getElementsByTagName("img");
+                for (var j = 0; j < imgs.length; j++) {
+                    imgAltText += " " + (imgs[j].alt || "");
+                }
+
+                var fullSearchableText = (rowText + " " + imgAltText).toLowerCase();
+
+                if (fullSearchableText.indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    </script>
+</body>
+</html>

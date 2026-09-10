@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equipment & Facilities | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .equip-controls {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .equip-search-bar {
+            position: relative;
+            width: 100%;
+        }
+
+        .equip-search-bar input {
+            width: 100%;
+            padding: 0.85rem 1rem 0.85rem 2.8rem;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 0.95rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .equip-search-bar input:focus {
+            border-color: var(--ntu-red, #c8102e);
+        }
+
+        .equip-search-bar i {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        .filter-tabs {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 0.6rem 1.25rem;
+            border-radius: 20px;
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .tab-btn:hover {
+            background: #e2e8f0;
+        }
+
+        .tab-btn.active {
+            background: var(--ntu-red, #c8102e);
+            color: #ffffff;
+            border-color: var(--ntu-red, #c8102e);
+        }
+
+        .equip-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .equip-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .equip-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .equip-card-img-wrapper {
+            position: relative;
+            height: 190px;
+            background: #f1f5f9;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .equip-card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .equip-card:hover .equip-card-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .equip-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(15, 23, 42, 0.85);
+            color: #ffffff;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.35rem 0.75rem;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            z-index: 2;
+        }
+
+        .equip-card-body {
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .equip-card-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .equip-title-link {
+            color: #0f172a;
+            text-decoration: none;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .equip-title-link:hover {
+            color: var(--ntu-red, #c8102e);
+            text-decoration: underline;
+        }
+
+        .equip-card-desc {
+            font-size: 0.875rem;
+            color: #64748b;
+            line-height: 1.5;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        /* Lightbox Modal */
+        .lightbox-modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .lightbox-content {
+            max-width: 85%;
+            max-height: 85%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+            color: var(--ntu-red, #c8102e);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Equipment & Facilities</h2>
+                <p>State-of-the-art film deposition, micro/nano-fabrication, and magnetic characterisation systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Controls: Search & Category Filter Tabs -->
+        <div class="equip-controls">
+            <div class="equip-search-bar">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="equipSearch" placeholder="Search equipment by name or facility type...">
+            </div>
+            <div class="filter-tabs">
+                <button class="tab-btn active" onclick="filterCategory('all', this)">All Facilities</button>
+                <button class="tab-btn" onclick="filterCategory('deposition', this)">Deposition & Processing</button>
+                <button class="tab-btn" onclick="filterCategory('fabrication', this)">Micro/Nano Fabrication</button>
+                <button class="tab-btn" onclick="filterCategory('characterisation', this)">Characterisation</button>
+                <button class="tab-btn" onclick="filterCategory('computation', this)">Computation</button>
+                <button class="tab-btn" onclick="filterCategory('central', this)">Central Facilities</button>
+            </div>
+        </div>
+
+        <!-- Equipment Grid Gallery (All 38 items updated to compact card format with clickable title modal triggers) -->
+        <div class="equip-grid" id="equipGrid">
+
+            <!-- CATEGORY 1: DEPOSITION & PROCESSING (8 ITEMS) -->
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/aja-sputter2.jpg" alt="AJA Sputtering System">
+                    <span class="equip-badge">Deposition</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/aja-sputter1.jpg')">AJA 8–Target UHV MRAM Magnetron Sputtering System</a>
+                    </h3>
+                    <p class="equip-card-desc">Ultra-high vacuum magnetron deposition system optimized for MRAM thin-film stacks.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/sputtering-system.jpg" alt="Six-target Magnetron Sputtering System">
+                    <span class="equip-badge">Deposition</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/sputter6.jpg')">Home-built 6-Target UHV Magnetron Sputtering System</a>
+                    </h3>
+                    <p class="equip-card-desc">Custom high-vacuum sputtering system engineered for specialized magnetic heterostructures.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/uhv.jpg" alt="Home-built Metal Growth System">
+                    <span class="equip-badge">Evaporation</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/uhv-evaporator.jpg')">Home-built Metal Growth UHV Evaporation System</a>
+                    </h3>
+                    <p class="equip-card-desc">Ultra-high vacuum thermal evaporation system customized for metallic thin-film growth.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80" alt="Pulsed Electrodeposition System">
+                    <span class="equip-badge">Electrodeposition</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1581093588401-fbb62a02f120?auto=format&fit=crop&w=800&q=80')">PAR Pulsed Electrodeposition System</a>
+                    </h3>
+                    <p class="equip-card-desc">Electrochemical deposition platform for controlled growth of nanostructured magnetic materials.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/edwards-evaporator.jpg" alt="Edwards 306 Evaporation System">
+                    <span class="equip-badge">Evaporation</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/auto306.jpg')">Edwards 306 Thermal & E-Beam Evaporation System</a>
+                    </h3>
+                    <p class="equip-card-desc">Dual thermal and electron-beam evaporation system for high-purity contact electrode patterning.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/semiconductor-mbe.jpg" alt="Riber Semiconductor MBE System">
+                    <span class="equip-badge">Epitaxy</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/semiconductor-mbe.jpg')">Riber III-V Semiconductor Molecular Beam Epitaxy System</a>
+                    </h3>
+                    <p class="equip-card-desc">Advanced MBE system for single-crystal growth of compound semiconductor heterostructures.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="deposition">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/field-anneal2.jpg" alt="Magnetic Field Annealing System">
+                    <span class="equip-badge">Annealing</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/field-anneal3.jpg')">Home-built In-Plane & Perpendicular Field Annealing High Vacuum System</a>
+                    </h3>
+                    <p class="equip-card-desc">High-vacuum thermal annealing system equipped with magnetic field orientation capabilities.</p>
+                </div>
+            </div>
+
+            
+
+            <!-- CATEGORY 2: MICRO-/NANO-FABRICATION (12 ITEMS)
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/EBL.jpg" alt="Raith e-line Electron Beam Lithography">
+                    <span class="equip-badge">Nanolithography</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/EBL.jpg')">Raith e-Line Electron Beam Lithography</a>
+                    </h3>
+                    <p class="equip-card-desc">High-resolution pattern generator for ultra-fine nanoscale device fabrication.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/SussAligner.jpg" alt="Suss Microtec MJB4 Mask Aligner">
+                    <span class="equip-badge">Photolithography</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/SussAligner.jpg')">Suss Microtec MJB4 Mask Aligner</a>
+                    </h3>
+                    <p class="equip-card-desc">Precision optical alignment lithography tool for micro-scale contact patterns.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/IonMill.jpg" alt="AJA Ion Milling System">
+                    <span class="equip-badge">Etching</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/IonMill.jpg')">AJA Ion Milling System with Hiden SIMS Detector</a>
+                    </h3>
+                    <p class="equip-card-desc">Argon ion beam milling equipped with inline secondary ion mass spectrometry.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80" alt="SCS Spin Coater">
+                    <span class="equip-badge">Spin Coating</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80')">SCS G3-8 Programmable Spin Coater</a>
+                    </h3>
+                    <p class="equip-card-desc">Precision photoresist and polymer coating system with programmable acceleration profiles.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Laurell Spin Coater">
+                    <span class="equip-badge">Spin Coating</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80')">Laurell 150mm Spin Coater</a>
+                    </h3>
+                    <p class="equip-card-desc">Substrate spin coating unit suitable for up to 150mm wafers and small lithographic samples.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/NikonMicroscope.jpg" alt="Nikon Eclipse Optical Microscope">
+                    <span class="equip-badge">Microscopy</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/NikonMicroscope.jpg')">Nikon Eclipse Advanced Research Upright Microscope</a>
+                    </h3>
+                    <p class="equip-card-desc">High-magnification optical inspection setup with polarized light capabilities.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/Stereo.jpg" alt="Olympus Advanced Optical Microscope">
+                    <span class="equip-badge">Microscopy</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Stereo.jpg')">Olympus Advanced Optical Microscope</a>
+                    </h3>
+                    <p class="equip-card-desc">Stereo fluorescence optical station for sample inspection and micro-device positioning.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/Plasma.jpg" alt="Oxygen Plasma Etcher">
+                    <span class="equip-badge">Surface Cleaning</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Plasma.jpg')">Quorum Technology Oxygen Plasma Barrel Etcher</a>
+                    </h3>
+                    <p class="equip-card-desc">RF plasma system for organic residue removal and surface activation prior to lithography.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/SSBench.jpg" alt="Stainless Steel Solvent Bench">
+                    <span class="equip-badge">Wet Processing</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/SSBench.jpg')">Stainless Steel Solvent Bench for Nanolithography</a>
+                    </h3>
+                    <p class="equip-card-desc">Dedicated chemical bench for resist development and nanolithographic wet processing.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80" alt="PP Chemical Benches">
+                    <span class="equip-badge">Wet Processing</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=800&q=80')">PP Acid & Solvent Benches for Photolithography</a>
+                    </h3>
+                    <p class="equip-card-desc">Polypropylene chemical extraction workstations for acid etching and wet chemical cleaning.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80" alt="Sartorius DI Water System">
+                    <span class="equip-badge">Purification</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1576086213369-97a306d36557?auto=format&fit=crop&w=800&q=80')">Sartorius DI Water System</a>
+                    </h3>
+                    <p class="equip-card-desc">Ultrapure deionized water purification unit for semiconductor processing and rinsing.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="fabrication">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="Elga DI Water System">
+                    <span class="equip-badge">Purification</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80')">Elga DI Water System</a>
+                    </h3>
+                    <p class="equip-card-desc">Secondary laboratory DI water purification system maintaining high-resistivity standards.</p>
+                </div>
+            </div>
+
+            <!-- CATEGORY 3: CHARACTERISATION (13 ITEMS)
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/ProbeStation.jpg" alt="Cascade Microtech RF Probe Station">
+                    <span class="equip-badge">RF Probing</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/ProbeStation.jpg')">Cascade Microtech 40GHz RF Probe Station</a>
+                    </h3>
+                    <p class="equip-card-desc">High-frequency microwave probe station combined with magnetic field application setups.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80" alt="4-Point Probe Setup">
+                    <span class="equip-badge">Transport</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1629654297299-c8506221ca97?auto=format&fit=crop&w=800&q=80')">Home-built 4-Point Probe & AMR/GMR/TMR Setup</a>
+                    </h3>
+                    <p class="equip-card-desc">Custom magnetoresistance measurement facility for bonded-chip and wafer-level testing.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/Picosecond.jpg" alt="Picosecond Pulse Generator">
+                    <span class="equip-badge">Electronics</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Picosecond.jpg')">Picosecond Model 10300B Programmable Pulse Generator</a>
+                    </h3>
+                    <p class="equip-card-desc">Ultra-fast electrical pulse excitation source for fast magnetic switching experiments.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/Lecroyscope.jpg" alt="Teledyne LeCroy Oscilloscope">
+                    <span class="equip-badge">Electronics</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Lecroyscope.jpg')">Teledyne LeCroy WaveMaster 6 GHz Real-Time Oscilloscope</a>
+                    </h3>
+                    <p class="equip-card-desc">High-bandwidth real-time oscilloscope for time-resolved spintronic dynamics.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/MOKE.jpg" alt="MOKE Magnetometry Setup">
+                    <span class="equip-badge">Magnetometry</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/MOKE.jpg')">Home-built Polar & Longitudinal MOKE Magnetometer</a>
+                    </h3>
+                    <p class="equip-card-desc">Magneto-optical Kerr effect setup for surface magnetization hysteresis measurement.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/MFM_Park.jpg" alt="Park Atomic & Magnetic Force Microscope">
+                    <span class="equip-badge">Microscopy</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/MFM_Park.jpg')">Park System Atomic / Magnetic Force Microscopy (AFM/MFM)</a>
+                    </h3>
+                    <p class="equip-card-desc">Scanning probe microscopy with in-situ magnetic field for domain structure visualization.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80" alt="Lakeshore Electromagnet System">
+                    <span class="equip-badge">Magnet Setup</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80')">Lakeshore EM4 Electromagnet & 642 Power Supply</a>
+                    </h3>
+                    <p class="equip-card-desc">Precision bipolar electromagnet system providing stable programmable magnetic fields.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80" alt="Quadrupole Electromagnet System">
+                    <span class="equip-badge">Magnet Setup</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1507668077129-56e32842fceb?auto=format&fit=crop&w=800&q=80')">Home-built Quadrupole Electromagnet & Rotating Field Controller</a>
+                    </h3>
+                    <p class="equip-card-desc">Custom four-pole magnetic field control system for 360-degree vector field generation.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/pProbe.jpg" alt="Magneto-Fluidics Probing Station">
+                    <span class="equip-badge">BioMEMS</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/pProbe.jpg')">Home-built Magneto-Fluidics BioMEMS Probing Station</a>
+                    </h3>
+                    <p class="equip-card-desc">Integrated microfluidic and magnetic testbed for lab-on-a-chip bio-detection applications.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/ST-FMR.jpg" alt="VNA Ferromagnetic Resonance System">
+                    <span class="equip-badge">Resonance</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/ST-FMR.jpg')">Home-built VNA-Based Ferromagnetic Resonance (FMR) System</a>
+                    </h3>
+                    <p class="equip-card-desc">Vector network analyzer based FMR dynamic characterization setup for spin relaxation studies.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/Kerr Imaging.jpg" alt="Magvision Kerr Microscopy">
+                    <span class="equip-badge">Microscopy</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Kerr Imaging.jpg')">Magvision Kerr Microscopy & Domain Imaging</a>
+                    </h3>
+                    <p class="equip-card-desc">High-sensitivity optical Kerr microscope for real-time domain wall and skyrmion imaging.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/SCS4200.jpg" alt="Keithley 4200A-SCS Parameter Analyzer">
+                    <span class="equip-badge">Electrical</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/SCS4200.jpg')">Keithley 4200A-SCS Semiconductor Parameter Analyzer</a>
+                    </h3>
+                    <p class="equip-card-desc">Comprehensive I-V, C-V, and pulse characterization analyzer for memristive and logic devices.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="characterisation">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/VSM.jpg" alt="Lakeshore 8600 VSM">
+                    <span class="equip-badge">Magnetometry</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/VSM.jpg')">Lakeshore Model 8600 Vibrating Sample Magnetometer</a>
+                    </h3>
+                    <p class="equip-card-desc">Precision VSM providing rapid magnetic moment measurement with low noise floor.</p>
+                </div>
+            </div>
+
+            <!-- CATEGORY 4: COMPUTATION CAPABILITY (4 ITEMS) 
+            <div class="equip-card" data-category="computation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80" alt="Xeon Workstation Server Racks">
+                    <span class="equip-badge">Hardware</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=80')">Xeon-Based High Performance Simulation Workstations</a>
+                    </h3>
+                    <p class="equip-card-desc">5 dedicated multi-core Intel Xeon compute nodes for micro-magnetic and TCAD modeling.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="computation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="OOMMF Code and Simulation Output">
+                    <span class="equip-badge">Software</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80')">OOMMF Micromagnetic Simulation Framework</a>
+                    </h3>
+                    <p class="equip-card-desc">Object Oriented MicroMagnetic Framework developed by NIST for magnetization dynamics simulations.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="computation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80" alt="LLG Simulation Environment">
+                    <span class="equip-badge">Software</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=800&q=80')">LLG Micromagnetic Simulator</a>
+                    </h3>
+                    <p class="equip-card-desc">Full 3D micromagnetic simulation package for analyzing spin-torque dynamics and domains.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="computation">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80" alt="Mumax3 GPU Compute Platform">
+                    <span class="equip-badge">GPU Software</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=800&q=80')">Mumax3 GPU-Accelerated Micromagnetic Solver</a>
+                    </h3>
+                    <p class="equip-card-desc">CUDA-accelerated micromagnetic simulation tool for high-speed finite-difference modeling.</p>
+                </div>
+            </div>
+
+            <!-- CATEGORY 5: CENTRAL FACILITIES (8 ITEMS) 
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/PPMS.jpg" alt="Quantum Design PPMS">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/PPMS.jpg')">Quantum Design PPMS / VSM System</a>
+                    </h3>
+                    <p class="equip-card-desc">Physical Property Measurement System for wide-temperature transport and magnetic characterization.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=80" alt="Quantum Design SQUID MPMS System">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1581093450021-4a7360e9a6b5?auto=format&fit=crop&w=800&q=80')">Quantum Design SQUID Magnetometer (MPMS)</a>
+                    </h3>
+                    <p class="equip-card-desc">Superconducting Quantum Interference Device providing high magnetic sensitivity.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80" alt="JEOL Transmission Electron Microscope">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=800&q=80')">JEOL JEM-1400 Transmission Electron Microscope (TEM)</a>
+                    </h3>
+                    <p class="equip-card-desc">High-resolution TEM system for atomic-level structural and interface characterization.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/SEM2.jpg" alt="JEOL FESEM System">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/SEM2.jpg')">JEOL 6700F Field Emission SEM with EDX</a>
+                    </h3>
+                    <p class="equip-card-desc">Field emission scanning electron microscope with energy-dispersive X-ray spectroscopy.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/XRD1.jpg" alt="Bruker XRD System">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/XRD1.jpg')">Bruker D8 Advance Powder X-Ray Diffractometer</a>
+                    </h3>
+                    <p class="equip-card-desc">Powder XRD system for phase identification and crystallographic structure analysis.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/RigakuXRD1.jpg" alt="Rigaku High Resolution XRD">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/RigakuXRD1.jpg')">Rigaku SmartLab High-Resolution X-Ray Diffractometer</a>
+                    </h3>
+                    <p class="equip-card-desc">HR-XRD system optimized for thin-film reflectivity and epitaxial strain analysis.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="images/SPM1.jpg" alt="Veeco Dimension SPM">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/SPM1.jpg')">Veeco Dimension 3100 Scanning Probe Microscope</a>
+                    </h3>
+                    <p class="equip-card-desc">Versatile SPM platform for surface roughness mapping and atomic force profiling.</p>
+                </div>
+            </div>
+
+            <div class="equip-card" data-category="central">
+                <div class="equip-card-img-wrapper">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80" alt="Cypher S Fast Scanning AFM">
+                    <span class="equip-badge">Central Facility</span>
+                </div>
+                <div class="equip-card-body">
+                    <h3 class="equip-card-title">
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80')">Asylum Research Cypher S Fast Scanning AFM</a>
+                    </h3>
+                    <p class="equip-card-desc">High-speed atomic force microscope for rapid surface topography and force mapping.</p>
+                </div>
+            </div>
+
+        </div> -->
+
+    </main>
+
+    <!-- Lightbox Modal Container -->
+    <div id="lightboxModal" class="lightbox-modal">
+        <span class="lightbox-close" onclick="closeModal()">&times;</span>
+        <img class="lightbox-content" id="modalImage" alt="Equipment Preview">
+    </div>
+
+    <!-- Interactive Filtering, Search, & Modal Lightbox JS -->
+    <script>
+        function filterCategory(category, element) {
+            const tabs = document.querySelectorAll('.tab-btn');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            element.classList.add('active');
+
+            const cards = document.querySelectorAll('.equip-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.dataset.category === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Live Search Filter
+        document.getElementById('equipSearch').addEventListener('input', function(e) {
+            const query = e.target.value.toLowerCase();
+            const cards = document.querySelectorAll('.equip-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('.equip-card-title').textContent.toLowerCase();
+                const desc = card.querySelector('.equip-card-desc').textContent.toLowerCase();
+                if (title.includes(query) || desc.includes(query)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Lightbox Modal Functions
+        function openModal(imageSrc) {
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('modalImage');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('lightboxModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('lightboxModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

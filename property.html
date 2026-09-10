@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intellectual Property | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html" style="color: var(--accent); font-weight: 700;">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Page Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Intellectual Property</h2>
+                <p>Patents, PCT applications, and technology disclosures arising from our work on memory devices, spin-orbit torque logic, magnetic sensing, and advanced fabrication techniques.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <div class="section-header">
+            <h2><i class="fa-solid fa-scale-balanced" style="color: var(--ntu-red);"></i> Patent & IP Records</h2>
+        </div>
+
+        <div class="card-panel" style="margin-bottom: 2rem;">
+            <div class="search-box" style="margin-bottom: 1.5rem; display: flex; align-items: center; gap: 10px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 8px; padding: 0.6rem 1rem;">
+                <i class="fa-solid fa-magnifying-glass" style="color: var(--text-muted);"></i>
+                <input type="text" id="searchInput" placeholder="Search by title, inventor, or reference number..." style="border: none; background: transparent; width: 100%; outline: none; font-size: 0.95rem;">
+            </div>
+            
+            <div class="filter-row" style="margin-bottom: 1rem; display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;">
+                <span style="font-weight: 700; font-size: 0.9rem; min-width: 60px;">Year:</span>
+                <div id="yearFilters" style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                    <button class="year-btn active" data-year="all" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">All Years</button>
+                    <button class="year-btn" data-year="2023" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2023</button>
+                    <button class="year-btn" data-year="2022" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2022</button>
+                    <button class="year-btn" data-year="2021" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2021</button>
+                    <button class="year-btn" data-year="2020" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2020</button>
+                    <button class="year-btn" data-year="2019" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2019</button>
+                    <button class="year-btn" data-year="2018" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2018</button>
+                    <button class="year-btn" data-year="2017" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2017</button>
+                    <button class="year-btn" data-year="2016" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2016</button>
+                    <button class="year-btn" data-year="2015" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2015</button>
+                    <button class="year-btn" data-year="2014" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2014</button>
+                    <button class="year-btn" data-year="2013" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2013</button>
+                    <button class="year-btn" data-year="2012" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2012</button>
+                    <button class="year-btn" data-year="2011" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2011</button>
+                    <button class="year-btn" data-year="2010" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2010</button>
+                    <button class="year-btn" data-year="2009" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">2009</button>
+                    <button class="year-btn" data-year="Other" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">Other</button>
+                </div>
+            </div>
+
+            <div class="filter-row" style="display: flex; flex-wrap: wrap; align-items: center; gap: 1rem;">
+                <span style="font-weight: 700; font-size: 0.9rem; min-width: 60px;">Type:</span>
+                <div id="statusFilters" style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                    <button class="status-btn active" data-status="all" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">All Types</button>
+                    <button class="status-btn" data-status="PCT Application" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">PCT Application</button>
+                    <button class="status-btn" data-status="IP Record" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">IP Record</button>
+                    <button class="status-btn" data-status="Patent Application" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">Patent Application</button>
+                    <button class="status-btn" data-status="Technology Disclosure" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">Technology Disclosure</button>
+                    <button class="status-btn" data-status="Provisional Patent" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">Provisional Patent</button>
+                    <button class="status-btn" data-status="Granted Patent" style="padding: 0.3rem 0.8rem; border-radius: 6px; border: 1px solid var(--border); background: var(--card-bg); cursor: pointer; font-size: 0.85rem;">Granted Patent</button>
+                </div>
+            </div>
+        </div>
+
+        <p id="resultsCount" style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; font-weight: 600;">Showing 51 of 51 records</p>
+
+        <div class="pub-list" id="pubList" style="display: flex; flex-direction: column; gap: 1rem;">
+            
+            <div class="card pub-card" data-year="2022" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">51</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Circuit Arrangement And Method Of Forming The Same</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">S. Chakrabarti, Putu Andhita Dananjaya, Yong Chiang Ee, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> PCT Application No: PCT/SG2022/050788 (2024).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2023" data-status="IP Record" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">50</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Memory Device, Plasma Treatment, And Thermal Stability Improvement Thereof</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">IP Record</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Putu Andhita Dananjaya, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> NTU TD ref: 2023-276 (2023).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2023" data-status="IP Record" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">49</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Memory Device, Via Oxygen Scavenging Electrode, And Methods Of Making The Same</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">IP Record</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Putu Andhita Dananjaya, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> NTU TD ref: 2023-277 (2023).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2023" data-status="IP Record" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">48</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Method for Fabricating Resistive Switching Memory Cells</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">IP Record</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Funan Tan, Tianli Jin, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> NTU TD ref: 2023-411 (2023).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2023" data-status="IP Record" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">47</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">SPICE Modeling Of Resistive Random-Access Memories</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">IP Record</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Yang Wanlan, Zhou Xing, Li Jiahou, Wen Siang Lew, Du Yuanmin, Lai Weng Hong</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> NTU TD ref: 2023-362 (2023).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2022" data-status="Patent Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">46</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Resistive Switching Memory Device With An Ion Obstruction Barrier Layer And Fabrication Method Thereof</h3>
+                        <span style="background: #e0e7ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Patent Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">DU Yuanmin, Wen Siang Lew, Lai Weng Hong</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Patent Application No. 10202260203T (2022)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2022" data-status="Patent Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">45</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Thin Film Multi-Layered Resistive Switching Memory Elements And Methods Of Fabricating The Same</h3>
+                        <span style="background: #e0e7ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Patent Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">DU Yuanmin, Wen Siang Lew, Putu Andhita Danajaya</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Patent Application No. 10202251306M (2022)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2022" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">44</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Maskless Laser Lithography System</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Gerard Joseph Lim, Calvin Ang, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2022-089 (2022)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2021" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">43</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-Volatile Memory And Methods Of Fabricating The Same</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Du Yuanmin, Wen Siang Lew, Putu Andhita Danajaya, Hoo Siew Wei, Lai Weng Hong</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Patent Application No. 10202106132V (2021); PCT Patent Application (2021-239-02-PCT); US Patent Application No: 18/562,739 (2024).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2021" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">42</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-Volatile Memory Containing Oxygen Scavenger Regions And Methods Of Making The Same</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Du Yuanmin, Wen Siang Lew, Putu Andhita Danajaya, Hoo Siew Wei</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Patent Application No. 10202110532Y (2021); PCT Patent Application (2021-392-02-PCT); US Patent Application No: 18/692,088.</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2021" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">41</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Compact Cryostat For Magneto-Optical Imaging</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Hoo Siew Wei, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2021-119 (2021)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2019" data-status="Patent Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">40</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Apparatus For Generating Magnetic Field, Imaging Device Having The Same, And Method For Imaging A Sample</h3>
+                        <span style="background: #e0e7ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Patent Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Patent Application No. 10201900137V (2021)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2020" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">39</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Magnetic Logic Device, Circuit Having Magnetic Logic Devices, And Methods For Controlling The Magnetic Logic Device And The Circuit</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Gerard Joseph Lim, Chandrasekhar Murapaka, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> PCT Patent Application No. PCT/SG2020/050626 (2021)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2018" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">38</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Spin-Orbit Torque Driven Logic</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Gerard Joseph Lim, Chandrasekhar Murapaka, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2018-197 (2018)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2018" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">37</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A High-Temperature Ferromagnetic Resonance Spectrometer</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Gerard Joseph Lim, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2018-232 (2018).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2018" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">36</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Real-time 3D drift correction for Kerr Imaging</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2018-189 (2018).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2018" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">35</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Memory Device, Method For Controlling Multi-Level Alkaline Earth Metal Oxide-Based Resistive Switching States And Of The Same</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU TD ref 2018-132 (2018)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Patent Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">34</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Integrated Circuits With Magnetic Tunnel Junctions and Methods of Producing The Same</h3>
+                        <span style="background: #e0e7ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Patent Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Wai Cheung Law, Taiebeh Tahmasebi, Chim Seng Seet, Alex See, Gerard Joseph Lim, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Patent Application, GF Ref. No.: JSG053</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2017" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">33</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Electromagnet design for Kerr Imaging</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/263/17 (2017) Singapore provisional patent application no: 10201800208W, NTU reference: PAT/263/17/18/SG PRV</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2017" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">32</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Laser illumination system</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/264/17 (2017)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Patent Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">31</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-volatile memory devices, RRAM devices and methods for fabricating RRAM devices with magnesium oxide insulator layers</h3>
+                        <span style="background: #e0e7ff; color: #4338ca; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Patent Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Desmond Jia Jun Loy, Danny Shum, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Patent Application, GF Ref.: JSG026</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2017" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">30</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Memory Device, Method Of Forming The Same, Method For Controlling The Same And Memory Array</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Putu Andhita Dananjaya, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> PCT Application No: PCT/SG2017/050457</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">29</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A continuous-flow size and affinity-based microfluidics cell sorter</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">H.W. Hou, L. Ning, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/189/17.</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2016" data-status="Granted Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">28</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Memory device including a domain wall and ferromagnetic driver nanowire</h3>
+                        <span style="background: #dcfce7; color: #15803d; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Granted Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, I. Purnama, M. Chandra Sekhar</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Granted US Patent No. 9,502,090, Nov. 22, 2016.</p>
+                    <a href="Patent/PAT-097-12-15-PCT-US_Grant.pdf" target="_blank" style="color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Document</a>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">27</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A Ferromagnetic Resonance Spectrometer</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, G.J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/326/16</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2016" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">26</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Magnetic memory devices and methods of operating the same</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, S.F. Zhang, W.L. Gan, G.J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> PCT Application No: PCT/SG2016/050526</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">25</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Anti-Serially connected resistive random access memory cell</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Putu Andhita Dananjaya, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Provisional Patent PAT/172/16/16/SG PRV</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2016" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">24</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">An apparatus and method for Kerr imaging</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Weiliang Gan, Wen Siang Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Provisional Patent 10201603665S (2016), PCT Application No : PCT/SG2017/050237</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2016" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">23</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Magnetic random number generator</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Pankaj Sethi, M. Chandra Sekhar, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Singapore Provisional Patent PAT/285/15/16/SG PRV (2016). Singapore Patent Application No. 10201600538P, US Patent Application Publication No: US2017/0212728A1</p>
+                    <a href="Patent/US20170212728A1_RNG.PDF" target="_blank" style="color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Document</a>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2015" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">22</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Low-power bit writing in perpendicular magnetic anisotropy memory devices</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, S.F. Zhang, W.L. Gan, G.J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Provisional Patent, 10201508828X (2015)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2015" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">21</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-uniform spatial current distribution for logic operations in perpendicular magnetic tunnel junction</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">H.K. Teoh, S. Goolaup, C. Engel, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/044/15 (2015), SG provisional patent.</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2015" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">20</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Programmable logic operation via domain wall profile manipulation</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">S. Goolaup, H.K. Teoh, M. Chandra Sekhar, I. Purnama, R. Maddu, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent, 62/101,491 (2015).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">19</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A magnetron thin film sputter deposition system</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, G. J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/203/14 (2014).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">18</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A resistively-heated thin film evaporation deposition system</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, G. J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/204/14 (2014).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">17</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">An electron beam-heated thin film evaporation deposition system</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, G. J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/202/14 (2014).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="Other" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">16</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Magnetic domain wall digital fan-out with perpendicular magnetic anisotropy</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">P. Sethi, S. Goolaup, M. Chandra Sekhar, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/213/14.</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="Granted Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">15</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-volatile logic device</h3>
+                        <span style="background: #dcfce7; color: #15803d; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Granted Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, M. Chandra Sekhar, I. Purnama, S. Goolaup, P. Sethi, C. Guite</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Patent Cooperation Treaty (PCT) Application No: PCT/SG2014/000218. Granted US Patent No. 9,431,599, Aug 30, 2016.</p>
+                    <a href="Patent/PAT-079-13-15-PCT-US_Grant.pdf" target="_blank" style="color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Document</a>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="PCT Application" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">14</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">A memory device</h3>
+                        <span style="background: #dbeafe; color: #1d4ed8; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">PCT Application</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, I. Purnama, M. Chandra Sekhar</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin-bottom: 0.5rem;"><i class="fa-solid fa-scale-balanced"></i> Patent Cooperation Treaty (PCT) Application No: PCT/SG2014/000002. US Patent No. 9,502,090</p>
+                    <a href="https://patentscope.wipo.int/search/en/detail.jsf?docId=WO2014107140" target="_blank" style="color: var(--accent); font-size: 0.85rem; font-weight: 600; text-decoration: none;"><i class="fa-solid fa-file-pdf"></i> View Document</a>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2014" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">13</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Deterministic generation of domain wall in zero external magnetic field</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Chinkhanlun Guite, I.S. Kerk, M. Chandra Sekhar, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Singapore Provisional Application No: 10201405402X.</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2013" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">12</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Fabrication Of magnetic nanoparticles by electrodeposition and differential chemical etching techniques</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.L. Gan, M. Chandra Sekhar, D.W. Wong, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/083/14 (2013).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2013" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">11</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-volatile memory architecture based on domain wall remote driving sandwiched perpendicular magnetic anisotropy nanowires</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, I. Purnama, I.S. Kerk, G.J. Lim</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/268/13 (2013).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2013" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">10</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Switching magnetization direction by optical method</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">Chinkhanlun Guite, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/129/13 (2013).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2013" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">9</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Reconfigurable magnetic logic</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, M. Chandra Sekhar, I. Purnama</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent, 61/824,738 (2013).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2013" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">8</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Coupled domain wall oscillator as microwave generator</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, M. Chandra Sekhar, I. Purnama</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent 61/845,097 (2013).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2012" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">7</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Logic operation based on magnetic domain wall profile</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, M. Chandra Sekhar, I. Purnama</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent 61/748,337 (2012).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2012" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">6</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Non-volatile memory architecture based on domain wall remote driving</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, I. Purnama, M. Chandra Sekhar</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent 61/748,316 (2012).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2012" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">5</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Current-induced NOT gate operation based on the chirality flipping of domain wall</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.S. Lew, M. Chandra Sekhar, I. Purnama</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure, NTU ref TD/096/12 (2012).</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2011" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">4</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Metastatic cancer cells removal dialyzer</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">H. Y. Li, W.S. Lew, N.S. Tan, H. F. Liew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent, 61/555,728 (2011)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2011" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">3</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Controllable disc-shaped magnetic nanoparticles</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W. S. Lew, H. F. Liew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure NTU ref: TD/034/11 (2011)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2010" data-status="Technology Disclosure" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">2</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Method of fabrication for the storage medium of a vertical magnetic domain wall memory device</h3>
+                        <span style="background: #f1f5f9; color: #475569; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Technology Disclosure</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">H. F. Liew, W. S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> Technology Disclosure ETPL Ref: SRC/Z/06294 (2010)</p>
+                </div>
+            </div>
+
+            <div class="card pub-card" data-year="2009" data-status="Provisional Patent" style="display: flex; gap: 1.5rem; align-items: flex-start; padding: 1.5rem;">
+                <div style="font-size: 1.25rem; font-weight: 800; color: var(--ntu-red); min-width: 30px;">1</div>
+                <div style="flex: 1;">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; margin-bottom: 0.4rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 0;">Integrated pocket-sized lab-on-chip magnetic resonance spectroscopy/imaging</h3>
+                        <span style="background: #fef9c3; color: #a16207; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.75rem; font-weight: 700; white-space: nowrap;">Provisional Patent</span>
+                    </div>
+                    <p style="color: var(--text-dark); font-size: 0.92rem; margin-bottom: 0.4rem;">W.K. Peng, W.S. Lew</p>
+                    <p style="color: var(--text-muted); font-size: 0.88rem; margin: 0;"><i class="fa-solid fa-scale-balanced"></i> US Provisional Patent, 61/187784 (2009)</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="noResults" style="display: none; text-align: center; padding: 3rem; color: var(--text-muted);">
+            <i class="fa-solid fa-magnifying-glass" style="font-size: 2rem; margin-bottom: 1rem; display: block;"></i>
+            <p>No IP records match your filter criteria.</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        const searchInput = document.getElementById('searchInput');
+        const yearFilters = document.getElementById('yearFilters');
+        const statusFilters = document.getElementById('statusFilters');
+        const pubCards = Array.from(document.querySelectorAll('.pub-card'));
+        const resultsCount = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const pubList = document.getElementById('pubList');
+        let activeYear = 'all';
+        let activeStatus = 'all';
+
+        function applyFilters() {
+            const query = searchInput.value.trim().toLowerCase();
+            let visibleCount = 0;
+
+            pubCards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                const year = card.getAttribute('data-year');
+                const status = card.getAttribute('data-status');
+                const matchesYear = (activeYear === 'all' || year === activeYear);
+                const matchesStatus = (activeStatus === 'all' || status === activeStatus);
+                const matchesSearch = (query === '' || text.includes(query));
+                const show = matchesYear && matchesStatus && matchesSearch;
+                card.style.display = show ? 'flex' : 'none';
+                if (show) visibleCount++;
+            });
+
+            resultsCount.textContent = `Showing ${visibleCount} of 51 records`;
+            noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+            pubList.style.display = visibleCount === 0 ? 'none' : 'flex';
+        }
+
+        searchInput.addEventListener('input', applyFilters);
+
+        yearFilters.addEventListener('click', (e) => {
+            const btn = e.target.closest('.year-btn');
+            if (!btn) return;
+            yearFilters.querySelectorAll('.year-btn').forEach(b => {
+                b.style.background = 'var(--card-bg)';
+                b.style.color = 'var(--text-dark)';
+            });
+            btn.style.background = 'var(--accent)';
+            btn.style.color = '#fff';
+            activeYear = btn.getAttribute('data-year');
+            applyFilters();
+        });
+
+        statusFilters.addEventListener('click', (e) => {
+            const btn = e.target.closest('.status-btn');
+            if (!btn) return;
+            statusFilters.querySelectorAll('.status-btn').forEach(b => {
+                b.style.background = 'var(--card-bg)';
+                b.style.color = 'var(--text-dark)';
+            });
+            btn.style.background = 'var(--accent)';
+            btn.style.color = '#fff';
+            activeStatus = btn.getAttribute('data-status');
+            applyFilters();
+        });
+    </script>
+
+</body>
+</html>

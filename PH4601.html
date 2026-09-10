@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH4601 - Physics of Semiconductor and Spintronics Devices | IMS Lab | NTU</title>
+    
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Page Styling -->
+    <style>
+        .course-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 0.75rem 1rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .info-grid strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .info-grid span {
+            color: #334155;
+        }
+
+        .section-title {
+            color: #0f172a;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 1.75rem 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin: 1rem 0 2rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+
+        .custom-list {
+            padding-left: 1.25rem;
+            color: #334155;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        .book-list {
+            line-height: 1.8;
+            color: #334155;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2><span class="code-badge" style="font-size: 1.2rem; color: #fff; background: rgba(255,255,255,0.2); border: none;">PH4601</span> Physics of Semiconductor and Spintronics Devices</h2>
+                <p>Course syllabus and operational details for PH4601.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <div class="course-card">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-circle-info" style="color: var(--ntu-red, #c8102e);"></i> Course Information</h2>
+            </div>
+
+            <div class="info-grid">
+                <strong>Instructor:</strong> <span>Lew Wen Siang</span>
+                <strong>Office:</strong> <span>SPMS-PAP-03-04</span>
+                <strong>Phone:</strong> <span>6316 2963</span>
+                <strong>Email:</strong> <span>wensiang@ntu.edu.sg</span>
+                <strong>Lecture Hours:</strong> <span>Semester II 2017/2018, Wednesday 1230 - 1430, Friday 1630 - 1730</span>
+                <strong>Lecture Hall:</strong> <span>SPMS-LT5 (Wednesday and Friday)</span>
+                <strong>Tutorial Hour & Venue:</strong> <span>Friday 1730 - 1830, SPMS-LT5</span>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-bullseye" style="color: #2563eb;"></i> Course Objective</h3>
+            <p style="color: #334155; margin-bottom: 0.75rem;">This course aims to introduce solid state devices that signify modern technologies and microelectronics industries. These technologies are generally drawn from the physics of semiconductor and magnetism.</p>
+            <ul class="custom-list">
+                <li>To understand the physical principles governing the performance of solid state devices.</li>
+                <li>To provide foundation knowledge of the functionality and applications of the devices.</li>
+                <li>To be able to design experiment that uses these devices correctly.</li>
+                <li>To link theory and practice of the course concepts.</li>
+            </ul>
+
+            <h3 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #2563eb;"></i> Learning Outcomes</h3>
+            <p style="color: #334155; margin-bottom: 1.5rem;">The students will understand the fundamental principles of solid state devices, especially semiconductor and spintronics devices. The students will learn the main functionality and applications of the devices; and they will also be able to use these devices correctly in real experiments.</p>
+
+            <h3 class="section-title"><i class="fa-solid fa-book" style="color: #2563eb;"></i> Reference Books</h3>
+            <div class="book-list">
+                "Semiconductor Physics and Devices: Basic Principles", 4th edition, Donald A. Neamen, McGraw-Hill, 978-0073529585, 2011.<br>
+                "Physics of Semiconductor Devices", 3rd edition, Simon M. Sze and Kwok K. Ng, Wiley-Interscience, 978-0471143239, 2007.<br>
+                "Fundamentals of Semiconductor Devices", Betty L. Anderson and Richard L. Anderson, McGraw-Hill College, 978-0072369779, 2004.<br>
+                "Modern Semiconductor Devices for Integrated Circuits", Chenming Calvin Hu, 978-0137006687, 2009.<br>
+                "Modern Magnetic Materials: Principles and Applications", 1st Edition, Robert C. O'Handley, 978-0471155669, 1999.<br>
+                "Introduction to Magnetic Materials", 2nd Edition, B. D. Cullity and C. D. Graham, 978-0471477419, 2008.<br>
+                "Magnetism and Magnetic Materials", 1st Edition, J. M. D. Coey, 978-0521816144, 2010.<br>
+                "Magnetism: Basics and Applications", 1st Edition, Carmen-Gabriela Stefanita, 978-3642229763, 2012.
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-chart-pie" style="color: #2563eb;"></i> Assessment</h3>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Assessment Component</th>
+                            <th>Weightage</th>
+                            <th>Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Final Examination</td><td>60%</td><td>Restricted open book</td></tr>
+                        <tr><td>Term Test 1</td><td>10%</td><td>Restricted open book</td></tr>
+                        <tr><td>Term Test 2</td><td>10%</td><td>Restricted open book</td></tr>
+                        <tr><td>Assignment</td><td>20%</td><td>&nbsp;</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> Course Outline</h3>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 150px;">Lecture</th>
+                            <th>Topic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lecture 1</td><td>Introduction to Semiconductors</td></tr>
+                        <tr><td>Lecture 2</td><td>Carrier Transport Phenomena in Semiconductors</td></tr>
+                        <tr><td>Lecture 3</td><td>Non-Equilibrium Excess Carriers in Semiconductors</td></tr>
+                        <tr><td>Lecture 4</td><td>The pn Junction Diodes</td></tr>
+                        <tr><td>Lecture 5</td><td>The Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET)</td></tr>
+                        <tr><td>Lecture 6</td><td>Other Semiconductor Devices</td></tr>
+                        <tr><td>Lecture 7</td><td>Introduction to Magnetism</td></tr>
+                        <tr><td>Lecture 8</td><td>Low Dimensional Magnetism</td></tr>
+                        <tr><td>Lecture 9</td><td>Electronic Transport in Magnetic Materials</td></tr>
+                        <tr><td>Lecture 10</td><td>Magnetic Recording</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

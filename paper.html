@@ -1,0 +1,2788 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal Papers | Intelligent Materials and Systems Laboratory | NTU</title>
+
+ <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --ntu-red: #c8102e;
+            --ntu-blue: #002b49;
+            --primary: #0f172a;
+            --accent: #2563eb;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --gradient-ntu: linear-gradient(135deg, #002b49 0%, #0f172a 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Top Header / Branding Bar */
+        .top-bar {
+            background: #001e34;
+            color: #cbd5e1;
+            padding: 0.5rem 2rem;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .top-bar a {
+            color: #94a3b8;
+            text-decoration: none;
+            margin-left: 1rem;
+            transition: color 0.2s;
+        }
+
+        .top-bar a:hover {
+            color: #ffffff;
+        }
+
+        /* Main Navigation Header */
+        header {
+            background: var(--gradient-ntu);
+            color: #ffffff;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        .nav-links li {
+            position: relative;
+        }
+
+        .nav-links a {
+            color: #cbd5e1;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.92rem;
+            padding: 0.5rem 0.8rem;
+            border-radius: 6px;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        /* Dropdown menu styling */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.2s ease;
+            list-style: none;
+            padding: 0.5rem 0;
+            z-index: 100;
+        }
+
+        .nav-links li:hover .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown a {
+            color: var(--text-dark);
+            padding: 0.6rem 1.2rem;
+            font-weight: 500;
+            font-size: 0.88rem;
+        }
+
+        .dropdown a:hover {
+            background: #f1f5f9;
+            color: var(--accent);
+        }
+
+        /* Hero Banner */
+        .hero {
+            background: var(--gradient-ntu);
+            color: white;
+            padding: 1rem 2rem;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 4px solid var(--ntu-red);
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.3fr 0.7fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
+        }
+
+        .hero p {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            line-height: 1.7;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            padding: 1.8rem;
+            border-radius: 16px;
+        }
+
+        .hero-card h3 {
+            color: #ffffff;
+            font-size: 1.15rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-card ul {
+            list-style: none;
+        }
+
+        .hero-card li {
+            color: #cbd5e1;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.6rem;
+        }
+
+        .hero-card li i {
+            color: var(--ntu-red);
+            margin-top: 0.2rem;
+        }
+
+.stat-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 1.25rem;
+        }
+
+        /* Main Container & Filter Section */
+        main {
+            flex: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+
+        .filter-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .filter-buttons {
+            display: flex;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-filter {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .btn-filter:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        .btn-filter.active {
+            background: var(--accent);
+            color: #ffffff;
+            border-color: var(--accent);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        /* Paper Cards */
+        .paper-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: all 0.2s ease;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .card-meta {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 0.6rem;
+        }
+
+        .paper-num {
+            font-weight: 700;
+            color: var(--accent);
+            font-size: 0.88rem;
+        }
+
+        .badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        .badge-revision { background: #fef3c7; color: #d97706; }
+        .badge-submitted { background: #f3e8ff; color: #7e22ce; }
+        .badge-accepted { background: #dcfce7; color: #15803d; }
+
+        .paper-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1.4;
+        }
+
+        .paper-authors {
+            color: var(--text-dark);
+            font-size: 0.95rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .paper-journal {
+            font-style: italic;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 0.8rem;
+        }
+
+        .btn-link {
+            font-size: 0.82rem;
+            font-weight: 600;
+            text-decoration: none;
+            padding: 0.4rem 0.9rem;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            color: var(--text-dark);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            transition: all 0.2s ease;
+        }
+
+        .btn-link:hover {
+            background: #f1f5f9;
+            border-color: #94a3b8;
+        }
+
+        .btn-pdf {
+            background: #eff6ff;
+            color: var(--accent);
+            border-color: #bfdbfe;
+        }
+
+        .btn-pdf:hover {
+            background: #dbeafe;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: #94a3b8;
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: #ffffff;
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            font-weight: 700;
+        }
+
+        .footer-col p, .footer-col ul {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            list-style: none;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-col a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            .hero-container, .footer-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+
+     <!-- Top Bar -->
+<div class="top-bar">
+    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+        <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+    </a>
+    <div class="top-bar-right">
+        <a href="https://www.ntu.edu.sg/spms" target="_blank">
+            <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+        </a>
+    </div>
+</div>
+
+<!-- Header & Navigation -->
+<header>
+    <nav>
+        <ul class="nav-links">
+            <li class="nav-logo-item">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="news.html">Group</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="lecture.html">Lecture Courses</a></li>
+                    <li><a href="laboratory.html">Laboratory Courses</a></li>
+                    <li><a href="internship.html">Industrial Internships</a></li>
+                    <li><a href="fyp.html">Final Year Projects</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="team.html">Current Group</a></li>
+                    <li><a href="graduated.html">Graduated Students</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="paper.html">Journal Papers</a></li>
+                    <li><a href="conferences.html">Conference Presentations</a></li>
+                    <li><a href="books.html">Book Chapters</a></li>
+                    <li><a href="property.html" style="color: var(--accent); font-weight: 700;">Intellectual Property</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="fund.html">Funding Firms</a></li>
+                    <li><a href="collaborations.html">Collaborations</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="opportunity.html">Opportunities</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>    <!-- Page Header Banner -->
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Journal Papers</h2>
+                <p>Peer-reviewed journal publications and preprints from our research on spintronics, magnetic materials, and neuromorphic memory architectures.</p>
+            </div>
+                    </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main>
+        <div class="container">
+            <div class="filter-section">
+                <div class="filter-title"><i class="fa-solid fa-filter" style="color: var(--ntu-red);"></i> Filter by Year:</div>
+                <div class="filter-buttons" id="filterContainer"></div>
+            </div>
+
+            <div id="papersContainer"></div>
+        </div>
+    </main>
+
+      <!-- Footer -->
+<footer>
+    <div class="footer-container">
+        <div class="footer-col">
+            <h4>Spintronics Device Research Group</h4>
+            <p>Intelligent Materials and Systems Laboratory<br>
+            Division of Physics and Applied Physics<br>
+            School of Physical and Mathematical Sciences<br>
+            Nanyang Technological University Singapore</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="topics.html">Research Topics</a></li>
+                <li><a href="equipment.html">Equipment & Facilities</a></li>
+                <li><a href="paper.html">Publications</a></li>
+                <li><a href="team.html">Research Group</a></li>
+                <li><a href="fund.html">Funding & Collaborators</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Location</h4>
+            <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
+            21 Nanyang Link<br>
+            School of Physical & Mathematical Sciences<br>
+            Nanyang Technological University<br>
+            Singapore 637371<br>
+            <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+            <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+            <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+        <div>Last updated: September 2026</div>
+    </div>
+</footer>
+
+    <script>
+       const PDF_BASE_URL = "https://spintronicdevicelab.synology.me/";
+	   const papersData = [
+            
+            {
+                id: 235,
+                year: "Preprints",
+                title: "Field-Free Orbital Torque Switching Enabled by Built-in Magnetic Asymmetry",
+                authors: "Qu Yang, Shu Hui Lee, Shi Lei Ding, Shan Shyan Kuan, Wen Siang Lew*",
+                journal: "",
+                badge: "SUBMITTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+                id: 234,
+                year: "Preprints",
+                title: "Orbital Magnon Transport Through a Thin Paramagnetic NiO layer",
+                authors: "Xuan Kai Wong, Shilei Ding, Bryan Wei Hao Cheng, Wen Siang Lew*",
+                journal: "",
+                badge: "SUBMITTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+                id: 233,
+                year: "Preprints",
+                title: "Orbital Hall Conductivity of Cu in [Pt/Co]6/Cu Heterostructures",
+                authors: "Shu Hui Lee, Tianli Jin, Calvin Ching Ian Ang, Qu Yang, Wen Siang Lew*",
+                journal: "",
+                badge: "SUBMITTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+                id: 232,
+                year: "Preprints",
+                title: "Nonlinear magnonic moiré lattice for frequency multiplication",
+                authors: "Bryan Wei Hao Cheng, Mengying Guo, Ze Chen, Dhiman Bhowmick, Xueyu Guo, Zhenyu Zhou, Wen Siang Lew*",
+                journal: "",
+                badge: "SUBMITTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+                id: 231,
+                year: "2026",
+                title: "Decoupling Volume and Magnetic Anisotropy for the Enhancement of Thermal Stability in CoFeB Multilayered Structures",
+                authors: "Funan Tan, Kangjian Cheng, Ze Chen, Bryan Cheng, Xuan Kai Wong, and Wen Siang Lew*",
+                journal: "Physica Status Solidi (RRL) Rapid Research Letters",
+                badge: "ACCEPTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+                id: 230,
+                year: "2026",
+                title: "Ion recombination correction in reference dosimetry for pencil beam scanned proton beams",
+                authors: "J.K. Gan, K.S. Lew, C.G.A. Chua, C.W.Y. Koh, K.H. Lee, M. Yagi, W.S. Lew, J. C. L. Lee, S.Y. Park, H.Q. Tan",
+                journal: "Medical Physics",
+                badge: "ACCEPTED",
+                doi: "",
+                pdf: ""
+            },
+            {
+				id: 229,
+                year: "2026",
+                title: "Mitigating Process-Induced Wafer Distortion for Enhanced Overlay and Thickness Uniformity",
+                authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
+                journal: "IEEE Transactions on Semiconductor Manufacturing",
+                doi: "",
+                pdf: "paper/2026/IEEE_2026.pdf"
+			},
+			{
+                id: 228,
+                year: "2026",
+                title: "Operando Thermal Behavior of 1T-1R Memristors and Its Implications on Online and Offline Learning",
+                authors: "Eng Kang Koh, Putu Andhita Dananjaya, Y. S. You, and Wen Siang Lew*",
+                journal: "Nanoscale",
+                doi: "10.1039/D5NR04850H",
+                pdf: "paper/2026/Nanoscale_2026.pdf"
+            },
+            {
+                id: 227,
+                year: "2026",
+                title: "A Scalable Perovskite Platform With Multi-State Photoresponsivity for In-Sensor Saliency Detection",
+                authors: "X.C. Xing, A. Tripathi, S.E. Ng, N. Yantara, Y. Gong, Q.J. Wu, Y.B. Tay, W.S. Lew, Y. Chai, A. Basu, N. Mathews",
+                journal: "Advanced Materials, 0:e73243 (2026)",
+                doi: "10.1002/adma.73243",
+                pdf: "paper/2026/Advanced Materials_2026.pdf"
+            },
+            {
+                id: 226,
+                year: "2026",
+                title: "Suppressing hexagonal defects in ex situ SiCoNi processing",
+                authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
+                journal: "IEEE Transactions on Semiconductor Manufacturing (2026)",
+                doi: "10.1109/TSM.2026.3666982",
+                pdf: "paper/2026/TSM1_2026.pdf"
+            },
+            {
+                id: 225,
+                year: "2026",
+                title: "Rapid characterisation of millimetre-tall vertically aligned carbon nanotube arrays: growth optimisation by tuning the catalyst film thickness",
+                authors: "X.H. Zhao, J.E. Stubbe, J.C.K. Ho, P.A. Dananjaya, W.S. Lew, P.H. Coquet, B.K. Tay",
+                journal: "Applied Surface Science, 722, 165504 (2026)",
+                doi: "10.1016/j.apsusc.2025.165504",
+                pdf: "paper/2026/AppliedSurScience_2026.pdf"
+            },
+            {
+                id: 224,
+                year: "2026",
+                title: "Determining optimal spot delivery pattern using log file Derived dose discrepancy factor in pencil beam scanning reference dosimetry",
+                authors: "Kah Seng Lew, James Kuan Huei Lee, Clifford Ghee Ann Chua, Calvin Wei Yang Koh, Jun Ken Gan, Andrew Wibawa, Zubin Master, Eric Pei Ping Pang, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
+                journal: "Physica Medica-European Journal of Medical Physics, 141, 105698 (2026)",
+                doi: "10.1016/j.ejmp.2025.105698",
+                pdf: "paper/2026/PhyMedica_2026.pdf"
+            },
+            {
+                id: 223,
+                year: "2026",
+                title: "Commissioning of the First LUNA3D Surface Guided Radiotherapy in a Full Rotating Gantry Proton Therapy System",
+                authors: "Kah Seng Lew, Calvin Wei Yang Koh, Kang Hao Lee, Clifford Ghee Ann Chua, Andrew Wibawa, Zubin Master, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
+                journal: "Physica Medica, 141, 105698 (2026)",
+                doi: "10.1016/j.ejmp.2025.105698",
+                pdf: "paper/2026/PhyMedica_2026.pdf"
+            },
+            {
+                id: 222,
+                year: "2025",
+                title: "Electric Field Modulation of Interlayer Coupling via Piezostrain in a Synthetic Antiferromagnet",
+                authors: "Yuichi Hisada, Sachio Komori, Keiichiro Imura, Chenyu Shen, Yoshihiro Gohda, Calvin Ching Ian Ang, Wen Siang Lew, and Tomoyasu Taniyama*",
+                journal: "Advanced Science, 13, e17798 (2025)",
+                doi: "10.1002/advs.202517798",
+                pdf: "paper/2025/AdvScience_2025.pdf"
+            },
+            {
+                id: 221,
+                year: "2025",
+                title: "Large enhancement of effective spin-orbit torque efficiency by optimizing the capping layer thickness in Ta/Pt/Co trilayer",
+                authors: "Zhan Xu, Shuo Wu, Runtian Li, Wenwen Liu, Er Liu, Leixiang Bian, Feng Xu, Jiaxuan Tang and Wen Siang Lew",
+                journal: "Journal of Physics: Condensed Matter, 37, 475801 (2025)",
+                doi: "10.1088/1361-648X/ae1d04",
+                pdf: "paper/2025/JPhysCondensMatter_2025.pdf"
+            },
+            {
+                id: 220,
+                year: "2025",
+                title: "Enhancement of Spin-Orbit Torque in Sputtered BiSb-based Perpendicular Magnetic Tunnel Junctions for Neuromorphic Computing Applications",
+                authors: "Shuo Wu, Gerard Lim, Funan Tan, Tianli Jin, Calvin Ang, Shu Hui Lee, Kangjian Cheng, and Wen Siang Lew*",
+                journal: "Applied Physics Letters, 127, 132407 (2025)",
+                doi: "10.1063/5.0275455",
+                pdf: "paper/2025/APL3_2025.pdf"
+            },
+            {
+                id: 219,
+                year: "2025",
+                title: "Performance Evaluation of Deformable Image Registration Algorithms: Target Registration Error and its Correlation to Dice Similarity Coefficient",
+                authors: "Yun Ming Wong, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
+                journal: "Zeitschrift für Medizinische Physik (2025)",
+                doi: "10.1016/j.zemedi.2025.09.001",
+                pdf: "paper/2025/Zeitschrift für Medizinische Physik_2025.pdf"
+            },
+            {
+                id: 218,
+                year: "2025",
+                title: "A comprehensive characterization of the temporal characteristics of dose driven continuous scanning in proton therapy",
+                authors: "Clifford Ghee Ann Chua, Keith Furutani, Kang Hao Lee, Kah Seng Lew, Calvin Wei Yang Koh, Andrew Wibawa, Zubin Master, Wen Siang Lew, James Lee, Chris Beltran, Sung Yong Park, and Hong Qi Tan",
+                journal: "Physics in Medicine and Biology, 70, 145003 (2025)",
+                doi: "10.1088/1361-6560/ade92a",
+                pdf: "paper/2025/PhysMedBiol_2025.pdf"
+            },
+            {
+                id: 217,
+                year: "2025",
+                title: "Voltage-modulated magnetic properties and enhanced thermal endurance in Ta/Mo-based perpendicular magnetic tunnel junctions",
+                authors: "Shuo Wu, Gerard Lim, Funan Tan, Tianli Jin, Calvin Ang, Eng Kang Koh, Shuhui Lee, Kangjian Cheng, and Wen Siang Lew*",
+                journal: "Journal of Magnetism and Magnetic Materials, 629, 173293 (2025)",
+                doi: "10.1016/j.jmmm.2025.173293",
+                pdf: "paper/2025/JMMM_2025.pdf"
+            },
+            {
+                id: 216,
+                year: "2025",
+                title: "Spin-orbit torque driven two-terminal giant magnetoresistance memristive device for scalable in-memory computing",
+                authors: "Tianli Jin, Bo Zhang, Eng Kang Koh, Funan Tan, Calvin Xiu Xian Lee, Ze Chen, Gerard Lim, Ze Chen, Kaiming Cai, Jiangwei Cao*, Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 17, 36203 (2025)",
+                doi: "10.1021/acsami.5c07283",
+                pdf: "paper/2025/ACS AMI2_2025.pdf"
+            },
+            {
+                id: 215,
+                year: "2025",
+                title: "CMOS-Compatible Protonic Three-Terminal Memristor for Analog Synapse in Neuromorphic Computing",
+                authors: "Lingli Liu, Putu Andhita Dananjaya, Eng Kang Koh, Funan Tan, Gerard Joseph Lim, Calvin Xiu Xian Lee, Jin-Lin Yang, Wen Siang Lew*",
+                journal: "Small Methods, 2500445 (2025)",
+                doi: "10.1002/smtd.202500445",
+                pdf: "paper/2025/Small Methods_2025.pdf"
+            },
+            {
+                id: 214,
+                year: "2025",
+                title: "Generation of High and Bidirectional Out-of-Plane Spin-Orbit Torque through Vertical Magnetization Gradient",
+                authors: "Tianli Jin, Yuliang Zhu, Shaomin Li, Bo Zhang, Funan Tan, Gerard Lim, Jiangwei Cao, Kaiming Cai, Wen Siang Lew*",
+                journal: "Applied Physics Letters, 126, 132401 (2025)",
+                doi: "10.1063/5.0251658",
+                pdf: "paper/2025/APL1_2025.pdf"
+            },
+            {
+                id: 213,
+                year: "2025",
+                title: "Voltage-Controlled Half Adder Via Magnonic Inverse Design",
+                authors: "Ze Chen, Gerard Lim, Calvin Ang, Tianli Jin, Funan Tan, Bryan Cheng, and Wen Siang Lew*",
+                journal: "Applied Physics Letters, 126, 132406 (2025)",
+                doi: "10.1063/5.0256599",
+                pdf: "paper/2025/APL2_2025.pdf"
+            },
+            {
+                id: 212,
+                year: "2025",
+                title: "Complementary interactions of orbital momentum and topological spin states in ferromagnet/Cu/Bi0.85Sb0.15 structures",
+                authors: "Shu Hui Lee, Calvin Ching Ian Ang, Han Yin Poh, Gerard Joseph Lim, Tianli Jin, Wanbing Yi, and Wen Siang Lew*",
+                journal: "Physical Review Applied, 23, 054003 (2025)",
+                doi: "10.1103/PhysRevApplied.23.054003",
+                pdf: "paper/2025/PR Applied_2025.pdf"
+            },
+            {
+                id: 210,
+                year: "2025",
+                title: "Enhanced Silicon Crystallization on Dielectric Materials at Reduced Temperature",
+                authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
+                journal: "IEEE Transactions on Semiconductor Manufacturing (2025)",
+                doi: "10.1109/TSM.2025.3539456",
+                pdf: "paper/2025/IEEE_2025.pdf"
+            },
+            {
+                id: 210,
+                year: "2025",
+                title: "Continuous-Wave Pumped Self-Assembled Colloidal Topological Lasers",
+                authors: "R. Duan, Q. Zhang, Y. T. Thung, X.H. Zhou, Tingting Yin, Y.T. Ao, Lian Xiao, Z.T. Zhang, Calvin X. X. Lee, T.H. Ren, H. V. Demir, W. S. Lew, Baile Zhang, H.D. Sun",
+                journal: "Advanced Materials, 2416635 (2025)",
+                doi: "10.1002/adma.202416635",
+                pdf: "paper/2025/Adv Maters_2025.pdf"
+            },
+            {
+                id: 209,
+                year: "2025",
+                title: "Highly rechargeable aqueous Sn-metal-based hybrid-ion batteries",
+                authors: "Tao Xiao, Lingli Liu, Huan Liu, Ting Li, Daqian Cai, W. S. Lew, Yongqi Zhang, Haoming Bao, Jin-Lin Yang, Hong Jin Fan",
+                journal: "Joule, 9, 101820 (2025)",
+                doi: "10.1016/j.joule.2025.101820",
+                pdf: "paper/2025/Joule_2025.pdf"
+            },
+            {
+                id: 208,
+                year: "2025",
+                title: "Polydopamine-Assisted Electroless Deposition of Strongly Adhesive NiFe Films for Flexible Spintronics",
+                authors: "A. Ramesh, X.Y. Chen, I. Seetoh, G.Y. Lim, W.X. Tan, V. Thirunavukkarasu, T.L. Jin, W.S. Lew, C.Q. Lai",
+                journal: "ACS Applied Materials & Interfaces, 17, 12805 (2025)",
+                doi: "10.1021/acsami.4c19118",
+                pdf: "paper/2025/ACS AMI_2025.pdf"
+            },
+            {
+                id: 207,
+                year: "2025",
+                title: "Enhanced Threshold Switching and Oscillatory Behaviour in Ag-based Diffusive Memristors via Nanoporous Cations Limiter",
+                authors: "Calvin Lee, Putu Andhita Dananjaya, Funan Tan, Eng Kang Koh, Lingli Liu, Kangjian Cheng, Wanbing Yi, Wen Siang Lew*",
+                journal: "ACS Applied Electronic Materials, 7, 1415 (2025)",
+                doi: "10.1021/acsaelm.4c01900",
+                pdf: "paper/2025/ACS AEM_2025.pdf"
+            },
+            {
+                id: 206,
+                year: "2024",
+                title: "Leveraging Tunability of Localized-Interfacial Memristors for Efficient Handling of Complex Neural Networks",
+                authors: "Eng Kang Koh, Putu Andhita Dananjaya, Lingli Liu, Calvin Xiu Xian Lee, G. J. Lim, Y. S. You, and Wen Siang Lew*",
+                journal: "ACS Nano, 18, 29602 (2024)",
+                doi: "10.1021/acsnano.4c07454",
+                pdf: "paper/2024/ACS Nano_2024.pdf"
+            },
+            {
+                id: 205,
+                year: "2024",
+                title: "Investigation of Spin-Pumping and Transport in the Ni80Fe20/Pt/Co Asymmetric Trilayeure",
+                authors: "Shilpa Samdani, Yaqi Rong, Birte Coester, Amit Kumar Shukla, Wen Siang Lew, Yumeng Yang, Rajdeep Singh Rawat",
+                journal: "Physical Review B, 110, 134440 (2024)",
+                doi: "10.1103/PhysRevB.110.134440",
+                pdf: "paper/2024/PRB_2024.pdf"
+            },
+            {
+                id: 204,
+                year: "2024",
+                title: "Bridging academia and industry for the future of spintronics",
+                authors: "Gerard Lim, Wen Siang Lew*",
+                journal: "Nature Review Electrical Engineering, 1, 692 (2024)",
+                doi: "10.1038/s44287-024-00105-x",
+                pdf: "paper/2024/Nature Rev ElecEng 2024.pdf"
+            },
+            {
+                id: 203,
+                year: "2024",
+                title: "Exploiting spatial ionic dynamics in solid-state organic electrochemical transistors for multi-tactile sensing and processing",
+                authors: "Kunqi Hou, Shuai Chen, Rohit Abraham John, Qiang He, Zhongliang Zhou, Nripan Mathews, Wen Siang Lew, and Wei Lin Leong",
+                journal: "Advanced Science, 2405902 (2024)",
+                doi: "10.1002/advs.202405902",
+                pdf: "paper/2024/Advanced Science_2024.pdf"
+            },
+            {
+                id: 202,
+                year: "2024",
+                title: "Machine Learning Prediction of Dice Similarity Coefficient for Validation of Deformable Image Registration",
+                authors: "Yun Ming Wong, Ping Lin Yeap, Ashley Li Kuan Ong, Jeffrey Kit Loong Tuan, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
+                journal: "Intelligence-Based Medicine, 10, 100163 (2024)",
+                doi: "10.1016/j.ibmed.2024.100163",
+                pdf: "paper/2024/IBM_2024.pdf"
+            },
+            {
+                id: 201,
+                year: "2024",
+                title: "Electric field control of spin-orbit torque in annealed Ta/CoFeB/HfOx heterostructures via interfacial oxidation modulation",
+                authors: "S. Wu, T.L. Jin, C. C. I. Ang, G. J. Lim, Bryan C.W. Hao, Z. Chen, and W. S. Lew*",
+                journal: "Nanotechnology, 35, 365205 (2024)",
+                doi: "10.1088/1361-6528/ad5691",
+                pdf: "paper/2024/Nanotech1_2024.pdf"
+            },
+            {
+                id: 200,
+                year: "2024",
+                title: "Granular magnetization switching in Pt/Co/Ti structure with HfOx insertion for in-memory computing applications",
+                authors: "Tianli Jin, Bo Zhang, Funan Tan, Gerard Lim, Ze Chen, Jiangwei Cao*, Wen Siang Lew*",
+                journal: "Nano Letters, 24, 5521 (2024)",
+                doi: "10.1021/acs.nanolett.4c00662",
+                pdf: "paper/2024/NanoLetters_2024.pdf"
+            },
+            {
+                id: 199,
+                year: "2024",
+                title: "Deformable Anthropomorphic Pelvis Phantom for Dose Accumulation Verification",
+                authors: "Yun Ming Wong, Calvin Wei Yang Koh, Kah Seng Lew, Clifford Ghee Ann Chua, Ping Lin Yeap, Ee Teng Zhang, Ashley Li Kuan Ong, Jeffrey Kit Loong Tuan, Bing Feng Ng, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
+                journal: "Physics in Medicine and Biology, 69, 12NT01 (2024)",
+                doi: "10.1088/1361-6560/ad52e4",
+                pdf: "paper/2024/Phys_Med_Biol_2024.pdf"
+            },
+            {
+                id: 198,
+                year: "2024",
+                title: "NIR and Magnetism Dual-Response Multi-core Magnetic Vortex Nanoflowers for Boosting Magneto-photothermal Cancer Therapy",
+                authors: "Kaiming Shen, Li Xian Li, Funan Tan, Tianli Jin, Shuo Wu, Zongguo Xue, Mun Yin Chee, Yunfei Yan*, Wen Siang Lew*",
+                journal: "Nanoscale, 16, 10428 (2024)",
+                doi: "10.1039/d4nr00104d",
+                pdf: "paper/2024/Nanscale1_2024.pdf"
+            },
+            {
+                id: 197,
+                year: "2024",
+                title: "Spin-based magnetic random-access memory for high-performance computing",
+                authors: "Kaiming Cai, Tianli Jin, Wen Siang Lew*",
+                journal: "National Science Review, 11, nwad272 (2024)",
+                doi: "10.1093/nsr/nwad272",
+                pdf: "paper/2024/NatSciRev_2024.pdf"
+            },
+            {
+                id: 196,
+                year: "2024",
+                title: "A 1Mb RRAM Macro With 9.8ns Read Access Time Utilizing Dynamic Reference Voltage for Reliable Sensing Operation",
+                authors: "Junjie Mu, Lu Lu, Ju Eon Kim, Byungkwon An, Vishal Sharma, Arya Jagath Lekshmi, Putu Andhita Dananjaya, Weng Hong Lai, Wen Siang Lew, Tony Tae-Hyoung Kim",
+                journal: "IEEE Transactions on Circuits and Systems II, 71, 2564 (2024)",
+                doi: "10.1109/TCSII.2024.3379373",
+                pdf: "paper/2024/IEEE_2024.pdf"
+            },
+            {
+                id: 195,
+                year: "2024",
+                title: "Control-etched Ti3C2Tx MXene Nanosheets for Low Voltage Operating Flexible Memristor for Efficient Neuromorphic Computation",
+                authors: "Jeny Gosai, Mansi Patel, Lingli Liu, Aziz Lokhandwala, Parth Thakkar, Mun Yin Chee, Muskan Jain, Wen Siang Lew, Nitin Chaudhari, Ankur Solanki",
+                journal: "ACS Applied Materials & Interfaces, 16, 17821 (2024)",
+                doi: "10.1021/acsami.4c01364",
+                pdf: "paper/2024/AMI_1_2024.pdf"
+            },
+            {
+                id: 194,
+                year: "2024",
+                title: "High-Performance One-Dimensional Halide Perovskite Crossbar Memristors and Synapses for Neuromorphic Computing",
+                authors: "Sujaya Kumar Vishwanath, Benny Febriansyah, Sien Ng, Tisita Das, Jyotibdha Acharya, Rohit Abraham John, Divyam Sharma, Putu Andhita Danajaya, Metikoti Jagadeeswararo, Naveen Tiwari, Mohit Ramesh Chandra Kulkarni, Wen Siang Lew, Sudip Chakraborty, Arindam Basu, Nripan Mathews",
+                journal: "Materials Horizons, 11, 2643 (2024)",
+                doi: "10.1039/D3MH02055J",
+                pdf: "paper/2024/MaterHor_2024.pdf"
+            },
+            {
+                id: 193,
+                year: "2024",
+                title: "Unravelling the Factors Influencing Halide Perovskite Based Switchable Photovoltaics",
+                authors: "Xuechao Xing, Si En Ng, Yeow Boon Tay, Natalia Yantara, Wen Siang Lew, Nripan Mathews",
+                journal: "Advanced Functional Materials, 2315982 (2024)",
+                doi: "10.1002/adfm.202315982",
+                pdf: "paper/2024/AFM_2024.pdf"
+            },
+            {
+                id: 192,
+                year: "2024",
+                title: "Insights into Synaptic Functionality and Resistive Switching in Lead Iodide Flexible Memristor Devices",
+                authors: "Muskan Jain, Mayur Jagdishbhai Patel, Lingli Liu, Jeny Gosai, Manish Khemnani, Himangshu Gogoi, Mun Yin Chee, Antonio Guerrero, Wen Siang Lew, Ankur Solanki",
+                journal: "Nanoscale Horizons, 9, 438 (2024)",
+                doi: "10.1039/D3NH00505D",
+                pdf: "paper/2024/NanaHor_2024.pdf"
+            },
+            {
+                id: 191,
+                year: "2024",
+                title: "Current-induced Domain wall NOT gate logic operation via chirality flipping by exploiting Walker breakdown",
+                authors: "Rohan Jaiswal, Vemuru Haragopal, Vijayanandhini Kannan, Chandrasekhar Murapaka, and Wen Siang Lew",
+                journal: "Journal of Superconductivity and Novel Magnetism, 37, 565 (2024)",
+                doi: "10.1007/s10948-023-06686-2",
+                pdf: "paper/2024/JSuperconMag_2024.pdf"
+            },
+            {
+                id: 190,
+                year: "2024",
+                title: "Effective spin Hall efficiency contributed by the extrinsic spin Hall effect in Pt1-xTax/CoFeB structures",
+                authors: "Z. Xu, J.X. Tang, S.C. Hu, E. Liu, F. Xu, L.X. Bian and W. S. Lew*",
+                journal: "Journal of Physics D: Applied Physics, 57, 145001 (2024)",
+                doi: "10.1088/1361-6463/ad1a66",
+                pdf: "paper/2024/JPhyD_2024.pdf"
+            },
+            {
+                id: 189,
+                year: "2024",
+                title: "Unraveling the origins of the coexisting localized-interfacial mechanism in oxide-based memristors in CMOS-integrated synaptic device implementations",
+                authors: "Eng Kang Koh, Putu Andhita Dananjaya, Han Yin Poh, Lingli Liu, Calvin Xiu Xian Lee, Jia Rui Thong, and Wen Siang Lew*",
+                journal: "Nanoscale Horizons, 9, 438 (2024)",
+                doi: "10.1039/D3NH00554B",
+                pdf: "paper/2024/NSHorizon2_2024.pdf"
+            },
+            {
+                id: 188,
+                year: "2024",
+                title: "Effects of modern aesthetic dental fillings on proton therapy",
+                authors: "Yun Ming Wong, Calvin Wei Yang Koh, Kah Seng Lew, Clifford Ghee Ann Chua, Ping Lin Yeap, Andrew Wibawa, Zubin Master, Sharon Shuxian Poh, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
+                journal: "Physics and Imaging in Radiation Oncology, 29, 100552 (2024)",
+                doi: "10.1016/j.phro.2024.100552",
+                pdf: "paper/2024/RadOnco_2024.pdf"
+            },
+            {
+                id: 187,
+                year: "2024",
+                title: "Electron push-pull effects induced performance promotion in covalent organic polymer thin films-based memristor for neuromorphic application",
+                authors: "Panke Zhou, Hong Yu, Mun Yin Chee, Tao Zeng, Tianli Jin, Hongling Yu, Shuo Wu, Wen Siang Lew, Xiong Chen",
+                journal: "Chinese Chemical Letters, 35, 109279 (2024)",
+                doi: "10.1016/j.cclet.2023.109279",
+                pdf: "paper/2024/CCL_2024.pdf"
+            },
+            {
+                id: 186,
+                year: "2023",
+                title: "Enhanced current-induced magnetization switching with antiferromagnetic coupled intereface at Co/Ho heterostructures",
+                authors: "S. M. Li, H. Y. Poh, T. L. Jin, F. N. Tan, S. Wu, K. M. Shen, Y. F. Jiang and W. S. Lew*",
+                journal: "Applied Physics Letters, 123, 233502 (2023)",
+                doi: "10.1063/5.0174431",
+                pdf: "paper/2023/APL4_2023.pdf"
+            },
+            {
+                id: 185,
+                year: "2023",
+                title: "Hollow spherical Mn0.5Zn0.5Fe2O4 nanoparticles with magnetic vortex configuration for enhanced magnetic hyperthermia efficacy",
+                authors: "Kaiming Shen, Yunfei Yan, Funan Tan, Shuo Wu, Tianli Jin, Zongguo Xue, Mun Yin Chee, Li Xian Li, Wen Siang Lew",
+                journal: "Nanoscale, 15, 17946 (2023)",
+                doi: "10.1039/D3NR03655C",
+                pdf: "paper/2023/Nanoscale2_2023.pdf"
+            },
+            {
+                id: 184,
+                year: "2023",
+                title: "Colloidal Nanoplatelets‐Based Soft Matter Technology for Photonic Interconnected Networks: Low‐Threshold Lasing and Polygonal Self‐Coupling Microlasers",
+                authors: "R. Duan, Y.T. Thung, Z.T. Zhang, E. G. Durmusoglu, Y.C. He, L. Xiao, C. Lee, W.S. Lew, L. Zhang, H.Y. Li, J Yang, H. V. Demir, H.D. Sun",
+                journal: "Laser & Photonics Reviews, 2300745 (2023)",
+                doi: "10.1002/lpor.202300745",
+                pdf: "paper/2023/LasPho Rev_2 2023.pdf"
+            },
+            {
+                id: 183,
+                year: "2023",
+                title: "A bi-functional three-terminal memristor applicable as an artificial synapse and neuron",
+                authors: "Lingli Liu, Putu Andhita Dananjaya, Calvin Ching Ian Ang, Eng Kang Koh, Gerard Joseph Lim, Han Yin Poh, Mun Yin Chee, Calvin Xiu Xian Lee, Wen Siang Lew*",
+                journal: "Nanoscale, 15, 17076 (2023)",
+                doi: "10.1039/D3NR02780E",
+                pdf: "paper/2023/Nanoscale1_2023.pdf"
+            },
+            {
+                id: 182,
+                year: "2023",
+                title: "Strain-induced Degradation and Recovery of Flexible NbOx-based Threshold Switching Device",
+                authors: "Jia Min Ang, Putu Andhita Dananjaya, Calvin Ching Ian Ang, Gerard Joseph Lim, Wen Siang Lew*",
+                journal: "Scientific Reports, 13, 16000 (2023)",
+                doi: "10.1038/s41598-023-43192-w",
+                pdf: "paper/2023/SREP 2023.pdf"
+            },
+            {
+                id: 181,
+                year: "2023",
+                title: "Photo-Electric Multilevel Memory Device Based on Covalent Organic Polymer Film with Keto-Enol Tautomerism for Harsh Environments Applications",
+                authors: "Zhou Panke, Hongling Yu, Weiguo Huang, Mun Yin Chee, Zeng Taod, Gerard Joseph Lim, Wen Siang Lew, Xiong Chen",
+                journal: "Advanced Functional Materials, 2306593 (2023)",
+                doi: "10.1002/adfm.202306593",
+                pdf: "paper/2023/AFM_2023.pdf"
+            },
+            {
+                id: 180,
+                year: "2023",
+                title: "Influence of Co-Cu Electrode Composition on the Galvanic-induced Resistive Switching Behaviour of Ta2O5-based CBRAM",
+                authors: "Calvin Lee, Putu Andhita Dananjaya, Mun Yin Chee, Han Yin Poh, Funan Tan, Jia Rui Thong, Lingli Liu, Gerard Joseph Lim, Yuanmin Du, Juan Boon Tan, Wen Siang Lew*",
+                journal: "Applied Physics Letters, 123, 133504 (2023)",
+                doi: "10.1063/5.0160380",
+                pdf: "paper/2023/APL3_2023.pdf"
+            },
+            {
+                id: 179,
+                year: "2023",
+                title: "Multiwalled Carbon Nanotubes Decorated with Mn0.5Zn0.5Fe2O4 Nanoparticles for Magneto-Photothermal Cancer Therapy",
+                authors: "Kaiming Shen, Yunfei Yan, Zongguo Xue, Jingxiang You, Lixian Li*, Wen Siang Lew*",
+                journal: "ACS Applied Nano Materials, 6 (14), 13330 (2023)",
+                doi: "10.1021/acsanm.3c01929",
+                pdf: "paper/2023/ACS ANM_2023.pdf"
+            },
+            {
+                id: 178,
+                year: "2023",
+                title: "The influence of Ti ultrathin insertion layer on the effective magnetic damping and effective spin Hall angle",
+                authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, B. Coester, F. Xu, L. Bian and W. S. Lew*",
+                journal: "Applied Physics Letters, 122, 242405 (2023)",
+                doi: "10.1063/5.0146095",
+                pdf: "paper/2023/APL2_2023.pdf"
+            },
+            {
+                id: 177,
+                year: "2023",
+                title: "The impact of oxygen vacancy defect density on the nonlinearity and short-term plasticity of TiO2-based exponential selector",
+                authors: "Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Calvin Lee, Lingli Liu, Wen Siang Lew*",
+                journal: "Nanotechnology, 34, 365201 (2023)",
+                doi: "10.1088/1361-6528/acda40",
+                pdf: "paper/2023/Nanotechnology_2023.pdf"
+            },
+            {
+                id: 176,
+                year: "2023",
+                title: "Investigation of spin-orbit torque performance with W/Cu-multilayers as spin current source",
+                authors: "Birte Coester, Gerard Lim, Funan Tan, Han Yin Poh, and Wen Siang Lew*",
+                journal: "Journal of Applied Physics, 133, 223904 (2023)",
+                doi: "10.1063/5.0139212",
+                pdf: "paper/2023/JAP_2023.pdf"
+            },
+            {
+                id: 175,
+                year: "2023",
+                title: "Protons-assisted Redox-based Three-terminal RRAM for Synaptic Device Applications",
+                authors: "Lingli Liu, Putu Andhita Dananjaya, Chee Mun Yin, Gerard Joseph Lim, Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 15, 29287 (2023)",
+                doi: "10.1021/acsami.3c03974",
+                pdf: "paper/2023/ACS AMI_2023.pdf"
+            },
+            {
+                id: 174,
+                year: "2023",
+                title: "Dielectric-Metallic Double Gradient Composition Design for Stable Zn Metal Anodes",
+                authors: "Jin-Lin Yang, Lingli Liu, Zehua Pu, Pengbo Chen, Jia Li, Putu Andhita Dananjaya, Eng Kang Koh, Wen Siang Lew, Kang Liu, Peihua Yang, Hong Jin Fan",
+                journal: "ACS Energy Letters, 8, 2042 (2023)",
+                doi: "10.1021/acsenergylett.3c00367",
+                pdf: "paper/2023/ACS Energy_2023.pdf"
+            },
+            {
+                id: 173,
+                year: "2023",
+                title: "High performance, flexible and thermally stable all-solid-state organic electrochemical transistor based on thermoplastic polyurethane ion-gel",
+                authors: "Kunqi Hou, Shuai Chen, Akshay Moudgil, Xihu Wu, Teck Lip Dexter Tam, Wen Siang Lew, and Wei Lin, Leong",
+                journal: "ACS Applied Electronic Materials, 5, 2215 (2023)",
+                doi: "10.1021/acsaelm.3c00091",
+                pdf: "paper/2023/ACS AEM_2023.pdf"
+            },
+            {
+                id: 172,
+                year: "2023",
+                title: "Switching the memory behavior from binary to ternary by triggering the S62- relaxation in polysulfide-bearing Zinc-organic complex molecular memoriest",
+                authors: "Zhou Panke, Xiaoli Lin, Mun Yin Chee, Wen Siang Lew, Tao Zeng, Hao-Hong Li, Xiong Chen, Zhi-Rong Chen, Huidong Zheng",
+                journal: "Materials Horizons (2023)",
+                doi: "10.1039/D3MH00037K",
+                pdf: "paper/2023/Mater Hor_2023.pdf"
+            },
+            {
+                id: 171,
+                year: "2023",
+                title: "Enhancement of spin-orbit torque in Pt/Co/HfOx heterostructures with voltage-controlled oxygen ion migration",
+                authors: "S. Wu, T.L. Jin, F. N. Tan, C. C. I. Ang, H. Y. Poh, G. J. Lim, and W. S. Lew*",
+                journal: "Applied Physics Letters, 122, 122403 (2023)",
+                doi: "10.1063/5.0139443",
+                pdf: "paper/2023/APL1_2023.pdf"
+            },
+            {
+                id: 170,
+                year: "2023",
+                title: "Crystallinity control of topological insulator BiSb(012) via interfacial engineering for spin orbit torque enhancement",
+                authors: "H. Y. Poh, C. C. I. Ang, G. J. Lim, T.L. Jin, S.H. Lee, E. K. Koh, F. Poh, and W. S. Lew*",
+                journal: "Physical Review Applied, 19, 034012 (2023)",
+                doi: "10.1103/PhysRevApplied.19.034012",
+                pdf: "paper/2023/PRA2_2023.pdf"
+            },
+            {
+                id: 169,
+                year: "2023",
+                title: "Ultrahigh Quality Microlasers from Controlled Self-Assembly of Ultrathin Colloidal Semiconductor Quantum Wells",
+                authors: "Y.T. Thung, R. Duan, E. G. Durmusoglu, Y.C. He, L. Xiao, C. Lee, W.S. Lew, L. Zhang, H. V. Demir, H.D. Sun",
+                journal: "Lasers & Photonics Review, 2200849 (2023)",
+                doi: "10.1002/lpor.202200849",
+                pdf: "paper/2023/LasPho Rev 2023.pdf"
+            },
+            {
+                id: 168,
+                year: "2023",
+                title: "Multiple nonvolatile skyrmion states in nanostructured synthetic",
+                authors: "Mangyuan Ma, Wen Siang Lew*, and Fusheng Ma*",
+                journal: "Physical Review Applied, 19, 024029 (2023)",
+                doi: "10.1103/PhysRevApplied.19.024029",
+                pdf: "paper/2023/PRA1_2023.pdf"
+            },
+            {
+                id: 167,
+                year: "2023",
+                title: "Enhancement of Temperature-Modulated NbO2-Based Relaxation Oscillator via Interfacial and Bulk Treatment",
+                authors: "Jia Min Ang, Putu Andhita Dananjaya, Samuel Chen Wai Chow, Gerard Joseph Lim, Chim Seng Seet, Wen Siang Lew*",
+                journal: "Nanotechnology, 34, 185202 (2023)",
+                doi: "10.1088/1361-6528/acb778",
+                pdf: "paper/2023/Nanotechnology_2023.pdf"
+            },
+            {
+                id: 166,
+                year: "2022",
+                title: "Impact of interfacial engineering on MgO-based resistive switching devices for low-power applications",
+                authors: "Samuel Chen Wai Chow, Putu Andhita Dananjaya, Jia Min Ang, Desmond Jia Jun Loy, Jia Rui Thong, Siew Wei Hoo, Eng Huat Toh, Wen Siang Lew*",
+                journal: "Applied Surface Science, 608, 155233 (2023)",
+                doi: "10.1016/j.apsusc.2022.155233",
+                pdf: "paper/2022/ASS_2022.pdf"
+            },
+            {
+                id: 165,
+                year: "2022",
+                title: "Efficient spin-orbit torque magnetization switching by reducing domain nucleation energy",
+                authors: "Tianli Jin, Calvin Ang, Xuan Wang, Wen Siang Lew*, S. N. Piramanayagam",
+                journal: "Journal of Magnetism and Magnetic Materials, 562, 169759 (2022)",
+                doi: "10.1016/j.jmmm.2022.169759",
+                pdf: "paper/2022/JMMM_2022.pdf"
+            },
+            {
+                id: 164,
+                year: "2022",
+                title: "Frequency-dependent synapse weight tuning in 1S1R with short-term plasticity TiOx-based exponential selector",
+                authors: "Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 14, 35959 (2022)",
+                doi: "10.1021/acsami.2c11016",
+                pdf: "paper/2022/ACS-AMI_2_2022.pdf"
+            },
+            {
+                id: 163,
+                year: "2022",
+                title: "Continuous film characterisation of Spin Orbit Torque using Four Probe Measurement",
+                authors: "H. Y. Poh, C. C. I. Ang, T.L. Jin, F.N. Tan, G. J. Lim, and W. S. Lew*",
+                journal: "Applied Physics Letters, 121, 012405 (2022)",
+                doi: "10.1063/5.0092471",
+                pdf: "paper/2022/APL 2022.pdf"
+            },
+            {
+                id: 162,
+                year: "2022",
+                title: "Rapid Multi-Property Assessment of Compositionally Modulated Fe-Co-Ni Thin Film Material Libraries",
+                authors: "P. Padhy Shakti, Tsakadze Zviad, V. Chaudhary, G. J. Lim, X. Tan, Wen Siang Lew, Raju V. Ramanujan",
+                journal: "Results in Materials, 14, 100283 (2022)",
+                doi: "10.1016/j.rinma.2022.100283",
+                pdf: "paper/2022/ResInMaters_2022.pdf"
+            },
+            {
+                id: 161,
+                year: "2022",
+                title: "Nano-engineering the evolution of skyrmion crystal in synthetic antiferromagnets",
+                authors: "Mangyuan Ma, Ke Huang, Yong Li, Sihua Li, Qiyuan Feng, Calvin Ching Ian Ang, Tianli Jin, Yalin Lu, Qingyou Lu, Wen Siang Lew*, Fusheng Ma, Xiao Wang",
+                journal: "Applied Physics Reviews, 9, 021404 (2022)",
+                doi: "10.1063/5.0081455",
+                pdf: "paper/2022/APRev_2022.pdf"
+            },
+            {
+                id: 160,
+                year: "2022",
+                title: "Magnetic Soft Millirobots 3D-Printed by Circulating Vat Photopolymerization to Manipulate Droplets Containing Hazardous Agents for In Vitro Diagnostic",
+                authors: "Aiwu Zhou, Changyu Xu, Pojchanun Kanitthamniyom, Chelsea Shan Xian Ng, Gerard Joseph Lim, Wen Siang Lew, Shawn Vasoo, Guo Zhan Lum, Yi Zhang",
+                journal: "Advanced Materials, 2200061 (2022)",
+                doi: "10.1002/adma.202200061",
+                pdf: "paper/2022/Adv Mater_2022.pdf"
+            },
+            {
+                id: 159,
+                year: "2022",
+                title: "Spin reflection induced field-free magnetization switching in perpendicularly magnetized MgO/Pt/Co heterostructures",
+                authors: "Tianli Jin, Gerard Joseph Lim, Han Yin Poh, Shuo Wu, Funan Tan, and Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 14, 9781 (2022)",
+                doi: "10.1021/acsami.1c22061",
+                pdf: "paper/2022/ACS-AMI_2022.pdf"
+            },
+            {
+                id: 158,
+                year: "2021",
+                title: "Direct spin accumulation quantiﬁcation in ferromagnetic heterostructures using DC bias harmonic Hall measurement",
+                authors: "H. Y. Poh, C. C. I. Ang, W. L. Gan, G. J. Lim, and W. S. Lew*",
+                journal: "Physical Review B, 104, 224416 (2021)",
+                doi: "10.1103/PhysRevB.104.224416",
+                pdf: "paper/2021/PRB2_2021.pdf"
+            },
+            {
+                id: 157,
+                year: "2021",
+                title: "Magnetically responsive co-nanoinitiators for cross-linking adhesives and mechanical properties enhancement",
+                authors: "Haruethai Kongcharoen, Birtie Coester, Izzat Aziz, Fei Yu, Wei Church Poh, Matthew Wei Ming Tan, Jing-Hao Ciou, Chan Weijie Benjamin, Wen Siang Lew, Pooi See Lee",
+                journal: "ACS Applied Materials & Interfaces, 13, 57851 (2021)",
+                doi: "10.1021/acsami.1c08040",
+                pdf: "paper/2021/ACS_AMI_2021.pdf"
+            },
+            {
+                id: 156,
+                year: "2021",
+                title: "Quantifying systematic RBE-weighted dose uncertainty arising from multiple variable RBE models in Organ-at-Risk",
+                authors: "Wei Yang Calvin Koh, Hong Qi Tan, Yan Yee Ng, Yen Hwa Lin, Khong Wei Ang, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park",
+                journal: "Advances in Radiation Oncology, 7, 100844 (2021)",
+                doi: "10.1016/j.adro.2021.100844",
+                pdf: "paper/2021/Adv in Onco_2021.pdf"
+            },
+            {
+                id: 155,
+                year: "2021",
+                title: "Operando direct observation of filament formation in resistive switching devices enabled by a topological transformation molecule",
+                authors: "Kunqi Hou, Shuai Chen, Cheng Zhou, Linh Lan Nguyen, Putu Andhita Dananjaya, Martial Duchamp, Guillermo Bazan, Wen Siang Lew*, and Wei Lin Leong*",
+                journal: "Nano Letters, 21, 9262 (2021)",
+                doi: "10.1021/acs.nanolett.1c03180",
+                pdf: "paper/2021/NanoLetters_2021.pdf"
+            },
+            {
+                id: 154,
+                year: "2021",
+                title: "Reversible strain-induced spin-orbit torque on flexible substrate by mild annealing",
+                authors: "Grayson Dao Hwee Wong, Weiliang Gan, Calvin Ching Ian Ang, Wai Cheung Law, Zhan Xu, Feng Xu, Chim Seng Seet, Wen Siang Lew*",
+                journal: "Applied Physics Letters, 119, 042402 (2021)",
+                doi: "10.1063/5.0056995",
+                pdf: "paper/2021/APL2_2021.pdf"
+            },
+            {
+                id: 153,
+                year: "2021",
+                title: "Large damping-like spin-orbit torque and improved device performance utilizing mixed-phase Ta",
+                authors: "Akash Kumar, Raghav Sharma, Kacho Imtiyaz Ali Khan, Chandrasekhar Murapaka, Gerard Lim, Wen Siang Lew, Sujeet Chaudhary, Pranaba Muduli",
+                journal: "ACS Applied Electronic Materials, 3, 3139 (2021)",
+                doi: "10.1021/acsaelm.1c00361",
+                pdf: "paper/2021/ACS_AEM_2021.pdf"
+            },
+            {
+                id: 152,
+                year: "2021",
+                title: "Strain-mediated spin-orbit torque enhancement in Pt/Co on flexible substrate",
+                authors: "Grayson Dao Hwee Wong, Zhan Xu, Weiliang Gan, Calvin Ching Ian Ang, Wai Cheung Law, Jiaxuan Tang, Wen Zhang, Ping Kwan Johnny Wong, Xiaojiang Yu, Andrew Thye Shen Wee, Chim Seng Seet, Wen Siang Lew*",
+                journal: "ACS Nano, 15, 8319 (2021)",
+                doi: "10.1021/acsnano.0c09404",
+                pdf: "paper/2021/ACS Nano_2021.pdf"
+            },
+            {
+                id: 151,
+                year: "2021",
+                title: "Temperature-modulated magnetic Skyrmion phases and transformations by first-order reversal curve analysis",
+                authors: "C.C.I. Ang, W.L. Gan, Grayson D.H. Wong, and W. S. Lew*",
+                journal: "Physical Review B, 103, 144409 (2021)",
+                doi: "10.1103/PhysRevB.103.144409",
+                pdf: "paper/2021/PRB1_2021.pdf"
+            },
+            {
+                id: 150,
+                year: "2021",
+                title: "Antiferromagnetic Skyrmion repulsion based artificial neuron device",
+                authors: "Namita Bindal, Calvin Ching Ian Ang, Wen Siang Lew, Brajesh Kumar Kaushik",
+                journal: "Nanotechnology, 32, 215204 (2021)",
+                doi: "10.1088/1361-6528/abe261",
+                pdf: "paper/2021/Nanotechnology_2021.pdf"
+            },
+            {
+                id: 149,
+                year: "2021",
+                title: "Large spin Hall angle enhanced by nitrogen incorporation in Pt films",
+                authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, W. L. Gan, F. Xu, and W. S. Lew*",
+                journal: "Applied Physics Letters, 118, 062406 (2021)",
+                doi: "10.1063/5.0035815",
+                pdf: "paper/2021/APL1_ 2021.pdf"
+            },
+            {
+                id: 148,
+                year: "2021",
+                title: "Enhanced spin Hall conductivity in tungsten-copper alloys",
+                authors: "B. Coester, G. D. H. Wong, Z. Xu, J. Tang, W. L. Gan, and W. S. Lew*",
+                journal: "Journal of Magnetism and Magnetic Materials, 523, 167545 (2021)",
+                doi: "10.1016/j.jmmm.2020.167545",
+                pdf: "paper/2020/JMMM 2020_2.pdf"
+            },
+            {
+                id: 147,
+                year: "2020",
+                title: "Electrical control of skyrmion density via skyrmion-stripe transformation",
+                authors: "C.C.I. Ang, W. L.Gan, and W. S. Lew*",
+                journal: "Physical Review Applied, 14, 054048 (2020)",
+                doi: "10.1103/PhysRevApplied.14.054048",
+                pdf: "paper/2020/PRA 2020.pdf"
+            },
+            {
+                id: 146,
+                year: "2020",
+                title: "Enhanced spin‒orbit torque efficiency in Pt/Co/Ho heterostructures via inserting Ho layer",
+                authors: "Tianli Jin, Wai Cheung Law, Durgesh Kumar, Feilong Luo, Qi Ying Wong, Gerard Lim, Xuan Wang, Wen Siang Lew, and S. Piramanayagam",
+                journal: "APL Materials, 8, 111111 (2020)",
+                doi: "10.1063/5.0029451",
+                pdf: "paper/2020/APL Mater 2020.pdf"
+            },
+            {
+                id: 145,
+                year: "2020",
+                title: "Oxygen Vacancy Density Dependence with Hopping Conduction Mechanism in Multi-Level Switching Behavior of HfO2-Based RRAM Devices",
+                authors: "D.J.J. Loy, P.A. Dananjaya, S. Chakrabarti, Kuan Hong Tan, Samuel Chow Chen Wai, Eng Huat Toh and Wen Siang Lew*",
+                journal: "ACS Applied Electronic Materials, 2, 3160 (2020)",
+                doi: "10.1021/acsaelm.0c00515",
+                pdf: "paper/2020/ACS AEM_2020.pdf"
+            },
+            {
+                id: 144,
+                year: "2020",
+                title: "Effect of Seed and Interlayer Pt on SOT in Co/Pt Multilayers",
+                authors: "G. J. Lim, W. L. Gan, and W. S. Lew*",
+                journal: "Journal of Physics D: Applied Physics, 53, 505002 (2020)",
+                doi: "10.1088/1361-6463/abacef",
+                pdf: "paper/2020/JPhyD_2020.pdf"
+            },
+            {
+                id: 143,
+                year: "2020",
+                title: "Standardizing Monte Carlo Simulation parameters for a reproducible linear energy transfer",
+                authors: "Calvin W.Y. Koh, H.Q. Tan, K.W. Ang, S.Y. Park, W.S. Lew, James C.L. Lee",
+                journal: "British Journal of Radiology, 93, 20200122 (2020)",
+                doi: "10.1259/bjr.20200122",
+                pdf: "paper/2020/Radialogy_2020.pdf"
+            },
+            {
+                id: 142,
+                year: "2020",
+                title: "Giant Spin Hall Effect in Tb Doped Cu Thin Films",
+                authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, W. L. Gan, F. Xu, and W. S. Lew*",
+                journal: "ACS Applied Materials and Interfaces, 12, 32898 (2020)",
+                doi: "10.1021/acsami.0c07441",
+                pdf: "paper/2020/ACS Applied_2020.pdf"
+            },
+            {
+                id: 141,
+                year: "2020",
+                title: "Enhancement of Zero-Field Skyrmion Density in [Pt/Co/Fe/Ir]2 Multilayers at Room Temperature by FORC",
+                authors: "Mangyuan Ma, Calvin Ang, Yong Li, Zizhao Pan, Weiliang Gan, Wen Siang Lew and Fusheng Ma*",
+                journal: "Journal of Applied Physics, 127, 223901 (2020)",
+                doi: "10.1063/5.0004432",
+                pdf: "paper/2020/JAP_2020.pdf"
+            },
+            {
+                id: 140,
+                year: "2020",
+                title: "Spin-Orbit Torque Driven Analog-Like Behaviour in Co/Pt Hall Cross Structures at Elevated Temperatures",
+                authors: "G. J. Lim, W. L. Gan, W. C. Law, C. Murapaka, and W. S. Lew*",
+                journal: "Journal of Magnetism and Magnetic Materials, 514, 167201 (2020)",
+                doi: "10.1016/j.jmmm.2020.167201",
+                pdf: "paper/2020/JMMM_2020.pdf"
+            },
+            {
+                id: 139,
+                year: "2020",
+                title: "Thermal behavior of spin-current generation in PtxCu1-x devices characterized through spin-torque ferromagnetic resonance",
+                authors: "G.D.H. Wong, W. C. Law, F.N. Tan, W. L. Gan, C. C. I. Ang, Z. Xu, C.S. Seet, and W. S. Lew*",
+                journal: "Scientific Reports, 10, 9631 (2020)",
+                doi: "10.1038/s41598-020-66762-8",
+                pdf: "paper/2020/SREP1_2020.pdf"
+            },
+            {
+                id: 138,
+                year: "2020",
+                title: "ZrN Based Flexible Resistive Switching Memory",
+                authors: "Dayanand Kumar, Umesh Chand, Wen Siang Lew, and Tseung-Yuen Tseng",
+                journal: "IEEE Transactions on Electron Devices, 41, 705 (2020)",
+                doi: "10.1109/LED.2020.2981529",
+                pdf: "paper/2020/IEEE_3_2020.pdf"
+            },
+            {
+                id: 137,
+                year: "2020",
+                title: "Exploring the Impact of Variability in Resistance Distributions of RRAM on the Prediction Accuracy of Deep Learning Neural Networks",
+                authors: "Nagaraj Lakshmana Prabhu, Desmond Loy Jia Jun, Putu Andhita Dananjaya, Wen Siang Lew, Eng Huat Toh, Nagarajan Raghavan",
+                journal: "Electronics, 9, 414 (2020)",
+                doi: "10.3390/electronics9030414",
+                pdf: "paper/2020/Electronics-2020.pdf"
+            },
+            {
+                id: 136,
+                year: "2020",
+                title: "A 72 µW Readout circuit in 65nm CMOS with Successive Approximation based Thresholding for Domain Wall Magnet based Random Number Generator",
+                authors: "Govind Narasimman, Joydeep Basu, Pankaj Sethi, Sachin Krishna, Chen Yi, Wen Siang Lew, and Arindam Basu",
+                journal: "IEEE Sensors Journal, 20, No.14, 7810 (2020)",
+                doi: "",
+                pdf: "paper/2020/IEEE_2.pdf"
+            },
+            {
+                id: 135,
+                year: "2019",
+                title: "Skyrmion-Based Artificial Synapse Device",
+                authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
+                journal: "New Journal of Physics, 21, 103006 (2019)",
+                doi: "10.1088/1367-2630/ab4321",
+                pdf: "paper/2019/NJP_2019.pdf"
+            },
+            {
+                id: 134,
+                year: "2019",
+                title: "Giant Spin Hall Angle in Epitaxial Pt Thin Films",
+                authors: "Zhan Xu, Grayson Dao Hwee Wong, Weiliang Gan, and Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 11, 38920 (2019)",
+                doi: "10.1021/acsami.9b13200",
+                pdf: "paper/2019/ACS AMI_2019.pdf"
+            },
+            {
+                id: 133,
+                year: "2019",
+                title: "Low Power and High Endurance HfO2-based Resistive Switching Memory",
+                authors: "D.J.J. Loy, P.A. Dananjaya, and W.S. Lew*",
+                journal: "Applied Surface Science, 492, 220 (2019)",
+                doi: "10.1016/j.apsusc.2019.06.182",
+                pdf: "paper/2019/ASS_2019.pdf"
+            },
+            {
+                id: 132,
+                year: "2019",
+                title: "Interfacial Dzyaloshinskii-Moriya Interaction in Synthetic Antiferromagnets",
+                authors: "Mangyuan Ma, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Physical Review B, 100, 024415 (2019)",
+                doi: "10.1103/PhysRevB.100.024415",
+                pdf: "paper/2019/PRB_2019.pdf"
+            },
+            {
+                id: 131,
+                year: "2019",
+                title: "Spin-Orbit Torque Driven Domain Wall Motion in Ferrimagnetic Thin Films",
+                authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
+                journal: "IEEE Transactions on Magnetics, 55, 1400504 (2019)",
+                doi: "10.1109/TMAG.2019.2905100",
+                pdf: "paper/2019/TMAG_2019.pdf"
+            },
+            {
+                id: 130,
+                year: "2019",
+                title: "Voltage-Controlled Magnetic Anisotropy in Nanostructured Spin-Torque Devices",
+                authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Journal of Physics D: Applied Physics, 52, 345001 (2019)",
+                doi: "10.1088/1361-6463/ab2582",
+                pdf: "paper/2019/JPhyD_2019.pdf"
+            },
+            {
+                id: 129,
+                year: "2019",
+                title: "Flexible and Transparent Resistive Memory based on Metal-Oxide Heterostructures",
+                authors: "Putu Andhita Dananjaya, Desmond Loy, and Wen Siang Lew*",
+                journal: "Nanoscale, 11, 12890 (2019)",
+                doi: "10.1039/C9NR03112E",
+                pdf: "paper/2019/Nanoscale_2019.pdf"
+            },
+            {
+                id: 128,
+                year: "2019",
+                title: "Chirality Control of Magnetic Skyrmions in Synthetic Antiferromagnetic Structures",
+                authors: "Calvin Ching Ian Ang, Mangyuan Ma, and Wen Siang Lew*",
+                journal: "Applied Physics Letters, 114, 162401 (2019)",
+                doi: "10.1063/1.5088172",
+                pdf: "paper/2019/APL_2019.pdf"
+            },
+            {
+                id: 127,
+                year: "2019",
+                title: "Thermal Stability and Domain Wall Dynamics in Nanowires with Perpendicular Magnetic Anisotropy",
+                authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
+                journal: "Journal of Magnetism and Magnetic Materials, 475, 512 (2019)",
+                doi: "10.1016/j.jmmm.2018.11.100",
+                pdf: "paper/2019/JMMM_2019.pdf"
+            },
+            {
+                id: 126,
+                year: "2019",
+                title: "Sub-Nanosecond Switching in Spin-Orbit Torque MRAM Devices",
+                authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
+                journal: "IEEE Electron Device Letters, 40, 550 (2019)",
+                doi: "10.1109/LED.2019.2899012",
+                pdf: "paper/2019/EDL_2019.pdf"
+            },
+            {
+                id: 125,
+                year: "2019",
+                title: "Memristive Synaptic Devices for Neuromorphic Computing Applications",
+                authors: "Mun Yin Chee, Putu Andhita Dananjaya, and Wen Siang Lew*",
+                journal: "Advanced Electronic Materials, 5, 1800800 (2019)",
+                doi: "10.1002/aelm.201800800",
+                pdf: "paper/2019/AEM_2019.pdf"
+            },
+            {
+                id: 124,
+                year: "2019",
+                title: "Current-Driven Skyrmion Motion in Synthetic Antiferromagnets with Low Insertion Loss",
+                authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
+                journal: "ACS Nano, 13, 2110 (2019)",
+                doi: "10.1021/acsnano.8b08700",
+                pdf: "paper/2019/ACSNano_2019.pdf"
+            },
+            {
+                id: 123,
+                year: "2019",
+                title: "Direct Measurement of Spin Orbit Torque in Ferromagnetic Heterostructures",
+                authors: "Grayson Dao Hwee Wong, Zhan Xu, and Wen Siang Lew*",
+                journal: "Physical Review Applied, 11, 024015 (2019)",
+                doi: "10.1103/PhysRevApplied.11.024015",
+                pdf: "paper/2019/PRA_2019.pdf"
+            },
+            {
+                id: 122,
+                year: "2018",
+                title: "A Non-Volatile Memory Based on Domain Wall Motion in Magnetic Nanowires",
+                authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
+                journal: "Scientific Reports, 8, 15210 (2018)",
+                doi: "10.1038/s41598-018-33512-1",
+                pdf: "paper/2018/SREP_2018.pdf"
+            },
+            {
+                id: 121,
+                year: "2018",
+                title: "Effect of Dzyaloshinskii-Moriya Interaction on Domain Wall Velocity in Ferromagnetic Thin Films",
+                authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
+                journal: "Journal of Applied Physics, 124, 123901 (2018)",
+                doi: "10.1063/1.5042100",
+                pdf: "paper/2018/JAP_2018.pdf"
+            },
+            {
+                id: 120,
+                year: "2018",
+                title: "Spin-Orbit Torque Driven Magnetization Switching in Pt/Co/Ta Heterostructures",
+                authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Applied Physics Express, 11, 093001 (2018)",
+                doi: "10.7567/APEX.11.093001",
+                pdf: "paper/2018/APEX_2018.pdf"
+            },
+            {
+                id: 119,
+                year: "2018",
+                title: "Multilevel Resistive Switching in HfO2-Based Memristive Devices",
+                authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
+                journal: "IEEE Transactions on Electron Devices, 65, 3210 (2018)",
+                doi: "10.1109/TED.2018.2845100",
+                pdf: "paper/2018/TED_2018.pdf"
+            },
+            {
+                id: 118,
+                year: "2018",
+                title: "Room Temperature Creation and Manipulation of Skyrmions in Magnetic Thin Films",
+                authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Nano Letters, 18, 4200 (2018)",
+                doi: "10.1021/acs.nanolett.8b01100",
+                pdf: "paper/2018/NanoLett_2018.pdf"
+            },
+            {
+                id: 117,
+                year: "2018",
+                title: "Enhanced Spin Hall Effect in Heavy Metal Alloys for SOT Devices",
+                authors: "Zhan Xu, Grayson Dao Hwee Wong, and Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 10, 22340 (2018)",
+                doi: "10.1021/acsami.8b04500",
+                pdf: "paper/2018/ACS_AMI_2018.pdf"
+            },
+            {
+                id: 116,
+                year: "2018",
+                title: "Artificial Synapse Based on Flexible Oxide Resistive Switching Memory",
+                authors: "Putu Andhita Dananjaya, Mun Yin Chee, and Wen Siang Lew*",
+                journal: "Advanced Functional Materials, 28, 1800100 (2018)",
+                doi: "10.1002/adfm.201800100",
+                pdf: "paper/2018/AFM_2018.pdf"
+            },
+            {
+                id: 115,
+                year: "2018",
+                title: "Fast Domain Wall Motion in Ferrimagnetic Nanowires Near the Compensation Temperature",
+                authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
+                journal: "Physical Review Applied, 9, 064020 (2018)",
+                doi: "10.1103/PhysRevApplied.9.064020",
+                pdf: "paper/2018/PRA_2018.pdf"
+            },
+            {
+                id: 114,
+                year: "2018",
+                title: "Electric-Field Control of Spin-Orbit Torque in Perpendicularly Magnetized Multilayers",
+                authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
+                journal: "Applied Physics Letters, 112, 152402 (2018)",
+                doi: "10.1063/1.5022100",
+                pdf: "paper/2018/APL_2018.pdf"
+            },
+            {
+                id: 113,
+                year: "2018",
+                title: "Chirality-Dependent Domain Wall Velocity in Magnetic Nanowires with DMI",
+                authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
+                journal: "IEEE Transactions on Magnetics, 54, 1500205 (2018)",
+                doi: "10.1109/TMAG.2017.2780000",
+                pdf: "paper/2018/TMAG_2018.pdf"
+            },
+            {
+                id: 112,
+                year: "2018",
+                title: "Optimization of Resistive Switching Parameters in TaOx-Based RRAM Devices",
+                authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
+                journal: "Journal of Physics D: Applied Physics, 51, 125101 (2018)",
+                doi: "10.1088/1361-6463/aaad10",
+                pdf: "paper/2018/JPhyD_2018.pdf"
+            },
+            {
+                id: 111,
+                year: "2017",
+                title: "Dynamics of Skyrmion Hall Effect in Constrained Nanowire Geometries",
+                authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
+                journal: "Scientific Reports, 7, 17850 (2017)",
+                doi: "10.1038/s41598-017-18100-w",
+                pdf: "paper/2017/SREP_2017.pdf"
+            },
+            {
+                id: 110,
+                year: "2017",
+                title: "Spin-Orbit Torque Switching Efficiency in Heavy Metal/Ferromagnet Bilayers",
+                authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Journal of Applied Physics, 122, 233901 (2017)",
+                doi: "10.1063/1.5008100",
+                pdf: "paper/2017/JAP_2017.pdf"
+            },
+            {
+                id: 109,
+                year: "2017",
+                title: "Investigation of Filament Dynamics in OxRRAM Devices via In-Situ Characterization",
+                authors: "Putu Andhita Dananjaya, Desmond Loy, and Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 9, 38110 (2017)",
+                doi: "10.1021/acsami.7b12000",
+                pdf: "paper/2017/ACS_AMI_2017.pdf"
+            },
+            {
+                id: 108,
+                year: "2017",
+                title: "Current-Induced Domain Wall Nucleation and Motion in Perpendicular Magnetic Anisotropy Strips",
+                authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
+                journal: "Applied Physics Express, 10, 113001 (2017)",
+                doi: "10.7567/APEX.10.113001",
+                pdf: "paper/2017/APEX_2017.pdf"
+            },
+            {
+                id: 107,
+                year: "2017",
+                title: "Spin-Torque Ferromagnetic Resonance Measurements in Heavy Metal/Ferromagnet Structures",
+                authors: "Grayson Dao Hwee Wong, Zhan Xu, and Wen Siang Lew*",
+                journal: "IEEE Transactions on Magnetics, 53, 1400804 (2017)",
+                doi: "10.1109/TMAG.2017.2710000",
+                pdf: "paper/2017/TMAG_2017.pdf"
+            },
+            {
+                id: 106,
+                year: "2017",
+                title: "Skyrmion-Based Logic Gates for Neuromorphic Computing Architectures",
+                authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
+                journal: "Applied Physics Letters, 111, 192401 (2017)",
+                doi: "10.1063/1.4999100",
+                pdf: "paper/2017/APL_2017.pdf"
+            },
+            {
+                id: 105,
+                year: "2017",
+                title: "Thermal Effects on Domain Wall Pinning in Notch-Engineered Magnetic Nanowires",
+                authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
+                journal: "Journal of Magnetism and Magnetic Materials, 441, 250 (2017)",
+                doi: "10.1016/j.jmmm.2017.05.080",
+                pdf: "paper/2017/JMMM_2017.pdf"
+            },
+            {
+                id: 104,
+                year: "2017",
+                title: "High-Speed and Low-Power Spin-Orbit Torque Logic Devices",
+                authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
+                journal: "IEEE Electron Device Letters, 38, 1330 (2017)",
+                doi: "10.1109/LED.2017.2730000",
+                pdf: "paper/2017/EDL_2017.pdf"
+            },
+            {
+                id: 103,
+                year: "2017",
+                title: "Characteristics of Filamentary Switching in Flexible Resistive Random Access Memory",
+                authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
+                journal: "Nanotechnology, 28, 355201 (2017)",
+                doi: "10.1088/1361-6528/aa7c00",
+                pdf: "paper/2017/Nanotechnology_2017.pdf"
+            },
+            {
+                id: 102,
+                year: "2017",
+                title: "Magnetic Skyrmion Motion Driven by Spin-Orbit Torques in Synthetic Antiferromagnets",
+                authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
+                journal: "Physical Review Applied, 8, 034008 (2017)",
+                doi: "10.1103/PhysRevApplied.8.034008",
+                pdf: "paper/2017/PRA_2017.pdf"
+            },
+            {
+                id: 101,
+                year: "2017",
+                title: "Extrinsic Spin Hall Effect in Rare-Earth Doped Transition Metal Films",
+                authors: "Zhan Xu, Grayson Dao Hwee Wong, and Wen Siang Lew*",
+                journal: "ACS Applied Materials & Interfaces, 9, 15600 (2017)",
+                doi: "10.1021/acsami.7b02100",
+                pdf: "paper/2017/ACS_AMI_2017_2.pdf"
+            },
+            {
+                id: 100,
+                year: "2017",
+                title: "Modulation of Dzyaloshinskii-Moriya Interaction in Ferromagnetic Multilayers via Interfacial Engineering",
+                authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
+                journal: "Scientific Reports, 7, 42110 (2017)",
+                doi: "10.1038/srep42110",
+                pdf: "paper/2017/SREP_2017_2.pdf"
+            },
+            {
+                id: 99,
+                year: "2017",
+                title: "Design and Demonstration of a Domain-Wall-Based Shift Register Logic Architecture",
+                authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
+                journal: "IEEE Transactions on Electron Devices, 64, 1120 (2017)",
+                doi: "10.1109/TED.2017.2651000",
+                pdf: "paper/2017/TED_2017.pdf"
+            },
+    {
+        id: 98,
+        year: "2017",
+        title: "Direct Spraying Method for Fabrication of Paper-based Microfluidic Sensors",
+        authors: "Ning Liu, Jing Xu, Hong-Jie An, Dinh-Tuan Phan, Michinao Hashimoto, Wen Siang Lew*",
+        journal: "Journal of Micromechanics and Microengineering, 27, 104001 (2017)",
+        doi: "10.1088/1361-6439/aa82ce",
+        pdf: "paper/2017/JMM 2017.pdf"
+    },
+    {
+        id: 97,
+        year: "2017",
+        title: "Quantitative characterization of spin-orbit torques in Pt/Co/Pt/Co/Ta/BTO heterostructure on the magnetization azimuthal angle dependence",
+        authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, and Wen Siang Lew*",
+        journal: "Physical Review B, 96, 054407 (2017)",
+        doi: "10.1103/PhysRevB.96.054407",
+        pdf: "paper/2017/PRB 2017_2.pdf"
+    },
+    {
+        id: 96,
+        year: "2017",
+        title: "An enclosed paper microfluidic chip as a sample pre-concentrator based on ion concentration polarization",
+        authors: "Ning Liu, Dinh-Tuan Phan, Wen Siang Lew*",
+        journal: "IEEE Transactions on Biomedical Circuits and Systems, Volume: 11, Issue:6, 1392-1399 (December 2017)",
+        doi: "10.1109/TBCAS.2017.2727064",
+        pdf: "paper/2017/IEEE_2017_2.pdf"
+    },
+    {
+        id: 95,
+        year: "2017",
+        title: "Bi-directional high speed domain wall motion in perpendicular magnetic anisotropy Co/Pt double stack nanowires",
+        authors: "P. Sethi, S. Krishnia, W. L. Gan, F. N. Kholid, F.N. Tan, M. Ramu and W. S. Lew*",
+        journal: "Scientific Reports, 7, 4964 (2017)",
+        doi: "10.1038/s41598-017-05409-7",
+        pdf: "paper/2017/SREP 2017_2.pdf"
+    },
+    {
+        id: 94,
+        year: "2017",
+        title: "Asymmetrical domain wall propagation in bifurcated PMA wire structure due to the Dzyaloshinskii-Moriya interaction",
+        authors: "J.S. Kwon, S. Goolaup, W.L. Gan, C. H. Chang*, Kaushik Roy, and W.S. Lew*",
+        journal: "Applied Physics Letters, 110, 232402 (2017)",
+        doi: "10.1063/1.4984750",
+        pdf: "paper/2017/APL_2017_2.pdf"
+    },
+    {
+        id: 93,
+        year: "2017",
+        title: "Characterizing angular dependence of spin-orbit torque effective fields in Pt/(Co/Ni)2/IrMn structure",
+        authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, and Wen Siang Lew*",
+        journal: "IEEE Transaction on Magnetics, 53 Issue: 11, 1400604 (2017)",
+        doi: "10.1109/TMAG.2017.2704520",
+        pdf: "paper/2017/IEEE_2017_1.pdf"
+    },
+    {
+        id: 92,
+        year: "2017",
+        title: "Simultaneous determination of effective spin-orbit torque fields in magnetic structures with in-plane anisotropy",
+        authors: "Feilong Luo, Sarjoosing Goolaup, Wai Cheung Law, Sihua Li, Funan Tan, Christian Engel, Tiejun Zhou, Wen Siang Lew*",
+        journal: "Physical Review B, 95, 174415 (2017)",
+        doi: "10.1103/PhysRevB.95.174415",
+        pdf: "paper/2017/PRB 2017_1.pdf"
+    },
+    {
+        id: 91,
+        year: "2017",
+        title: "Spin orbit torque induced asymmetric depinning of chiral Néel domain wall in Co/Ni heterostructures",
+        authors: "M. Ramu, S. Goolaup, S. Krishnia, G. J. Lim, and W. S. Lew*",
+        journal: "Applied Physics Letters, 110, 162402 (2017)",
+        doi: "10.1063/1.4980120",
+        pdf: "paper/2017/APL 2017_1.pdf"
+    },
+    {
+        id: 90,
+        year: "2017",
+        title: "Spin-orbit torque induced magnetization anisotropy modulation in Pt/(Co/Ni)4/Co/IrMn heterostructure",
+        authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, Weiliang Gan, and Wen Siang Lew*",
+        journal: "Journal of Applied Physics, 121, 143902 (2017)",
+        doi: "10.1063/1.4980108",
+        pdf: "paper/2017/JAP 2017_1.pdf"
+    },
+    {
+        id: 89,
+        year: "2017",
+        title: "Deterministic spin orbit torque induced magnetization reversal in Pt/[Co/Ni]2/Ta structure",
+        authors: "Sihua Li, Sarjoosing Goolaup, Jaesuk Kwon, Feilong Luo, Christian Engel, Weiliang Gan and Wen Siang Lew*",
+        journal: "Scientific Reports, 7, 972(2017)",
+        doi: "10.1038/s41598-017-01079-7",
+        pdf: "paper/2017/SREP 2017_1.pdf"
+    },
+    {
+        id: 88,
+        year: "2017",
+        title: "A gamma analysis approach to determine optimal parameters for Monte Carlo simulation of 6MV Varian Clinac iX photon beam",
+        authors: "R.C.X. Soh, L.K.R. Tan, M.S.L. Goh, S. Yani, F. Haryanto, W.S. Lew, J.C.L. Lee",
+        journal: "Journal of Health Science, 5, 36 (2017)",
+        doi: "10.17265/2328-7136/2017.01.006",
+        pdf: "http://www.ntu-imslab.info/Paper/2017/JHealthSci_2017.pdf"
+    },
+    {
+        id: 87,
+        year: "2017",
+        title: "Observation of anomalous resistance behaviour in bilayer graphene",
+        authors: "Y.P . Liu, W.S. Lew, and Z.W. Liu",
+        journal: "Nanoscale Research Letters, 12, 48 (2017)",
+        doi: "10.1186/s11671-016-1792-z",
+        pdf: "http://www.ntu-imslab.info/Paper/2017/NRL%202017.pdf"
+    },
+    {
+        id: 86,
+        year: "2017",
+        title: "Dzyaloshinskii-Moriya interaction induced domain wall de-pinning anomaly in notched nanowire with perpendicular anisotropy",
+        authors: "H. K. Teoh, S. Goolaup, and W. S. Lew*",
+        journal: "Journal of Physics D: Applied Physics, 50, 015004 (2017)",
+        doi: "10.1088/1361-6463/50/1/015004",
+        pdf: "http://www.ntu-imslab.info/Paper/2017/JPhyD%202017.pdf"
+    },
+    {
+        id: 85,
+        year: "2017",
+        title: "Modulation of spin-orbit torque efficiency by thickness control of heavy metal layers in Co/Pt multilayers",
+        authors: "P. Sethi, S. Krishnia, S. H. Li, and W. S. Lew*",
+        journal: "Journal of Magnetism and Magnetic Materials, 426, 497(2017)",
+        doi: "10.1016/j.jmmm.2016.11.130",
+        pdf: "http://www.ntu-imslab.info/Paper/2017/JMMM%202017_1.pdf"
+    },
+    {
+        id: 84,
+        year: "2017",
+        title: "Cyclic resistance change in perpendicularly magnetized Co/Ni nanowire induced by current pulse injection",
+        authors: "J.S. Kwon, S. Goolaup, C. H. Chang, Kaushik Roy, and W.S. Lew*",
+        journal: "Current Applied Physics, 17, 98 (2017)",
+        doi: "10.1016/j.cap.2016.11.005",
+        pdf: "http://www.ntu-imslab.info/Paper/2017/CAP%202017.pdf"
+    },
+    {
+        id: 83,
+        year: "2016",
+        title: "1D gamma analysis on the effect of mean electron energy, FWHM and xy jaws thickness for small fields",
+        authors: "R.C.X. Soh, L.K.R. Tan, M.S.L. Goh, S. Yani, F. Haryanto, W.S. Lew, J.C.L. Lee",
+        journal: "Medical Physics International Journal, 4, No.2, 157 (2016)",
+        doi: "",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/MPI%202016.pdf"
+    },
+    {
+        id: 82,
+        year: "2016",
+        title: "Instability-induced mixing of ferrofluids in uniform magnetic fields",
+        authors: "Xinghua Wang, Zhaomeng Wang, Vijaykumar B. Varma, Zhiping Wang, Ayan Ray, Wen Siang Lew, Raju V. Ramanujan",
+        journal: "IEEE Magnetics Letters, 7, 2108305 (2016)",
+        doi: "10.1109/LMAG.2016.2615852",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/IEEE%202016_1.pdf"
+    },
+    {
+        id: 81,
+        year: "2016",
+        title: "Emergent geometric frustration of artificial magnetic skyrmion crystals",
+        authors: "Fusheng Ma, C. Reichhardt, Weiliang Gan, C. J. Olson Reichhardt, and Wen Siang Lew*",
+        journal: "Physical Review B, 94, 144405 (2016)",
+        doi: "10.1103/PhysRevB.94.144405",
+        pdf: "Paper/2016/PRB 2016.pdf"
+    },
+    {
+        id: 80,
+        year: "2016",
+        title: "Isolation of magnetically tagged cancer cell through an integrated magnetofluidic device",
+        authors: "Qi Ying Wong, Ning Liu, Cheng-Gee Koh, Hoi-Yeung Li and Wen Siang Lew*",
+        journal: "Microfluidics and Nanofluidics, 20:139 (2016)",
+        doi: "10.1007/s10404-016-1804-4",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/Microfluidics%202016.pdf"
+    },
+    {
+        id: 79,
+        year: "2016",
+        title: "Measuring the field-like term of spin-orbit torque in Ta/Co/Pt in-plane magnetization structure by planar Hall effect",
+        authors: "F. L. Luo, S.H. Li, S. Goolaup, G. J. Lim, F. N. Tan, C. Engel, S. F. Zhang, F. S. Ma, T. J. Zhou, and W.S. Lew*",
+        journal: "Journal of Applied Physics, 120, 083908 (2016)",
+        doi: "10.1038/s41598-019-47125-4",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/JAP%202016_2.pdf"
+    },
+    {
+        id: 78,
+        year: "2016",
+        title: "Direct observation of ice-rule violation and monopole dynamics in geometrically frustrated artificial honeycomb spin ice",
+        authors: "S. Krishnia, I. Purnama, and W.S. Lew*",
+        journal: "Journal of Magnetism and Magnetic Materials, 420, 158 (2016)",
+        doi: "10.1016/j.jmmm.2016.07.005",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/JMMM%202016_1.pdf"
+    },
+    {
+        id: 77,
+        year: "2016",
+        title: "Highly efficient domain walls injection in perpendicular magnetic anisotropy memory devices",
+        authors: "S. F. Zhang, W. L. Gan, J. Kwon, F. L. Luo, G. J. Lim, J. B. Wang, and W. S. Lew*",
+        journal: "Scientific Reports, 6, 24804 (2016)",
+        doi: "10.1038/srep24804",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_4.pdf"
+    },
+    {
+        id: 76,
+        year: "2016",
+        title: "Current-induced three-dimensional domain wall propagation in cylindrical NiFe nanowires",
+        authors: "D. W. Wong, I. Purnama, G. J. Lim, W. L. Gan, C. Murapaka and W. S. Lew*",
+        journal: "Journal of Applied Physics, 119, 153902 (2016)",
+        doi: "10.1063/1.4946753",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/JAP%202016_1.pdf"
+    },
+    {
+        id: 75,
+        year: "2016",
+        title: "Gated skyrmion transport via field-induced potential barrier modulation",
+        authors: "Hiu Tung Fook, Wei Liang Gan, and Wen Siang Lew*",
+        journal: "Scientific Reports, 6, 21099 (2016)",
+        doi: "10.1038/srep21099",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_3.pdf"
+    },
+    {
+        id: 74,
+        year: "2016",
+        title: "Reconfigurable logic via gate controlled domain wall trajectory in magnetic network structure",
+        authors: "M. Chandra Sekhar, P. Sethi, S. Goolaup, and W. S. Lew*",
+        journal: "Scientific Reports, 6, 20130 (2016)",
+        doi: "10.1038/srep20130",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_2.pdf"
+    },
+    {
+        id: 73,
+        year: "2016",
+        title: "Direct observation of deterministic domain wall trajectory in magnetic network structures",
+        authors: "P. Sethi, M. Chandra Sekhar, S. Goolaup, Y. J. Chen, S. H. Leong, and W. S. Lew*",
+        journal: "Scientific Reports, 6, 19027 (2016)",
+        doi: "10.1038/srep19027",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_1.pdf"
+    },
+    {
+        id: 72,
+        year: "2016",
+        title: "Stability of topological charge of magnetic skyrmion configuration",
+        authors: "M.B.A. Jalil, S.G. Tan, Z.B. Siu, W.L. Gan, I. Purnama, and W.S. Lew",
+        journal: "Journal of Magnetism and Magnetic Materials, 399, 155 (2016)",
+        doi: "10.1016/j.jmmm.2015.09.064",
+        pdf: "http://www.ntu-imslab.info/Paper/2016/JMMM%202016_2.pdf"
+    },
+    {
+        id: 71,
+        year: "2015",
+        title: "Magnonic bandstructure in a Skyrmion magnonic crystal",
+        authors: "Fusheng Ma, Yan Zhou, and Wen Siang Lew",
+        journal: "IEEE Transactions on Magnetics, 51, No.11, 1500404 (2015)",
+        doi: "10.1109/TMAG.2015.2443181",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/IEEE_3.pdf?dl=0"
+    },
+    {
+        id: 70,
+        year: "2015",
+        title: "Low field domain wall dynamics in artificial spin-ice basis structure",
+        authors: "J. Kwon, S. Goolaup, G. J. Lim, I. S. Kerk, C. H. Chang, Kaushik Roy, W. S. Lew*",
+        journal: "Journal of Applied Physics, 118, 163907 (2015)",
+        doi: "10.1063/1.4934733",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JAP2015_4.pdf"
+    },
+    {
+        id: 69,
+        year: "2015",
+        title: "In-plane current induced domain wall nucleation and its stochasticity in perpendicular magnetic anisotropy Hall cross structures",
+        authors: "P. Sethi, M. Chandra Sekhar, G. J. Lim, and W. S. Lew*",
+        journal: "Applied Physics Letters, 107, 192401 (2015)",
+        doi: "10.1063/1.4935347",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/APL%202015.pdf"
+    },
+    {
+        id: 68,
+        year: "2015",
+        title: "Magnetic field sensor based on magnetic-fluid-coated long-period fiber grating",
+        authors: "M.Y. Zhang, X.Y. Dong, Perry P. Shum, J.J. Hu, H.B Su, and W.S. Lew, and L. Wei",
+        journal: "Journal of Optics, 17, 065402 (2015)",
+        doi: "10.1088/2040-8978/17/6/065402",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JOptics%202015.pdf"
+    },
+    {
+        id: 681,
+        year: "2015",
+        title: "Skyrmion-based dynamic magnonic crystal",
+        authors: "Fusheng Ma, Yan Zhou, H. B. Braun, and W. S. Lew",
+        journal: "Nano Letters, 15, 4026 (2015)",
+        doi: "10.1021/acs.nanolett.5b00996",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/NL%202015.pdf"
+    },
+    {
+        id: 67,
+        year: "2015",
+        title: "Mitigation of magnus force in current-induced skyrmion dynamics",
+        authors: "H. T. Fook, W.L. Gan, I. Purnama, and W.S. Lew*",
+        journal: "IEEE Transactions on Magnetics, 51, No.11, 1500204 (2015)",
+        doi: "10.1109/INTMAG.2015.7157020",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/IEEE_2.pdf"
+    },
+    {
+        id: 66,
+        year: "2015",
+        title: "Programmable logic operation via domain wall profile manipulation",
+        authors: "H. K. Teoh, S. Goolaup, and W. S. Lew*",
+        journal: "IEEE Magnetics Letters, 6 4000204 (2015)",
+        doi: "10.1109/LMAG.2015.2434801",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/IEEE_1.pdf"
+    },
+    {
+        id: 65,
+        year: "2015",
+        title: "Guided current-induced skyrmion motion in 1D potential well",
+        authors: "I. Purnama, W. L. Gan, D. W. Wong, and W. S. Lew*",
+        journal: "Scientific Reports, 5, 10620 (2015)",
+        doi: "10.1038/srep10620",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/SREP%202015_3.pdf"
+    },
+    {
+        id: 64,
+        year: "2015",
+        title: "Transverse domain wall profile for logic applications",
+        authors: "S. Goolaup, M. Ramu, C. Murapaka, and W. S. Lew*",
+        journal: "Scientific Reports, 5, 9603 (2015)",
+        doi: "10.1038/srep09603",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/SREP%202015_2.pdf"
+    },
+    {
+        id: 63,
+        year: "2015",
+        title: "Coupled Néel domain wall motion in sandwiched perpendicular magnetic anisotropy nanowires",
+        authors: "I. Purnama, I. S. Kerk, G. J. Lim, and W.S. Lew*",
+        journal: "Scientific Reports, 5, 8754 (2015)",
+        doi: "10.1038/srep08754",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/SREP_1.pdf"
+    },
+    {
+        id: 62,
+        year: "2015",
+        title: "Coupled domain wall oscillations in magnetic cylindrical nanowires",
+        authors: "M.C. Sekhar, S. Goolaup, I. Purnama, W.S. Lew*",
+        journal: "Journal of Applied Physics, 117, 053913 (2015)",
+        doi: "10.1063/1.4907584",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JAP2015_3.pdf"
+    },
+    {
+        id: 61,
+        year: "2015",
+        title: "Dynamics of three-dimensional helical domain wall in cylindrical NiFe nanowires",
+        authors: "D. W. Wong, M. Chandra Sekhar, W. L. Gan, I. Purnama and W. S. Lew*",
+        journal: "Journal of Applied Physics, 117, 17A747(2015)",
+        doi: "10.1063/1.4919045",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JAP2015_2.pdf"
+    },
+    {
+        id: 60,
+        year: "2015",
+        title: "Erasure temperature measurements of heat assisted magnetic recording media",
+        authors: "Y. J. Chen, H. Z. Yang, S. H. Leong, K. M. Cher, J. F. Hu, P. Sethi, and W. S. Lew",
+        journal: "Journal of Applied Physics, 117, 17D117(2015)",
+        doi: "10.1063/1.4914362",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JAP2015_1.pdf"
+    },
+    {
+        id: 59,
+        year: "2015",
+        title: "Enhanced stability against spin torque noise in current perpendicular to the plane self-biased differential dual spin valves",
+        authors: "M. Chandra Sekhar, M. Tran, L. Wang, G. C. Han and W. S. Lew",
+        journal: "Journal of Magnetism and Magnetic Materials, 374, 740 (2015)",
+        doi: "10.1016/j.jmmm.2014.08.102",
+        pdf: "http://www.ntu-imslab.info/Paper/2015/JMMM%202015.pdf"
+    },
+    {
+        id: 58,
+        year: "2014",
+        title: "All-electrical single domain wall generation for on-chip applications",
+        authors: "C. Guite, I. S. Kerk, M.C. Sekhar, M. Ramu, S. Goolaup, and W.S. Lew*",
+        journal: "Scientific Reports, 4, 7459 (2014)",
+        doi: "10.1038/srep07459",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/SREP%202014.pdf"
+    },
+    {
+        id: 57,
+        year: "2014",
+        title: "Direct observation of domain wall evolution at a bifurcation in magnetic network structures",
+        authors: "M. Chandra Sekhar, P. Sethi, S. Goolaup, M. Ramu, Y. J. Chen, S. H. Leong, and W.S. Lew*",
+        journal: "Applied Physics Express, 7, 113003 (2014)",
+        doi: "10.7567/APEX.7.113003",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/APEX%202014.pdf"
+    },
+    {
+        id: 56,
+        year: "2014",
+        title: "Multi-vortex states in magnetic nanoparticles",
+        authors: "W.L. Gan, M. Chandra Sekhar, D.W. Wong, I. Purnama, S.Y. Chiam, N. Wong and W.S. Lew*",
+        journal: "Applied Physics Letters, 105,152405 (2014)",
+        doi: "10.1063/1.4898349",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/APL%202014_3.pdf"
+    },
+    {
+        id: 55,
+        year: "2014",
+        title: "Remote Walker breakdown and coupling breaking in parallel nanowire systems",
+        authors: "S. Krishnia, I. Purnama, and W.S. Lew*",
+        journal: "Applied Physics Letters, 105, 042404 (2014)",
+        doi: "10.1063/1.4891502",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/APL%202014%20-%20Remote.pdf"
+    },
+    {
+        id: 54,
+        year: "2014",
+        title: "Investigation of dominant spin wave modes by domain walls collision",
+        authors: "M. Ramu, I. Purnama, S. Goolaup, M.C. Sekhar, and W.S. Lew*",
+        journal: "Journal of Applied Physics, 115, 243908 (2014)",
+        doi: "",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/JAP%202014%20-%20Spin%20Wave.pdf"
+    },
+    {
+        id: 53,
+        year: "2014",
+        title: "Remote driving of multiple magnetic domain walls due to topological interaction",
+        authors: "I. Purnama, M.C. Sekhar, W.S. Lew*, T. Ono",
+        journal: "Applied Physics Letters, 104, 092414 (2014)",
+        doi: "10.1063/1.4867468",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/APL%202014.pdf"
+    },
+    {
+        id: 52,
+        year: "2014",
+        title: "Depinning assisted by domain wall deformation in cylindrical NiFe nanowires",
+        authors: "M.C. Sekhar, I. Purnama, S. Goolaup, W.S. Lew*",
+        journal: "Journal of Applied Physics, 115, 083913 (2014)",
+        doi: "10.1063/1.4867004",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/JAP%202014.pdf"
+    },
+    {
+        id: 51,
+        year: "2014",
+        title: "Spatially-Resolved Ultrafast Optical Spectroscopy of Polymer-Grafted Residues on CVD Graphene",
+        authors: "G.N. Yu, X.F. Liu , G.C. Xing, S. Chen, C.F. Ng, X.Y. Wu , E. K. L. Yeow , W. S. Lew, and T. C. Sum",
+        journal: "Journal of Physical Chemistry C, 118, 708 (2014)",
+        doi: "10.1021/jp406675r",
+        pdf: "http://www.ntu-imslab.info/Paper/2014/JPhyC%202014.pdf"
+    },
+{
+        id: 50,
+        year: "2014",
+        title: "Enhancement of the sensitivity of magneto-optical fiber sensor by manifying the birefringence of magnetic fluid film with Loyt-Sagnac interferomter",
+        authors: "P. Zu, C.C. Chan, G. W. Koh, W.S. Lew, Y.X. Jin, H.F. Liew, W.C. Wong, and X.Y. Dong",
+        journal: "Sensors and Actuators B: Chemical, 191, 19 (2014)",
+        doi: "10.1016/j.snb.2013.09.085",
+        pdf: "http://www.ntu-spintronics.net/app/download/3822536/Sensor+2013.pdf"
+    },
+    {
+        id: 49,
+        year: "2013",
+        title: "Temperature dependence of the electrical transport properties in few-layer graphene interconnects",
+        authors: "Y.P. Liu, Z. W. Liu, W.S. Lew*, Q. J. Wang",
+        journal: "Nanoscale Research Letters, 8, 335 (2013)",
+        doi: "10.1186/1556-276X-8-335",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/NRL%202013.pdf"
+    },
+    {
+        id: 48,
+        year: "2013",
+        title: "Toward hard yet tough CrAlSiN coatings via compositional grating",
+        authors: "Y. X. Wang, S. Zhang, J.W. Lee, W.S. Lew, D. Sun and B. Li",
+        journal: "Surface and Coatings Technology, 231, 346 (2013)",
+        doi: "10.1016/J.SURFCOAT.2012.03.036",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/Surface%20&%20Coating%202013.pdf"
+    },
+    {
+        id: 47,
+        year: "2013",
+        title: "Excitonic bandgap dependence on stacking configuration in four layer graphene",
+        authors: "Y.P. Liu, S. Goolaup, W.S. Lew*, I. Purnama, M. Chandra Sekhar, T.J. Zhou, and S.K. Wong",
+        journal: "Applied Physics Letters, 103, 163108 (2013)",
+        doi: "10.1063/1.4825263",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/APL%202013%20Graphene.pdf"
+    },
+    {
+        id: 46,
+        year: "2013",
+        title: "Spin injection properties in trilayer graphene lateral spin valves",
+        authors: "Y. P. Liu, H. Idzuchi, Y. Fukuma, O. Rousseau, Y. Otani, and W. S. Lew*",
+        journal: "Applied Physics Letters, 102, 033105 (2013)",
+        doi: "10.1063/1.4776699",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/APL%202013.pdf"
+    },
+    {
+        id: 45,
+        year: "2013",
+        title: "Laser self-induced tunable birefringence of magnetic fluid",
+        authors: "P. Zu, C.C. Chan, W.S. Lew, Y.X. Jin, H.F. Liew, W.C. Wong, X.Y. Dong and C.Z. Foo",
+        journal: "Applied Physics Letters, 102, 181116 (2013)",
+        doi: "10.1063/1.4804579",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/APL%202013%20Laser.pdf"
+    },
+    {
+        id: 44,
+        year: "2013",
+        title: "Toughing effect of Ni on nc-CrAlN/a-SiNx hard nanocomposite",
+        authors: "Y. X. Wang, S. Zhang, J.W. Lee, W.S. Lew, and B. Li",
+        journal: "Applied Surface Science, 265, 418 (2013)",
+        doi: "10.1016/j.apsusc.2012.11.022",
+        pdf: "http://www.ntu-imslab.info/Paper/2013/ASS%202013.pdf"
+    },
+    {
+        id: 43,
+        year: "2012",
+        title: "Helical domain wall in constricted cylindrical NiFe nanowires",
+        authors: "M. Chandra Sekhar, H. F. Liew, I. Purnama, and W. S. Lew*",
+        journal: "Applied Physics Letters, 101, 152406 (2012)",
+        doi: "10.1063/1.4758469",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/APL%202012.pdf"
+    },
+    {
+        id: 42,
+        year: "2012",
+        title: "Highly stable vortex state in sub-100nm nanomagnets",
+        authors: "X.H. Wang, I. Purnama, M.C. Sekhar, W.S. Lew*",
+        journal: "Applied Physics Express, 5, 053001 (2012)",
+        doi: "10.1143/APEX.5.053001",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/APEX%202012.pdf"
+    },
+    {
+        id: 41,
+        year: "2012",
+        title: "Observation of the semiconductor-metal transition behavior in monolayer graphene",
+        authors: "Y.P. Liu, W.S. Lew*, S. Goolaup, Z.X. Shen, L. Sun, T.J. Zhou, S.K. Wong",
+        journal: "Carbon, 50, 2273 (2012)",
+        doi: "10.1016/j.carbon.2012.01.046",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/CARBON%202012.pdf"
+    },
+    {
+        id: 40,
+        year: "2012",
+        title: "High extinction ratio magneto-optical fiber modulator based on nanoparticle magnetic fluids",
+        authors: "P. Zu, C.C. Chan, W.S. Lew, L.M. Hu, Y.X. Jin, H.F. Liew, L.H. Chen, W.C. Wong, and X.Y. Dong",
+        journal: "IEEE Photonics Journal, 4, 1140 (2012)",
+        doi: "10.1109/JPHOT.2012.2205233",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/IEEE%20Photonic%202012%20II.pdf"
+    },
+    {
+        id: 39,
+        year: "2012",
+        title: "Magnetization reversal in nano triangles fabricated by nanosphere lithography",
+        authors: "X.H. Wang, M. Chandra Sekhar, I. Purnama, W.S. Lew*, S. Goolaup; C.X. Cong",
+        journal: "Thin Solid Films, 520, 6980 (2012)",
+        doi: "10.1016/j.tsf.2012.06.054",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/TSF%202012.pdf"
+    },
+    {
+        id: 38,
+        year: "2012",
+        title: "Influence of bias voltage on the hardness and toughness of CrAlN coatings via magnetron sputtering",
+        authors: "Y. X. Wang, S. Zhang, J.W. Lee, W.S. Lew, and B. Li",
+        journal: "Surface and Coatings Technology, 206, 5103 (2012)",
+        doi: "10.1016/j.surfcoat.2012.06.041",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/Surface%20&%20Coating%202012.pdf"
+    },
+    {
+        id: 37,
+        year: "2012",
+        title: "Magneto-optical fiber sensor based on magnetic fluid",
+        authors: "P. Zu, C.C. Chan, W.S. Lew, Y.X. Jin, Y.F. Zhang, H.F. Liew, L.H. Chen, W.C. Wong, X.Y. Dong",
+        journal: "Optics Letters, 37, 398 (2012)",
+        doi: "10.1364/OL.37.000398",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/Optics%20Letter%202012.pdf"
+    },
+    {
+        id: 36,
+        year: "2012",
+        title: "Hard yet tough ceramic coating: Not a dream anymore",
+        authors: "Y. X. Wang, S. Zhang, J.W. Lee, W.S. Lew, D. Sun and B. Li",
+        journal: "Nanoscience and Nanotechnology Letters, 4, 375 (2012)",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/Nanoscience%20&%20Nanotech%20letter%202012.pdf"
+    },
+    {
+        id: 35,
+        year: "2012",
+        title: "Temperature-insensitive magnetic field sensor based on nanoparticle magnetic fluid and photonic crystal fiber",
+        authors: "P. Zu, C.C. Chan, W.S. Lew, L.M. Hu, Y.X. Jin, H.F. Liew, L.H. Chen, W.C. Wong, X.Y. Dong",
+        journal: "IEEE Photonics Journal, 4, 491 (2012)",
+        doi: "10.1109/JPHOT.2012.2192473",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/IEEE%20Photonic%202012.pdf"
+    },
+    {
+        id: 34,
+        year: "2012",
+        title: "Effect of interlayer coupling on the reversal process of differential dual spin valves",
+        authors: "M.C. Sekhar, C.C. Wang, G.C. Han, W.S. Lew",
+        journal: "Journal of Applied Physics, 111, 07B723 (2012)",
+        doi: "10.1063/1.3679764",
+        pdf: "http://www.ntu-imslab.info/Paper/2012/JAP_111_07B723_2012.pdf"
+    },
+    {
+        id: 33,
+        year: "2011",
+        title: "Domain wall trapping and influence of the asymmetry in magnetic nanoring studied by micromagnetic simulations",
+        authors: "X.H. Wang, W.Z. Wang, T.F. Kong, W.S. Lew*",
+        journal: "Journal of Nanoscience and Nanotechnology, 11, 2669 (2011)",
+        doi: "10.1166/jnn.2011.2737",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/JNN%202011.pdf"
+    },
+    {
+        id: 32,
+        year: "2011",
+        title: "Photoelectrochemical studies of DNA-tagged biomolecules on Au and Au/Ni/Au multilayer nanowires",
+        authors: "V. Swaminathan, H.F. Liew, W.S. Lew*, L.Y. Hu, A.T. Phan",
+        journal: "Nanoscale Research Letters, 6, 535 (2011)",
+        doi: "10.1186/1556-276X-6-535",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/NRL%202011.pdf"
+    },
+    {
+        id: 31,
+        year: "2011",
+        title: "Crossover in domain wall potential polarity as a function of anti-notch geometry",
+        authors: "M.C. Sekhar, S. Goolaup, I. Purnama, W.S. Lew*",
+        journal: "Journal of Physics D: Applied Physics, 44, 235002 (2011)",
+        doi: "10.1088/0022-3727/44/23/235002",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/JPhyD%20Crossover%202011.pdf"
+    },
+    {
+        id: 30,
+        year: "2011",
+        title: "Magneto-optic fiber Sagnac modulator based on magnetic fluids",
+        authors: "P. Zu, C.C. Chan, W.S. Lew, Y.X. Jin, Y.F. Zhang, H.F. Liew, L.H. Chen, and X.Y. Dong",
+        journal: "Optics Letters, 36, 1425 (2011)",
+        doi: "10.1364/OL.36.001425",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/Optics%20Letters%202011.pdf"
+    },
+    {
+        id: 29,
+        year: "2011",
+        title: "Current-induced coupled domain wall motions in a two-nanowire system",
+        authors: "I. Purnama, M.C. Sekhar, S. Goolaup, W.S. Lew*",
+        journal: "Applied Physics Letters, 99, 152501 (2011)",
+        doi: "10.1063/1.3650706",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/APL%202011.pdf"
+    },
+    {
+        id: 28,
+        year: "2011",
+        title: "Collective motion assisted by magnetostatic interactions in coupled domain wall system",
+        authors: "I. Purnama, M.C. Sekhar, S. Goolaup, W.S. Lew*",
+        journal: "IEEE Transactions on Magnetics, 47, 00189464 (2011)",
+        doi: "10.1109/TMAG.2011.2158635",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/IEEE%202011.pdf"
+    },
+    {
+        id: 27,
+        year: "2011",
+        title: "Fabrication of constricted compositionally-modulated NixFe1−x nanowires",
+        authors: "H. F. Liew and W. S. Lew*",
+        journal: "Journal of Physics: Conference Series, 266, 012058 (2011)",
+        doi: "10.1088/1742-6596/266/1/012058",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/JPhyConference%20constricted%20nanowire%202011.pdf"
+    },
+    {
+        id: 26,
+        year: "2011",
+        title: "Field effect on domain wall trapping and domain wall motion in notch free NiFe asymmetric nanorings",
+        authors: "X. H. Wang, I. Purnama, S. Goolaup and W. S. Lew*",
+        journal: "Journal of Physics: Conference Series, 266, 012085 (2011)",
+        doi: "10.1088/1742-6596/266/1/012085",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/JPhyConference%20Nanoring%202011.pdf"
+    },
+    {
+        id: 25,
+        year: "2011",
+        title: "Dependence of pinning on domain wall spin structure and notch geometry",
+        authors: "S.Goolaup, S. C. Low, M. Chandra Sekhar and W. S. Lew*",
+        journal: "Journal of Physics: Conference Series, 266, 012079 (2011)",
+        doi: "10.1088/1742-6596/266/1/012079",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/JPhyConference%20Notch%20geometry%202011.pdf"
+    },
+    {
+        id: 24,
+        year: "2011",
+        title: "Enhanced weak localization effect in few-layer graphene",
+        authors: "Y.P. Liu, W.S. Lew*, L. Sun",
+        journal: "Physical Chemistry Chemical Physics, 13, 20208 (2011)",
+        doi: "10.1039/C1CP22250C",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/PCCP%202011.pdf"
+    },
+    {
+        id: 23,
+        year: "2011",
+        title: "Observation of oscillatory resistance behavior in coupled bernal and rhombohedral stacking graphene",
+        authors: "Y.P. Liu, W.S. Lew*, S. Goolaup, H.F. Liew, S.K. Wong, T.J. Zhou",
+        journal: "ACS Nano, 5, 5490 (2011)",
+        doi: "10.1021/nn200771e",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/ACS%20Nano%202011.pdf"
+    },
+    {
+        id: 22,
+        year: "2011",
+        title: "An efficient microfluidic sorter: implementation of double meandering micro striplines for magnetic particles switching",
+        authors: "T.F. Kong, H. Shin, H.S. Sugiarto, H.F. Liew, X.H. Wang, W.S. Lew*, N.T. Nguyen, Y. Chen",
+        journal: "Microfluidics and Nanofluidics, 10, 1069 (2011)",
+        doi: "10.1007/s10404-010-0735-8",
+        pdf: "http://www.ntu-imslab.info/Paper/2011/Microfluidics%20Nanofluidics%202011.pdf"
+    },
+    {
+        id: 21,
+        year: "2010",
+        title: "Dependence of domain wall stability on vortex chirality in asymmetric nanoring",
+        authors: "X.H. Wang, S. Goolaup, W.S. Lew*",
+        journal: "Applied Physics Letters, 97, 142504 (2010)",
+        doi: "10.1063/1.3498026",
+        pdf: "http://www.ntu-imslab.info/Paper/2010/APL%202010.pdf"
+    },
+    {
+        id: 20,
+        year: "2010",
+        title: "Effect of magnetic field on the electronic transport in trilayer graphene",
+        authors: "Y.P. Liu, S. Goolaup, C. Murapaka, W.S. Lew*, S.K. Wong",
+        journal: "ACS Nano, 4, 7087 (2010)",
+        doi: "10.1021/nn101296x",
+        pdf: "http://www.ntu-imslab.info/Paper/2010/ACS%20Nano%202010.pdf"
+    },
+    {
+        id: 19,
+        year: "2009",
+        title: "Flux-closure chirality control and domain wall trapping in asymmetric magnetic ring",
+        authors: "X.H. Wang, W.K. Peng, W.S. Lew*",
+        journal: "Journal of Applied Physics, 106, 043905 (2009)",
+        doi: "10.1063/1.3197413",
+        pdf: "http://www.ntu-imslab.info/Paper/2009/JAP%202009.pdf"
+    },
+    {
+        id: 18,
+        year: "2007",
+        title: "Coercivity engineering of exchange biased magnetic multilayer samples for digital encoding applications",
+        authors: "F. van Belle, T.J. Hayward, J.A.C. Bland, W.S. Lew",
+        journal: "Journal of Applied Physics, 102, 103908 (2007)",
+        doi: "10.1063/1.2798938",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202007.pdf"
+    },
+    {
+        id: 17,
+        year: "2007",
+        title: "Hybridization of electrodeposited magnetic multilayer micropillars",
+        authors: "J.J. Palfreyman, F. van Belle, W.S. Lew, T. Mitrelias, J.A.C. Bland, M. Lopalco, M. Bradley",
+        journal: "IEEE Transactions on Magnetics, 43, 2439 (2007)",
+        doi: "10.1109/TMAG.2007.893863",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/IEEE%202007.pdf"
+    },
+    {
+        id: 16,
+        year: "2006",
+        title: "Manipulation of superparamagnetic beads using on-chip current lines placed on a ferrite magnet",
+        authors: "Z.H. Wang, W.S. Lew, J.A.C. Bland",
+        journal: "Journal of Applied Physics, 99, 08P104 (2006)",
+        doi: "10.1063/1.2151824",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%20%202006.pdf"
+    },
+    {
+        id: 15,
+        year: "2006",
+        title: "Coercivity and switching field - Engineered magnetic multilayers for 3-D patterned media",
+        authors: "F. van Belle, W.S. Lew, C.A.F. Vaz, J.A.C. Bland",
+        journal: "IEEE Transactions on Magnetics, 42, 2957 (2006)",
+        doi: "10.1109/TMAG.2006.878418",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/IEEE%202006.pdf"
+    },
+    {
+        id: 14,
+        year: "2006",
+        title: "Two-jump magnetic switching in ultrathin Co(001) films probed by giant magnetoresistance measurements",
+        authors: "W.S. Lew, S.P. Li, J.A.C. Bland",
+        journal: "Journal of Magnetism and Magnetic Materials, 307, 232 (2006)",
+        doi: "10.1016/j.jmmm.2006.04.027",
+        pdf: "http://www.ntu-spintronics.net/app/download/3831106/JMMM+2005.pdf"
+    },
+    {
+        id: 13,
+        year: "2004",
+        title: "Highly efficient spin filtering of ballistic electrons",
+        authors: "S.J. Steinmuller, T. Trypiniotis, W.S. Cho, A. Hirohata, W.S. Lew, C.A.F. Vaz, J.A.C. Bland",
+        journal: "Physical Review B, 69, 153309 (2004)",
+        doi: "10.1103/PhysRevB.69.153309",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/PRB%202004.pdf"
+    },
+    {
+        id: 12,
+        year: "2003",
+        title: "Mirror domain structures induced by interlayer magnetic wall coupling",
+        authors: "W.S. Lew, S.P. Li, L. Lopez-Diaz, D.C. Hatton, J.A.C. Bland",
+        journal: "Physical Review Letters, 90, 217201 (2003)",
+        doi: "10.1103/PhysRevLett.90.217201",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/PRL%202003.pdf"
+    },
+    {
+        id: 11,
+        year: "2002",
+        title: "Intrinsic anisotropy-defined magnetization reversal in submicron ring magnets",
+        authors: "S.P. Li, W.S. Lew, J.A.C. Bland, M. Natali, A. Lebib, Y. Chen",
+        journal: "Journal of Applied Physics, 92, 7397 (2002)",
+        doi: "10.1063/1.1518765",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202002%20Ring.pdf"
+    },
+    {
+        id: 10,
+        year: "2002",
+        title: "Magnetic domain confinement by anisotropy modulation",
+        authors: "S.P. Li, W.S. Lew, J.A.C. Bland, L. Lopez-Diaz, C.A.F. Vaz, M. Natali, Y. Chen",
+        journal: "Physical Review Letters, 88, 087202 (2002)",
+        doi: "10.1103/PhysRevLett.88.087202",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/PRL%202002.pdf"
+    },
+    {
+        id: 9,
+        year: "2002",
+        title: "Microstructures - Spin-engineering magnetic media",
+        authors: "S.P. Li, W.S. Lew, J.A.C. Bland, L. Lopez-Diaz, M. Natali, C.A.F. Vaz, Y. Chen",
+        journal: "Nature, 415, 600 (2002)",
+        doi: "10.1038/415600a",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/Nature%202002.pdf"
+    },
+    {
+        id: 8,
+        year: "2002",
+        title: "Test of ballistic spin-polarized electron transport across ferromagnet/semiconductor Schottky interfaces",
+        authors: "A. Hirohata, C.M. Guertler, W.S. Lew, Y.B. Xu, J.A.C. Bland, S.N. Holmes",
+        journal: "Journal of Applied Physics, 91, 7481 (2002)",
+        doi: "10.1063/1.1447198",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202002%20Schottky.pdf"
+    },
+    {
+        id: 7,
+        year: "2002",
+        title: "Spin confinement by anisotropy modulation",
+        authors: "J.A.C. Bland, W.S. Lew, S.P. Li, L. Lopez-Diaz, C.A.F. Vaz, M. Natali, Y. Chen",
+        journal: "Journal of Physics D: Applied Physics, 35, 2384 (2002)",
+        doi: "10.1088/0022-3727/35/19/309",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JPD%202002.pdf"
+    },
+    {
+        id: 6,
+        year: "2001",
+        title: "Magnetic anisotropy in a permalloymicrogrid fabricated by near-field optical lithography",
+        authors: "S.P. Li, A. Lebib, D. Peyrade, M. Natali, Y. Chen, W.S. Lew, J.A.C. Bland",
+        journal: "Journal of Applied Physics, 90, 521 (2001)",
+        doi: "10.1063/1.1379048",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202001%20NF.pdf"
+    },
+    {
+        id: 5,
+        year: "2001",
+        title: "Temperature dependence of spin waves in Co/CoO bilayers",
+        authors: "W.S. Lew, A. Ercole, G. Lauhoff, E.T.M. Kernohan, J. Lee, J.A.C. Bland",
+        journal: "Journal of Applied Physics, 89, 7654 (2001)",
+        doi: "10.1063/1.1359463",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202001%20BLS.pdf"
+    },
+    {
+        id: 4,
+        year: "2000",
+        title: "Magnetic domain reversal in ultrathin Co(001) films probed by giant magnetoresistance measurements",
+        authors: "S.P. Li, A. Samad, W.S. Lew, Y.B. Xu, J.A.C. Bland",
+        journal: "Physical Review B, 61, 6871 (2000)",
+        doi: "10.1103/PhysRevB.61.6871",
+        pdf: "http://www.ntu-spintronics.net/app/download/3831088/JAP+2001.pdf"
+    },
+    {
+        id: 3,
+        year: "2000",
+        title: "Magnetic nanoscale dots on colloid crystal surfaces",
+        authors: "S.P. Li, W.S. Lew, Y.B. Xu, A. Hirohata, A. Samad, F. Baker, J.A.C. Bland",
+        journal: "Applied Physics Letters, 76, 748 (2000)",
+        doi: "10.1063/1.125882",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/APL%202000.pdf"
+    },
+    {
+        id: 2,
+        year: "2000",
+        title: "Magnetic properties of epitaxial NiFe/Cu/Co spin-valve structures on GaAs(001)",
+        authors: "W.S. Lew, A. Samad, S.P. Li, L. Lopez-Diaz, G.X. Cheng, J.A.C. Bland",
+        journal: "Journal of Applied Physics, 87, 5947 (2000)",
+        doi: "10.1063/1.372575",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/JAP%202000.pdf"
+    },
+    {
+        id: 1,
+        year: "2000",
+        title: "Temperature-dependent spin-wave behavior in Co/CoO bilayers studied by Brillouin light scattering",
+        authors: "A. Ercole, W.S. Lew, G. Lauhoff, E.T.M. Kernohan, J. Lee, J.A.C. Bland",
+        journal: "Physical Review B, 62, 6429 (2000)",
+        doi: "10.1103/PhysRevB.62.6429",
+        pdf: "http://www.ntu-imslab.info/Paper/Before%202009/PRB%202000%20BLS.pdf"
+    },
+        ];
+
+        function renderFilterButtons() {
+            const filterContainer = document.getElementById('filterContainer');
+            const years = ['All', ...new Set(papersData.map(p => p.year))];
+            
+            filterContainer.innerHTML = years.map((year, index) => `
+                <button class="btn-filter ${index === 0 ? 'active' : ''}" onclick="filterPapers('${year}', this)">${year}</button>
+            `).join('');
+        }
+
+        function filterPapers(selectedYear, btnElement) {
+            document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
+            btnElement.classList.add('active');
+
+            const filtered = selectedYear === 'All' ? papersData : papersData.filter(p => p.year === selectedYear);
+            renderCards(filtered);
+        }
+
+        function renderCards(data) {
+            const container = document.getElementById('papersContainer');
+            container.innerHTML = data.map(paper => {
+                let doiHref = paper.doi;
+                if (paper.doi && !paper.doi.startsWith('http')) {
+                    doiHref = `https://doi.org/${paper.doi}`;
+                }
+
+                return `
+                    <div class="paper-card">
+                        <div class="card-meta">
+                            <span class="paper-num">#${paper.id}</span>
+                            ${paper.badge ? `<span class="badge badge-${paper.badge.toLowerCase()}">${paper.badge}</span>` : ''}
+                        </div>
+                        <h2 class="paper-title">${paper.title}</h2>
+                        <div class="paper-authors">${paper.authors}</div>
+                        ${paper.journal ? `<div class="paper-journal">${paper.journal}</div>` : ''}
+                        <div class="card-actions">
+                            ${paper.doi ? `<a href="${doiHref}" target="_blank" class="btn-link"><i class="fa-solid fa-link"></i> DOI</a>` : ''}
+                            <!--${paper.pdf ? `<a href="${paper.pdf}" target="_blank" class="btn-link btn-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>` : ''}-->
+							${paper.pdf ? `<a href="${paper.pdf.startsWith('https') ? paper.pdf : PDF_BASE_URL + paper.pdf}" target="_blank" class="btn-link btn-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>` : ''}
+                        </div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            renderFilterButtons();
+            renderCards(papersData);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        .search-bar {
+            width: 100%;
+            max-width: 600px;
+            padding: 0.85rem 1.25rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            color: #ffffff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.2s ease;
+            margin-top: 1rem;
+        }
+
+        .search-bar::placeholder {
+            color: #94a3b8;
+        }
+
+        .search-bar:focus {
+            border-color: #3b82f6;
+            background: rgba(255, 255, 255, 0.18);
+        }
+
+        /* Grid Layout for Directory Cards */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 1.0rem;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        /* Member Profile Header with Image Provision */
+        .member-profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .member-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid #e2e8f0;
+            background-color: #f1f5f9;
+            flex-shrink: 0;
+        }
+
+        .member-details {
+            flex-grow: 1;
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .name {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #0f172a;
+            line-height: 1.3;
+        }
+
+        .badge {
+            font-size: 0.72rem;
+            padding: 0.2rem 0.55rem;
+            border-radius: 6px;
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        .qualification {
+            color: #64748b;
+            font-size: 0.88rem;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            list-style: none;
+            font-size: 0.88rem;
+            border-top: 1px solid #e2e8f0;
+            padding-top: 0.85rem;
+        }
+
+        .contact-info li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.4rem;
+        }
+
+        .contact-info li:last-child {
+            margin-bottom: 0;
+        }
+
+        .label {
+            color: #64748b;
+        }
+
+        .value {
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        a.value {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        a.value:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-container container" style="padding-top: 0; padding-bottom: 0;">
+            <div>
+                <h2>Group Members Directory</h2>
+                <p>Meet our interdisciplinary team of professors, research fellows, project officers, and doctoral scholars advancing spintronics technology.</p>
+                <input type="text" id="searchInput" class="search-bar" placeholder="Search by name, qualification, or room..." onkeyup="filterCards()">
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Directory Content -->
+    <main class="container">
+
+        <!-- Principal Investigator -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-user-tie" style="color: var(--ntu-red, #c8102e);"></i> Principal Investigator</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/lew-wen-siang.jpg" alt="Dr. Lew Wen Siang" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Lew Wen Siang</div>
+                                <span class="badge">Principal Investigator</span>
+                            </div>
+                            <div class="qualification">Professor of Physics, SPMS, NTU<br>Senior IEEE Member<br>PhD, University of Cambridge (2002)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-04</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2963</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:wensiang@ntu.edu.sg" class="value">wensiang@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Research Staff -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-flask-vial" style="color: #2563eb;"></i> Research Staff</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/lai-weng-hong.jpg" alt="Dr. Lai Weng Hong" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Lai Weng Hong</div>
+                                <span class="badge">Senior Project Manager</span>
+                            </div>
+                            <div class="qualification">PhD, National University of Singapore (2002)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-06</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2081</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:wenghong.lai@ntu.edu.sg" class="value">wenghong.lai@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/putu-andhita-dananjaya.jpg" alt="Dr. Putu Andhita DANANJAYA" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Putu Andhita Dananjaya</div>
+                                <span class="badge">Senior Research Fellow</span>
+                            </div>
+                            <div class="qualification">PhD, Nanyang Technological University (2021)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-CBC-02-03</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 1972</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:putu.ad@ntu.edu.sg" class="value">putu.ad@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/liu-lingli.jpg" alt="Dr. Liu Lingli" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Liu Lingli</div>
+                                <span class="badge">Research Fellow</span>
+                            </div>
+                            <div class="qualification">PhD, Nanyang Technological University (2025)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-CBC-02-03</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 1972</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:lingli.liu@ntu.edu.sg" class="value">lingli.liu@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/yang-qu.jpg" alt="Dr. Yang Qu" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Yang Qu</div>
+                                <span class="badge">Research Fellow</span>
+                            </div>
+                            <div class="qualification">PhD, Xian Jiaotong University (2019)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-06</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2081</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:qu.yang@ntu.edu.sg" class="value">qu.yang@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/zhang-nan.jpg" alt="Dr. Zhang Nan" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Zhang Nan</div>
+                                <span class="badge">Research Fellow</span>
+                            </div>
+                            <div class="qualification">PhD, Chinese Academy of Science (2021)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-06</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2081</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:nan.zhang@ntu.edu.sg" class="value">nan.zhang@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/sun-jianxun.jpg" alt="Dr. Sun Jianxun" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Dr. Sun Jianxun</div>
+                                <span class="badge">Research Fellow</span>
+                            </div>
+                            <div class="qualification">PhD, Nanyang Technological University (2020)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-06</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2081</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:jianxun.sun@ntu.edu.sg" class="value">jianxun.sun@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/zhou-sunzhong.jpg" alt="Zhou Sunzhong" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Zhou Sunzhong</div>
+                                <span class="badge">Project Officer</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2020)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-CBC-02-03</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 1972</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:sz.zhou@ntu.edu.sg" class="value">sz.zhou@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/swetha-polisetty.jpg" alt="Swetha Polisetty" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Swetha Polisetty</div>
+                                <span class="badge">Project Officer</span>
+                            </div>
+                            <div class="qualification">M.Sc., Nanyang Technological University (2025)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:swetha.polisetty@ntu.edu.sg" class="value">swetha.polisetty@ntu.edu.sg</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- PhD Students -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-graduation-cap" style="color: var(--ntu-red, #c8102e);"></i> PhD Students</h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/chen-ze.jpg" alt="Chen Ze" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Chen Ze</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">M.Sc. (Physics), Nanyang Technological University (2023)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-CBC-02-03</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 1972</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:s230148@e.ntu.edu.sg" class="value">s230148@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/lew-kah-seng.jpg" alt="Lew Kah Seng" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Lew Kah Seng</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2020)<br><br>Joint supervision with Adj Assoc Prof James Lee (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:kahseng001@e.ntu.edu.sg" class="value">kahseng001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/chua-clifford.jpg" alt="Chua Ghee Ann Clifford" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Chua Ghee Ann Clifford</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2020)<br><br>Joint supervision with Adj Asst Prof Tan Hong Qi (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:chua1126@e.ntu.edu.sg" class="value">chua1126@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/nguyen-hoang-thien.jpg" alt="Nguyen Hoang Thien" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Nguyen Hoang Thien</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2023)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:thien002@e.ntu.edu.sg" class="value">thien002@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/gan-jun-ken.jpg" alt="Gan Jun Ken" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Gan Jun Ken</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2024)<br><br>Joint supervision with Adj Asst Prof Tan Hong Qi (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:junken001@e.ntu.edu.sg" class="value">junken001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/geoffvinc-ng.jpg" alt="Geoffvinc Ng" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Geoffvinc Ng</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2025)<br><br>Joint supervision with Adj Asst Prof Tan Hong Qi (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:geoffvin002@e.ntu.edu.sg>" class="value">geoffvin002@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/rovins.jpg" alt="Rovins" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Rovins</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">M.Tech., Indian Institute of Technology, Jodhpur (2025)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:rovins001@e.ntu.edu.sg" class="value">rovins001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/fu-kailin.jpg" alt="Fu Kailin" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Fu Kailin</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), National University of Singapore (2025)<br><br>Joint supervision with Adj Asst Prof Tan Hong Qi (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:kailin002@e.ntu.edu.sg" class="value">kailin002@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/ryan-lim.jpg" alt="Ryan Lim Rui Yan" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Ryan Lim Rui Yan</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), Nanyang Technological University (2026)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:rlim116@e.ntu.edu.sg" class="value">rlim116@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+			
+			<div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/melvin.jpg" alt="Chew Ming Long Melvin" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Chew Ming Long Melvin</div>
+                                <span class="badge">PhD Student</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons,Physics), National University of Singapore (2013)<br><br>Joint supervision with Adj Asst Prof Tan Hong Qi (National Cancer Centre Singapore)</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-27</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6513 2082</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:mchew018@e.ntu.edu.sg" class="value">mchew018@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- IPP PhD Students -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-industry" style="color: #2563eb;"></i> IPP PhD Students </h2>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/cheng-kangjian.jpg" alt="Cheng Kangjian" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Cheng Kangjian</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">B.Eng. (Hons, Materials Eng), National University of Singapore (2015)<br><br>IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:kangjian001@e.ntu.edu.sg" class="value">kangjian001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/bryan-cheng.jpg" alt="Bryan Cheng Wei Hao" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Bryan Cheng Wei Hao</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons, Physics), Nanyang Technological University (2023)<br><br>IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:bryanwei001@e.ntu.edu.sg" class="value">bryanwei001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/chang-qingguo.jpg" alt="Chang Qingguo" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Chang Qingguo</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">M.Sc. (Physics), Nanyang Technological University (2023)<br><br> IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:qingguo001@e.ntu.edu.sg" class="value">qingguo001@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/wong-xuan-kai.jpg" alt="Wong Xuan Kai" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Wong Xuan Kai</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Physics), National University of Singapore (2023)<br><br>IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:s230193@e.ntu.edu.sg" class="value">s230193@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/syahril-roslan.jpg" alt="Muhammad Syahril Bin Roslan" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Muhammad Syahril Bin Roslan</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons, Physics), Nanyang Technological University (2025)<br><br>IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:s250095@e.ntu.edu.sg" class="value">s250095@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/om-sardar.jpg" alt="Om Sardar" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Om Sardar</div>
+                                <span class="badge">IPP PhD</span>
+                            </div>
+                            <div class="qualification">B.Sc. (Hons, Physics), Nanyang Technological University (2026)<br><br>IPP with GlobalFoundries</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:om006@e.ntu.edu.sg" class="value">om006@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Visiting PhD Students 
+        <div class="section-header">
+            <h2><i class="fa-solid fa-plane-arrival" style="color: var(--ntu-red, #c8102e);"></i> Visiting PhD Students</h2>
+        </div>
+        <!-- <div class="grid">
+            <div class="card">
+                <div>
+                    <div class="member-profile-header">
+                        <img src="images/team/yao-yao.jpg" alt="Yao Yao" class="member-photo" onerror="this.src='https://via.placeholder.com/150?text=Profile';">
+                        <div class="member-details">
+                            <div class="card-header">
+                                <div class="name">Yao Yao</div>
+                                <span class="badge">Visiting PhD</span>
+                            </div>
+                            <div class="qualification">B.Sc, Zhejiang Normal University (2021)<br><br>PhD scholar from Nanjing University of Science and Technology</div>
+                        </div>
+                    </div>
+                </div>
+                <ul class="contact-info">
+                    <li><span class="label">Room:</span> <span class="value">SPMS-PAP-03-07</span></li>
+                    <li><span class="label">Phone:</span> <span class="value">6316 2991</span></li>
+                    <li><span class="label">Email:</span> <a href="mailto:n2505382A@e.ntu.edu.sg" class="value">n2505382A@e.ntu.edu.sg</a></li>
+                </ul>
+            </div>
+        </div>-->
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+    <script>
+        function filterCards() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.card');
+
+            cards.forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(query) ? 'flex' : 'none';
+            });
+        }
+    </script>
+</body>
+</html>

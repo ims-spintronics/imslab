@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Industrial Internships | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Page-Specific Enhancements -->
+    <style>
+        /* Overview Card */
+        .about-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            margin-bottom: 3rem;
+        }
+
+        .about-card p {
+            font-size: 1.05rem;
+            color: #1e293b;
+            line-height: 1.8;
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+
+        .about-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Assessment Grid */
+        .assessment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .assess-box {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .assess-box:hover {
+            transform: translateY(-4px);
+            border-color: rgba(37, 99, 235, 0.3);
+        }
+
+        .assess-percent {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #2563eb;
+            margin-bottom: 0.5rem;
+        }
+
+        .assess-title {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #0f172a;
+            line-height: 1.4;
+        }
+
+        /* Table Card & Data Styling */
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            margin-bottom: 3rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Industrial Internships</h2>
+                <p>PAP493 / PH4407 (10 AU, 22-week practical industrial attachment program bridging academic knowledge with corporate R&amp;D).</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <!-- Program Overview Section -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-briefcase" style="color: var(--ntu-red, #c8102e);"></i> Program Overview</h2>
+        </div>
+
+        <div class="about-card">
+            <p>Prof Lew Wen Siang developed the Physics Division’s internship program from its inception in 2007 with the support of the University Career &amp; Attachment Office (CAO) and have been coordinating the program implementation (mentoring and assessment). I personally visited almost every intern organisation for work assessment discussion with their intern supervisors (except overseas intern organisations) to understand the training progress and student performance.</p>
+            <p>Organisations that have offered internship training for our Physics students include microelectronics investment banks, research institutions, microelectronic companies, hospitals, specialist medical centres, manufacturing plants, defence organisations, etc. As more physics students opt for the 22-week internship program, three faculty staff members have joined to take up supervision load.</p>
+        </div>
+
+        <!-- Assessment Components Section -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-chart-pie" style="color: #2563eb;"></i> Assessment Components</h2>
+        </div>
+
+        <div class="assessment-grid">
+            <div class="assess-box">
+                <div class="assess-percent">50%</div>
+                <div class="assess-title">Internship Work Assessment<br><small style="color: #64748b; font-weight: normal;">(Assessed by Intern Supervisor)</small></div>
+            </div>
+            <div class="assess-box">
+                <div class="assess-percent">25%</div>
+                <div class="assess-title">Internship Report</div>
+            </div>
+            <div class="assess-box">
+                <div class="assess-percent">25%</div>
+                <div class="assess-title">Internship Oral Presentation</div>
+            </div>
+        </div>
+
+        <!-- Supervision Statistics Section -->
+        <div class="section-header">
+            <h2><i class="fa-solid fa-users-gear" style="color: var(--ntu-red, #c8102e);"></i> Supervision Statistics</h2>
+        </div>
+
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="text-align: center;">Academic Year</th>
+                        <th style="text-align: center;">Semester</th>
+                        <th style="text-align: center;">Total Physics Intern Students</th>
+                        <th style="text-align: center;">Students Under Direct Supervision</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align: center;"><span class="code-badge">2025/2026</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2025/2026</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2024/2025</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2024/2025</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2023/2024</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2023/2024</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2022/2023</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2022/2023</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2021/2022</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2021/2022</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2020/2021</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2020/2021</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2019/2020</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2019/2020</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					
+					<tr><td style="text-align: center;"><span class="code-badge">2018/2019</span></td><td style="text-align: center;">II</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+					<tr><td style="text-align: center;"><span class="code-badge">2018/2019</span></td><td style="text-align: center;">I</td><td style="text-align: center;">16</td><td style="text-align: center;">2</td></tr>
+                    
+					<tr><td style="text-align: center;"><span class="code-badge">2017/2018</span></td><td style="text-align: center;">II</td><td style="text-align: center;">55</td><td style="text-align: center;">10</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2017/2018</span></td><td style="text-align: center;">I</td><td style="text-align: center;">31</td><td style="text-align: center;">7</td></tr>
+                    
+					<tr><td style="text-align: center;"><span class="code-badge">2016/2017</span></td><td style="text-align: center;">II</td><td style="text-align: center;">53</td><td style="text-align: center;">15</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2016/2017</span></td><td style="text-align: center;">I</td><td style="text-align: center;">7</td><td style="text-align: center;">1</td></tr>
+                    
+					<tr><td style="text-align: center;"><span class="code-badge">2015/2016</span></td><td style="text-align: center;">Extra</td><td style="text-align: center;">1</td><td style="text-align: center;">1</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2015/2016</span></td><td style="text-align: center;">II</td><td style="text-align: center;">25</td><td style="text-align: center;">7</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2015/2016</span></td><td style="text-align: center;">I</td><td style="text-align: center;">34</td><td style="text-align: center;">9</td></tr>
+                    
+					<tr><td style="text-align: center;"><span class="code-badge">2014/2015</span></td><td style="text-align: center;">II</td><td style="text-align: center;">12</td><td style="text-align: center;">5</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2014/2015</span></td><td style="text-align: center;">I</td><td style="text-align: center;">29</td><td style="text-align: center;">9</td></tr>
+                   
+				    <tr><td style="text-align: center;"><span class="code-badge">2013/2014</span></td><td style="text-align: center;">II</td><td style="text-align: center;">22</td><td style="text-align: center;">6</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2013/2014</span></td><td style="text-align: center;">I</td><td style="text-align: center;">18</td><td style="text-align: center;">18</td></tr>
+                    
+					<tr><td style="text-align: center;"><span class="code-badge">2011</span></td><td style="text-align: center;">-</td><td style="text-align: center;">15</td><td style="text-align: center;">15</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2010</span></td><td style="text-align: center;">-</td><td style="text-align: center;">10</td><td style="text-align: center;">10</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2009</span></td><td style="text-align: center;">-</td><td style="text-align: center;">2</td><td style="text-align: center;">2</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2008</span></td><td style="text-align: center;">-</td><td style="text-align: center;">8</td><td style="text-align: center;">8</td></tr>
+                    <tr><td style="text-align: center;"><span class="code-badge">2007</span></td><td style="text-align: center;">-</td><td style="text-align: center;">4</td><td style="text-align: center;">4</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>

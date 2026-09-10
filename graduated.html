@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graduated Students | Intelligent Materials and Systems Laboratory | NTU</title>
+    
+    <!-- Link to style.css inside css folder -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Table Styling Enhancements matching lecture.html -->
+    <style>
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            margin-top: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+
+        .text-muted-cell {
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
+        </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
+            </a>
+        </div>
+    </div>
+
+    <!-- Header & Navigation -->
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-logo-item">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                </li>
+                <li>
+                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="news.html">Group</a></li>
+                        <li><a href="events.html">Events</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="topics.html">Research Topics</a></li>
+                        <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="laboratory.html">Laboratory Courses</a></li>
+                        <li><a href="internship.html">Industrial Internships</a></li>
+                        <li><a href="fyp.html">Final Year Projects</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="team.html">Current Group</a></li>
+                        <li><a href="graduated.html">Graduated Students</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="paper.html">Journal Papers</a></li>
+                        <li><a href="conferences.html">Conference Presentations</a></li>
+                        <li><a href="books.html">Book Chapters</a></li>
+                        <li><a href="property.html">Intellectual Property</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="fund.html">Funding Firms</a></li>
+                        <li><a href="collaborations.html">Collaborations</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="opportunity.html">Opportunities</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2>Graduated Alumni & Students</h2>
+                <p>Recognising the achievements and current pursuits of former PhD, Undergraduate, and High School / JC project students.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+
+        <!-- Category 1: Graduated PhD Students -->
+        <div class="section-header" id="phd-alumni">
+            <h2><i class="fa-solid fa-user-graduate" style="color: var(--ntu-red);"></i> Graduated PhD Students</h2>
+        </div>
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">#</th>
+                        <th style="width: 220px;">Name</th>
+                        <th style="width: 110px;text-align: center;">Year of Graduation </th>
+                        <th style="width: 220px;">Supervision / Joint</th>
+                        <th style="text-align: center;">Current Position</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align: center;">1</td><td><strong>Lee Shui Hui</strong></td><td><span class="code-badge">2026</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">2</td><td><strong>Koh Eng Kang</strong></td><td><span class="code-badge">2026</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">3</td><td><strong>Wu Shuo</strong></td><td><span class="code-badge">2026</span></td><td>Main</td><td>Postdoctoral Researcher, MIT, USA</td></tr>
+                    <tr><td style="text-align: center;">4</td><td><strong>Wong Yun Ming</strong></td><td><span class="code-badge">2025</span></td><td>Main</td><td>Associate Medical Physicist, NCCS, Singapore</td></tr>
+                    <tr><td style="text-align: center;">5</td><td><strong>Thong Jia Rui</strong></td><td><span class="code-badge">2024</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">6</td><td><strong>Liu Lingli</strong></td><td><span class="code-badge">2024</span></td><td>Main</td><td>Research Fellow, NTU, Singapore</td></tr>
+                    <tr><td style="text-align: center;">7</td><td><strong>Calvin LEE Xiu Xian</strong></td><td><span class="code-badge">2024</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">8</td><td><strong>Ang Jia Min</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">9</td><td><strong>Poh Han Yin</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>Principal Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">10</td><td><strong>Chee Mun Yin</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>Senior Engineer, UMC, Singapore</td></tr>
+                    <tr><td style="text-align: center;">11</td><td><strong>Hou Kunqi</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>Senior Engineer, Micron, Singapore</td></tr>
+                    <tr><td style="text-align: center;">12</td><td><strong>Birte Coester</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>R&D Engineer, IMEC, Leuven, Belgium</td></tr>
+                    <tr><td style="text-align: center;">13</td><td><strong>Samuel Chow Chen Wai</strong></td><td><span class="code-badge">2023</span></td><td>Main</td><td>Senior Member of Technical Staff, DSO National Laboratories, Singapore</td></tr>
+                    <tr><td style="text-align: center;">14</td><td><strong>Grayson Wong</strong></td><td><span class="code-badge">2021</span></td><td>Main</td><td>Senior Process Engineer, GlobalFoundries, Singapore</td></tr>
+                    <tr><td style="text-align: center;">15</td><td><strong>Calvin Koh</strong></td><td><span class="code-badge">2021</span></td><td>Main</td><td>Senior Medical Physicist, National Cancer Centre Singapore (NCCS)</td></tr>
+                    <tr><td style="text-align: center;">16</td><td><strong>Calvin Ang</strong></td><td><span class="code-badge">2021</span></td><td>Main</td><td>Research Fellow, NTU, Singapore</td></tr>
+                    <tr><td style="text-align: center;">17</td><td><strong>Gerard Joseph Lim</strong></td><td><span class="code-badge">2020</span></td><td>Main</td><td>Lecturer, NTU, Singapore</td></tr>
+                    <tr><td style="text-align: center;">18</td><td><strong>Desmond Loy Jia Jun</strong></td><td><span class="code-badge">2020</span></td><td>Main</td><td>Lecturer, Singapore Polytechnic, Singapore</td></tr>
+                    <tr><td style="text-align: center;">19</td><td><strong>Putu Andhita Dananjaya</strong></td><td><span class="code-badge">2020</span></td><td>Main</td><td>Senior Research Fellow, NTU, Singapore</td></tr>
+                    <tr><td style="text-align: center;">20</td><td><strong>Shane Wong Qi Ying</strong></td><td><span class="code-badge">2020</span></td><td>Main</td><td>Lecturer, Singapore Polytechnic, Singapore</td></tr>
+                    <tr><td style="text-align: center;">21</td><td><strong>Gan Weiliang</strong></td><td><span class="code-badge">2019</span></td><td>Main</td><td>Self Business, Nantye, Singapore</td></tr>
+                    <tr><td style="text-align: center;">22</td><td><strong>Law Wai Cheung</strong></td><td><span class="code-badge">2019</span></td><td>Main</td><td>Senior Principal Engineer, Hangzhou, PR China</td></tr>
+                    <tr><td style="text-align: center;">23</td><td><strong>Tan Funan</strong></td><td><span class="code-badge">2019</span></td><td>Main</td><td>Principal Engineer, Applied Materials, Singapore</td></tr>
+                    <tr><td style="text-align: center;">24</td><td><strong>Wong De Wei, Shawn</strong></td><td><span class="code-badge">2019</span></td><td>Main</td><td>Education Officer, Ministry of Education, Singapore</td></tr>
+                    <tr><td style="text-align: center;">25</td><td><strong>Li Sihua</strong></td><td><span class="code-badge">2019</span></td><td>Main</td><td>Professional Engineer, Yangtze Memory Technologies Co. Ltd., Wuhan, PR China</td></tr>
+                    <tr><td style="text-align: center;">26</td><td><strong>Luo Feilong</strong></td><td><span class="code-badge">2018</span></td><td>Main</td><td>Principal Engineer, Huawei, Shanghai, PR China</td></tr>
+                    <tr><td style="text-align: center;">27</td><td><strong>Christian Andreas Engel</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Senior Specialist, Hauck & Aufhäuser, Luxembourg</td></tr>
+                    <tr><td style="text-align: center;">28</td><td><strong>Liu Ning</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Investment Manager, Zhangjiang Group, Shanghai, PR China</td></tr>
+                    <tr><td style="text-align: center;">29</td><td><strong>Roger Soh Cai Xiang</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Global Product Marketing Manager, Elekta, Singapore</td></tr>
+                    <tr><td style="text-align: center;">30</td><td><strong>Sachin Krishnia</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Postdoctoral Researcher, Johannes Gutenberg University Mainz, Germany</td></tr>
+                    <tr><td style="text-align: center;">31</td><td><strong>Pankaj Sethi</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Research Scientist, VTT, Finland</td></tr>
+                    <tr><td style="text-align: center;">32</td><td><strong>Ramu Maddu</strong></td><td><span class="code-badge">2017</span></td><td>Main</td><td>Senior Research Fellow, NTU, Singapore</td></tr>
+                    <tr><td style="text-align: center;">33</td><td><strong>Indra Purnama</strong></td><td><span class="code-badge">2015</span></td><td>Main</td><td>Senior Data Scientist, Visa, Jakarta, Indonesia</td></tr>
+                    <tr><td style="text-align: center;">34</td><td><strong>Chandra Sekhar Murapaka</strong></td><td><span class="code-badge">2014</span></td><td>Main</td><td>Associate Professor, IIT-Hyderabad, India</td></tr>
+                    <tr><td style="text-align: center;">35</td><td><strong>Liu Yanping</strong></td><td><span class="code-badge">2013</span></td><td>Main</td><td>Professor, Central South University, Hunan, PR China</td></tr>
+                    <tr><td style="text-align: center;">36</td><td><strong>Wang Xinghua</strong></td><td><span class="code-badge">2012</span></td><td>Main</td><td>Senior Scientist, IME, A*Star, Singapore</td></tr>
+                    <tr><td style="text-align: center;">37</td><td><strong>Jin Tianli</strong></td><td><span class="code-badge">2019</span></td><td>Prof SN Prem, SPMS</td><td>Assistant Professor, HUST, Wuhan, PRC</td></tr>
+                    <tr><td style="text-align: center;">38</td><td><strong>Yu Guannan</strong></td><td><span class="code-badge">2015</span></td><td>Prof Tze Chien Sum, SPMS</td><td>Senior Laser Engineer, Shenzhen JPT Opto-electronics, Shenzhen, PR China</td></tr>
+                    <tr><td style="text-align: center;">39</td><td><strong>Lin Weinan</strong></td><td><span class="code-badge">2014</span></td><td>Prof Tom Wu Tao, Hong Kong Polytechnic University</td><td>Professor, Xiamen University, Fujian, PR China</td></tr>
+                    <tr><td style="text-align: center;">40</td><td><strong>Wang Yuxi</strong></td><td><span class="code-badge">2013</span></td><td>Prof Sam Zhang, MSE</td><td>Limited Partner, UZ ENERGY Limited, Shenzhen, PR China</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Category 2: Graduated Undergraduate Research Project Students -->
+        <div class="section-header" id="ug-alumni">
+            <h2><i class="fa-solid fa-graduation-cap" style="color: var(--ntu-red);"></i> Graduated Undergraduate Research Project Students</h2>
+        </div>
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">No</th>
+                        <th style="width: 320px;">Name</th>
+                        <th>Project Details / Program</th>
+                        <th style="width: 160px; text-align: center;">Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align: center;">1</td><td><strong>Kuan Shan Shyan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2025/2026</span></td></tr>
+                    <tr><td style="text-align: center;">2</td><td><strong>Ryan Lim Rui Yan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2025/2026</span></td></tr>
+                    <tr><td style="text-align: center;">3</td><td><strong>Christopher Govert</strong></td><td>URECA</td><td style="text-align: center;"><span class="code-badge">2024/2025</span></td></tr>
+                    <tr><td style="text-align: center;">4</td><td><strong>Tan Kuan Hong</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2019/2020</span></td></tr>
+                    <tr><td style="text-align: center;">5</td><td><strong>Foo Yi Ling</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2019/2020</span></td></tr>
+                    <tr><td style="text-align: center;">6</td><td><strong>Chua ChenHao Daniel</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2018/2019</span></td></tr>
+                    <tr><td style="text-align: center;">7</td><td><strong>Sim Wei Kiat</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2018/2019</span></td></tr>
+                    <tr><td style="text-align: center;">8</td><td><strong>Poh Han Yin</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2018/2019</span></td></tr>
+                    <tr><td style="text-align: center;">9</td><td><strong>Malvin Tan Yee Phang</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2018/2019</span></td></tr>
+                    <tr><td style="text-align: center;">10</td><td><strong>Sherilyn Teo Xuer</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2017/2018</span></td></tr>
+                    <tr><td style="text-align: center;">11</td><td><strong>Joycelyn Tan Shu Hui</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2017/2018</span></td></tr>
+                    <tr><td style="text-align: center;">12</td><td><strong>Kevin</strong></td><td>URECA</td><td style="text-align: center;"><span class="code-badge">2017/2018</span></td></tr>
+                    <tr><td style="text-align: center;">13</td><td><strong>Lowe Angus Joon</strong></td><td>PH2999 and PH3999 Undergraduate Research Experience I and II</td><td style="text-align: center;"><span class="code-badge">2017/2018</span></td></tr>
+                    <tr><td style="text-align: center;">14</td><td><strong>Calvin Ang Ching Ian</strong></td><td>URECA-FYP</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">15</td><td><strong>Khatee Zathul Arifa</strong></td><td>URECA</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">16</td><td><strong>Mohamed Hamzah bin Mohamed Abdul Kadir</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">17</td><td><strong>Alina Toh Chin Chin</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">18</td><td><strong>Fook Hiu Tung</strong></td><td>URECA-FYP</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">19</td><td><strong>Teoh Han Kheng</strong></td><td>URECA-FYP</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">20</td><td><strong>Desmond Loy Jia Jun</strong></td><td>URECA-FYP</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">21</td><td><strong>Ng Yee Yen</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">22</td><td><strong>Li Zhen</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">23</td><td><strong>Glenn Oon Tze Chong</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">24</td><td><strong>Tan Chor Boon</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">25</td><td><strong>Ziolkowska Aleksandra Agnieszka</strong></td><td>PH3999 Undergraduate Research Experience II</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">26</td><td><strong>Wong De Wei, Shawn</strong></td><td>URECA-Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">27</td><td><strong>Putu Andhita Dananjaya</strong></td><td>URECA-Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">28</td><td><strong>Wang Qi Ying</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">29</td><td><strong>Koh Soo Kuan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">30</td><td><strong>Wong San Yee</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">31</td><td><strong>Michelle Yeo Min Xue</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">32</td><td><strong>Chua Ee Liang</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">33</td><td><strong>Chen Jun Xiang</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">34</td><td><strong>Soh Chin Sheng</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2014/2015</span></td></tr>
+                    <tr><td style="text-align: center;">35</td><td><strong>Gan Wei Liang</strong></td><td>URECA-Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">36</td><td><strong>Tang Xiaolei</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">37</td><td><strong>Lin Jun Xiang, Eddy</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">38</td><td><strong>Ang Li Feng</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">39</td><td><strong>Toh Jing Xiang</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">40</td><td><strong>Lee Meng Suan, June</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">41</td><td><strong>Chew Yihang</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">42</td><td><strong>Shaun Tan Shun Ming</strong></td><td>URECA Project</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">43</td><td><strong>Le Thanh Khue Viet</strong></td><td>URECA Project</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">44</td><td><strong>Do Thi Thu Ha</strong></td><td>URECA Project</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">45</td><td><strong>Gerard Joseph Lim</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">46</td><td><strong>Nur Shahzreen Bte Mohd Taufik</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">47</td><td><strong>Renuka D/O Prasobhan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">48</td><td><strong>Tyas Kokasih</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">49</td><td><strong>Hendrik Santoso Sugiarto</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">50</td><td><strong>Azat Sulaev</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">51</td><td><strong>Indra Purnama</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">52</td><td><strong>Lim Kuo Hou</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">53</td><td><strong>Namig Hasanov</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">54</td><td><strong>Parviz Hajiyev</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">55</td><td><strong>E Huan Shin</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">56</td><td><strong>Foo Pey Shan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">57</td><td><strong>Xiang Gansheng</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">58</td><td><strong>William Chandra Junus</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">59</td><td><strong>Low Seow Chin</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">60</td><td><strong>Septian Budi Waluyan</strong></td><td>Final Year Project</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Category 3: Graduated JC/High School Research Project Students -->
+        <div class="section-header" id="jc-alumni">
+            <h2><i class="fa-solid fa-school" style="color: var(--ntu-red);"></i> Graduated JC / High School Research Project Students</h2>
+        </div>
+        <div class="table-card">
+            <table class="custom-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60px; text-align: center;">No</th>
+                        <th style="width: 280px;">Name</th>
+                        <th>Institution & Program</th>
+                        <th style="width: 160px; text-align: center;">Period</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td style="text-align: center;">1</td><td><strong>Sun Zizhuo</strong></td><td>Hwa Chong Institution, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2025/2026</span></td></tr>
+                    <tr><td style="text-align: center;">2</td><td><strong>Cheng Shi Teng</strong></td><td>River Valley High School, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2025/2026</span></td></tr>
+                    <tr><td style="text-align: center;">3</td><td><strong>Kristen Yee Yi Xin</strong></td><td>Eunoia Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2024/2025</span></td></tr>
+                    <tr><td style="text-align: center;">4</td><td><strong>Justin Chong Jia Xuan</strong></td><td>River Valley High School, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2024/2025</span></td></tr>
+                    <tr><td style="text-align: center;">5</td><td><strong>Lyu Lanqing</strong></td><td>Victoria Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2019/2020</span></td></tr>
+                    <tr><td style="text-align: center;">6</td><td><strong>Li Jiang Rong</strong></td><td>River Valley High School, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2018/2019</span></td></tr>
+                    <tr><td style="text-align: center;">7</td><td><strong>Jiao Yuyang</strong></td><td>National Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2017/2018</span></td></tr>
+                    <tr><td style="text-align: center;">8</td><td><strong>Chen Xinyi</strong></td><td>River Valley High School, H3 Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">9</td><td><strong>Justin Ong Qian Rong</strong></td><td>Raffles Institution, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">10</td><td><strong>Melissa Amanda Murtidjaja</strong></td><td>Raffles Institution, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">11</td><td><strong>Zhao Yi Yang</strong></td><td>Victoria Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2016/2017</span></td></tr>
+                    <tr><td style="text-align: center;">12</td><td><strong>Dinh Khoa Thoang Anh</strong></td><td>Nanyang Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">13</td><td><strong>Rayhan Erlangga Rahadian</strong></td><td>NUS High School of Math and Science, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2015/2016</span></td></tr>
+                    <tr><td style="text-align: center;">14</td><td><strong>Liew Nam Yang</strong></td><td>Meridian Junior College, H3 Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2013/2014</span></td></tr>
+                    <tr><td style="text-align: center;">15</td><td><strong>Chen Si</strong></td><td>Raffles Institution, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">16</td><td><strong>Liu Xintong</strong></td><td>Hwa Chong Institution, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">17</td><td><strong>Yang Xiaoyu</strong></td><td>Meridian Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">18</td><td><strong>Goh Keller</strong></td><td>Temasek Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">19</td><td><strong>Melissa Hiang Shu Wen</strong></td><td>Yishun Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">20</td><td><strong>Conan Thion</strong></td><td>Catholic Junior College, Nanyang Research Program</td><td style="text-align: center;"><span class="code-badge">2009/2010</span></td></tr>
+                    <tr><td style="text-align: center;">21</td><td><strong>Cong Feng</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">22</td><td><strong>Matthew Wong Huai Zhe</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2012/2013</span></td></tr>
+                    <tr><td style="text-align: center;">23</td><td><strong>Fong En Lei Samuel</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">24</td><td><strong>Weng De En Jonathan</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">25</td><td><strong>Poh Ying Ming</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2011/2012</span></td></tr>
+                    <tr><td style="text-align: center;">26</td><td><strong>Zeph Yap</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                    <tr><td style="text-align: center;">27</td><td><strong>Chia Yu Xuan</strong></td><td>Raffles Institution, Science Mentorship Program</td><td style="text-align: center;"><span class="code-badge">2010/2011</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
+
+</body>
+</html>
