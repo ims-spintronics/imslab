@@ -59,7 +59,7 @@ img {
 
 /* NTU Logo Sizing in Top Bar */
 .top-bar-ntu-logo {
-    height: 32px;
+    height:65px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -114,11 +114,12 @@ nav {
 
 .nav-links {
     display: flex !important;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     align-items: center;
     justify-content: center;
     list-style: none;
     gap: 1.25rem;
+	width: 100%
 }
 
 .nav-links li {
@@ -129,7 +130,7 @@ nav {
     color: #cbd5e1;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 1.09rem;
     padding: 0.5rem 0.8rem;
     border-radius: 6px;
     transition: all 0.2s ease;
