@@ -519,9 +519,10 @@
             const toggleIcon = toggleBtn.querySelector('i');
             const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
 
-            // Mobile menu slide toggle
+            // Mobile menu slide toggle & fixed close button positioning
             toggleBtn.addEventListener('click', function () {
                 navMenu.classList.toggle('active');
+                toggleBtn.classList.toggle('is-active');
                 
                 if (navMenu.classList.contains('active')) {
                     toggleIcon.classList.remove('fa-bars');

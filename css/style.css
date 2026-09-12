@@ -606,9 +606,17 @@ main.container {
         padding: 0.6rem 1.2rem;
     }
 
-    /* Show Hamburger Menu Button on Mobile ONLY */
+    /* Show Hamburger Toggle Button on Navbar */
     .hamburger-toggle {
         display: block !important;
+    }
+
+    /* Fixed Top-Right Close Button inside Open Drawer */
+    .hamburger-toggle.is-active {
+        position: fixed;
+        top: 1.2rem;
+        right: 1.2rem;
+        z-index: 1002;
     }
 
     /* Off-screen Navigation Drawer */
@@ -622,7 +630,7 @@ main.container {
         flex-direction: column;
         align-items: flex-start;
         justify-content: flex-start;
-        padding: 5rem 1.5rem 2rem;
+        padding: 4.5rem 1.25rem 2rem;
         gap: 0.5rem;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
         transition: right 0.3s ease-in-out;
@@ -638,12 +646,17 @@ main.container {
         width: 100%;
     }
 
+    /* Fix #1: Keep "About" and text right beside icons on mobile */
     .nav-links a {
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start !important; /* Left aligns icon & text side-by-side */
         padding: 0.75rem 0.8rem;
         font-size: 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links a.dropdown-trigger {
+        justify-content: space-between !important; /* Retains right arrow spacing for expandable items */
     }
 
     .nav-ims-logo {
@@ -672,6 +685,18 @@ main.container {
 
     .has-dropdown.active .dropdown-icon {
         transform: rotate(180deg);
+    }
+
+    /* Fix #3: High-contrast visible text color for subsection links */
+    .dropdown a {
+        color: #94a3b8 !important; /* High contrast visible light grey */
+        display: block;
+        padding: 0.5rem 0.8rem;
+    }
+
+    .dropdown a:hover {
+        color: #60a5fa !important; /* Highlight blue on tap */
+        background: transparent !important;
     }
 
     .hero-container, 
