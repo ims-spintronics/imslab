@@ -59,7 +59,7 @@ img {
 
 /* NTU Logo Sizing in Top Bar */
 .top-bar-ntu-logo {
-    height:65px;
+    height: 65px;
     width: auto;
     object-fit: contain;
     display: block;
@@ -107,7 +107,7 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     padding: 0.75rem 2rem;
 }
@@ -116,10 +116,10 @@ nav {
     display: flex !important;
     flex-wrap: nowrap;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     list-style: none;
     gap: 1.25rem;
-	width: 100%
+    width: 100%;
 }
 
 .nav-links li {
@@ -148,6 +148,7 @@ nav {
 .nav-logo-item {
     display: flex;
     align-items: center;
+    margin-right: auto;
 }
 
 .logo-link {
@@ -478,6 +479,7 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
 /* --- Equipment Page Specific Styling --- */
 
 /* Main Container Spacing */
@@ -586,17 +588,31 @@ main.container {
     line-height: 1.4;
     text-align: center;
 }
+
 /* ==========================================================================
-   Mobile & Responsive Layout Fixes
+   Hamburger Menu & Mobile Drawer Navigation
    ========================================================================== */
+
+/* Toggle Button Styling (Hidden on Desktop) */
+.hamburger-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
 
 .dropdown-icon {
     font-size: 0.7em;
+    transition: transform 0.25s ease;
 }
 
-/* Tablet & Mobile Header Adjustments */
+/* Mobile & Tablet Styles */
 @media (max-width: 900px) {
-    /* 1. Fix Top Bar Text Collision */
+    /* Top Bar Mobile Layout */
     .top-bar {
         flex-direction: column;
         align-items: flex-start;
@@ -623,36 +639,78 @@ main.container {
         opacity: 0.9;
     }
 
-    /* 2. Fix Horizontal Navigation Overflow */
+    /* Header Nav Layout */
     nav {
-        padding: 0.5rem 0.5rem;
+        justify-content: space-between;
+        padding: 0.6rem 1.2rem;
     }
 
+    .hamburger-toggle {
+        display: block; /* Show hamburger button on mobile */
+    }
+
+    /* Slide-out Drawer */
     .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%; /* Hidden off-screen by default */
+        width: 280px;
+        height: 100vh;
+        background: #001e34;
+        flex-direction: column !important;
+        align-items: flex-start !important;
         justify-content: flex-start !important;
-        overflow-x: auto !important;
-        white-space: nowrap !important;
-        -webkit-overflow-scrolling: touch;
-        padding-bottom: 6px;
+        padding: 5rem 1.5rem 2rem !important;
         gap: 0.5rem !important;
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
+        transition: right 0.3s ease-in-out;
+        overflow-y: auto;
+        z-index: 1000;
     }
 
-    .nav-links::-webkit-scrollbar {
-        height: 3px;
+    /* Open State for Drawer */
+    .nav-links.active {
+        right: 0;
     }
 
-    .nav-links::-webkit-scrollbar-thumb {
-        background: rgba(255, 255, 255, 0.2);
-        border-radius: 4px;
+    .nav-links li {
+        width: 100%;
     }
 
     .nav-links a {
-        font-size: 0.9rem;
-        padding: 0.4rem 0.6rem;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0.75rem 0.8rem;
+        font-size: 1rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav-ims-logo {
-        height: 36px;
+        height: 38px;
+    }
+
+    /* Accordion Dropdowns for Mobile */
+    .dropdown {
+        position: static !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: none !important;
+        background: rgba(255, 255, 255, 0.04) !important;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out, padding 0.3s ease;
+        padding: 0 0 0 1rem;
+        border-radius: 6px;
+    }
+
+    .has-dropdown.active .dropdown {
+        max-height: 300px;
+        padding: 0.4rem 0 0.4rem 1rem;
+    }
+
+    .has-dropdown.active .dropdown-icon {
+        transform: rotate(180deg);
     }
 }
 

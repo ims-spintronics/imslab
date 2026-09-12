@@ -55,24 +55,25 @@
             margin: 0;
         }
 
-       		.stats-grid-separate {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 columns per row */
-			gap: 1.25rem;
-			margin: 2.5rem 0;
-		}
+        .stats-grid-separate {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 columns per row */
+            gap: 1.25rem;
+            margin: 2.5rem 0;
+        }
 
-		/* Optional: Keep it mobile-friendly on small screens */
-		@media (max-width: 768px) {
-			.stats-grid-separate {
-				grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
-			}
-		}
-		@media (max-width: 480px) {
-			.stats-grid-separate {
-				grid-template-columns: 1fr; /* 1 per row on phones */
-			}
-}
+        /* Optional: Keep it mobile-friendly on small screens */
+        @media (max-width: 768px) {
+            .stats-grid-separate {
+                grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+            }
+        }
+        @media (max-width: 480px) {
+            .stats-grid-separate {
+                grid-template-columns: 1fr; /* 1 per row on phones */
+            }
+        }
+
         .stat-card-item {
             background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
             border-radius: 12px;
@@ -214,62 +215,90 @@
 
     <!-- Top Bar -->
     <div class="top-bar">
-    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-        <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-    </a>
-    <div class="top-bar-right">
-        <a href="https://www.ntu.edu.sg/spms" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i> 
-            <span>School of Physical and Mathematical Sciences</span>
+        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
         </a>
+        <div class="top-bar-right">
+            <a href="https://www.ntu.edu.sg/spms" target="_blank">
+                <i class="fa-solid fa-graduation-cap"></i> 
+                <span>School of Physical and Mathematical Sciences</span>
+            </a>
+        </div>
     </div>
-</div>
+
     <!-- Header & Navigation -->
     <header>
         <nav>
-            <ul class="nav-links">
-                <li class="nav-logo-item">
-                    <a href="index.html" class="logo-link">
-                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-                    </a>
-                </li>
+            <!-- IMS Brand Logo -->
+            <div class="nav-logo-item">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+            </div>
+
+            <!-- Hamburger Toggle Button (Mobile Only) -->
+            <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle navigation">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <!-- Navigation Links -->
+            <ul class="nav-links" id="nav-menu">
                 <li>
                     <a href="index.html" class="active"><i class="fa-solid fa-house"></i> About</a>
                 </li>
 
-                <li>
-                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-bullhorn"></i> Updates</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="news.html">Group</a></li>
                         <li><a href="events.html">Events</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-flask"></i> Research</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="topics.html">Research Topics</a></li>
                         <li><a href="equipment.html">Equipment & Facilities</a></li>
                     </ul>
                 </li>
 
-                <li>
-                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-book-open"></i> Teaching</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
-                       <li><a href="lecture.html">Lecture Courses</a></li>
+                        <li><a href="lecture.html">Lecture Courses</a></li>
                         <li><a href="laboratory.html">Laboratory Courses</a></li>
                         <li><a href="internship.html">Industrial Internships</a></li>
                         <li><a href="fyp.html">Final Year Projects</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-users"></i> Team</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="team.html">Current Group</a></li>
                         <li><a href="graduated.html">Graduated Students</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-file-lines"></i> Publications</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="paper.html">Journal Papers</a></li>
                         <li><a href="conferences.html">Conference Presentations</a></li>
@@ -277,16 +306,23 @@
                         <li><a href="property.html">Intellectual Property</a></li>
                     </ul>
                 </li>
-               
-                <li>
-                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-dollar-sign"></i> Support</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="fund.html">Funding Firms</a></li>
                         <li><a href="collaborations.html">Collaborations</a></li>
                     </ul>
                 </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+
+                <li class="has-dropdown">
+                    <a href="#" class="dropdown-trigger">
+                        <span><i class="fa-solid fa-envelope"></i> Connect</span>
+                        <i class="fa-solid fa-chevron-down dropdown-icon"></i>
+                    </a>
                     <ul class="dropdown">
                         <li><a href="contact.html">Contact Us</a></li>
                         <li><a href="opportunity.html">Opportunities</a></li>
@@ -344,9 +380,9 @@
         
         <div class="about-card about-layout">
             <div class="about-text">
-			<p> The <strong>Laboratory of Intelligent Materials and Systems (IMS Lab) </strong> at <strong>Nanyang Technological University Singapore </strong>, advances energy-efficient technologies in non-volatile memory, spintronics, and intelligent sensing. Our research spans device and circuit simulation, micro- and nano-fabrication, and precision magnetic/electronic characterisation, extending to MEMS/NEMS-based biomedical sensing.</p>
-			<p> Through strong industry and international collaborations, we bridge fundamental research and real-world technological innovation. </p>
-			</div>
+                <p> The <strong>Laboratory of Intelligent Materials and Systems (IMS Lab) </strong> at <strong>Nanyang Technological University Singapore </strong>, advances energy-efficient technologies in non-volatile memory, spintronics, and intelligent sensing. Our research spans device and circuit simulation, micro- and nano-fabrication, and precision magnetic/electronic characterisation, extending to MEMS/NEMS-based biomedical sensing.</p>
+                <p> Through strong industry and international collaborations, we bridge fundamental research and real-world technological innovation. </p>
+            </div>
             <div class="about-image">
                 <img src="images/about-lab.jpg" alt="About NTU Laboratory" class="responsive-img">
             </div>
@@ -370,11 +406,11 @@
                 <div class="number">10+</div>
                 <div class="label">Advanced Lab Tools</div>
             </div>
-			 <div class="stat-card-item">
+            <div class="stat-card-item">
                 <div class="number">40+</div>
                 <div class="label">Graduated PhD Students</div>
             </div>
-			 <div class="stat-card-item">
+            <div class="stat-card-item">
                 <div class="number">60+</div>
                 <div class="label">Graduated Undergraduate<br> Project Students</div>
             </div>
@@ -475,6 +511,48 @@
             <div>Last updated: September 2026</div>
         </div>
     </footer>
+
+    <!-- Mobile Navigation Drawer & Dropdown Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggleBtn = document.getElementById('hamburger-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const toggleIcon = toggleBtn.querySelector('i');
+            const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
+
+            // Toggle mobile drawer open/close
+            toggleBtn.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+                
+                if (navMenu.classList.contains('active')) {
+                    toggleIcon.classList.remove('fa-bars');
+                    toggleIcon.classList.add('fa-xmark');
+                } else {
+                    toggleIcon.classList.remove('fa-xmark');
+                    toggleIcon.classList.add('fa-bars');
+                }
+            });
+
+            // Mobile accordion dropdown handling
+            dropdownTriggers.forEach(trigger => {
+                trigger.addEventListener('click', function (e) {
+                    if (window.innerWidth <= 900) {
+                        e.preventDefault();
+                        const parentLi = this.parentElement;
+
+                        // Close other open accordions
+                        document.querySelectorAll('.has-dropdown').forEach(item => {
+                            if (item !== parentLi) {
+                                item.classList.remove('active');
+                            }
+                        });
+
+                        parentLi.classList.toggle('active');
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
