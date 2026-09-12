@@ -45,8 +45,8 @@ img {
 
 /* Left Brand Side-by-Side Alignment */
 .top-bar-brand {
-    display: flex !important;
-    align-items: center !important;
+    display: flex;
+    align-items: center;
     gap: 12px;
     color: #cbd5e1;
     text-decoration: none;
@@ -113,13 +113,12 @@ nav {
 }
 
 .nav-links {
-    display: flex !important;
+    display: flex;
     flex-wrap: nowrap;
     align-items: center;
     justify-content: flex-end;
     list-style: none;
-    gap: 1.25rem;
-    width: 100%;
+    gap: 1rem;
 }
 
 .nav-links li {
@@ -130,13 +129,14 @@ nav {
     color: #cbd5e1;
     text-decoration: none;
     font-weight: 600;
-    font-size: 1.09rem;
-    padding: 0.5rem 0.8rem;
+    font-size: 1.05rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 6px;
     transition: all 0.2s ease;
     display: flex;
     align-items: center;
     gap: 0.4rem;
+    white-space: nowrap;
 }
 
 .nav-links a:hover {
@@ -148,7 +148,6 @@ nav {
 .nav-logo-item {
     display: flex;
     align-items: center;
-    margin-right: auto;
 }
 
 .logo-link {
@@ -173,7 +172,7 @@ nav {
     transform: scale(1.04);
 }
 
-/* Dropdown Navigation */
+/* Dropdown Navigation (Desktop) */
 .dropdown {
     position: absolute;
     top: 100%;
@@ -209,7 +208,24 @@ nav {
     color: var(--accent);
 }
 
-/* Hero Section - Compact Top/Bottom Padding */
+/* Toggle Button Styling (Strictly Hidden on Desktop) */
+.hamburger-toggle {
+    display: none !important;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1001;
+}
+
+.dropdown-icon {
+    font-size: 0.7em;
+    transition: transform 0.25s ease;
+}
+
+/* Hero Section */
 .hero {
     background: var(--gradient-ntu);
     color: white;
@@ -460,53 +476,13 @@ footer {
     gap: 1rem;
 }
 
-/* Responsive Styles */
-@media (max-width: 1024px) {
-    .footer-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 900px) {
-    .hero-container, 
-    .about-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 600px) {
-    .footer-container {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* --- Equipment Page Specific Styling --- */
-
-/* Main Container Spacing */
+/* Equipment Page Specific Styling */
 main.container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* Section Headers */
-.section-header {
-    margin-top: 40px;
-    margin-bottom: 16px;
-    padding-bottom: 8px;
-    border-bottom: 2px solid #e2e8f0;
-}
-
-.section-header h2 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--ntu-blue, #002b49);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-/* Card Container */
 .card-panel {
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -516,7 +492,6 @@ main.container {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
-/* Equipment List */
 .equip-list {
     list-style: none;
     padding: 0;
@@ -540,7 +515,6 @@ main.container {
     margin-top: 4px;
 }
 
-/* Equipment Gallery Grid */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -590,27 +564,14 @@ main.container {
 }
 
 /* ==========================================================================
-   Hamburger Menu & Mobile Drawer Navigation
+   Mobile & Tablet Breakpoint (Under 900px)
    ========================================================================== */
-
-/* Toggle Button Styling (Hidden on Desktop) */
-.hamburger-toggle {
-    display: none;
-    background: transparent;
-    border: none;
-    color: #ffffff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    padding: 0.5rem;
-    z-index: 1001;
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
-.dropdown-icon {
-    font-size: 0.7em;
-    transition: transform 0.25s ease;
-}
-
-/* Mobile & Tablet Styles */
 @media (max-width: 900px) {
     /* Top Bar Mobile Layout */
     .top-bar {
@@ -639,36 +600,36 @@ main.container {
         opacity: 0.9;
     }
 
-    /* Header Nav Layout */
+    /* Header Nav Mobile Layout */
     nav {
         justify-content: space-between;
         padding: 0.6rem 1.2rem;
     }
 
+    /* Show Hamburger Menu Button on Mobile ONLY */
     .hamburger-toggle {
-        display: block; /* Show hamburger button on mobile */
+        display: block !important;
     }
 
-    /* Slide-out Drawer */
+    /* Off-screen Navigation Drawer */
     .nav-links {
         position: fixed;
         top: 0;
-        right: -100%; /* Hidden off-screen by default */
+        right: -100%;
         width: 280px;
         height: 100vh;
         background: #001e34;
-        flex-direction: column !important;
-        align-items: flex-start !important;
-        justify-content: flex-start !important;
-        padding: 5rem 1.5rem 2rem !important;
-        gap: 0.5rem !important;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 5rem 1.5rem 2rem;
+        gap: 0.5rem;
         box-shadow: -5px 0 25px rgba(0, 0, 0, 0.4);
         transition: right 0.3s ease-in-out;
         overflow-y: auto;
         z-index: 1000;
     }
 
-    /* Open State for Drawer */
     .nav-links.active {
         right: 0;
     }
@@ -689,14 +650,14 @@ main.container {
         height: 38px;
     }
 
-    /* Accordion Dropdowns for Mobile */
+    /* Accordion Dropdowns for Mobile Drawer */
     .dropdown {
-        position: static !important;
-        opacity: 1 !important;
-        visibility: visible !important;
-        transform: none !important;
-        box-shadow: none !important;
-        background: rgba(255, 255, 255, 0.04) !important;
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.04);
         max-height: 0;
         overflow: hidden;
         transition: max-height 0.3s ease-in-out, padding 0.3s ease;
@@ -712,9 +673,19 @@ main.container {
     .has-dropdown.active .dropdown-icon {
         transform: rotate(180deg);
     }
+
+    .hero-container, 
+    .about-layout {
+        grid-template-columns: 1fr;
+    }
 }
 
-/* Small Smartphone Tweaks */
+@media (max-width: 600px) {
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 480px) {
     .hero h2 {
         font-size: 1.8rem;

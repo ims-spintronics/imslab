@@ -57,20 +57,19 @@
 
         .stats-grid-separate {
             display: grid;
-            grid-template-columns: repeat(3, 1fr); /* Forces exactly 3 columns per row */
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.25rem;
             margin: 2.5rem 0;
         }
 
-        /* Optional: Keep it mobile-friendly on small screens */
         @media (max-width: 768px) {
             .stats-grid-separate {
-                grid-template-columns: repeat(2, 1fr); /* 2 per row on tablets */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         @media (max-width: 480px) {
             .stats-grid-separate {
-                grid-template-columns: 1fr; /* 1 per row on phones */
+                grid-template-columns: 1fr;
             }
         }
 
@@ -512,7 +511,7 @@
         </div>
     </footer>
 
-    <!-- Mobile Navigation Drawer & Dropdown Logic -->
+    <!-- Mobile Navigation Drawer Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const toggleBtn = document.getElementById('hamburger-toggle');
@@ -520,7 +519,7 @@
             const toggleIcon = toggleBtn.querySelector('i');
             const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
 
-            // Toggle mobile drawer open/close
+            // Mobile menu slide toggle
             toggleBtn.addEventListener('click', function () {
                 navMenu.classList.toggle('active');
                 
@@ -533,14 +532,13 @@
                 }
             });
 
-            // Mobile accordion dropdown handling
+            // Mobile dropdown accordion handling
             dropdownTriggers.forEach(trigger => {
                 trigger.addEventListener('click', function (e) {
                     if (window.innerWidth <= 900) {
                         e.preventDefault();
                         const parentLi = this.parentElement;
 
-                        // Close other open accordions
                         document.querySelectorAll('.has-dropdown').forEach(item => {
                             if (item !== parentLi) {
                                 item.classList.remove('active');
