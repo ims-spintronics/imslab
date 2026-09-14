@@ -22,6 +22,7 @@ body {
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 /* Base Image Defaults */
@@ -379,6 +380,13 @@ nav {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
+/* Vision and Mission Cards Justification */
+.vision-card p,
+.mission-card p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 /* Cards Grid Layout */
 .grid {
     display: grid;
@@ -420,6 +428,58 @@ nav {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+}
+
+/* Table Card & Data Styling (Mobile Alignment Fixes Included) */
+.table-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow-x: auto; /* Enables horizontal swiping on mobile devices */
+    -webkit-overflow-scrolling: touch; /* Smooth Touch Scrolling for iOS */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+    margin-bottom: 3rem;
+    width: 100%;
+}
+
+.custom-table {
+    width: 100%;
+    min-width: 600px; /* Forces readable minimum width for table data on narrow screens */
+    border-collapse: collapse;
+    font-size: 0.92rem;
+    text-align: left;
+}
+
+.custom-table th {
+    background-color: #f8fafc;
+    color: #0f172a;
+    font-weight: 700;
+    padding: 1rem 1.25rem;
+    border-bottom: 2px solid var(--border);
+    text-transform: uppercase;
+    font-size: 0.78rem;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.custom-table td {
+    padding: 0.9rem 1.25rem;
+    border-bottom: 1px solid #edf2f7;
+    color: #334155;
+    vertical-align: middle;
+}
+
+.custom-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.custom-table tbody tr:nth-child(even) {
+    background-color: #f9fafb;
+}
+
+.custom-table tbody tr:hover {
+    background-color: #f1f5f9;
+    transition: background-color 0.2s ease;
 }
 
 /* Footer Section */
@@ -564,7 +624,7 @@ main.container {
 }
 
 /* ==========================================================================
-   Mobile & Tablet Breakpoint (Under 900px)
+   Mobile & Tablet Breakpoint (Under 1024px & 900px)
    ========================================================================== */
 @media (max-width: 1024px) {
     .footer-container {
@@ -573,6 +633,11 @@ main.container {
 }
 
 @media (max-width: 900px) {
+    .container,
+    main.container {
+        padding: 1.5rem 1rem;
+    }
+
     /* Top Bar Mobile Layout */
     .top-bar {
         flex-direction: column;
@@ -646,17 +711,16 @@ main.container {
         width: 100%;
     }
 
-    /* Fix #1: Keep "About" and text right beside icons on mobile */
     .nav-links a {
         width: 100%;
-        justify-content: flex-start !important; /* Left aligns icon & text side-by-side */
+        justify-content: flex-start !important;
         padding: 0.75rem 0.8rem;
         font-size: 1rem;
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
 
     .nav-links a.dropdown-trigger {
-        justify-content: space-between !important; /* Retains right arrow spacing for expandable items */
+        justify-content: space-between !important;
     }
 
     .nav-ims-logo {
@@ -687,15 +751,14 @@ main.container {
         transform: rotate(180deg);
     }
 
-    /* Fix #3: High-contrast visible text color for subsection links */
     .dropdown a {
-        color: #94a3b8 !important; /* High contrast visible light grey */
+        color: #94a3b8 !important;
         display: block;
         padding: 0.5rem 0.8rem;
     }
 
     .dropdown a:hover {
-        color: #60a5fa !important; /* Highlight blue on tap */
+        color: #60a5fa !important;
         background: transparent !important;
     }
 
@@ -708,6 +771,10 @@ main.container {
 @media (max-width: 600px) {
     .footer-container {
         grid-template-columns: 1fr;
+    }
+
+    .about-card {
+        padding: 1.5rem;
     }
 }
 
