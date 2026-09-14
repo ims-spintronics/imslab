@@ -488,15 +488,27 @@
 <!-- Header & Navigation -->
 <header>
     <nav>
-        <ul class="nav-links">
+        <!-- Mobile & Desktop Top Logo -->
+        <a href="index.html" class="mobile-logo-link">
+            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+        </a>
+
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+		
+		<!-- Navigation Drawer -->
+		
+		<ul class="nav-links">
             <li class="nav-logo-item">
                 <a href="index.html" class="logo-link">
-                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-                </a>
+                   </a>
             </li>
             <li>
                 <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
             </li>
+
             <li>
                 <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                 <ul class="dropdown">
@@ -511,6 +523,7 @@
                     <li><a href="equipment.html">Equipment & Facilities</a></li>
                 </ul>
             </li>
+
             <li>
                 <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                 <ul class="dropdown">
@@ -533,9 +546,10 @@
                     <li><a href="paper.html">Journal Papers</a></li>
                     <li><a href="conferences.html">Conference Presentations</a></li>
                     <li><a href="books.html">Book Chapters</a></li>
-                    <li><a href="property.html" style="color: var(--accent); font-weight: 700;">Intellectual Property</a></li>
+                    <li><a href="property.html">Intellectual Property</a></li>
                 </ul>
             </li>
+            
             <li>
                 <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
                 <ul class="dropdown">
@@ -552,7 +566,9 @@
             </li>
         </ul>
     </nav>
-</header>    <!-- Page Header Banner -->
+</header>
+
+   <!-- Page Header Banner -->
     <section class="page-hero">
         <div class="page-hero-container">
             <h2>Conference Presentations</h2>
@@ -1873,5 +1889,51 @@
 
         searchInput.addEventListener('input', filterPresentations);
     </script>
+	
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            const isOpen = navMenu.classList.toggle('active');
+            
+            const toggleIcon = toggleBtn.querySelector('i');
+            if (toggleIcon) {
+                if (isOpen) {
+                    toggleIcon.className = 'fa-solid fa-xmark';
+                    toggleIcon.style.color = '#ffffff';
+                    toggleIcon.style.display = 'inline-block';
+                } else {
+                    toggleIcon.className = 'fa-solid fa-bars';
+                    toggleIcon.style.color = '#ffffff';
+                    toggleIcon.style.display = 'inline-block';
+                }
+            }
+        });
+    }
+
+    const parentLinks = document.querySelectorAll('.nav-links > li > a');
+    parentLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 900) {
+                const parentLi = this.parentElement;
+                const dropdown = parentLi.querySelector('.dropdown');
+
+                if (dropdown) {
+                    e.preventDefault();
+                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                        if (item !== parentLi) item.classList.remove('active');
+                    });
+                    parentLi.classList.toggle('active');
+                }
+            }
+        });
+    });
+});
+</script>
+
 </body>
 </html>

@@ -169,74 +169,88 @@
         </div>
     </div>
 
-    <!-- Header & Navigation -->
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li class="nav-logo-item">
-                    <a href="index.html" class="logo-link">
-                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-                    </a>
-                </li>
-                <li>
-                    <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="news.html">Group</a></li>
-                        <li><a href="events.html">Events</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="topics.html">Research Topics</a></li>
-                        <li><a href="equipment.html">Equipment & Facilities</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="lecture.html">Lecture Courses</a></li>
-                        <li><a href="laboratory.html">Laboratory Courses</a></li>
-                        <li><a href="internship.html">Industrial Internships</a></li>
-                        <li><a href="fyp.html">Final Year Projects</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#" class="active"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="team.html">Current Group</a></li>
-                        <li><a href="graduated.html">Graduated Students</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="paper.html">Journal Papers</a></li>
-                        <li><a href="conferences.html">Conference Presentations</a></li>
-                        <li><a href="books.html">Book Chapters</a></li>
-                        <li><a href="property.html">Intellectual Property</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="fund.html">Funding Firms</a></li>
-                        <li><a href="collaborations.html">Collaborations</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="opportunity.html">Opportunities</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
-    </header>
+   <!-- Header & Navigation -->
+<header>
+    <nav>
+        <!-- Mobile & Desktop Top Logo -->
+        <a href="index.html" class="mobile-logo-link">
+            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+        </a>
+
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+		
+		<!-- Navigation Drawer -->
+		
+		<ul class="nav-links">
+            <li class="nav-logo-item">
+                <a href="index.html" class="logo-link">
+                   </a>
+            </li>
+            <li>
+                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="news.html">Group</a></li>
+                    <li><a href="events.html">Events</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="lecture.html">Lecture Courses</a></li>
+                    <li><a href="laboratory.html">Laboratory Courses</a></li>
+                    <li><a href="internship.html">Industrial Internships</a></li>
+                    <li><a href="fyp.html">Final Year Projects</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="team.html">Current Group</a></li>
+                    <li><a href="graduated.html">Graduated Students</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="paper.html">Journal Papers</a></li>
+                    <li><a href="conferences.html">Conference Presentations</a></li>
+                    <li><a href="books.html">Book Chapters</a></li>
+                    <li><a href="property.html">Intellectual Property</a></li>
+                </ul>
+            </li>
+            
+            <li>
+                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="fund.html">Funding Firms</a></li>
+                    <li><a href="collaborations.html">Collaborations</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                <ul class="dropdown">
+                    <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="opportunity.html">Opportunities</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</header>
 
     <!-- Hero Banner -->
     <section class="hero">
@@ -862,5 +876,51 @@
             });
         }
     </script>
+	
+	<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+
+    // Mobile slide menu toggle
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            
+            const toggleIcon = toggleBtn.querySelector('i');
+            if (toggleIcon) {
+                toggleIcon.classList.toggle('fa-bars');
+                toggleIcon.classList.toggle('fa-xmark');
+            }
+        });
+    }
+
+    // Mobile dropdown accordion handling
+    const parentLinks = document.querySelectorAll('.nav-links > li > a');
+    parentLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 900) {
+                const parentLi = this.parentElement;
+                const dropdown = parentLi.querySelector('.dropdown');
+
+                if (dropdown) {
+                    e.preventDefault();
+                    
+                    // Close other open accordions
+                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                        if (item !== parentLi) {
+                            item.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current accordion
+                    parentLi.classList.toggle('active');
+                }
+            }
+        });
+    });
+});
+</script>
 </body>
 </html>

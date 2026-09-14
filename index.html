@@ -232,11 +232,22 @@
 <!-- Header & Navigation -->
 <header>
     <nav>
-        <ul class="nav-links">
+        <!-- Mobile & Desktop Top Logo -->
+        <a href="index.html" class="mobile-logo-link">
+            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+        </a>
+
+        <!-- Hamburger Toggle Button -->
+        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+		
+		<!-- Navigation Drawer -->
+		
+		<ul class="nav-links">
             <li class="nav-logo-item">
                 <a href="index.html" class="logo-link">
-                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-                </a>
+                   </a>
             </li>
             <li>
                 <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
@@ -481,46 +492,51 @@
     </footer>
 
     <!-- Mobile Navigation Drawer Logic -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggleBtn = document.getElementById('hamburger-toggle');
-            const navMenu = document.getElementById('nav-menu');
+   <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+
+    // Mobile slide menu toggle
+    if (toggleBtn && navMenu) {
+        toggleBtn.addEventListener('click', function (e) {
+            e.stopPropagation();
+            navMenu.classList.toggle('active');
+            
             const toggleIcon = toggleBtn.querySelector('i');
-            const dropdownTriggers = document.querySelectorAll('.dropdown-trigger');
-
-            // Mobile menu slide toggle & fixed close button positioning
-            toggleBtn.addEventListener('click', function () {
-                navMenu.classList.toggle('active');
-                toggleBtn.classList.toggle('is-active');
-                
-                if (navMenu.classList.contains('active')) {
-                    toggleIcon.classList.remove('fa-bars');
-                    toggleIcon.classList.add('fa-xmark');
-                } else {
-                    toggleIcon.classList.remove('fa-xmark');
-                    toggleIcon.classList.add('fa-bars');
-                }
-            });
-
-            // Mobile dropdown accordion handling
-            dropdownTriggers.forEach(trigger => {
-                trigger.addEventListener('click', function (e) {
-                    if (window.innerWidth <= 900) {
-                        e.preventDefault();
-                        const parentLi = this.parentElement;
-
-                        document.querySelectorAll('.has-dropdown').forEach(item => {
-                            if (item !== parentLi) {
-                                item.classList.remove('active');
-                            }
-                        });
-
-                        parentLi.classList.toggle('active');
-                    }
-                });
-            });
+            if (toggleIcon) {
+                toggleIcon.classList.toggle('fa-bars');
+                toggleIcon.classList.toggle('fa-xmark');
+            }
         });
-    </script>
+    }
+
+    // Mobile dropdown accordion handling
+    const parentLinks = document.querySelectorAll('.nav-links > li > a');
+    parentLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
+            if (window.innerWidth <= 900) {
+                const parentLi = this.parentElement;
+                const dropdown = parentLi.querySelector('.dropdown');
+
+                if (dropdown) {
+                    e.preventDefault();
+                    
+                    // Close other open accordions
+                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                        if (item !== parentLi) {
+                            item.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current accordion
+                    parentLi.classList.toggle('active');
+                }
+            }
+        });
+    });
+});
+</script>
 
 </body>
 </html>

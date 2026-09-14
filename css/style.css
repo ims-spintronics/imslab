@@ -464,16 +464,44 @@ footer {
         font-size: 0.8rem;
     }
 
-    /* Keep IMS logo visible on top left for mobile */
-    .nav-ims-logo {
-        height: 36px;
-        display: block;
+    /* Force Nav Container to display Logo left & Hamburger right */
+    header nav {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0.5rem 1rem !important;
     }
 
-    /* Hamburger top-right alignment */
+    /* Keep IMS logo visible on top left for mobile */
+    .mobile-logo-link {
+        display: block !important;
+        z-index: 1001;
+    }
+
+    .nav-ims-logo {
+        height: 36px;
+        width: auto;
+        display: block !important;
+    }
+
+   /* Hamburger top-right alignment */
     .hamburger-toggle {
-        display: block;
+        display: block !important;
+        background: transparent;
+        border: none;
+        color: #ffffff !important;
+        font-size: 1.5rem;
         cursor: pointer;
+        z-index: 1200;
+        position: relative;
+    }
+
+    /* Force icon child element to stay visible */
+    .hamburger-toggle i {
+        display: inline-block !important;
+        color: #ffffff !important;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
 
     /* Mobile drawer menu alignment */
