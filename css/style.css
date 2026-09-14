@@ -179,7 +179,7 @@ nav {
     z-index: 100;
 }
 
-.has-dropdown:hover .dropdown {
+.nav-links li:hover .dropdown {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
@@ -530,7 +530,7 @@ footer {
         border-radius: 0;
     }
 
-    .has-dropdown.active .dropdown {
+    .nav-links li.active .dropdown {
         display: block;
     }
 
