@@ -17,7 +17,87 @@
     
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Carousel Component Styles -->
+    <style>
+        .carousel-section {
+            margin-bottom: 2.5rem;
+        }
+        .carousel-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+        }
+        .carousel-stage {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 380px;
+        }
+        .slide-content {
+            text-align: center;
+            max-width: 80%;
+        }
+        .slide-content img {
+            max-height: 360px;
+            width: auto;
+            max-width: 100%;
+            border-radius: 8px;
+            object-fit: contain;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+            transition: opacity 0.3s ease;
+        }
+        .slide-caption {
+            margin-top: 1rem;
+            color: #475569;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(15, 23, 42, 0.7);
+            color: #ffffff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s ease;
+        }
+        .carousel-btn:hover {
+            background: var(--ntu-red, #c8102e);
+        }
+        .prev-btn { left: 10px; }
+        .next-btn { right: 10px; }
+        .carousel-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 1.25rem;
+        }
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #cbd5e1;
+            cursor: pointer;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .dot.active {
+            background: var(--ntu-red, #c8102e);
+            transform: scale(1.2);
+        }
+    </style>
 </head>
+
 <body>
 
     <!-- Top Bar -->
@@ -171,9 +251,36 @@
             </div>
 
            
-        </div>
-    </main>
+        </div> <!-- End of .grid -->
 
+        <!-- Research Publication Highlights Carousel (Placed After Research Areas) -->
+        <div class="carousel-section" style="margin-top: 3rem;">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-flask-vial" style="color: var(--ntu-red, #c8102e);"></i> Research Publication Highlights</h2>
+            </div>
+
+            <div class="carousel-card">
+                <div class="carousel-stage">
+                    <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous Slide">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    
+                    <div class="slide-content">
+                        <img id="carouselImage" src="images/acsaem2019.jpg" alt="Publication Cover">
+                        <p id="carouselCaption" class="slide-caption">ACS Applied Energy Materials (2019)</p>
+                    </div>
+
+                    <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next Slide">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <div class="carousel-dots" id="dotsContainer"></div>
+            </div>
+        </div>
+
+    </main> <!-- End of .container -->
+   
     <!-- Footer -->
     <footer>
         <div class="footer-container">
@@ -267,5 +374,68 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    const slides = [
+        { img: 'images/slidingimages/acsaem2019.jpg', caption: 'ACS Applied Energy Materials (2019)' },
+        { img: 'images/slidingimages/aem2020.jpg', caption: 'Advanced Electronic Materials (2020)' },
+        { img: 'images/slidingimages/apex2014.jpg', caption: 'Applied Physics Express (2014)' },
+        { img: 'images/slidingimages/apl2014_3.jpg', caption: 'Applied Physics Letters (2014)' },
+        { img: 'images/slidingimages/jap2020_1.jpg', caption: 'Journal of Applied Physics (2020)' },
+        { img: 'images/slidingimages/nanoscale2018.jpg', caption: 'Nanoscale Research (2018)' },
+        { img: 'images/slidingimages/srep2020.jpg', caption: 'Scientific Reports (2020)' }
+    ];
+
+    let currentIndex = 0;
+    const carouselImg = document.getElementById('carouselImage');
+    const carouselCaption = document.getElementById('carouselCaption');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const dotsContainer = document.getElementById('dotsContainer');
+
+    slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => goToSlide(index));
+        dotsContainer.appendChild(dot);
+    });
+
+    const dots = document.querySelectorAll('.dot');
+
+    function updateSlide() {
+        carouselImg.style.opacity = '0.3';
+        setTimeout(() => {
+            carouselImg.src = slides[currentIndex].img;
+            carouselCaption.textContent = slides[currentIndex].caption;
+            carouselImg.style.opacity = '1';
+        }, 150);
+
+        dots.forEach((dot, idx) => {
+            dot.classList.toggle('active', idx === currentIndex);
+        });
+    }
+
+    function goToSlide(index) {
+        currentIndex = index;
+        updateSlide();
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+        updateSlide();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+        updateSlide();
+    });
+
+    setInterval(() => {
+        currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+        updateSlide();
+    }, 5000);
+});
+</script>
 </body>
 </html>
