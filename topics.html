@@ -266,7 +266,7 @@
                     </button>
                     
                     <div class="slide-content">
-                        <img id="carouselImage" src="images/acsaem2019.jpg" alt="Publication Cover">
+                        <img id="carouselImage" src="images/slidingimages/acsaem2019.jpg" alt="Publication Cover">
                         <p id="carouselCaption" class="slide-caption">ACS Applied Energy Materials (2019)</p>
                     </div>
 
@@ -386,6 +386,12 @@ document.addEventListener('DOMContentLoaded', function () {
         { img: 'images/slidingimages/srep2020.jpg', caption: 'Scientific Reports (2020)' }
     ];
 
+	// Preload images into memory immediately
+    slides.forEach(slide => {
+        const preloadedImg = new Image();
+        preloadedImg.src = slide.img;
+    });
+	
     let currentIndex = 0;
     const carouselImg = document.getElementById('carouselImage');
     const carouselCaption = document.getElementById('carouselCaption');
