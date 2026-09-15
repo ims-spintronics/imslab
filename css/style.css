@@ -420,8 +420,8 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 2rem;
+    grid-template-columns: 1.3fr 0.8fr 0.9fr 1fr;
+    gap: 1.5rem;
     margin-bottom: 2rem;
 }
 
