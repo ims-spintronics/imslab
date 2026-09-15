@@ -458,7 +458,11 @@ footer {
    Responsive Breakpoints & Mobile Navigation Fixes
    ========================================================================== */
 @media (max-width: 900px) {
-    /* Responsive Top Bar Right Data */
+    /* Force footer to stack in a single column on mobile */
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+	/* Responsive Top Bar Right Data */
     .top-bar-right {
         display: flex;
         font-size: 0.8rem;
