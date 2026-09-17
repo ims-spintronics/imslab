@@ -18,7 +18,10 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <style>
+	<!-- Carousel of images -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
+   
+   <style>
         .equip-controls {
             display: flex;
             flex-direction: column;
@@ -212,6 +215,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- Top Bar -->
@@ -342,11 +346,41 @@
         <!-- Equipment Grid Gallery (All 38 items updated to compact card format with clickable title modal triggers) -->
         <div class="equip-grid" id="equipGrid">
 
-            <!-- CATEGORY 1: DEPOSITION & PROCESSING (8 ITEMS) -->
-            <div class="equip-card" data-category="deposition">
+            <!-- CATEGORY 1: DEPOSITION & PROCESSING (8 ITEMS)
+            <div class="equip-card" data-category="deposition"> 
+    <div class="equip-card-img-wrapper">
+        <!-- Main cover image opens the GLightbox gallery 
+        <a href="images/aja-sputter2.jpg" class="glightbox" data-gallery="aja">
+            <img src="images/aja-sputter2.jpg" alt="AJA Sputtering System">
+        </a>
+        
+        <!-- Hidden extra image for the 'Next' arrow
+        <a href="images/aja-sputter1.jpg" class="glightbox" data-gallery="aja" style="display:none;"></a>
+        
+        <span class="equip-badge">Deposition</span>
+    </div>
+    
+    <div class="equip-card-body">
+        <h3 class="equip-card-title">
+            <!-- Title links directly to the same gallery group ("aja")
+            <a href="images/aja-sputter2.jpg" class="glightbox" data-gallery="aja" class="equip-title-link">
+                AJA 8-Target UHV MRAM Magnetron Sputtering System
+            </a>
+        </h3>
+        <p class="equip-card-desc">Ultra-high vacuum magnetron deposition system optimized for MRAM thin-film stacks.</p>
+    </div>
+</div>-->
+			
+			
+			
+			
+			
+			<div class="equip-card" data-category="deposition">
                 <div class="equip-card-img-wrapper">
-                    <img src="images/aja-sputter2.jpg" alt="AJA Sputtering System">
-                    <span class="equip-badge">Deposition</span>
+                    
+                    <a href="images/aja-sputter1.jpg" class="glightbox" data-gallery="aja-sputter-gallery" data-title="AJA 8-Target UHV MRAM Magnetron Sputtering System">
+					<img src="images/aja-sputter2.jpg" alt="AJA Sputtering System">
+					<span class="equip-badge">Deposition</span>
                 </div>
                 <div class="equip-card-body">
                     <h3 class="equip-card-title">
@@ -363,7 +397,7 @@
                 </div>
                 <div class="equip-card-body">
                     <h3 class="equip-card-title">
-                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/sputter6.jpg')">Home-built 6-Target UHV Magnetron Sputtering System</a>
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/sputter6.jpg')">Custom-built 6-Target UHV Magnetron Sputtering System</a>
                     </h3>
                     <p class="equip-card-desc">Custom high-vacuum sputtering system engineered for specialized magnetic heterostructures.</p>
                 </div>
@@ -371,7 +405,7 @@
 
             <div class="equip-card" data-category="deposition">
                 <div class="equip-card-img-wrapper">
-                    <img src="images/uhv.jpg" alt="Home-built Metal Growth System">
+                    <img src="images/uhv.jpg" alt="Custom-built Metal Growth System">
                     <span class="equip-badge">Evaporation</span>
                 </div>
                 <div class="equip-card-body">
@@ -428,7 +462,7 @@
                 </div>
                 <div class="equip-card-body">
                     <h3 class="equip-card-title">
-                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/field-anneal3.jpg')">Home-built In-Plane & Perpendicular Field Annealing High Vacuum System</a>
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/field-anneal3.jpg')">Custom-built In-Plane & Perpendicular Field Annealing High Vacuum System</a>
                     </h3>
                     <p class="equip-card-desc">High-vacuum thermal annealing system equipped with magnetic field orientation capabilities.</p>
                 </div>
@@ -539,22 +573,22 @@
                     </h3>
                     <p class="equip-card-desc">Stereo fluorescence optical station for sample inspection and micro-device positioning.</p>
                 </div>
-            </div>
-
+            </div>-->
+ 
             <div class="equip-card" data-category="fabrication">
                 <div class="equip-card-img-wrapper">
-                    <img src="images/Plasma.jpg" alt="Oxygen Plasma Etcher">
+                    <img src="images/oxygen-plasma.jpg" alt="Oxygen Plasma Etcher">
                     <span class="equip-badge">Surface Cleaning</span>
                 </div>
                 <div class="equip-card-body">
                     <h3 class="equip-card-title">
-                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/Plasma.jpg')">Quorum Technology Oxygen Plasma Barrel Etcher</a>
+                        <a href="javascript:void(0)" class="equip-title-link" onclick="openModal('images/oxygen-plasma.jpg')">Quorum Technology Oxygen Plasma Barrel Etcher</a>
                     </h3>
                     <p class="equip-card-desc">RF plasma system for organic residue removal and surface activation prior to lithography.</p>
                 </div>
             </div>
 
-            <div class="equip-card" data-category="fabrication">
+            <!--<div class="equip-card" data-category="fabrication">
                 <div class="equip-card-img-wrapper">
                     <img src="images/SSBench.jpg" alt="Stainless Steel Solvent Bench">
                     <span class="equip-badge">Wet Processing</span>
@@ -1087,6 +1121,12 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+</script>
+
+<!-- For carousel view of images -->
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+<script>
+    const lightbox = GLightbox({ selector: '.glightbox' });
 </script>
 
 </body>
