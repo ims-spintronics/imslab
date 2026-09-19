@@ -21,6 +21,7 @@ html, body {
     color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
+	text-align: justify;
 }
 
 * {
