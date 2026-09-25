@@ -128,32 +128,42 @@
             <button class="filter-btn" data-filter="2021" style="padding: 8px 16px; border: 1px solid #ddd; background: #f8f9fa; color: #333; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;">2021</button>
         </div>
 
-        <!-- Book Cards Grid -->
-        <div class="book-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(450px, 1fr)); gap: 25px; margin-bottom: 60px;">
+        <!-- Book Cards Grid (Widened for Image + Text Layout) -->
+        <div class="book-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(550px, 1fr)); gap: 25px; margin-bottom: 60px;">
             
             <!-- Book Card 1 -->
-            <div class="book-card" data-year="2021" style="background: #fff; border: 1px solid #e1e4e8; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; flex-direction: column; justify-content: space-between; transition: transform 0.2s, box-shadow 0.2s; text-align: left;">
-                <div>
-                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
-                        <span style="background: #eef2f7; color: #1d3557; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: 700;"><i class="fa-solid fa-book-bookmark"></i> Book</span>
-                        <span style="color: #6c757d; font-weight: 600; font-size: 0.9rem;"><i class="fa-regular fa-calendar"></i> 2021</span>
+            <div class="book-card" data-year="2021" style="background: #fff; border: 1px solid #e1e4e8; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; gap: 20px; align-items: stretch; transition: transform 0.2s, box-shadow 0.2s; text-align: left;">
+                
+                <!-- Book Cover Thumbnail -->
+                <div style="flex: 0 0 200px; display: flex; align-items: center; justify-content: background; background: #f8f9fa; border-radius: 6px; padding: 8px; border: 1px solid #eaeaea;">
+                    <img src="images/enmt.jpg" alt="Book Cover" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                </div>
+
+                <!-- Book Content Details -->
+                <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
+                            <span style="background: #eef2f7; color: #1d3557; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;"><i class="fa-solid fa-book-bookmark"></i> Book</span>
+                            <span style="color: #6c757d; font-weight: 600; font-size: 0.85rem;"><i class="fa-regular fa-calendar"></i> 2021</span>
+                        </div>
+                        <h3 style="font-size: 1.1rem; color: #1a1a1a; margin-bottom: 10px; line-height: 1.35; text-align: left;">
+                            Emerging Non-volatile Memory Technologies: Physics, Engineering, and Applications
+                        </h3>
+                        <p style="color: #4a5568; font-size: 0.85rem; margin-bottom: 10px; text-align: left;">
+                            <strong>Authors:</strong> Wen Siang Lew, Gerard Joseph Lim, Putu Andhita Dananjaya
+                        </p>
+                        <p style="color: #718096; font-size: 0.83rem; line-height: 1.4; margin-bottom: 15px; text-align: left;">
+                            Comprehensive guide to core principles, properties, and applications of spintronics-based devices and resistive switching (RRAM) memory systems.
+                        </p>
                     </div>
-                    <h3 style="font-size: 1.15rem; color: #1a1a1a; margin-bottom: 12px; line-height: 1.4; text-align: left;">
-                        Emerging Non-volatile Memory Technologies: Physics, Engineering, and Applications
-                    </h3>
-                    <p style="color: #4a5568; font-size: 0.9rem; margin-bottom: 15px; text-align: left;">
-                        <strong>Authors:</strong> Wen Siang Lew, Gerard Joseph Lim, Putu Andhita Dananjaya
-                    </p>
-                    <p style="color: #718096; font-size: 0.88rem; line-height: 1.5; margin-bottom: 20px; text-align: left;">
-                        Comprehensive guide to core principles, properties, and applications of spintronics-based devices and resistive switching (RRAM) memory systems.
-                    </p>
+                    <div style="border-top: 1px solid #edf2f7; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 0.8rem; color: #718096;">Springer Nature Singapore</span>
+                        <a href="https://dr.ntu.edu.sg/entities/publication/25ec313e-0fac-4f58-a184-bc0c8c937c97" target="_blank" style="color: var(--ntu-red, #c8102e); text-decoration: none; font-weight: 600; font-size: 0.85rem;">
+                            View Record <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
+                        </a>
+                    </div>
                 </div>
-                <div style="border-top: 1px solid #edf2f7; padding-top: 15px; display: flex; justify-content: space-between; align-items: center;">
-                    <span style="font-size: 0.85rem; color: #718096;">Springer Nature Singapore</span>
-                    <a href="https://dr.ntu.edu.sg/entities/publication/25ec313e-0fac-4f58-a184-bc0c8c937c97" target="_blank" style="color: var(--ntu-red, #c8102e); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
-                        View Record <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
-                    </a>
-                </div>
+
             </div>
 
         </div>
