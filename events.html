@@ -455,7 +455,22 @@
         
         <div class="events-grid">
             
-            <!-- Event 1: Group Outing -->
+            <!-- Event : Award -->
+            <div class="event-card" onclick="openModal('modal-award')">
+                <div class="card-image-box">
+                    <img src="images/events/lws-2019.jpg" alt="Award">
+                    <span class="event-date-badge"><i class="fa-regular fa-calendar"></i> 19 September 2019</span>
+                </div>
+                <div class="card-content">
+                    <h3>Award Ceremony</h3>
+                    <p>Prof. Lew Wen Siang being presented with "2019 Nanyang Award for Innovation and Entrepreneurship" by then-NTU President Subra Suresh.</p>
+                    <div class="card-action-btn">
+                        <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+			
+			<!-- Event 1: Group Outing -->
             <div class="event-card" onclick="openModal('modal-outing')">
                 <div class="card-image-box">
                     <img src="images/events/group-outing-dec2016.jpg" alt="Group Outing Dinner">
@@ -465,7 +480,7 @@
                     <h3>Group Gathering & Celebration</h3>
                     <p>Group's annual gathering for dinner held at Marché Mövenpick 313@somerset to celebrate year-end achievements.</p>
                     <div class="card-action-btn">
-                        <span>View Photo & Details</span> <i class="fa-solid fa-arrow-right"></i>
+                        <span>View Details</span> <i class="fa-solid fa-arrow-right"></i>
                     </div>
                 </div>
             </div>
@@ -522,6 +537,15 @@
                         <div class="timeline-date">16 December 2022</div>
                         <div class="timeline-title">Group Gathering</div>
                         <div class="timeline-desc">Annual group gathering to celebrate research achievements and team milestones.</div>
+                        <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
+                    </a>
+                </div>
+				
+				<div class="timeline-item">
+                    <a href="javascript:void(0)" onclick="openModal('modal-award')" class="timeline-link">
+                        <div class="timeline-date">19 September 2019</div>
+                        <div class="timeline-title">Award Ceremony</div>
+                        <div class="timeline-desc">Prof. Lew Wen Siang being presented with "2019 Nanyang Award for Innovation and Entrepreneurship" by then-NTU President Subra Suresh.</div>
                         <div class="timeline-action"><span>View Event Details</span> <i class="fa-solid fa-arrow-right"></i></div>
                     </a>
                 </div>
@@ -624,6 +648,19 @@
     </div>
 </div>
 
+	<!-- Modal :Award -->
+	<div id="modal-award" class="modal">
+		<div class="modal-card">
+			<button class="modal-close" onclick="closeModal('modal-award')"><i class="fa-solid fa-xmark"></i></button>
+			<div class="modal-body">
+				<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Award Felicitation</span>
+				<h3>Award Ceremony</h3>
+				<p><strong>Date:</strong> 19th September 2019</p>
+				 <img src="images/events/lws-2019.jpg" alt="Awards">
+				<p>From SPMS, NTU, Prof. Lew Wen Siang  being presented with "2019 Nanyang Award for Innovation and Entrepreneurship" by then-NTU President Subra Suresh at Nanyang Auditorium, NTU.</p>
+			</div>
+		</div>
+	</div>
     <!-- Modal 1: Group Outing -->
     <div id="modal-outing" class="modal">
         <div class="modal-card">
