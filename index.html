@@ -9,7 +9,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/logofavicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 	
-	<!-- Link to style.css inside css folder -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     
     <!-- Font Awesome Icons -->
@@ -17,304 +17,122 @@
     
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- Custom Page Enhancement Styles -->
-    <style>
-        /* Vision & Mission Grid */
-        .vm-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .vm-card {
-            background: #ffffff;
-            border: 1px solid #e2e8f0;
-            border-left: 4px solid var(--ntu-red, #c8102e);
-            border-radius: 12px;
-            padding: 1.75rem;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .vm-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-        }
-
-        .vm-card h3 {
-            color: #0f172a;
-            font-size: 1.25rem;
-            margin-bottom: 0.75rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .vm-card p {
-            color: #475569;
-            font-size: 0.98rem;
-            line-height: 1.6;
-            margin: 0;
-            text-align: justify;
-            text-justify: inter-word;
-        }
-
-        .stats-grid-separate {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.25rem;
-            margin: 2.5rem 0;
-        }
-
-        @media (max-width: 768px) {
-            .stats-grid-separate {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        @media (max-width: 480px) {
-            .stats-grid-separate {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .stat-card-item {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-            border-radius: 12px;
-            padding: 1.75rem 1.25rem;
-            text-align: center;
-            color: #ffffff;
-            box-shadow: 0 6px 16px rgba(15, 23, 42, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .stat-card-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-        }
-
-        .stat-card-item .number {
-            font-size: 2.25rem;
-            font-weight: 800;
-            color: #60a5fa;
-            line-height: 1.1;
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card-item .label {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        /* Enhanced Research Cards */
-        .grid .card {
-            display: flex;
-            flex-direction: column;
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .grid .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.09);
-        }
-
-        .card-img-wrapper {
-            position: relative;
-            width: 100%;
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .card-img-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .pill-badge {
-            position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(15, 23, 42, 0.75);
-            backdrop-filter: blur(4px);
-            color: #ffffff;
-            font-size: 0.75rem;
-            font-weight: 700;
-            padding: 0.3rem 0.65rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Call To Action Box */
-        .cta-banner {
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            border-radius: 14px;
-            padding: 2.5rem 2rem;
-            margin: 3rem 0 1rem;
-            text-align: center;
-        }
-
-        .cta-banner h3 {
-            color: #0f172a;
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 700;
-        }
-
-        .cta-banner p {
-            color: #475569;
-            max-width: 650px;
-            margin: 0 auto 1.5rem;
-            font-size: 0.98rem;
-        }
-
-        .cta-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-primary {
-            background: var(--ntu-red, #c8102e);
-            color: #ffffff;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            background: #a00c24;
-        }
-
-        .btn-secondary {
-            background: #ffffff;
-            color: #0f172a;
-            border: 1px solid #cbd5e1;
-            padding: 0.75rem 1.5rem;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: background-color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            background: #f1f5f9;
-            border-color: #94a3b8;
-        }
-    </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-        </a>
-        <div class="top-bar-right">
-            <a href="https://www.ntu.edu.sg/spms" target="_blank">
-                <i class="fa-solid fa-graduation-cap"></i> 
-                <span>School of Physical and Mathematical Sciences</span>
-            </a>
-        </div>
-    </div>
-
-
-<!-- Header & Navigation -->
-<header>
-    <nav>
-        <!-- Mobile & Desktop Top Logo -->
-        <a href="index.html" class="mobile-logo-link">
-            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-        </a>
-
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-		
-		<!-- Navigation Drawer -->
-		
-		<ul class="nav-links">
-            <li class="nav-logo-item">
-                <a href="index.html" class="logo-link">
-                   </a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="news.html">Group</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="lecture.html">Lecture Courses</a></li>
-                    <li><a href="laboratory.html">Laboratory Courses</a></li>
-                    <li><a href="internship.html">Industrial Internships</a></li>
-                    <li><a href="fyp.html">Final Year Projects</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="team.html">Current Group</a></li>
-                    <li><a href="graduated.html">Graduated Students</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="paper.html">Journal Papers</a></li>
-                    <li><a href="conferences.html">Conference Presentations</a></li>
-                    <li><a href="books.html">Books & Book Chapters</a></li>
-                    <li><a href="property.html">Intellectual Property</a></li>
-                </ul>
-            </li>
+    <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
             
-            <li>
-                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="fund.html">Funding Firms</a></li>
-                    <li><a href="collaborations.html">Collaborations</a></li>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html">Journal Papers</a></li>
+                            <li><a href="conferences.html">Conference Presentations</a></li>
+                            <li><a href="books.html">Books & Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="opportunity.html">Opportunities</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
+    </header>
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-container">
@@ -323,7 +141,7 @@
                 <p>Pioneering emerging non-volatile memory & sensory technology, intelligent computing architectures, and micro/nano-electromechanical magnetic sensing for bio-applications.</p>
                 <div class="hero-tags">
                     <span class="tag"><i class="fa-solid fa-gear"></i> Non-Volatile Memory</span>
-                    <span class="tag"><i class="fa-solid fa-microchip"></i> Neuromorphic Computing </span>
+                    <span class="tag"><i class="fa-solid fa-microchip"></i> Neuromorphic Computing</span>
                     <span class="tag"><i class="fa-solid fa-atom"></i> Resistive Random-Access Memory (RRAM)</span>
                     <span class="tag"><i class="fa-solid fa-magnet"></i> Electron-beam Lithography (EBL)</span>
                 </div>
@@ -363,12 +181,12 @@
         
         <div class="about-card about-layout">
             <div class="about-text">
-                <p> The <strong>Laboratory of Intelligent Materials and Systems (IMS Lab) </strong> at <strong>Nanyang Technological University Singapore </strong>, develops advanced materials and devices for AI hardware and next-generation computing. </p>
-				<p> Our research focuses on non-volatile memory, spintronics, in-memory and neuromorphic computing, and intelligent sensing, with emphasis on energy-efficient and scalable device technologies. We combine fundamental device physics with modelling, micro- and nano-fabrication, and advanced magnetic and electronic characterisation. </p>
-				<p> A key strength of the lab is translational research, including the development and integration of emerging memory technologies on 300 mm silicon wafers, in close collaboration with leading semiconductor industry partners and international research institutes.</p>
+                <p>The <strong>Laboratory of Intelligent Materials and Systems (IMS Lab)</strong> at <strong>Nanyang Technological University Singapore</strong>, develops advanced materials and devices for AI hardware and next-generation computing.</p>
+                <p>Our research focuses on non-volatile memory, spintronics, in-memory and neuromorphic computing, and intelligent sensing, with emphasis on energy-efficient and scalable device technologies. We combine fundamental device physics with modelling, micro- and nano-fabrication, and advanced magnetic and electronic characterisation.</p>
+                <p>A key strength of the lab is translational research, including the development and integration of emerging memory technologies on 300 mm silicon wafers, in close collaboration with leading semiconductor industry partners and international research institutes.</p>
             </div>
             <div class="about-image">
-                <img src="images/about-lab.jpg" alt="About NTU Laboratory" class="responsive-img" style="width: 100%; height: auto;">
+                <img src="images/about-lab.jpg" alt="About NTU Laboratory" style="width: 100%; height: auto;">
             </div>
         </div>
 
@@ -408,30 +226,30 @@
         <div class="grid">
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="images/sem1.jpg" alt="Non-Volatile Memory" class="card-img">
+                    <img src="images/sem1.jpg" alt="Non-Volatile Memory">
                     <span class="pill-badge">Spintronics</span>
                 </div>
-                <div style="padding: 1.25rem;">
+                <div class="card-content">
                     <h3>Non-Volatile Memory</h3>
                     <p>Development and characterisation of next-generation spin-based non-volatile memory devices for energy-efficient computing architectures.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="images/neuromorphic-computing.jpg" alt="Intelligent Systems" class="card-img">
+                    <img src="images/neuromorphic-computing.jpg" alt="Intelligent Systems">
                     <span class="pill-badge">AI Hardware</span>
                 </div>
-                <div style="padding: 1.25rem;">
+                <div class="card-content">
                     <h3>Intelligent Systems</h3>
                     <p>Integrating emerging memory devices into novel hardware for neuromorphic computing and intelligent sensor processing.</p>
                 </div>
             </div>
             <div class="card">
                 <div class="card-img-wrapper">
-                    <img src="images/biomedical-sensing.jpg" alt="Biomedical Sensing" class="card-img">
+                    <img src="images/biomedical-sensing.jpg" alt="Biomedical Sensing">
                     <span class="pill-badge">Bio-MEMS</span>
                 </div>
-                <div style="padding: 1.25rem;">
+                <div class="card-content">
                     <h3>Biomedical Sensing</h3>
                     <p>Micro- and nano-electromechanical magnetic sensing systems engineered for biological diagnostic and biomedical applications.</p>
                 </div>
@@ -497,51 +315,61 @@
     </footer>
 
     <!-- Mobile Navigation Drawer Logic -->
-   <script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
-    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+        const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
 
-    // Mobile slide menu toggle
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            
-            const toggleIcon = toggleBtn.querySelector('i');
-            if (toggleIcon) {
-                toggleIcon.classList.toggle('fa-bars');
-                toggleIcon.classList.toggle('fa-xmark');
-            }
-        });
-    }
-
-    // Mobile dropdown accordion handling
-    const parentLinks = document.querySelectorAll('.nav-links > li > a');
-    parentLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 900) {
-                const parentLi = this.parentElement;
-                const dropdown = parentLi.querySelector('.dropdown');
-
-                if (dropdown) {
-                    e.preventDefault();
-                    
-                    // Close other open accordions
-                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
-                        if (item !== parentLi) {
-                            item.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle current accordion
-                    parentLi.classList.toggle('active');
+        // Toggle drawer open/close
+        if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                
+                const toggleIcon = toggleBtn.querySelector('i');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('fa-bars');
+                    toggleIcon.classList.toggle('fa-xmark');
                 }
-            }
+            });
+
+            // Close drawer when tapping outside
+            document.addEventListener('click', function (e) {
+                if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const toggleIcon = toggleBtn.querySelector('i');
+                        if (toggleIcon) {
+                            toggleIcon.classList.remove('fa-xmark');
+                            toggleIcon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Mobile dropdown accordion handling
+        const parentLinks = document.querySelectorAll('.nav-links > li > a');
+        parentLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1150) {
+                    const parentLi = this.parentElement;
+                    const dropdown = parentLi.querySelector('.dropdown');
+
+                    if (dropdown) {
+                        e.preventDefault();
+                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                            if (item !== parentLi) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            });
         });
     });
-});
-</script>
+    </script>
 
 </body>
 </html>

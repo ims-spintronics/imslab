@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Journal Papers | Intelligent Materials and Systems Laboratory | NTU</title>
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logofavicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 	
- <!-- Link to style.css inside css folder -->
+    <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font Awesome Icons -->
@@ -19,358 +19,301 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --ntu-red: #c8102e;
-            --ntu-blue: #002b49;
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --gradient-ntu: linear-gradient(135deg, #002b49 0%, #0f172a 100%);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /* Top Header / Branding Bar */
-        .top-bar {
-            background: #001e34;
-            color: #cbd5e1;
-            padding: 0.5rem 2rem;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .top-bar a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 1rem;
-            transition: color 0.2s;
-        }
-
-        .top-bar a:hover {
-            color: #ffffff;
-        }
-
-        /* Main Navigation Header */
-        header {
-            background: var(--gradient-ntu);
-            color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        nav {
+        /* Page-specific styling for Journal Papers */
+        .papers-container {
             max-width: 1400px;
             margin: 0 auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 1rem 2rem;
+            padding: 2.5rem 1.5rem 4rem;
         }
 
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 0.8rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        /* Dropdown menu styling */
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
+        /* Search & Filter Controls Card (Matching reference design) */
+        .controls-card {
             background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            min-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.2s ease;
-            list-style: none;
-            padding: 0.5rem 0;
-            z-index: 100;
-        }
-
-        .nav-links li:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown a {
-            color: var(--text-dark);
-            padding: 0.6rem 1.2rem;
-            font-weight: 500;
-            font-size: 0.88rem;
-        }
-
-        .dropdown a:hover {
-            background: #f1f5f9;
-            color: var(--accent);
-        }
-
-        /* Hero Banner */
-        .hero {
-            background: var(--gradient-ntu);
-            color: white;
-            padding: 1rem 2rem;
-            position: relative;
-            overflow: hidden;
-            border-bottom: 4px solid var(--ntu-red);
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1.3fr 0.7fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .hero h2 {
-            font-size: 2.8rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 0.8rem;
-            letter-spacing: -0.5px;
-        }
-
-        .hero p {
-            font-size: 1.05rem;
-            color: #cbd5e1;
-            line-height: 1.7;
-        }
-
-        .hero-card {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 1.8rem;
-            border-radius: 16px;
-        }
-
-        .hero-card h3 {
-            color: #ffffff;
-            font-size: 1.15rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .hero-card ul {
-            list-style: none;
-        }
-
-        .hero-card li {
-            color: #cbd5e1;
-            font-size: 0.9rem;
-            margin-bottom: 0.8rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.6rem;
-        }
-
-        .hero-card li i {
-            color: var(--ntu-red);
-            margin-top: 0.2rem;
-        }
-
-.stat-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1.25rem;
-        }
-
-        /* Main Container & Filter Section */
-        main {
-            flex: 1;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        .filter-section {
-            margin-bottom: 2rem;
-        }
-
-        .filter-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .filter-buttons {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-        }
-
-        .btn-filter {
-            background: var(--card-bg);
             border: 1px solid var(--border);
-            padding: 0.5rem 1.2rem;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+        }
+
+        .search-box {
+            position: relative;
+            margin-bottom: 1.25rem;
+        }
+
+        .search-box i.search-icon {
+            position: absolute;
+            left: 1.1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+            font-size: 1rem;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.85rem 2.8rem 0.85rem 3rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.96rem;
+            color: var(--text-dark);
+            background: #f8fafc;
+            transition: all 0.2s ease;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--accent);
+            background: #ffffff;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .clear-search-btn {
+            position: absolute;
+            right: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #e2e8f0;
+            color: #64748b;
+            border: none;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 0.75rem;
+            transition: all 0.2s;
+        }
+
+        .clear-search-btn:hover {
+            background: #cbd5e1;
+            color: #0f172a;
+        }
+
+        /* Year Filter Pills */
+        .year-filters-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .year-btn {
+            font-family: inherit;
+            border: 1px solid var(--border);
+            background: #f8fafc;
+            color: #475569;
+            padding: 0.38rem 0.95rem;
             border-radius: 20px;
+            font-size: 0.86rem;
             font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-muted);
             cursor: pointer;
             transition: all 0.2s ease;
+            user-select: none;
         }
 
-        .btn-filter:hover {
+        .year-btn:hover {
             border-color: var(--accent);
             color: var(--accent);
+            background: #ffffff;
         }
 
-        .btn-filter.active {
+        .year-btn.active {
             background: var(--accent);
-            color: #ffffff;
             border-color: var(--accent);
+            color: #ffffff;
             box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
         }
 
-        /* Paper Cards */
+        .year-btn.btn-preprints {
+            border-color: #fde68a;
+            background: #fefce8;
+            color: #b45309;
+        }
+
+        .year-btn.btn-preprints:hover {
+            background: #fef08a;
+            border-color: #f59e0b;
+        }
+
+        .year-btn.btn-preprints.active {
+            background: #d97706;
+            border-color: #d97706;
+            color: #ffffff;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25);
+        }
+
+        /* Results Meta Bar */
+        .results-meta-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .results-count {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        .team-access-note {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            font-size: 0.85rem;
+            color: #1e40af;
+            background: #eff6ff;
+            padding: 0.35rem 0.85rem;
+            border-radius: 20px;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* 2 Cards View Grid */
+        .papers-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 950px) {
+            .papers-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Individual Paper Card */
         .paper-card {
-            background: var(--card-bg);
+            background: #ffffff;
             border: 1px solid var(--border);
-            border-radius: 12px;
+            border-radius: 14px;
             padding: 1.5rem;
-            margin-bottom: 1.2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
-            transition: all 0.2s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+            transition: all 0.25s ease;
         }
 
         .paper-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
             border-color: rgba(37, 99, 235, 0.3);
         }
 
-        .card-meta {
+        .paper-card-header {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .paper-number {
+            flex-shrink: 0;
+            min-width: 44px;
+            height: 38px;
+            border-radius: 8px;
+            background: #eff6ff;
+            color: var(--accent);
+            font-weight: 800;
+            font-size: 0.95rem;
             display: flex;
             align-items: center;
-            gap: 0.8rem;
-            margin-bottom: 0.6rem;
+            justify-content: center;
+            border: 1px solid rgba(37, 99, 235, 0.15);
         }
 
-        .paper-num {
-            font-weight: 700;
-            color: var(--accent);
-            font-size: 0.88rem;
+        .paper-number.is-preprint-num {
+            background: #fef3c7;
+            color: #b45309;
+            border-color: #fde68a;
         }
 
-        .badge {
-            font-size: 0.72rem;
-            font-weight: 700;
-            padding: 0.2rem 0.6rem;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.3px;
+        .paper-header-body {
+            flex-grow: 1;
         }
 
-        .badge-revision { background: #fef3c7; color: #d97706; }
-        .badge-submitted { background: #f3e8ff; color: #7e22ce; }
-        .badge-accepted { background: #dcfce7; color: #15803d; }
+        .paper-meta-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.35rem;
+            flex-wrap: wrap;
+        }
 
         .paper-title {
-            font-size: 1.1rem;
+            font-size: 1.08rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-            line-height: 1.4;
+            color: #0f172a;
+            line-height: 1.42;
+            margin: 0;
         }
 
+        .badge-status {
+            font-size: 0.7rem;
+            font-weight: 700;
+            padding: 0.2rem 0.55rem;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+        }
+
+        .badge-submitted { background: #fef3c7; color: #b45309; border: 1px solid #fde68a; }
+        .badge-accepted { background: #dcfce7; color: #15803d; border: 1px solid #bbf7d0; }
+        .badge-revision { background: #e0e7ff; color: #4338ca; border: 1px solid #c7d2fe; }
+
         .paper-authors {
-            color: var(--text-dark);
-            font-size: 0.95rem;
-            margin-bottom: 0.4rem;
+            font-size: 0.92rem;
+            color: #475569;
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
         }
 
         .paper-journal {
-            font-style: italic;
+            font-size: 0.88rem;
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-style: italic;
             margin-bottom: 1rem;
+            display: flex;
+            align-items: baseline;
+            gap: 0.45rem;
+            line-height: 1.45;
         }
 
+        .paper-journal i {
+            color: var(--ntu-red);
+            font-style: normal;
+        }
+
+        /* Card Actions */
         .card-actions {
             display: flex;
-            gap: 0.8rem;
+            gap: 0.65rem;
+            flex-wrap: wrap;
+            margin-top: auto;
+            padding-top: 0.85rem;
+            border-top: 1px solid #f1f5f9;
         }
 
         .btn-link {
             font-size: 0.82rem;
             font-weight: 600;
             text-decoration: none;
-            padding: 0.4rem 0.9rem;
+            padding: 0.42rem 0.9rem;
             border-radius: 6px;
             border: 1px solid var(--border);
             color: var(--text-dark);
+            background: #ffffff;
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
+            gap: 0.45rem;
             transition: all 0.2s ease;
+            cursor: pointer;
         }
 
         .btn-link:hover {
@@ -386,286 +329,578 @@
 
         .btn-pdf:hover {
             background: #dbeafe;
+            color: #1d4ed8;
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #94a3b8;
-            padding: 3rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            margin-top: auto;
+        .btn-preprint {
+            background: #fffbeb;
+            color: #b45309;
+            border-color: #fde68a;
         }
 
-        .footer-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 2rem;
+        .btn-preprint:hover {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #f59e0b;
         }
 
-        .footer-col h4 {
-            color: #ffffff;
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
+        .tag-lock {
+            font-size: 0.68rem;
+            background: #fef3c7;
+            color: #92400e;
+            padding: 0.1rem 0.35rem;
+            border-radius: 3px;
             font-weight: 700;
+            margin-left: 0.2rem;
+            border: 1px solid #fde68a;
         }
 
-        .footer-col p, .footer-col ul {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            list-style: none;
+        /* No results */
+        .no-results {
+            text-align: center;
+            padding: 4rem 1.5rem;
+            color: var(--text-muted);
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
         }
 
-        .footer-col a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
+        .no-results i {
+            font-size: 3rem;
+            color: #cbd5e1;
+            margin-bottom: 1rem;
         }
 
-        .footer-col a:hover {
-            color: #ffffff;
+        .no-results h3 {
+            font-size: 1.25rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
         }
 
-        .copyright {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
+        /* Preprint Password Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.65);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 2500;
             align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
+            justify-content: center;
+            padding: 1.25rem;
         }
 
-        @media (max-width: 900px) {
-            .hero-container, .footer-container {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none;
-            }
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-card {
+            background: #ffffff;
+            border-radius: 18px;
+            padding: 2.25rem 2rem 2rem;
+            max-width: 480px;
+            width: 100%;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            position: relative;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .modal-close-btn {
+            position: absolute;
+            top: 1.2rem;
+            right: 1.2rem;
+            background: #f1f5f9;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            color: #64748b;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        .modal-close-btn:hover {
+            background: #e2e8f0;
+            color: #0f172a;
+        }
+
+        .modal-lock-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #fef3c7;
+            color: #d97706;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin: 0 auto 1.25rem;
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.15);
+        }
+
+        .modal-card h3 {
+            font-size: 1.3rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+            font-weight: 800;
+        }
+
+        .modal-desc {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-bottom: 1.25rem;
+            line-height: 1.5;
+        }
+
+        .modal-paper-preview {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.25rem;
+            text-align: left;
+        }
+
+        .modal-paper-preview .preview-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            color: #2563eb;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            margin-bottom: 0.25rem;
+        }
+
+        .modal-paper-preview .preview-title {
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #1e293b;
+            line-height: 1.4;
+        }
+
+        .pwd-input-wrap {
+            position: relative;
+            margin-bottom: 0.75rem;
+        }
+
+        .pwd-input-wrap i.key-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #94a3b8;
+        }
+
+        .pwd-input-wrap input {
+            width: 100%;
+            padding: 0.8rem 2.8rem 0.8rem 2.75rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+            transition: all 0.2s ease;
+        }
+
+        .pwd-input-wrap input:focus {
+            border-color: var(--accent);
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+        }
+
+        .pwd-input-wrap input.error {
+            border-color: #ef4444;
+            animation: shake 0.35s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-6px); }
+            40%, 80% { transform: translateX(6px); }
+        }
+
+        .pwd-toggle-btn {
+            position: absolute;
+            right: 0.85rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: #94a3b8;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .pwd-toggle-btn:hover {
+            color: #475569;
+        }
+
+        .pwd-error-msg {
+            font-size: 0.82rem;
+            color: #dc2626;
+            margin-bottom: 1rem;
+            min-height: 1.2rem;
+            display: none;
+        }
+
+        .modal-btn-row {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-modal-cancel {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border: 1px solid #cbd5e1;
+            background: #ffffff;
+            color: #475569;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            transition: all 0.2s;
+        }
+
+        .btn-modal-cancel:hover {
+            background: #f1f5f9;
+        }
+
+        .btn-modal-submit {
+            flex: 1.4;
+            padding: 0.75rem 1rem;
+            border: none;
+            background: var(--accent);
+            color: #ffffff;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.92rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            transition: background 0.2s;
+        }
+
+        .btn-modal-submit:hover {
+            background: #1d4ed8;
+        }
+
+        .modal-footnote {
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin-top: 1.25rem;
+            line-height: 1.4;
         }
     </style>
 </head>
 <body>
 
-     <!-- Top Bar -->
-<div class="top-bar">
-    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-        <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-    </a>
-    <div class="top-bar-right">
-        <a href="https://www.ntu.edu.sg/spms" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
-        </a>
-    </div>
-</div>
-
-<!-- Header & Navigation -->
-<header>
-    <nav>
-        <!-- Mobile & Desktop Top Logo -->
-        <a href="index.html" class="mobile-logo-link">
-            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-        </a>
-
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-		
-		<!-- Navigation Drawer -->
-		
-		<ul class="nav-links">
-            <li class="nav-logo-item">
-                <a href="index.html" class="logo-link">
-                   </a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="news.html">Group</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="lecture.html">Lecture Courses</a></li>
-                    <li><a href="laboratory.html">Laboratory Courses</a></li>
-                    <li><a href="internship.html">Industrial Internships</a></li>
-                    <li><a href="fyp.html">Final Year Projects</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="team.html">Current Group</a></li>
-                    <li><a href="graduated.html">Graduated Students</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="paper.html">Journal Papers</a></li>
-                    <li><a href="conferences.html">Conference Presentations</a></li>
-                    <li><a href="books.html">Books & Book Chapters</a></li>
-                    <li><a href="property.html">Intellectual Property</a></li>
-                </ul>
-            </li>
+    <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
             
-            <li>
-                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="fund.html">Funding Firms</a></li>
-                    <li><a href="collaborations.html">Collaborations</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="opportunity.html">Opportunities</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
-
-   <!-- Page Header Banner -->
-
-    <!-- Hero Banner -->
-    <section class="hero">
-        <div class="hero-container">
-            <div>
-                <h2>Journal Papers</h2>
-                <p>Peer-reviewed journal publications and preprints from our research on spintronics, magnetic materials, and neuromorphic memory architectures.</p>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
             </div>
-                    </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html" style="color: var(--ntu-red) !important; font-weight: 700 !important;">Journal Papers</a></li>
+                            <li><a href="conferences.html">Conference Presentations</a></li>
+                            <li><a href="books.html">Books & Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Page Hero Banner -->
+    <section class="hero">
+        <div class="hero-container" style="display: block; max-width: 1400px; text-align: left;">
+            <h2>Journal Papers</h2>
+            <p style="margin-bottom: 0;">Peer-reviewed journal publications and preprints from our research on spintronics, magnetic materials, and neuromorphic memory architectures.</p>
+        </div>
     </section>
 
     <!-- Main Content Container -->
-    <main>
-        <div class="container">
-            <div class="filter-section">
-                <div class="filter-title"><i class="fa-solid fa-filter" style="color: var(--ntu-red);"></i> Filter by Year:</div>
-                <div class="filter-buttons" id="filterContainer"></div>
-            </div>
+    <main class="papers-container">
 
-            <div id="papersContainer"></div>
+        <!-- Controls Card: Search & Year Filters -->
+        <div class="controls-card">
+            <div class="search-box">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="searchInput" placeholder="Search by title, author, journal, or keywords..." oninput="handleSearch()">
+                <button class="clear-search-btn" id="clearSearchBtn" onclick="clearSearch()" title="Clear search">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <div class="year-filters-wrapper" id="filterContainer"></div>
         </div>
+
+        <!-- Results Counter & Info Bar -->
+        <div class="results-meta-bar">
+            <div class="results-count" id="resultsCount">Showing 235 out of 235 records</div>
+            <div class="team-access-note">
+                <i class="fa-solid fa-shield-halved"></i> <span> Preprints are accessible for authorized personnel only</span>
+            </div>
+        </div>
+
+        <!-- 2 Cards View Grid -->
+        <div class="papers-grid" id="papersContainer"></div>
+
+        <!-- No Results Fallback -->
+        <div class="no-results" id="noResults" style="display: none;">
+            <i class="fa-solid fa-book-open"></i>
+            <h3>No publications found</h3>
+            <p>Try searching for a different keyword or reset the year filter to view all papers.</p>
+            <button class="year-btn active" style="margin-top: 1rem;" onclick="resetFilters()">Reset All Filters</button>
+        </div>
+
     </main>
 
-      <!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>Spintronics Device Research Group</h4>
-            <p>Intelligent Materials and Systems Laboratory<br>
-            Division of Physics and Applied Physics<br>
-            School of Physical and Mathematical Sciences<br>
-            Nanyang Technological University Singapore</p>
-        </div>
+    <!-- Preprint Password Access Modal -->
+    <div class="modal-overlay" id="preprintModalOverlay" onclick="closePreprintModalOnOutside(event)">
+        <div class="modal-card">
+            <button class="modal-close-btn" onclick="closePreprintModal()" aria-label="Close Modal">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-lock-icon">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+            <h3>Internal Team Access Required</h3>
+            <p class="modal-desc">This preprint is confidential and restricted to IMS Lab researchers and collaborators. Enter the team password to view the PDF.</p>
+            
+            <div class="modal-paper-preview" id="modalPaperPreview">
+                <div class="preview-label" id="modalPreviewLabel">PREPRINT #235</div>
+                <div class="preview-title" id="modalPreviewTitle">Paper title</div>
+            </div>
 
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="topics.html">Research Topics</a></li>
-                <li><a href="equipment.html">Equipment & Facilities</a></li>
-                <li><a href="paper.html">Publications</a></li>
-                <li><a href="team.html">Research Group</a></li>
-                <li><a href="fund.html">Funding & Collaborators</a></li>
-            </ul>
-        </div>
-
-        <div class="footer-col">
-            <h4>Location</h4>
-            <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
-            21 Nanyang Link<br>
-            School of Physical & Mathematical Sciences<br>
-            Nanyang Technological University<br>
-            Singapore 637371<br>
-            <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
-            <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
-            <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            <form id="preprintAuthForm" onsubmit="verifyPreprintPassword(event)">
+                <div class="pwd-input-wrap">
+                    <i class="fa-solid fa-key key-icon"></i>
+                    <input type="password" id="preprintPasswordInput" placeholder="Enter team access password..." autocomplete="current-password" required>
+                    <button type="button" class="pwd-toggle-btn" onclick="togglePasswordVisibility()" aria-label="Toggle password visibility">
+                        <i class="fa-regular fa-eye" id="togglePwdIcon"></i>
+                    </button>
+                </div>
+                <div class="pwd-error-msg" id="pwdErrorMsg">Incorrect team password. Please try again.</div>
+                
+                <div class="modal-btn-row">
+                    <button type="button" class="btn-modal-cancel" onclick="closePreprintModal()">Cancel</button>
+                    <button type="submit" class="btn-modal-submit"><i class="fa-solid fa-unlock"></i> Unlock & Open PDF</button>
+                </div>
+            </form>
+            
+            <div class="modal-footnote">
+                <i class="fa-solid fa-circle-info"></i> Password is remembered during your active session. For password assistance, please contact Prof. Lew Wen Siang.
+            </div>
         </div>
     </div>
 
-    <div class="copyright">
-        <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
-        <div>Last updated: September 2026</div>
-    </div>
-</footer>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
+        </div>
+    </footer>
 
     <script>
-       const PDF_BASE_URL =  "https://ims-spintronics.github.io/imslab/";
-	   const papersData = [
+        // =========================================================================
+        // PREPRINT PASSWORD CONFIGURATION
+        // Team access password for protected preprint PDFs:
+        const PREPRINT_TEAM_PASSWORD = "imslab"; // Customize password here anytime!
+        // =========================================================================
+
+        const PDF_BASE_URL = "https://ims-spintronics.github.io/imslab/";
+        const papersData = [
             
             {
-                id: 235,
+                id: 236,
                 year: "Preprints",
                 title: "Field-Free Orbital Torque Switching Enabled by Built-in Magnetic Asymmetry",
                 authors: "Qu Yang, Shu Hui Lee, Shi Lei Ding, Shan Shyan Kuan, Wen Siang Lew*",
-                journal: "",
+                journal: "Manuscript Under Review",
                 badge: "SUBMITTED",
                 doi: "",
-                pdf: ""
+                pdf: "paper/preprints/orbital_torque_asymmetry_2026.pdf",
+                isPreprint: true
+            },
+            {
+                id: 235,
+                year: "Preprints",
+                title: "Orbital Magnon Transport Through a Thin Paramagnetic NiO layer",
+                authors: "Xuan Kai Wong, Shilei Ding, Bryan Wei Hao Cheng, Wen Siang Lew*",
+                journal: "Manuscript Under Review",
+                badge: "SUBMITTED",
+                doi: "",
+                pdf: "paper/preprints/orbital_magnon_transport_2026.pdf",
+                isPreprint: true
             },
             {
                 id: 234,
                 year: "Preprints",
-                title: "Orbital Magnon Transport Through a Thin Paramagnetic NiO layer",
-                authors: "Xuan Kai Wong, Shilei Ding, Bryan Wei Hao Cheng, Wen Siang Lew*",
-                journal: "",
+                title: "Orbital Hall Conductivity of Cu in [Pt/Co]6/Cu Heterostructures",
+                authors: "Shu Hui Lee, Tianli Jin, Calvin Ching Ian Ang, Qu Yang, Wen Siang Lew*",
+                journal: "Manuscript Under Review",
                 badge: "SUBMITTED",
                 doi: "",
-                pdf: ""
+                pdf: "paper/preprints/orbital_hall_conductivity_2026.pdf",
+                isPreprint: true
             },
             {
                 id: 233,
                 year: "Preprints",
-                title: "Orbital Hall Conductivity of Cu in [Pt/Co]6/Cu Heterostructures",
-                authors: "Shu Hui Lee, Tianli Jin, Calvin Ching Ian Ang, Qu Yang, Wen Siang Lew*",
-                journal: "",
+                title: "Nonlinear magnonic moiré lattice for frequency multiplication",
+                authors: "Bryan Wei Hao Cheng, Mengying Guo, Ze Chen, Dhiman Bhowmick, Xueyu Guo, Zhenyu Zhou, Wen Siang Lew*",
+                journal: "Manuscript Under Review",
                 badge: "SUBMITTED",
                 doi: "",
-                pdf: ""
+                pdf: "paper/preprints/nonlinear_magnonic_moire_2026.pdf",
+                isPreprint: true
             },
             {
                 id: 232,
-                year: "Preprints",
-                title: "Nonlinear magnonic moiré lattice for frequency multiplication",
-                authors: "Bryan Wei Hao Cheng, Mengying Guo, Ze Chen, Dhiman Bhowmick, Xueyu Guo, Zhenyu Zhou, Wen Siang Lew*",
-                journal: "",
-                badge: "SUBMITTED",
-                doi: "",
-                pdf: ""
-            },
-            {
-                id: 231,
                 year: "2026",
                 title: "Decoupling Volume and Magnetic Anisotropy for the Enhancement of Thermal Stability in CoFeB Multilayered Structures",
                 authors: "Funan Tan, Kangjian Cheng, Ze Chen, Bryan Cheng, Xuan Kai Wong, and Wen Siang Lew*",
@@ -674,7 +909,7 @@
                 pdf: "paper/2026/RRL_2026.pdf"
             },
             {
-                id: 230,
+                id: 231,
                 year: "2026",
                 title: "Ion recombination correction in reference dosimetry for pencil beam scanned proton beams",
                 authors: "J.K. Gan, K.S. Lew, C.G.A. Chua, C.W.Y. Koh, K.H. Lee, M. Yagi, W.S. Lew, J. C. L. Lee, S.Y. Park, H.Q. Tan",
@@ -683,7 +918,7 @@
                 pdf: "paper/2026/Medical Physics_2026.pdf"
             },
             {
-				id: 229,
+				id: 230,
                 year: "2026",
                 title: "Mitigating Process-Induced Wafer Distortion for Enhanced Overlay and Thickness Uniformity",
                 authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
@@ -692,7 +927,7 @@
                 pdf: "paper/2026/IEEE_2026.pdf"
 			},
 			{
-                id: 228,
+                id: 229,
                 year: "2026",
                 title: "Operando Thermal Behavior of 1T-1R Memristors and Its Implications on Online and Offline Learning",
                 authors: "Eng Kang Koh, Putu Andhita Dananjaya, Y. S. You, and Wen Siang Lew*",
@@ -701,7 +936,7 @@
                 pdf: "paper/2026/Nanoscale_2026.pdf"
             },
             {
-                id: 227,
+                id: 228,
                 year: "2026",
                 title: "A Scalable Perovskite Platform With Multi-State Photoresponsivity for In-Sensor Saliency Detection",
                 authors: "X.C. Xing, A. Tripathi, S.E. Ng, N. Yantara, Y. Gong, Q.J. Wu, Y.B. Tay, W.S. Lew, Y. Chai, A. Basu, N. Mathews",
@@ -710,7 +945,7 @@
                 pdf: "paper/2026/Advanced Materials_2026.pdf"
             },
             {
-                id: 226,
+                id: 227,
                 year: "2026",
                 title: "Suppressing hexagonal defects in ex situ SiCoNi processing",
                 authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
@@ -719,7 +954,7 @@
                 pdf: "paper/2026/TSM1_2026.pdf"
             },
             {
-                id: 225,
+                id: 226,
                 year: "2026",
                 title: "Rapid characterisation of millimetre-tall vertically aligned carbon nanotube arrays: growth optimisation by tuning the catalyst film thickness",
                 authors: "X.H. Zhao, J.E. Stubbe, J.C.K. Ho, P.A. Dananjaya, W.S. Lew, P.H. Coquet, B.K. Tay",
@@ -728,7 +963,7 @@
                 pdf: "paper/2026/AppliedSurScience_2026.pdf"
             },
             {
-                id: 224,
+                id: 225,
                 year: "2026",
                 title: "Determining optimal spot delivery pattern using log file Derived dose discrepancy factor in pencil beam scanning reference dosimetry",
                 authors: "Kah Seng Lew, James Kuan Huei Lee, Clifford Ghee Ann Chua, Calvin Wei Yang Koh, Jun Ken Gan, Andrew Wibawa, Zubin Master, Eric Pei Ping Pang, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
@@ -737,7 +972,7 @@
                 pdf: "paper/2026/PhyMedica_2026.pdf"
             },
             {
-                id: 223,
+                id: 224,
                 year: "2026",
                 title: "Commissioning of the LUNA3D Surface Guided Radiotherapy in Full Rotating Gantry Proton Therapy System",
                 authors: "Kah Seng Lew, Calvin Wei Yang Koh, Kang Hao Lee, Clifford Ghee Ann Chua, Andrew Wibawa, Zubin Master, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
@@ -746,7 +981,7 @@
                 pdf: "paper/2026/ParticleTherapy_2026.pdf"
             },
             {
-                id: 222,
+                id: 223,
                 year: "2025",
                 title: "Electric Field Modulation of Interlayer Coupling via Piezostrain in a Synthetic Antiferromagnet",
                 authors: "Yuichi Hisada, Sachio Komori, Keiichiro Imura, Chenyu Shen, Yoshihiro Gohda, Calvin Ching Ian Ang, Wen Siang Lew, and Tomoyasu Taniyama*",
@@ -755,7 +990,7 @@
                 pdf: "paper/2025/AdvScience_2025.pdf"
             },
             {
-                id: 221,
+                id: 222,
                 year: "2025",
                 title: "Large enhancement of effective spin-orbit torque efficiency by optimizing the capping layer thickness in Ta/Pt/Co trilayer",
                 authors: "Zhan Xu, Shuo Wu, Runtian Li, Wenwen Liu, Er Liu, Leixiang Bian, Feng Xu, Jiaxuan Tang and Wen Siang Lew",
@@ -764,7 +999,7 @@
                 pdf: "paper/2025/JPhysCondensMatter_2025.pdf"
             },
             {
-                id: 220,
+                id: 221,
                 year: "2025",
                 title: "Enhancement of Spin-Orbit Torque in Sputtered BiSb-based Perpendicular Magnetic Tunnel Junctions for Neuromorphic Computing Applications",
                 authors: "Shuo Wu, Gerard Lim, Funan Tan, Tianli Jin, Calvin Ang, Shu Hui Lee, Kangjian Cheng, and Wen Siang Lew*",
@@ -773,7 +1008,7 @@
                 pdf: "paper/2025/APL3_2025.pdf"
             },
             {
-                id: 219,
+                id: 220,
                 year: "2025",
                 title: "Performance Evaluation of Deformable Image Registration Algorithms: Target Registration Error and its Correlation to Dice Similarity Coefficient",
                 authors: "Yun Ming Wong, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
@@ -782,7 +1017,7 @@
                 pdf: "paper/2025/Zeitschrift für Medizinische Physik_2025.pdf"
             },
             {
-                id: 218,
+                id: 219,
                 year: "2025",
                 title: "A comprehensive characterization of the temporal characteristics of dose driven continuous scanning in proton therapy",
                 authors: "Clifford Ghee Ann Chua, Keith Furutani, Kang Hao Lee, Kah Seng Lew, Calvin Wei Yang Koh, Andrew Wibawa, Zubin Master, Wen Siang Lew, James Lee, Chris Beltran, Sung Yong Park, and Hong Qi Tan",
@@ -791,7 +1026,7 @@
                 pdf: "paper/2025/PhysMedBiol_2025.pdf"
             },
             {
-                id: 217,
+                id: 218,
                 year: "2025",
                 title: "Voltage-modulated magnetic properties and enhanced thermal endurance in Ta/Mo-based perpendicular magnetic tunnel junctions",
                 authors: "Shuo Wu, Gerard Lim, Funan Tan, Tianli Jin, Calvin Ang, Eng Kang Koh, Shuhui Lee, Kangjian Cheng, and Wen Siang Lew*",
@@ -800,7 +1035,7 @@
                 pdf: "paper/2025/JMMM_2025.pdf"
             },
             {
-                id: 216,
+                id: 217,
                 year: "2025",
                 title: "Spin-orbit torque driven two-terminal giant magnetoresistance memristive device for scalable in-memory computing",
                 authors: "Tianli Jin, Bo Zhang, Eng Kang Koh, Funan Tan, Calvin Xiu Xian Lee, Ze Chen, Gerard Lim, Ze Chen, Kaiming Cai, Jiangwei Cao*, Wen Siang Lew*",
@@ -809,7 +1044,7 @@
                 pdf: "paper/2025/ACS AMI2_2025.pdf"
             },
             {
-                id: 215,
+                id: 216,
                 year: "2025",
                 title: "CMOS-Compatible Protonic Three-Terminal Memristor for Analog Synapse in Neuromorphic Computing",
                 authors: "Lingli Liu, Putu Andhita Dananjaya, Eng Kang Koh, Funan Tan, Gerard Joseph Lim, Calvin Xiu Xian Lee, Jin-Lin Yang, Wen Siang Lew*",
@@ -818,7 +1053,7 @@
                 pdf: "paper/2025/Small Methods_2025.pdf"
             },
             {
-                id: 214,
+                id: 215,
                 year: "2025",
                 title: "Generation of High and Bidirectional Out-of-Plane Spin-Orbit Torque through Vertical Magnetization Gradient",
                 authors: "Tianli Jin, Yuliang Zhu, Shaomin Li, Bo Zhang, Funan Tan, Gerard Lim, Jiangwei Cao, Kaiming Cai, Wen Siang Lew*",
@@ -827,7 +1062,7 @@
                 pdf: "paper/2025/APL1_2025.pdf"
             },
             {
-                id: 213,
+                id: 214,
                 year: "2025",
                 title: "Voltage-Controlled Half Adder Via Magnonic Inverse Design",
                 authors: "Ze Chen, Gerard Lim, Calvin Ang, Tianli Jin, Funan Tan, Bryan Cheng, and Wen Siang Lew*",
@@ -836,7 +1071,7 @@
                 pdf: "paper/2025/APL2_2025.pdf"
             },
             {
-                id: 212,
+                id: 213,
                 year: "2025",
                 title: "Complementary interactions of orbital momentum and topological spin states in ferromagnet/Cu/Bi0.85Sb0.15 structures",
                 authors: "Shu Hui Lee, Calvin Ching Ian Ang, Han Yin Poh, Gerard Joseph Lim, Tianli Jin, Wanbing Yi, and Wen Siang Lew*",
@@ -845,7 +1080,7 @@
                 pdf: "paper/2025/PR Applied_2025.pdf"
             },
             {
-                id: 210,
+                id: 212,
                 year: "2025",
                 title: "Enhanced Silicon Crystallization on Dielectric Materials at Reduced Temperature",
                 authors: "K.J. Cheng, J.Y. Huang, Wen Siang Lew*",
@@ -854,7 +1089,7 @@
                 pdf: "paper/2025/IEEE_2025.pdf"
             },
             {
-                id: 210,
+                id: 211,
                 year: "2025",
                 title: "Continuous-Wave Pumped Self-Assembled Colloidal Topological Lasers",
                 authors: "R. Duan, Q. Zhang, Y. T. Thung, X.H. Zhou, Tingting Yin, Y.T. Ao, Lian Xiao, Z.T. Zhang, Calvin X. X. Lee, T.H. Ren, H. V. Demir, W. S. Lew, Baile Zhang, H.D. Sun",
@@ -863,7 +1098,7 @@
                 pdf: "paper/2025/Adv Maters_2025.pdf"
             },
             {
-                id: 209,
+                id: 210,
                 year: "2025",
                 title: "Highly rechargeable aqueous Sn-metal-based hybrid-ion batteries",
                 authors: "Tao Xiao, Lingli Liu, Huan Liu, Ting Li, Daqian Cai, W. S. Lew, Yongqi Zhang, Haoming Bao, Jin-Lin Yang, Hong Jin Fan",
@@ -872,7 +1107,7 @@
                 pdf: "paper/2025/Joule_2025.pdf"
             },
             {
-                id: 208,
+                id: 209,
                 year: "2025",
                 title: "Polydopamine-Assisted Electroless Deposition of Strongly Adhesive NiFe Films for Flexible Spintronics",
                 authors: "A. Ramesh, X.Y. Chen, I. Seetoh, G.Y. Lim, W.X. Tan, V. Thirunavukkarasu, T.L. Jin, W.S. Lew, C.Q. Lai",
@@ -881,7 +1116,7 @@
                 pdf: "paper/2025/ACS AMI_2025.pdf"
             },
             {
-                id: 207,
+                id: 208,
                 year: "2025",
                 title: "Enhanced Threshold Switching and Oscillatory Behaviour in Ag-based Diffusive Memristors via Nanoporous Cations Limiter",
                 authors: "Calvin Lee, Putu Andhita Dananjaya, Funan Tan, Eng Kang Koh, Lingli Liu, Kangjian Cheng, Wanbing Yi, Wen Siang Lew*",
@@ -890,7 +1125,7 @@
                 pdf: "paper/2025/ACS AEM_2025.pdf"
             },
             {
-                id: 206,
+                id: 207,
                 year: "2024",
                 title: "Leveraging Tunability of Localized-Interfacial Memristors for Efficient Handling of Complex Neural Networks",
                 authors: "Eng Kang Koh, Putu Andhita Dananjaya, Lingli Liu, Calvin Xiu Xian Lee, G. J. Lim, Y. S. You, and Wen Siang Lew*",
@@ -899,7 +1134,7 @@
                 pdf: "paper/2024/ACS Nano_2024.pdf"
             },
             {
-                id: 205,
+                id: 206,
                 year: "2024",
                 title: "Investigation of Spin-Pumping and Transport in the Ni80Fe20/Pt/Co Asymmetric Trilayeure",
                 authors: "Shilpa Samdani, Yaqi Rong, Birte Coester, Amit Kumar Shukla, Wen Siang Lew, Yumeng Yang, Rajdeep Singh Rawat",
@@ -908,7 +1143,7 @@
                 pdf: "paper/2024/PRB_2024.pdf"
             },
             {
-                id: 204,
+                id: 205,
                 year: "2024",
                 title: "Bridging academia and industry for the future of spintronics",
                 authors: "Gerard Lim, Wen Siang Lew*",
@@ -917,7 +1152,7 @@
                 pdf: "paper/2024/Nature Rev ElecEng 2024.pdf"
             },
             {
-                id: 203,
+                id: 204,
                 year: "2024",
                 title: "Exploiting spatial ionic dynamics in solid-state organic electrochemical transistors for multi-tactile sensing and processing",
                 authors: "Kunqi Hou, Shuai Chen, Rohit Abraham John, Qiang He, Zhongliang Zhou, Nripan Mathews, Wen Siang Lew, and Wei Lin Leong",
@@ -926,7 +1161,7 @@
                 pdf: "paper/2024/Advanced Science_2024.pdf"
             },
             {
-                id: 202,
+                id: 203,
                 year: "2024",
                 title: "Machine Learning Prediction of Dice Similarity Coefficient for Validation of Deformable Image Registration",
                 authors: "Yun Ming Wong, Ping Lin Yeap, Ashley Li Kuan Ong, Jeffrey Kit Loong Tuan, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
@@ -935,7 +1170,7 @@
                 pdf: "paper/2024/IBM_2024.pdf"
             },
             {
-                id: 201,
+                id: 202,
                 year: "2024",
                 title: "Electric field control of spin-orbit torque in annealed Ta/CoFeB/HfOx heterostructures via interfacial oxidation modulation",
                 authors: "S. Wu, T.L. Jin, C. C. I. Ang, G. J. Lim, Bryan C.W. Hao, Z. Chen, and W. S. Lew*",
@@ -944,7 +1179,7 @@
                 pdf: "paper/2024/Nanotech1_2024.pdf"
             },
             {
-                id: 200,
+                id: 201,
                 year: "2024",
                 title: "Granular magnetization switching in Pt/Co/Ti structure with HfOx insertion for in-memory computing applications",
                 authors: "Tianli Jin, Bo Zhang, Funan Tan, Gerard Lim, Ze Chen, Jiangwei Cao*, Wen Siang Lew*",
@@ -953,7 +1188,7 @@
                 pdf: "paper/2024/NanoLetters_2024.pdf"
             },
             {
-                id: 199,
+                id: 200,
                 year: "2024",
                 title: "Deformable Anthropomorphic Pelvis Phantom for Dose Accumulation Verification",
                 authors: "Yun Ming Wong, Calvin Wei Yang Koh, Kah Seng Lew, Clifford Ghee Ann Chua, Ping Lin Yeap, Ee Teng Zhang, Ashley Li Kuan Ong, Jeffrey Kit Loong Tuan, Bing Feng Ng, Wen Siang Lew, James Cheow Lei Lee, Hong Qi Tan",
@@ -962,7 +1197,7 @@
                 pdf: "paper/2024/Phys_Med_Biol_2024.pdf"
             },
             {
-                id: 198,
+                id: 199,
                 year: "2024",
                 title: "NIR and Magnetism Dual-Response Multi-core Magnetic Vortex Nanoflowers for Boosting Magneto-photothermal Cancer Therapy",
                 authors: "Kaiming Shen, Li Xian Li, Funan Tan, Tianli Jin, Shuo Wu, Zongguo Xue, Mun Yin Chee, Yunfei Yan*, Wen Siang Lew*",
@@ -971,7 +1206,7 @@
                 pdf: "paper/2024/Nanscale1_2024.pdf"
             },
             {
-                id: 197,
+                id: 198,
                 year: "2024",
                 title: "Spin-based magnetic random-access memory for high-performance computing",
                 authors: "Kaiming Cai, Tianli Jin, Wen Siang Lew*",
@@ -980,7 +1215,7 @@
                 pdf: "paper/2024/NatSciRev_2024.pdf"
             },
             {
-                id: 196,
+                id: 197,
                 year: "2024",
                 title: "A 1Mb RRAM Macro With 9.8ns Read Access Time Utilizing Dynamic Reference Voltage for Reliable Sensing Operation",
                 authors: "Junjie Mu, Lu Lu, Ju Eon Kim, Byungkwon An, Vishal Sharma, Arya Jagath Lekshmi, Putu Andhita Dananjaya, Weng Hong Lai, Wen Siang Lew, Tony Tae-Hyoung Kim",
@@ -989,7 +1224,7 @@
                 pdf: "paper/2024/IEEE_2024.pdf"
             },
             {
-                id: 195,
+                id: 196,
                 year: "2024",
                 title: "Control-etched Ti3C2Tx MXene Nanosheets for Low Voltage Operating Flexible Memristor for Efficient Neuromorphic Computation",
                 authors: "Jeny Gosai, Mansi Patel, Lingli Liu, Aziz Lokhandwala, Parth Thakkar, Mun Yin Chee, Muskan Jain, Wen Siang Lew, Nitin Chaudhari, Ankur Solanki",
@@ -998,7 +1233,7 @@
                 pdf: "paper/2024/AMI_1_2024.pdf"
             },
             {
-                id: 194,
+                id: 195,
                 year: "2024",
                 title: "High-Performance One-Dimensional Halide Perovskite Crossbar Memristors and Synapses for Neuromorphic Computing",
                 authors: "Sujaya Kumar Vishwanath, Benny Febriansyah, Sien Ng, Tisita Das, Jyotibdha Acharya, Rohit Abraham John, Divyam Sharma, Putu Andhita Danajaya, Metikoti Jagadeeswararo, Naveen Tiwari, Mohit Ramesh Chandra Kulkarni, Wen Siang Lew, Sudip Chakraborty, Arindam Basu, Nripan Mathews",
@@ -1007,7 +1242,7 @@
                 pdf: "paper/2024/MaterHor_2024.pdf"
             },
             {
-                id: 193,
+                id: 194,
                 year: "2024",
                 title: "Unravelling the Factors Influencing Halide Perovskite Based Switchable Photovoltaics",
                 authors: "Xuechao Xing, Si En Ng, Yeow Boon Tay, Natalia Yantara, Wen Siang Lew, Nripan Mathews",
@@ -1016,7 +1251,7 @@
                 pdf: "paper/2024/AFM_2024.pdf"
             },
             {
-                id: 192,
+                id: 193,
                 year: "2024",
                 title: "Insights into Synaptic Functionality and Resistive Switching in Lead Iodide Flexible Memristor Devices",
                 authors: "Muskan Jain, Mayur Jagdishbhai Patel, Lingli Liu, Jeny Gosai, Manish Khemnani, Himangshu Gogoi, Mun Yin Chee, Antonio Guerrero, Wen Siang Lew, Ankur Solanki",
@@ -1025,7 +1260,7 @@
                 pdf: "paper/2024/NanaHor_2024.pdf"
             },
             {
-                id: 191,
+                id: 192,
                 year: "2024",
                 title: "Current-induced Domain wall NOT gate logic operation via chirality flipping by exploiting Walker breakdown",
                 authors: "Rohan Jaiswal, Vemuru Haragopal, Vijayanandhini Kannan, Chandrasekhar Murapaka, and Wen Siang Lew",
@@ -1034,7 +1269,7 @@
                 pdf: "paper/2024/JSuperconMag_2024.pdf"
             },
             {
-                id: 190,
+                id: 191,
                 year: "2024",
                 title: "Effective spin Hall efficiency contributed by the extrinsic spin Hall effect in Pt1-xTax/CoFeB structures",
                 authors: "Z. Xu, J.X. Tang, S.C. Hu, E. Liu, F. Xu, L.X. Bian and W. S. Lew*",
@@ -1043,7 +1278,7 @@
                 pdf: "paper/2024/JPhyD_2024.pdf"
             },
             {
-                id: 189,
+                id: 190,
                 year: "2024",
                 title: "Unraveling the origins of the coexisting localized-interfacial mechanism in oxide-based memristors in CMOS-integrated synaptic device implementations",
                 authors: "Eng Kang Koh, Putu Andhita Dananjaya, Han Yin Poh, Lingli Liu, Calvin Xiu Xian Lee, Jia Rui Thong, and Wen Siang Lew*",
@@ -1052,7 +1287,7 @@
                 pdf: "paper/2024/NSHorizon2_2024.pdf"
             },
             {
-                id: 188,
+                id: 189,
                 year: "2024",
                 title: "Effects of modern aesthetic dental fillings on proton therapy",
                 authors: "Yun Ming Wong, Calvin Wei Yang Koh, Kah Seng Lew, Clifford Ghee Ann Chua, Ping Lin Yeap, Andrew Wibawa, Zubin Master, Sharon Shuxian Poh, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park, Hong Qi Tan",
@@ -1061,7 +1296,7 @@
                 pdf: "paper/2024/RadOnco_2024.pdf"
             },
             {
-                id: 187,
+                id: 188,
                 year: "2024",
                 title: "Electron push-pull effects induced performance promotion in covalent organic polymer thin films-based memristor for neuromorphic application",
                 authors: "Panke Zhou, Hong Yu, Mun Yin Chee, Tao Zeng, Tianli Jin, Hongling Yu, Shuo Wu, Wen Siang Lew, Xiong Chen",
@@ -1070,7 +1305,7 @@
                 pdf: "paper/2024/CCL_2024.pdf"
             },
             {
-                id: 186,
+                id: 187,
                 year: "2023",
                 title: "Enhanced current-induced magnetization switching with antiferromagnetic coupled intereface at Co/Ho heterostructures",
                 authors: "S. M. Li, H. Y. Poh, T. L. Jin, F. N. Tan, S. Wu, K. M. Shen, Y. F. Jiang and W. S. Lew*",
@@ -1079,7 +1314,7 @@
                 pdf: "paper/2023/APL4_2023.pdf"
             },
             {
-                id: 185,
+                id: 186,
                 year: "2023",
                 title: "Hollow spherical Mn0.5Zn0.5Fe2O4 nanoparticles with magnetic vortex configuration for enhanced magnetic hyperthermia efficacy",
                 authors: "Kaiming Shen, Yunfei Yan, Funan Tan, Shuo Wu, Tianli Jin, Zongguo Xue, Mun Yin Chee, Li Xian Li, Wen Siang Lew",
@@ -1088,7 +1323,7 @@
                 pdf: "paper/2023/Nanoscale2_2023.pdf"
             },
             {
-                id: 184,
+                id: 185,
                 year: "2023",
                 title: "Colloidal Nanoplatelets‐Based Soft Matter Technology for Photonic Interconnected Networks: Low‐Threshold Lasing and Polygonal Self‐Coupling Microlasers",
                 authors: "R. Duan, Y.T. Thung, Z.T. Zhang, E. G. Durmusoglu, Y.C. He, L. Xiao, C. Lee, W.S. Lew, L. Zhang, H.Y. Li, J Yang, H. V. Demir, H.D. Sun",
@@ -1097,7 +1332,7 @@
                 pdf: "paper/2023/LasPho Rev_2 2023.pdf"
             },
             {
-                id: 183,
+                id: 184,
                 year: "2023",
                 title: "A bi-functional three-terminal memristor applicable as an artificial synapse and neuron",
                 authors: "Lingli Liu, Putu Andhita Dananjaya, Calvin Ching Ian Ang, Eng Kang Koh, Gerard Joseph Lim, Han Yin Poh, Mun Yin Chee, Calvin Xiu Xian Lee, Wen Siang Lew*",
@@ -1106,7 +1341,7 @@
                 pdf: "paper/2023/Nanoscale1_2023.pdf"
             },
             {
-                id: 182,
+                id: 183,
                 year: "2023",
                 title: "Strain-induced Degradation and Recovery of Flexible NbOx-based Threshold Switching Device",
                 authors: "Jia Min Ang, Putu Andhita Dananjaya, Calvin Ching Ian Ang, Gerard Joseph Lim, Wen Siang Lew*",
@@ -1115,7 +1350,7 @@
                 pdf: "paper/2023/SREP 2023.pdf"
             },
             {
-                id: 181,
+                id: 182,
                 year: "2023",
                 title: "Photo-Electric Multilevel Memory Device Based on Covalent Organic Polymer Film with Keto-Enol Tautomerism for Harsh Environments Applications",
                 authors: "Zhou Panke, Hongling Yu, Weiguo Huang, Mun Yin Chee, Zeng Taod, Gerard Joseph Lim, Wen Siang Lew, Xiong Chen",
@@ -1124,7 +1359,7 @@
                 pdf: "paper/2023/AFM_2023.pdf"
             },
             {
-                id: 180,
+                id: 181,
                 year: "2023",
                 title: "Influence of Co-Cu Electrode Composition on the Galvanic-induced Resistive Switching Behaviour of Ta2O5-based CBRAM",
                 authors: "Calvin Lee, Putu Andhita Dananjaya, Mun Yin Chee, Han Yin Poh, Funan Tan, Jia Rui Thong, Lingli Liu, Gerard Joseph Lim, Yuanmin Du, Juan Boon Tan, Wen Siang Lew*",
@@ -1133,7 +1368,7 @@
                 pdf: "paper/2023/APL3_2023.pdf"
             },
             {
-                id: 179,
+                id: 180,
                 year: "2023",
                 title: "Multiwalled Carbon Nanotubes Decorated with Mn0.5Zn0.5Fe2O4 Nanoparticles for Magneto-Photothermal Cancer Therapy",
                 authors: "Kaiming Shen, Yunfei Yan, Zongguo Xue, Jingxiang You, Lixian Li*, Wen Siang Lew*",
@@ -1142,7 +1377,7 @@
                 pdf: "paper/2023/ACS ANM_2023.pdf"
             },
             {
-                id: 178,
+                id: 179,
                 year: "2023",
                 title: "The influence of Ti ultrathin insertion layer on the effective magnetic damping and effective spin Hall angle",
                 authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, B. Coester, F. Xu, L. Bian and W. S. Lew*",
@@ -1151,7 +1386,7 @@
                 pdf: "paper/2023/APL2_2023.pdf"
             },
             {
-                id: 177,
+                id: 178,
                 year: "2023",
                 title: "The impact of oxygen vacancy defect density on the nonlinearity and short-term plasticity of TiO2-based exponential selector",
                 authors: "Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Calvin Lee, Lingli Liu, Wen Siang Lew*",
@@ -1160,7 +1395,7 @@
                 pdf: "paper/2023/Nanotechnology_2023.pdf"
             },
             {
-                id: 176,
+                id: 177,
                 year: "2023",
                 title: "Investigation of spin-orbit torque performance with W/Cu-multilayers as spin current source",
                 authors: "Birte Coester, Gerard Lim, Funan Tan, Han Yin Poh, and Wen Siang Lew*",
@@ -1169,7 +1404,7 @@
                 pdf: "paper/2023/JAP_2023.pdf"
             },
             {
-                id: 175,
+                id: 176,
                 year: "2023",
                 title: "Protons-assisted Redox-based Three-terminal RRAM for Synaptic Device Applications",
                 authors: "Lingli Liu, Putu Andhita Dananjaya, Chee Mun Yin, Gerard Joseph Lim, Wen Siang Lew*",
@@ -1178,7 +1413,7 @@
                 pdf: "paper/2023/ACS AMI_2023.pdf"
             },
             {
-                id: 174,
+                id: 175,
                 year: "2023",
                 title: "Dielectric-Metallic Double Gradient Composition Design for Stable Zn Metal Anodes",
                 authors: "Jin-Lin Yang, Lingli Liu, Zehua Pu, Pengbo Chen, Jia Li, Putu Andhita Dananjaya, Eng Kang Koh, Wen Siang Lew, Kang Liu, Peihua Yang, Hong Jin Fan",
@@ -1187,7 +1422,7 @@
                 pdf: "paper/2023/ACS Energy_2023.pdf"
             },
             {
-                id: 173,
+                id: 174,
                 year: "2023",
                 title: "High performance, flexible and thermally stable all-solid-state organic electrochemical transistor based on thermoplastic polyurethane ion-gel",
                 authors: "Kunqi Hou, Shuai Chen, Akshay Moudgil, Xihu Wu, Teck Lip Dexter Tam, Wen Siang Lew, and Wei Lin, Leong",
@@ -1196,7 +1431,7 @@
                 pdf: "paper/2023/ACS AEM_2023.pdf"
             },
             {
-                id: 172,
+                id: 173,
                 year: "2023",
                 title: "Switching the memory behavior from binary to ternary by triggering the S62- relaxation in polysulfide-bearing Zinc-organic complex molecular memoriest",
                 authors: "Zhou Panke, Xiaoli Lin, Mun Yin Chee, Wen Siang Lew, Tao Zeng, Hao-Hong Li, Xiong Chen, Zhi-Rong Chen, Huidong Zheng",
@@ -1205,7 +1440,7 @@
                 pdf: "paper/2023/Mater Hor_2023.pdf"
             },
             {
-                id: 171,
+                id: 172,
                 year: "2023",
                 title: "Enhancement of spin-orbit torque in Pt/Co/HfOx heterostructures with voltage-controlled oxygen ion migration",
                 authors: "S. Wu, T.L. Jin, F. N. Tan, C. C. I. Ang, H. Y. Poh, G. J. Lim, and W. S. Lew*",
@@ -1214,7 +1449,7 @@
                 pdf: "paper/2023/APL1_2023.pdf"
             },
             {
-                id: 170,
+                id: 171,
                 year: "2023",
                 title: "Crystallinity control of topological insulator BiSb(012) via interfacial engineering for spin orbit torque enhancement",
                 authors: "H. Y. Poh, C. C. I. Ang, G. J. Lim, T.L. Jin, S.H. Lee, E. K. Koh, F. Poh, and W. S. Lew*",
@@ -1223,7 +1458,7 @@
                 pdf: "paper/2023/PRA2_2023.pdf"
             },
             {
-                id: 169,
+                id: 170,
                 year: "2023",
                 title: "Ultrahigh Quality Microlasers from Controlled Self-Assembly of Ultrathin Colloidal Semiconductor Quantum Wells",
                 authors: "Y.T. Thung, R. Duan, E. G. Durmusoglu, Y.C. He, L. Xiao, C. Lee, W.S. Lew, L. Zhang, H. V. Demir, H.D. Sun",
@@ -1232,7 +1467,7 @@
                 pdf: "paper/2023/LasPho Rev 2023.pdf"
             },
             {
-                id: 168,
+                id: 169,
                 year: "2023",
                 title: "Multiple nonvolatile skyrmion states in nanostructured synthetic",
                 authors: "Mangyuan Ma, Wen Siang Lew*, and Fusheng Ma*",
@@ -1241,7 +1476,7 @@
                 pdf: "paper/2023/PRA1_2023.pdf"
             },
             {
-                id: 167,
+                id: 168,
                 year: "2023",
                 title: "Enhancement of Temperature-Modulated NbO2-Based Relaxation Oscillator via Interfacial and Bulk Treatment",
                 authors: "Jia Min Ang, Putu Andhita Dananjaya, Samuel Chen Wai Chow, Gerard Joseph Lim, Chim Seng Seet, Wen Siang Lew*",
@@ -1250,7 +1485,7 @@
                 pdf: "paper/2023/Nanotechnology_2023.pdf"
             },
             {
-                id: 166,
+                id: 167,
                 year: "2022",
                 title: "Impact of interfacial engineering on MgO-based resistive switching devices for low-power applications",
                 authors: "Samuel Chen Wai Chow, Putu Andhita Dananjaya, Jia Min Ang, Desmond Jia Jun Loy, Jia Rui Thong, Siew Wei Hoo, Eng Huat Toh, Wen Siang Lew*",
@@ -1259,7 +1494,7 @@
                 pdf: "paper/2022/ASS_2022.pdf"
             },
             {
-                id: 165,
+                id: 166,
                 year: "2022",
                 title: "Efficient spin-orbit torque magnetization switching by reducing domain nucleation energy",
                 authors: "Tianli Jin, Calvin Ang, Xuan Wang, Wen Siang Lew*, S. N. Piramanayagam",
@@ -1268,7 +1503,7 @@
                 pdf: "paper/2022/JMMM_2022.pdf"
             },
             {
-                id: 164,
+                id: 165,
                 year: "2022",
                 title: "Frequency-dependent synapse weight tuning in 1S1R with short-term plasticity TiOx-based exponential selector",
                 authors: "Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Wen Siang Lew*",
@@ -1277,7 +1512,7 @@
                 pdf: "paper/2022/ACS-AMI_2_2022.pdf"
             },
             {
-                id: 163,
+                id: 164,
                 year: "2022",
                 title: "Continuous film characterisation of Spin Orbit Torque using Four Probe Measurement",
                 authors: "H. Y. Poh, C. C. I. Ang, T.L. Jin, F.N. Tan, G. J. Lim, and W. S. Lew*",
@@ -1286,7 +1521,7 @@
                 pdf: "paper/2022/APL 2022.pdf"
             },
             {
-                id: 162,
+                id: 163,
                 year: "2022",
                 title: "Rapid Multi-Property Assessment of Compositionally Modulated Fe-Co-Ni Thin Film Material Libraries",
                 authors: "P. Padhy Shakti, Tsakadze Zviad, V. Chaudhary, G. J. Lim, X. Tan, Wen Siang Lew, Raju V. Ramanujan",
@@ -1295,7 +1530,7 @@
                 pdf: "paper/2022/ResInMaters_2022.pdf"
             },
             {
-                id: 161,
+                id: 162,
                 year: "2022",
                 title: "Nano-engineering the evolution of skyrmion crystal in synthetic antiferromagnets",
                 authors: "Mangyuan Ma, Ke Huang, Yong Li, Sihua Li, Qiyuan Feng, Calvin Ching Ian Ang, Tianli Jin, Yalin Lu, Qingyou Lu, Wen Siang Lew*, Fusheng Ma, Xiao Wang",
@@ -1304,7 +1539,7 @@
                 pdf: "paper/2022/APRev_2022.pdf"
             },
             {
-                id: 160,
+                id: 161,
                 year: "2022",
                 title: "Magnetic Soft Millirobots 3D-Printed by Circulating Vat Photopolymerization to Manipulate Droplets Containing Hazardous Agents for In Vitro Diagnostic",
                 authors: "Aiwu Zhou, Changyu Xu, Pojchanun Kanitthamniyom, Chelsea Shan Xian Ng, Gerard Joseph Lim, Wen Siang Lew, Shawn Vasoo, Guo Zhan Lum, Yi Zhang",
@@ -1313,7 +1548,7 @@
                 pdf: "paper/2022/Adv Mater_2022.pdf"
             },
             {
-                id: 159,
+                id: 160,
                 year: "2022",
                 title: "Spin reflection induced field-free magnetization switching in perpendicularly magnetized MgO/Pt/Co heterostructures",
                 authors: "Tianli Jin, Gerard Joseph Lim, Han Yin Poh, Shuo Wu, Funan Tan, and Wen Siang Lew*",
@@ -1322,7 +1557,7 @@
                 pdf: "paper/2022/ACS-AMI_2022.pdf"
             },
             {
-                id: 158,
+                id: 159,
                 year: "2021",
                 title: "Direct spin accumulation quantiﬁcation in ferromagnetic heterostructures using DC bias harmonic Hall measurement",
                 authors: "H. Y. Poh, C. C. I. Ang, W. L. Gan, G. J. Lim, and W. S. Lew*",
@@ -1331,7 +1566,7 @@
                 pdf: "paper/2021/PRB2_2021.pdf"
             },
             {
-                id: 157,
+                id: 158,
                 year: "2021",
                 title: "Magnetically responsive co-nanoinitiators for cross-linking adhesives and mechanical properties enhancement",
                 authors: "Haruethai Kongcharoen, Birtie Coester, Izzat Aziz, Fei Yu, Wei Church Poh, Matthew Wei Ming Tan, Jing-Hao Ciou, Chan Weijie Benjamin, Wen Siang Lew, Pooi See Lee",
@@ -1340,7 +1575,7 @@
                 pdf: "paper/2021/ACS_AMI_2021.pdf"
             },
             {
-                id: 156,
+                id: 157,
                 year: "2021",
                 title: "Quantifying systematic RBE-weighted dose uncertainty arising from multiple variable RBE models in Organ-at-Risk",
                 authors: "Wei Yang Calvin Koh, Hong Qi Tan, Yan Yee Ng, Yen Hwa Lin, Khong Wei Ang, Wen Siang Lew, James Cheow Lei Lee, Sung Yong Park",
@@ -1349,7 +1584,7 @@
                 pdf: "paper/2021/Adv in Onco_2021.pdf"
             },
             {
-                id: 155,
+                id: 156,
                 year: "2021",
                 title: "Operando direct observation of filament formation in resistive switching devices enabled by a topological transformation molecule",
                 authors: "Kunqi Hou, Shuai Chen, Cheng Zhou, Linh Lan Nguyen, Putu Andhita Dananjaya, Martial Duchamp, Guillermo Bazan, Wen Siang Lew*, and Wei Lin Leong*",
@@ -1358,7 +1593,7 @@
                 pdf: "paper/2021/NanoLetters_2021.pdf"
             },
             {
-                id: 154,
+                id: 155,
                 year: "2021",
                 title: "Reversible strain-induced spin-orbit torque on flexible substrate by mild annealing",
                 authors: "Grayson Dao Hwee Wong, Weiliang Gan, Calvin Ching Ian Ang, Wai Cheung Law, Zhan Xu, Feng Xu, Chim Seng Seet, Wen Siang Lew*",
@@ -1367,7 +1602,7 @@
                 pdf: "paper/2021/APL2_2021.pdf"
             },
             {
-                id: 153,
+                id: 154,
                 year: "2021",
                 title: "Large damping-like spin-orbit torque and improved device performance utilizing mixed-phase Ta",
                 authors: "Akash Kumar, Raghav Sharma, Kacho Imtiyaz Ali Khan, Chandrasekhar Murapaka, Gerard Lim, Wen Siang Lew, Sujeet Chaudhary, Pranaba Muduli",
@@ -1376,7 +1611,7 @@
                 pdf: "paper/2021/ACS_AEM_2021.pdf"
             },
             {
-                id: 152,
+                id: 153,
                 year: "2021",
                 title: "Strain-mediated spin-orbit torque enhancement in Pt/Co on flexible substrate",
                 authors: "Grayson Dao Hwee Wong, Zhan Xu, Weiliang Gan, Calvin Ching Ian Ang, Wai Cheung Law, Jiaxuan Tang, Wen Zhang, Ping Kwan Johnny Wong, Xiaojiang Yu, Andrew Thye Shen Wee, Chim Seng Seet, Wen Siang Lew*",
@@ -1385,7 +1620,7 @@
                 pdf: "paper/2021/ACS Nano_2021.pdf"
             },
             {
-                id: 151,
+                id: 152,
                 year: "2021",
                 title: "Temperature-modulated magnetic Skyrmion phases and transformations by first-order reversal curve analysis",
                 authors: "C.C.I. Ang, W.L. Gan, Grayson D.H. Wong, and W. S. Lew*",
@@ -1394,7 +1629,7 @@
                 pdf: "paper/2021/PRB1_2021.pdf"
             },
             {
-                id: 150,
+                id: 151,
                 year: "2021",
                 title: "Antiferromagnetic Skyrmion repulsion based artificial neuron device",
                 authors: "Namita Bindal, Calvin Ching Ian Ang, Wen Siang Lew, Brajesh Kumar Kaushik",
@@ -1403,7 +1638,7 @@
                 pdf: "paper/2021/Nanotechnology_2021.pdf"
             },
             {
-                id: 149,
+                id: 150,
                 year: "2021",
                 title: "Large spin Hall angle enhanced by nitrogen incorporation in Pt films",
                 authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, W. L. Gan, F. Xu, and W. S. Lew*",
@@ -1412,7 +1647,7 @@
                 pdf: "paper/2021/APL1_ 2021.pdf"
             },
             {
-                id: 148,
+                id: 149,
                 year: "2021",
                 title: "Enhanced spin Hall conductivity in tungsten-copper alloys",
                 authors: "B. Coester, G. D. H. Wong, Z. Xu, J. Tang, W. L. Gan, and W. S. Lew*",
@@ -1421,7 +1656,7 @@
                 pdf: "paper/2020/JMMM 2020_2.pdf"
             },
             {
-                id: 147,
+                id: 148,
                 year: "2020",
                 title: "Electrical control of skyrmion density via skyrmion-stripe transformation",
                 authors: "C.C.I. Ang, W. L.Gan, and W. S. Lew*",
@@ -1430,7 +1665,7 @@
                 pdf: "paper/2020/PRA 2020.pdf"
             },
             {
-                id: 146,
+                id: 147,
                 year: "2020",
                 title: "Enhanced spin‒orbit torque efficiency in Pt/Co/Ho heterostructures via inserting Ho layer",
                 authors: "Tianli Jin, Wai Cheung Law, Durgesh Kumar, Feilong Luo, Qi Ying Wong, Gerard Lim, Xuan Wang, Wen Siang Lew, and S. Piramanayagam",
@@ -1439,7 +1674,7 @@
                 pdf: "paper/2020/APL Mater 2020.pdf"
             },
             {
-                id: 145,
+                id: 146,
                 year: "2020",
                 title: "Oxygen Vacancy Density Dependence with Hopping Conduction Mechanism in Multi-Level Switching Behavior of HfO2-Based RRAM Devices",
                 authors: "D.J.J. Loy, P.A. Dananjaya, S. Chakrabarti, Kuan Hong Tan, Samuel Chow Chen Wai, Eng Huat Toh and Wen Siang Lew*",
@@ -1448,7 +1683,7 @@
                 pdf: "paper/2020/ACS AEM_2020.pdf"
             },
             {
-                id: 144,
+                id: 145,
                 year: "2020",
                 title: "Effect of Seed and Interlayer Pt on SOT in Co/Pt Multilayers",
                 authors: "G. J. Lim, W. L. Gan, and W. S. Lew*",
@@ -1457,7 +1692,7 @@
                 pdf: "paper/2020/JPhyD_2020.pdf"
             },
             {
-                id: 143,
+                id: 144,
                 year: "2020",
                 title: "Standardizing Monte Carlo Simulation parameters for a reproducible linear energy transfer",
                 authors: "Calvin W.Y. Koh, H.Q. Tan, K.W. Ang, S.Y. Park, W.S. Lew, James C.L. Lee",
@@ -1466,7 +1701,7 @@
                 pdf: "paper/2020/Radialogy_2020.pdf"
             },
             {
-                id: 142,
+                id: 143,
                 year: "2020",
                 title: "Giant Spin Hall Effect in Tb Doped Cu Thin Films",
                 authors: "Z. Xu, G. D. H. Wong, J. Tang, E. Liu, W. L. Gan, F. Xu, and W. S. Lew*",
@@ -1475,7 +1710,7 @@
                 pdf: "paper/2020/ACS Applied_2020.pdf"
             },
             {
-                id: 141,
+                id: 142,
                 year: "2020",
                 title: "Enhancement of Zero-Field Skyrmion Density in [Pt/Co/Fe/Ir]2 Multilayers at Room Temperature by FORC",
                 authors: "Mangyuan Ma, Calvin Ang, Yong Li, Zizhao Pan, Weiliang Gan, Wen Siang Lew and Fusheng Ma*",
@@ -1484,7 +1719,7 @@
                 pdf: "paper/2020/JAP_2020.pdf"
             },
             {
-                id: 140,
+                id: 141,
                 year: "2020",
                 title: "Spin-Orbit Torque Driven Analog-Like Behaviour in Co/Pt Hall Cross Structures at Elevated Temperatures",
                 authors: "G. J. Lim, W. L. Gan, W. C. Law, C. Murapaka, and W. S. Lew*",
@@ -1493,7 +1728,7 @@
                 pdf: "paper/2020/JMMM_2020.pdf"
             },
             {
-                id: 139,
+                id: 140,
                 year: "2020",
                 title: "Thermal behavior of spin-current generation in PtxCu1-x devices characterized through spin-torque ferromagnetic resonance",
                 authors: "G.D.H. Wong, W. C. Law, F.N. Tan, W. L. Gan, C. C. I. Ang, Z. Xu, C.S. Seet, and W. S. Lew*",
@@ -1502,7 +1737,7 @@
                 pdf: "paper/2020/SREP1_2020.pdf"
             },
             {
-                id: 138,
+                id: 139,
                 year: "2020",
                 title: "ZrN Based Flexible Resistive Switching Memory",
                 authors: "Dayanand Kumar, Umesh Chand, Wen Siang Lew, and Tseung-Yuen Tseng",
@@ -1511,7 +1746,7 @@
                 pdf: "paper/2020/IEEE_3_2020.pdf"
             },
             {
-                id: 137,
+                id: 138,
                 year: "2020",
                 title: "Exploring the Impact of Variability in Resistance Distributions of RRAM on the Prediction Accuracy of Deep Learning Neural Networks",
                 authors: "Nagaraj Lakshmana Prabhu, Desmond Loy Jia Jun, Putu Andhita Dananjaya, Wen Siang Lew, Eng Huat Toh, Nagarajan Raghavan",
@@ -1520,7 +1755,7 @@
                 pdf: "paper/2020/Electronics-2020.pdf"
             },
             {
-                id: 136,
+                id: 137,
                 year: "2020",
                 title: "A 72 µW Readout circuit in 65nm CMOS with Successive Approximation based Thresholding for Domain Wall Magnet based Random Number Generator",
                 authors: "Govind Narasimman, Joydeep Basu, Pankaj Sethi, Sachin Krishna, Chen Yi, Wen Siang Lew, and Arindam Basu",
@@ -1529,7 +1764,7 @@
                 pdf: "paper/2020/IEEE_2.pdf"
             },
             {
-                id: 135,
+                id: 136,
                 year: "2019",
                 title: "Skyrmion-Based Artificial Synapse Device",
                 authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
@@ -1538,7 +1773,7 @@
                 pdf: "paper/2019/NJP_2019.pdf"
             },
             {
-                id: 134,
+                id: 135,
                 year: "2019",
                 title: "Giant Spin Hall Angle in Epitaxial Pt Thin Films",
                 authors: "Zhan Xu, Grayson Dao Hwee Wong, Weiliang Gan, and Wen Siang Lew*",
@@ -1547,7 +1782,7 @@
                 pdf: "paper/2019/ACS AMI_2019.pdf"
             },
             {
-                id: 133,
+                id: 134,
                 year: "2019",
                 title: "Low Power and High Endurance HfO2-based Resistive Switching Memory",
                 authors: "D.J.J. Loy, P.A. Dananjaya, and W.S. Lew*",
@@ -1556,7 +1791,7 @@
                 pdf: "paper/2019/ASS_2019.pdf"
             },
             {
-                id: 132,
+                id: 133,
                 year: "2019",
                 title: "Interfacial Dzyaloshinskii-Moriya Interaction in Synthetic Antiferromagnets",
                 authors: "Mangyuan Ma, Weiliang Gan, and Wen Siang Lew*",
@@ -1565,7 +1800,7 @@
                 pdf: "paper/2019/PRB_2019.pdf"
             },
             {
-                id: 131,
+                id: 132,
                 year: "2019",
                 title: "Spin-Orbit Torque Driven Domain Wall Motion in Ferrimagnetic Thin Films",
                 authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
@@ -1574,7 +1809,7 @@
                 pdf: "paper/2019/TMAG_2019.pdf"
             },
             {
-                id: 130,
+                id: 131,
                 year: "2019",
                 title: "Voltage-Controlled Magnetic Anisotropy in Nanostructured Spin-Torque Devices",
                 authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
@@ -1583,7 +1818,7 @@
                 pdf: "paper/2019/JPhyD_2019.pdf"
             },
             {
-                id: 129,
+                id: 130,
                 year: "2019",
                 title: "Flexible and Transparent Resistive Memory based on Metal-Oxide Heterostructures",
                 authors: "Putu Andhita Dananjaya, Desmond Loy, and Wen Siang Lew*",
@@ -1592,7 +1827,7 @@
                 pdf: "paper/2019/Nanoscale_2019.pdf"
             },
             {
-                id: 128,
+                id: 129,
                 year: "2019",
                 title: "Chirality Control of Magnetic Skyrmions in Synthetic Antiferromagnetic Structures",
                 authors: "Calvin Ching Ian Ang, Mangyuan Ma, and Wen Siang Lew*",
@@ -1601,7 +1836,7 @@
                 pdf: "paper/2019/APL_2019.pdf"
             },
             {
-                id: 127,
+                id: 128,
                 year: "2019",
                 title: "Thermal Stability and Domain Wall Dynamics in Nanowires with Perpendicular Magnetic Anisotropy",
                 authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
@@ -1610,7 +1845,7 @@
                 pdf: "paper/2019/JMMM_2019.pdf"
             },
             {
-                id: 126,
+                id: 127,
                 year: "2019",
                 title: "Sub-Nanosecond Switching in Spin-Orbit Torque MRAM Devices",
                 authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
@@ -1619,7 +1854,7 @@
                 pdf: "paper/2019/EDL_2019.pdf"
             },
             {
-                id: 125,
+                id: 126,
                 year: "2019",
                 title: "Memristive Synaptic Devices for Neuromorphic Computing Applications",
                 authors: "Mun Yin Chee, Putu Andhita Dananjaya, and Wen Siang Lew*",
@@ -1628,7 +1863,7 @@
                 pdf: "paper/2019/AEM_2019.pdf"
             },
             {
-                id: 124,
+                id: 125,
                 year: "2019",
                 title: "Current-Driven Skyrmion Motion in Synthetic Antiferromagnets with Low Insertion Loss",
                 authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
@@ -1637,7 +1872,7 @@
                 pdf: "paper/2019/ACSNano_2019.pdf"
             },
             {
-                id: 123,
+                id: 124,
                 year: "2019",
                 title: "Direct Measurement of Spin Orbit Torque in Ferromagnetic Heterostructures",
                 authors: "Grayson Dao Hwee Wong, Zhan Xu, and Wen Siang Lew*",
@@ -1646,7 +1881,7 @@
                 pdf: "paper/2019/PRA_2019.pdf"
             },
             {
-                id: 122,
+                id: 123,
                 year: "2018",
                 title: "A Non-Volatile Memory Based on Domain Wall Motion in Magnetic Nanowires",
                 authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
@@ -1655,7 +1890,7 @@
                 pdf: "paper/2018/SREP_2018.pdf"
             },
             {
-                id: 121,
+                id: 122,
                 year: "2018",
                 title: "Effect of Dzyaloshinskii-Moriya Interaction on Domain Wall Velocity in Ferromagnetic Thin Films",
                 authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
@@ -1664,7 +1899,7 @@
                 pdf: "paper/2018/JAP_2018.pdf"
             },
             {
-                id: 120,
+                id: 121,
                 year: "2018",
                 title: "Spin-Orbit Torque Driven Magnetization Switching in Pt/Co/Ta Heterostructures",
                 authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
@@ -1673,7 +1908,7 @@
                 pdf: "paper/2018/APEX_2018.pdf"
             },
             {
-                id: 119,
+                id: 120,
                 year: "2018",
                 title: "Multilevel Resistive Switching in HfO2-Based Memristive Devices",
                 authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
@@ -1682,7 +1917,7 @@
                 pdf: "paper/2018/TED_2018.pdf"
             },
             {
-                id: 118,
+                id: 119,
                 year: "2018",
                 title: "Room Temperature Creation and Manipulation of Skyrmions in Magnetic Thin Films",
                 authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
@@ -1691,7 +1926,7 @@
                 pdf: "paper/2018/NanoLett_2018.pdf"
             },
             {
-                id: 117,
+                id: 118,
                 year: "2018",
                 title: "Enhanced Spin Hall Effect in Heavy Metal Alloys for SOT Devices",
                 authors: "Zhan Xu, Grayson Dao Hwee Wong, and Wen Siang Lew*",
@@ -1700,7 +1935,7 @@
                 pdf: "paper/2018/ACS_AMI_2018.pdf"
             },
             {
-                id: 116,
+                id: 117,
                 year: "2018",
                 title: "Artificial Synapse Based on Flexible Oxide Resistive Switching Memory",
                 authors: "Putu Andhita Dananjaya, Mun Yin Chee, and Wen Siang Lew*",
@@ -1709,7 +1944,7 @@
                 pdf: "paper/2018/AFM_2018.pdf"
             },
             {
-                id: 115,
+                id: 116,
                 year: "2018",
                 title: "Fast Domain Wall Motion in Ferrimagnetic Nanowires Near the Compensation Temperature",
                 authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
@@ -1718,7 +1953,7 @@
                 pdf: "paper/2018/PRA_2018.pdf"
             },
             {
-                id: 114,
+                id: 115,
                 year: "2018",
                 title: "Electric-Field Control of Spin-Orbit Torque in Perpendicularly Magnetized Multilayers",
                 authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
@@ -1727,7 +1962,7 @@
                 pdf: "paper/2018/APL_2018.pdf"
             },
             {
-                id: 113,
+                id: 114,
                 year: "2018",
                 title: "Chirality-Dependent Domain Wall Velocity in Magnetic Nanowires with DMI",
                 authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
@@ -1736,7 +1971,7 @@
                 pdf: "paper/2018/TMAG_2018.pdf"
             },
             {
-                id: 112,
+                id: 113,
                 year: "2018",
                 title: "Optimization of Resistive Switching Parameters in TaOx-Based RRAM Devices",
                 authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
@@ -1745,7 +1980,7 @@
                 pdf: "paper/2018/JPhyD_2018.pdf"
             },
             {
-                id: 111,
+                id: 112,
                 year: "2017",
                 title: "Dynamics of Skyrmion Hall Effect in Constrained Nanowire Geometries",
                 authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
@@ -1754,7 +1989,7 @@
                 pdf: "paper/2017/SREP_2017.pdf"
             },
             {
-                id: 110,
+                id: 111,
                 year: "2017",
                 title: "Spin-Orbit Torque Switching Efficiency in Heavy Metal/Ferromagnet Bilayers",
                 authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
@@ -1763,7 +1998,7 @@
                 pdf: "paper/2017/JAP_2017.pdf"
             },
             {
-                id: 109,
+                id: 110,
                 year: "2017",
                 title: "Investigation of Filament Dynamics in OxRRAM Devices via In-Situ Characterization",
                 authors: "Putu Andhita Dananjaya, Desmond Loy, and Wen Siang Lew*",
@@ -1772,7 +2007,7 @@
                 pdf: "paper/2017/ACS_AMI_2017.pdf"
             },
             {
-                id: 108,
+                id: 109,
                 year: "2017",
                 title: "Current-Induced Domain Wall Nucleation and Motion in Perpendicular Magnetic Anisotropy Strips",
                 authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
@@ -1781,7 +2016,7 @@
                 pdf: "paper/2017/APEX_2017.pdf"
             },
             {
-                id: 107,
+                id: 108,
                 year: "2017",
                 title: "Spin-Torque Ferromagnetic Resonance Measurements in Heavy Metal/Ferromagnet Structures",
                 authors: "Grayson Dao Hwee Wong, Zhan Xu, and Wen Siang Lew*",
@@ -1790,7 +2025,7 @@
                 pdf: "paper/2017/TMAG_2017.pdf"
             },
             {
-                id: 106,
+                id: 107,
                 year: "2017",
                 title: "Skyrmion-Based Logic Gates for Neuromorphic Computing Architectures",
                 authors: "Calvin Ching Ian Ang, Weiliang Gan, and Wen Siang Lew*",
@@ -1799,7 +2034,7 @@
                 pdf: "paper/2017/APL_2017.pdf"
             },
             {
-                id: 105,
+                id: 106,
                 year: "2017",
                 title: "Thermal Effects on Domain Wall Pinning in Notch-Engineered Magnetic Nanowires",
                 authors: "Sachin Krishna, Pankaj Sethi, and Wen Siang Lew*",
@@ -1808,7 +2043,7 @@
                 pdf: "paper/2017/JMMM_2017.pdf"
             },
             {
-                id: 104,
+                id: 105,
                 year: "2017",
                 title: "High-Speed and Low-Power Spin-Orbit Torque Logic Devices",
                 authors: "Tianli Jin, Gerard Joseph Lim, and Wen Siang Lew*",
@@ -1817,7 +2052,7 @@
                 pdf: "paper/2017/EDL_2017.pdf"
             },
             {
-                id: 103,
+                id: 104,
                 year: "2017",
                 title: "Characteristics of Filamentary Switching in Flexible Resistive Random Access Memory",
                 authors: "Desmond Loy, Putu Andhita Dananjaya, and Wen Siang Lew*",
@@ -1826,7 +2061,7 @@
                 pdf: "paper/2017/Nanotechnology_2017.pdf"
             },
             {
-                id: 102,
+                id: 103,
                 year: "2017",
                 title: "Magnetic Skyrmion Motion Driven by Spin-Orbit Torques in Synthetic Antiferromagnets",
                 authors: "Weiliang Gan, Calvin Ching Ian Ang, and Wen Siang Lew*",
@@ -1835,7 +2070,7 @@
                 pdf: "paper/2017/PRA_2017.pdf"
             },
             {
-                id: 101,
+                id: 102,
                 year: "2017",
                 title: "Extrinsic Spin Hall Effect in Rare-Earth Doped Transition Metal Films",
                 authors: "Zhan Xu, Grayson Dao Hwee Wong, and Wen Siang Lew*",
@@ -1844,7 +2079,7 @@
                 pdf: "paper/2017/ACS_AMI_2017_2.pdf"
             },
             {
-                id: 100,
+                id: 101,
                 year: "2017",
                 title: "Modulation of Dzyaloshinskii-Moriya Interaction in Ferromagnetic Multilayers via Interfacial Engineering",
                 authors: "Pankaj Sethi, Sachin Krishna, and Wen Siang Lew*",
@@ -1853,7 +2088,7 @@
                 pdf: "paper/2017/SREP_2017_2.pdf"
             },
             {
-                id: 99,
+                id: 100,
                 year: "2017",
                 title: "Design and Demonstration of a Domain-Wall-Based Shift Register Logic Architecture",
                 authors: "Gerard Joseph Lim, Weiliang Gan, and Wen Siang Lew*",
@@ -1862,7 +2097,7 @@
                 pdf: "paper/2017/TED_2017.pdf"
             },
     {
-        id: 98,
+        id: 99,
         year: "2017",
         title: "Direct Spraying Method for Fabrication of Paper-based Microfluidic Sensors",
         authors: "Ning Liu, Jing Xu, Hong-Jie An, Dinh-Tuan Phan, Michinao Hashimoto, Wen Siang Lew*",
@@ -1871,7 +2106,7 @@
         pdf: "paper/2017/JMM 2017.pdf"
     },
     {
-        id: 97,
+        id: 98,
         year: "2017",
         title: "Quantitative characterization of spin-orbit torques in Pt/Co/Pt/Co/Ta/BTO heterostructure on the magnetization azimuthal angle dependence",
         authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, and Wen Siang Lew*",
@@ -1880,7 +2115,7 @@
         pdf: "paper/2017/PRB 2017_2.pdf"
     },
     {
-        id: 96,
+        id: 97,
         year: "2017",
         title: "An enclosed paper microfluidic chip as a sample pre-concentrator based on ion concentration polarization",
         authors: "Ning Liu, Dinh-Tuan Phan, Wen Siang Lew*",
@@ -1889,7 +2124,7 @@
         pdf: "paper/2017/IEEE_2017_2.pdf"
     },
     {
-        id: 95,
+        id: 96,
         year: "2017",
         title: "Bi-directional high speed domain wall motion in perpendicular magnetic anisotropy Co/Pt double stack nanowires",
         authors: "P. Sethi, S. Krishnia, W. L. Gan, F. N. Kholid, F.N. Tan, M. Ramu and W. S. Lew*",
@@ -1898,7 +2133,7 @@
         pdf: "paper/2017/SREP 2017_2.pdf"
     },
     {
-        id: 94,
+        id: 95,
         year: "2017",
         title: "Asymmetrical domain wall propagation in bifurcated PMA wire structure due to the Dzyaloshinskii-Moriya interaction",
         authors: "J.S. Kwon, S. Goolaup, W.L. Gan, C. H. Chang*, Kaushik Roy, and W.S. Lew*",
@@ -1907,7 +2142,7 @@
         pdf: "paper/2017/APL_2017_2.pdf"
     },
     {
-        id: 93,
+        id: 94,
         year: "2017",
         title: "Characterizing angular dependence of spin-orbit torque effective fields in Pt/(Co/Ni)2/IrMn structure",
         authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, and Wen Siang Lew*",
@@ -1916,7 +2151,7 @@
         pdf: "paper/2017/IEEE_2017_1.pdf"
     },
     {
-        id: 92,
+        id: 93,
         year: "2017",
         title: "Simultaneous determination of effective spin-orbit torque fields in magnetic structures with in-plane anisotropy",
         authors: "Feilong Luo, Sarjoosing Goolaup, Wai Cheung Law, Sihua Li, Funan Tan, Christian Engel, Tiejun Zhou, Wen Siang Lew*",
@@ -1925,7 +2160,7 @@
         pdf: "paper/2017/PRB 2017_1.pdf"
     },
     {
-        id: 91,
+        id: 92,
         year: "2017",
         title: "Spin orbit torque induced asymmetric depinning of chiral Néel domain wall in Co/Ni heterostructures",
         authors: "M. Ramu, S. Goolaup, S. Krishnia, G. J. Lim, and W. S. Lew*",
@@ -1934,7 +2169,7 @@
         pdf: "paper/2017/APL 2017_1.pdf"
     },
     {
-        id: 90,
+        id: 91,
         year: "2017",
         title: "Spin-orbit torque induced magnetization anisotropy modulation in Pt/(Co/Ni)4/Co/IrMn heterostructure",
         authors: "Christian Engel, Sarjoosing Goolaup, Feilong Luo, Weiliang Gan, and Wen Siang Lew*",
@@ -1943,7 +2178,7 @@
         pdf: "paper/2017/JAP 2017_1.pdf"
     },
     {
-        id: 89,
+        id: 90,
         year: "2017",
         title: "Deterministic spin orbit torque induced magnetization reversal in Pt/[Co/Ni]2/Ta structure",
         authors: "Sihua Li, Sarjoosing Goolaup, Jaesuk Kwon, Feilong Luo, Christian Engel, Weiliang Gan and Wen Siang Lew*",
@@ -1952,7 +2187,7 @@
         pdf: "paper/2017/SREP 2017_1.pdf"
     },
     {
-        id: 88,
+        id: 89,
         year: "2017",
         title: "A gamma analysis approach to determine optimal parameters for Monte Carlo simulation of 6MV Varian Clinac iX photon beam",
         authors: "R.C.X. Soh, L.K.R. Tan, M.S.L. Goh, S. Yani, F. Haryanto, W.S. Lew, J.C.L. Lee",
@@ -1961,7 +2196,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2017/JHealthSci_2017.pdf"
     },
     {
-        id: 87,
+        id: 88,
         year: "2017",
         title: "Observation of anomalous resistance behaviour in bilayer graphene",
         authors: "Y.P . Liu, W.S. Lew, and Z.W. Liu",
@@ -1970,7 +2205,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2017/NRL%202017.pdf"
     },
     {
-        id: 86,
+        id: 87,
         year: "2017",
         title: "Dzyaloshinskii-Moriya interaction induced domain wall de-pinning anomaly in notched nanowire with perpendicular anisotropy",
         authors: "H. K. Teoh, S. Goolaup, and W. S. Lew*",
@@ -1979,7 +2214,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2017/JPhyD%202017.pdf"
     },
     {
-        id: 85,
+        id: 86,
         year: "2017",
         title: "Modulation of spin-orbit torque efficiency by thickness control of heavy metal layers in Co/Pt multilayers",
         authors: "P. Sethi, S. Krishnia, S. H. Li, and W. S. Lew*",
@@ -1988,7 +2223,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2017/JMMM%202017_1.pdf"
     },
     {
-        id: 84,
+        id: 85,
         year: "2017",
         title: "Cyclic resistance change in perpendicularly magnetized Co/Ni nanowire induced by current pulse injection",
         authors: "J.S. Kwon, S. Goolaup, C. H. Chang, Kaushik Roy, and W.S. Lew*",
@@ -1997,7 +2232,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2017/CAP%202017.pdf"
     },
     {
-        id: 83,
+        id: 84,
         year: "2016",
         title: "1D gamma analysis on the effect of mean electron energy, FWHM and xy jaws thickness for small fields",
         authors: "R.C.X. Soh, L.K.R. Tan, M.S.L. Goh, S. Yani, F. Haryanto, W.S. Lew, J.C.L. Lee",
@@ -2006,7 +2241,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/MPI%202016.pdf"
     },
     {
-        id: 82,
+        id: 83,
         year: "2016",
         title: "Instability-induced mixing of ferrofluids in uniform magnetic fields",
         authors: "Xinghua Wang, Zhaomeng Wang, Vijaykumar B. Varma, Zhiping Wang, Ayan Ray, Wen Siang Lew, Raju V. Ramanujan",
@@ -2015,7 +2250,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/IEEE%202016_1.pdf"
     },
     {
-        id: 81,
+        id: 82,
         year: "2016",
         title: "Emergent geometric frustration of artificial magnetic skyrmion crystals",
         authors: "Fusheng Ma, C. Reichhardt, Weiliang Gan, C. J. Olson Reichhardt, and Wen Siang Lew*",
@@ -2024,7 +2259,7 @@
         pdf: "Paper/2016/PRB 2016.pdf"
     },
     {
-        id: 80,
+        id: 81,
         year: "2016",
         title: "Isolation of magnetically tagged cancer cell through an integrated magnetofluidic device",
         authors: "Qi Ying Wong, Ning Liu, Cheng-Gee Koh, Hoi-Yeung Li and Wen Siang Lew*",
@@ -2033,7 +2268,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/Microfluidics%202016.pdf"
     },
     {
-        id: 79,
+        id: 80,
         year: "2016",
         title: "Measuring the field-like term of spin-orbit torque in Ta/Co/Pt in-plane magnetization structure by planar Hall effect",
         authors: "F. L. Luo, S.H. Li, S. Goolaup, G. J. Lim, F. N. Tan, C. Engel, S. F. Zhang, F. S. Ma, T. J. Zhou, and W.S. Lew*",
@@ -2042,7 +2277,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/JAP%202016_2.pdf"
     },
     {
-        id: 78,
+        id: 79,
         year: "2016",
         title: "Direct observation of ice-rule violation and monopole dynamics in geometrically frustrated artificial honeycomb spin ice",
         authors: "S. Krishnia, I. Purnama, and W.S. Lew*",
@@ -2051,7 +2286,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/JMMM%202016_1.pdf"
     },
     {
-        id: 77,
+        id: 78,
         year: "2016",
         title: "Highly efficient domain walls injection in perpendicular magnetic anisotropy memory devices",
         authors: "S. F. Zhang, W. L. Gan, J. Kwon, F. L. Luo, G. J. Lim, J. B. Wang, and W. S. Lew*",
@@ -2060,7 +2295,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_4.pdf"
     },
     {
-        id: 76,
+        id: 77,
         year: "2016",
         title: "Current-induced three-dimensional domain wall propagation in cylindrical NiFe nanowires",
         authors: "D. W. Wong, I. Purnama, G. J. Lim, W. L. Gan, C. Murapaka and W. S. Lew*",
@@ -2069,7 +2304,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/JAP%202016_1.pdf"
     },
     {
-        id: 75,
+        id: 76,
         year: "2016",
         title: "Gated skyrmion transport via field-induced potential barrier modulation",
         authors: "Hiu Tung Fook, Wei Liang Gan, and Wen Siang Lew*",
@@ -2078,7 +2313,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_3.pdf"
     },
     {
-        id: 74,
+        id: 75,
         year: "2016",
         title: "Reconfigurable logic via gate controlled domain wall trajectory in magnetic network structure",
         authors: "M. Chandra Sekhar, P. Sethi, S. Goolaup, and W. S. Lew*",
@@ -2087,7 +2322,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_2.pdf"
     },
     {
-        id: 73,
+        id: 74,
         year: "2016",
         title: "Direct observation of deterministic domain wall trajectory in magnetic network structures",
         authors: "P. Sethi, M. Chandra Sekhar, S. Goolaup, Y. J. Chen, S. H. Leong, and W. S. Lew*",
@@ -2096,7 +2331,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/SREP%202016_1.pdf"
     },
     {
-        id: 72,
+        id: 73,
         year: "2016",
         title: "Stability of topological charge of magnetic skyrmion configuration",
         authors: "M.B.A. Jalil, S.G. Tan, Z.B. Siu, W.L. Gan, I. Purnama, and W.S. Lew",
@@ -2105,7 +2340,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2016/JMMM%202016_2.pdf"
     },
     {
-        id: 71,
+        id: 72,
         year: "2015",
         title: "Magnonic bandstructure in a Skyrmion magnonic crystal",
         authors: "Fusheng Ma, Yan Zhou, and Wen Siang Lew",
@@ -2114,7 +2349,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2015/IEEE_3.pdf?dl=0"
     },
     {
-        id: 70,
+        id: 71,
         year: "2015",
         title: "Low field domain wall dynamics in artificial spin-ice basis structure",
         authors: "J. Kwon, S. Goolaup, G. J. Lim, I. S. Kerk, C. H. Chang, Kaushik Roy, W. S. Lew*",
@@ -2123,7 +2358,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2015/JAP2015_4.pdf"
     },
     {
-        id: 69,
+        id: 70,
         year: "2015",
         title: "In-plane current induced domain wall nucleation and its stochasticity in perpendicular magnetic anisotropy Hall cross structures",
         authors: "P. Sethi, M. Chandra Sekhar, G. J. Lim, and W. S. Lew*",
@@ -2132,7 +2367,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2015/APL%202015.pdf"
     },
     {
-        id: 68,
+        id: 69,
         year: "2015",
         title: "Magnetic field sensor based on magnetic-fluid-coated long-period fiber grating",
         authors: "M.Y. Zhang, X.Y. Dong, Perry P. Shum, J.J. Hu, H.B Su, and W.S. Lew, and L. Wei",
@@ -2141,7 +2376,7 @@
         pdf: "http://www.ntu-imslab.info/Paper/2015/JOptics%202015.pdf"
     },
     {
-        id: 681,
+        id: 68,
         year: "2015",
         title: "Skyrmion-based dynamic magnonic crystal",
         authors: "Fusheng Ma, Yan Zhou, H. B. Braun, and W. S. Lew",
@@ -2753,100 +2988,371 @@
     },
         ];
 
+
+        let currentYear = 'All';
+        let searchQuery = '';
+        let activePreprintPdf = null;
+
+        // Initialize Filter Pills
         function renderFilterButtons() {
             const filterContainer = document.getElementById('filterContainer');
-            const years = ['All', ...new Set(papersData.map(p => p.year))];
+            if (!filterContainer) return;
+
+            // Extract unique years
+            const rawYears = [...new Set(papersData.map(p => p.year))];
             
-            filterContainer.innerHTML = years.map((year, index) => `
-                <button class="btn-filter ${index === 0 ? 'active' : ''}" onclick="filterPapers('${year}', this)">${year}</button>
-            `).join('');
+            // Put 'All', then 'Preprints', then sorted numeric years
+            const hasPreprints = rawYears.includes('Preprints');
+            const numericYears = rawYears.filter(y => y !== 'Preprints' && !isNaN(y)).sort((a, b) => Number(b) - Number(a));
+
+            const finalYears = ['All'];
+            if (hasPreprints) finalYears.push('Preprints');
+            finalYears.push(...numericYears);
+
+            filterContainer.innerHTML = finalYears.map(year => {
+                const label = year === 'All' ? 'All Years' : year;
+                const isPreprintClass = year === 'Preprints' ? 'btn-preprints' : '';
+                const isActive = year === currentYear ? 'active' : '';
+                return `
+                    <button class="year-btn ${isPreprintClass} ${isActive}" onclick="filterByYear('${year}', this)">
+                        ${label}
+                    </button>
+                `;
+            }).join('');
         }
 
-        function filterPapers(selectedYear, btnElement) {
-            document.querySelectorAll('.btn-filter').forEach(btn => btn.classList.remove('active'));
-            btnElement.classList.add('active');
+        // Year filter click handler
+        function filterByYear(selectedYear, btnElement) {
+            currentYear = selectedYear;
+            document.querySelectorAll('.year-btn').forEach(btn => btn.classList.remove('active'));
+            if (btnElement) {
+                btnElement.classList.add('active');
+            }
+            applyFilters();
+        }
 
-            const filtered = selectedYear === 'All' ? papersData : papersData.filter(p => p.year === selectedYear);
+        // Search input handler
+        function handleSearch() {
+            const searchInput = document.getElementById('searchInput');
+            searchQuery = searchInput.value.trim().toLowerCase();
+
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (clearBtn) {
+                clearBtn.style.display = searchQuery.length > 0 ? 'flex' : 'none';
+            }
+
+            applyFilters();
+        }
+
+        // Clear search input
+        function clearSearch() {
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.value = '';
+                searchQuery = '';
+            }
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (clearBtn) clearBtn.style.display = 'none';
+            applyFilters();
+        }
+
+        // Reset all filters
+        function resetFilters() {
+            currentYear = 'All';
+            searchQuery = '';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            const clearBtn = document.getElementById('clearSearchBtn');
+            if (clearBtn) clearBtn.style.display = 'none';
+
+            renderFilterButtons();
+            applyFilters();
+        }
+
+        // Combined filtering logic
+        function applyFilters() {
+            const filtered = papersData.filter(paper => {
+                // Year match
+                const matchesYear = (currentYear === 'All') || (paper.year === currentYear);
+
+                // Search match
+                const targetText = [
+                    paper.id,
+                    paper.title,
+                    paper.authors,
+                    paper.journal || '',
+                    paper.badge || '',
+                    paper.year
+                ].join(' ').toLowerCase();
+
+                const matchesSearch = searchQuery === '' || targetText.includes(searchQuery);
+
+                return matchesYear && matchesSearch;
+            });
+
+            // Update record count
+            const resultsCount = document.getElementById('resultsCount');
+            if (resultsCount) {
+                resultsCount.textContent = `Showing ${filtered.length} out of ${papersData.length} records`;
+            }
+
+            // Render cards or show no-results
             renderCards(filtered);
         }
 
+        // Render cards in 2-column view
         function renderCards(data) {
             const container = document.getElementById('papersContainer');
+            const noResults = document.getElementById('noResults');
+
+            if (!container) return;
+
+            if (data.length === 0) {
+                container.innerHTML = '';
+                if (noResults) noResults.style.display = 'block';
+                return;
+            }
+
+            if (noResults) noResults.style.display = 'none';
+
             container.innerHTML = data.map(paper => {
+                // DOI link formatting
                 let doiHref = paper.doi;
-                if (paper.doi && !paper.doi.startsWith('http')) {
-                    doiHref = `https://doi.org/${paper.doi}`;
+                if (doiHref && !doiHref.startsWith('http')) {
+                    doiHref = `https://doi.org/${doiHref}`;
+                }
+
+                // Check preprint status
+                const isPreprint = paper.year === 'Preprints' || paper.isPreprint;
+
+                // PDF full url calculation
+                let pdfFullUrl = '';
+                if (paper.pdf) {
+                    pdfFullUrl = paper.pdf.startsWith('http') ? paper.pdf : (PDF_BASE_URL + paper.pdf);
+                }
+
+                // Actions HTML
+                let actionsHtml = '';
+                if (doiHref) {
+                    actionsHtml += `<a href="${doiHref}" target="_blank" rel="noopener noreferrer" class="btn-link"><i class="fa-solid fa-arrow-up-right-from-square"></i> DOI</a>`;
+                }
+
+                if (isPreprint) {
+                    // Password protected preprint PDF button
+                    const safeTitle = (paper.title || '').replace(/'/g, "\\'").replace(/"/g, '&quot;');
+                    actionsHtml += `
+                        <button type="button" class="btn-link btn-preprint" onclick="requestPreprintAccess('${paper.pdf}', '${safeTitle}', ${paper.id})">
+                            <i class="fa-solid fa-lock"></i> Preprint PDF <span class="tag-lock">Team Only</span>
+                        </button>
+                    `;
+                } else if (pdfFullUrl) {
+                    actionsHtml += `<a href="${pdfFullUrl}" target="_blank" rel="noopener noreferrer" class="btn-link btn-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>`;
+                }
+
+                // Status Badge
+                let badgeHtml = '';
+                if (paper.badge) {
+                    badgeHtml = `<span class="badge-status badge-${paper.badge.toLowerCase()}">${paper.badge}</span>`;
+                }
+
+                // Journal citation
+                let journalHtml = '';
+                if (paper.journal) {
+                    journalHtml = `<div class="paper-journal"><i class="fa-solid fa-book-open"></i> <span>${paper.journal}</span></div>`;
                 }
 
                 return `
                     <div class="paper-card">
-                        <div class="card-meta">
-                            <span class="paper-num">#${paper.id}</span>
-                            ${paper.badge ? `<span class="badge badge-${paper.badge.toLowerCase()}">${paper.badge}</span>` : ''}
+                        <div>
+                            <div class="paper-card-header">
+                                <div class="paper-number ${isPreprint ? 'is-preprint-num' : ''}">${paper.id}</div>
+                                <div class="paper-header-body">
+                                    <div class="paper-meta-row">
+                                        ${badgeHtml}
+                                    </div>
+                                    <h3 class="paper-title">${paper.title}</h3>
+                                </div>
+                            </div>
+                            <div class="paper-authors">${paper.authors}</div>
+                            ${journalHtml}
                         </div>
-                        <h2 class="paper-title">${paper.title}</h2>
-                        <div class="paper-authors">${paper.authors}</div>
-                        ${paper.journal ? `<div class="paper-journal">${paper.journal}</div>` : ''}
                         <div class="card-actions">
-                            ${paper.doi ? `<a href="${doiHref}" target="_blank" class="btn-link"><i class="fa-solid fa-link"></i> DOI</a>` : ''}
-                            <!--${paper.pdf ? `<a href="${paper.pdf}" target="_blank" class="btn-link btn-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>` : ''}-->
-							${paper.pdf ? `<a href="${paper.pdf.startsWith('https') ? paper.pdf : PDF_BASE_URL + paper.pdf}" target="_blank" class="btn-link btn-pdf"><i class="fa-solid fa-file-pdf"></i> PDF</a>` : ''}
+                            ${actionsHtml}
                         </div>
                     </div>
                 `;
             }).join('');
         }
 
+        // =========================================================================
+        // PREPRINT PASSWORD ACCESS MODAL LOGIC
+        // =========================================================================
+        function requestPreprintAccess(pdfPath, title, id) {
+            // Check if already authenticated this session
+            if (sessionStorage.getItem('ims_preprint_unlocked') === 'true') {
+                openTargetPdf(pdfPath);
+                return;
+            }
+
+            activePreprintPdf = pdfPath;
+            
+            // Set modal preview info
+            document.getElementById('modalPreviewLabel').textContent = `PREPRINT ENTRY #${id}`;
+            document.getElementById('modalPreviewTitle').textContent = title;
+
+            // Reset input and error
+            const pwdInput = document.getElementById('preprintPasswordInput');
+            const pwdError = document.getElementById('pwdErrorMsg');
+            if (pwdInput) {
+                pwdInput.value = '';
+                pwdInput.classList.remove('error');
+            }
+            if (pwdError) {
+                pwdError.style.display = 'none';
+            }
+
+            // Show modal
+            const modal = document.getElementById('preprintModalOverlay');
+            if (modal) {
+                modal.classList.add('active');
+                setTimeout(() => {
+                    if (pwdInput) pwdInput.focus();
+                }, 100);
+            }
+        }
+
+        function verifyPreprintPassword(event) {
+            if (event) event.preventDefault();
+
+            const pwdInput = document.getElementById('preprintPasswordInput');
+            const pwdError = document.getElementById('pwdErrorMsg');
+            const entered = pwdInput ? pwdInput.value.trim() : '';
+
+            if (entered === PREPRINT_TEAM_PASSWORD) {
+                // Save session authorization
+                sessionStorage.setItem('ims_preprint_unlocked', 'true');
+                closePreprintModal();
+                openTargetPdf(activePreprintPdf);
+            } else {
+                if (pwdInput) {
+                    pwdInput.classList.add('error');
+                    setTimeout(() => pwdInput.classList.remove('error'), 400);
+                }
+                if (pwdError) {
+                    pwdError.style.display = 'block';
+                    pwdError.textContent = 'Incorrect team password. Please verify with lab members.';
+                }
+            }
+        }
+
+        function openTargetPdf(pdfPath) {
+            if (!pdfPath || pdfPath.trim() === '') {
+                alert('Preprint manuscript file is currently being processed for online view. Please check back shortly or request directly via email.');
+                return;
+            }
+
+            const targetUrl = pdfPath.startsWith('http') ? pdfPath : (PDF_BASE_URL + pdfPath);
+            window.open(targetUrl, '_blank', 'noopener,noreferrer');
+        }
+
+        function togglePasswordVisibility() {
+            const pwdInput = document.getElementById('preprintPasswordInput');
+            const toggleIcon = document.getElementById('togglePwdIcon');
+            if (pwdInput && toggleIcon) {
+                if (pwdInput.type === 'password') {
+                    pwdInput.type = 'text';
+                    toggleIcon.className = 'fa-regular fa-eye-slash';
+                } else {
+                    pwdInput.type = 'password';
+                    toggleIcon.className = 'fa-regular fa-eye';
+                }
+            }
+        }
+
+        function closePreprintModal() {
+            const modal = document.getElementById('preprintModalOverlay');
+            if (modal) {
+                modal.classList.remove('active');
+            }
+            activePreprintPdf = null;
+        }
+
+        function closePreprintModalOnOutside(e) {
+            if (e.target && e.target.id === 'preprintModalOverlay') {
+                closePreprintModal();
+            }
+        }
+
+        // Close modal on ESC key
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                closePreprintModal();
+            }
+        });
+
+        // Initialize on DOM load
         document.addEventListener('DOMContentLoaded', () => {
             renderFilterButtons();
-            renderCards(papersData);
+            applyFilters();
         });
     </script>
 	
-	<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
-    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+    <!-- Mobile Navigation Drawer Logic -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+        const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
 
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const isOpen = navMenu.classList.toggle('active');
-            
-            const toggleIcon = toggleBtn.querySelector('i');
-            if (toggleIcon) {
-                if (isOpen) {
-                    toggleIcon.className = 'fa-solid fa-xmark';
-                    toggleIcon.style.color = '#ffffff';
-                    toggleIcon.style.display = 'inline-block';
-                } else {
-                    toggleIcon.className = 'fa-solid fa-bars';
-                    toggleIcon.style.color = '#ffffff';
-                    toggleIcon.style.display = 'inline-block';
+        // Toggle drawer open/close
+        if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                
+                const toggleIcon = toggleBtn.querySelector('i');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('fa-bars');
+                    toggleIcon.classList.toggle('fa-xmark');
                 }
-            }
-        });
-    }
+            });
 
-    const parentLinks = document.querySelectorAll('.nav-links > li > a');
-    parentLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 900) {
-                const parentLi = this.parentElement;
-                const dropdown = parentLi.querySelector('.dropdown');
-
-                if (dropdown) {
-                    e.preventDefault();
-                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
-                        if (item !== parentLi) item.classList.remove('active');
-                    });
-                    parentLi.classList.toggle('active');
+            // Close drawer when tapping outside
+            document.addEventListener('click', function (e) {
+                if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const toggleIcon = toggleBtn.querySelector('i');
+                        if (toggleIcon) {
+                            toggleIcon.classList.remove('fa-xmark');
+                            toggleIcon.classList.add('fa-bars');
+                        }
+                    }
                 }
-            }
+            });
+        }
+
+        // Mobile dropdown accordion handling
+        const parentLinks = document.querySelectorAll('.nav-links > li > a');
+        parentLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1150) {
+                    const parentLi = this.parentElement;
+                    const dropdown = parentLi.querySelector('.dropdown');
+
+                    if (dropdown) {
+                        e.preventDefault();
+                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                            if (item !== parentLi) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            });
         });
     });
-});
-</script>
+    </script>
 
 </body>
 </html>

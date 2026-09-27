@@ -5,11 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conference Presentations | Intelligent Materials and Systems Laboratory | NTU</title>
 
-<!-- Favicon -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logofavicon.png">
     <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
 	
- <!-- Link to style.css inside css folder -->
+    <!-- Link to style.css inside css folder -->
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Font Awesome Icons -->
@@ -19,240 +19,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        :root {
-            --ntu-red: #c8102e;
-            --ntu-blue: #002b49;
-            --primary: #0f172a;
-            --accent: #2563eb;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --text-dark: #1e293b;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
-            --gradient-ntu: linear-gradient(135deg, #002b49 0%, #0f172a 100%);
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            color: var(--text-dark);
-            background-color: var(--bg-light);
-            line-height: 1.6;
-        }
-
-        /* Top Header / Branding Bar */
-        .top-bar {
-            background: #001e34;
-            color: #cbd5e1;
-            padding: 0.5rem 2rem;
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .top-bar a {
-            color: #94a3b8;
-            text-decoration: none;
-            margin-left: 1rem;
-            transition: color 0.2s;
-        }
-
-        .top-bar a:hover {
+        /* Hero Banner as seen in your image */
+        .hero {
+            background: var(--gradient-ntu, linear-gradient(135deg, #002b49 0%, #0f172a 100%));
             color: #ffffff;
-        }
-
-        /* Main Navigation Header */
-        header {
-            background: var(--gradient-ntu);
-            color: #ffffff;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-        }
-
-        nav {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            text-decoration: none;
-            color: #ffffff;
-        }
-
-        .logo-text h1 {
-            font-size: 1.15rem;
-            font-weight: 800;
-            letter-spacing: -0.3px;
-        }
-
-        .logo-text p {
-            font-size: 0.75rem;
-            color: #94a3b8;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 1.5rem;
-        }
-
-        .nav-links li {
-            position: relative;
-        }
-
-        .nav-links a {
-            color: #cbd5e1;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.92rem;
-            padding: 0.5rem 0.8rem;
-            border-radius: 6px;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.4rem;
-        }
-
-        .nav-links a:hover, .nav-links a.active {
-            color: #ffffff;
-            background: rgba(255, 255, 255, 0.08);
-        }
-
-        .dropdown {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-            min-width: 220px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(10px);
-            transition: all 0.2s ease;
-            list-style: none;
-            padding: 0.5rem 0;
-            z-index: 100;
-        }
-
-        .nav-links li:hover .dropdown {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        .dropdown a {
-            color: var(--text-dark);
-            padding: 0.6rem 1.2rem;
-            font-weight: 500;
-            font-size: 0.88rem;
-        }
-
-        .dropdown a:hover {
-            background: #f1f5f9;
-            color: var(--accent);
-        }
-
-        /* Page Header Banner */
-        .page-hero {
-            background: var(--gradient-ntu);
-            color: white;
-            padding: 1.5rem 2rem;
+            padding: 3rem 2rem 2.5rem;
             position: relative;
             overflow: hidden;
-            border-bottom: 4px solid var(--ntu-red);
+            border-bottom: 4px solid var(--ntu-red, #c8102e);
         }
 
-        .page-hero::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 50%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(37, 99, 235, 0.15) 0%, rgba(0,0,0,0) 70%);
-            pointer-events: none;
-        }
-
-        .page-hero-container {
+        .hero-container {
             max-width: 1200px;
             margin: 0 auto;
-            position: relative;
         }
 
-        .breadcrumb {
-            font-size: 0.85rem;
-            color: #94a3b8;
-            margin-bottom: 1rem;
-        }
-
-        .breadcrumb a {
-            color: #94a3b8;
-            text-decoration: none;
-        }
-
-        .breadcrumb a:hover {
-            color: #ffffff;
-        }
-
-        .page-hero h2 {
-            font-size: 2.8rem;
+        .hero h2 {
+            font-size: 2.8rem; /* Large font size matching image */
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 0.8rem;
             letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
-        .page-hero p {
+        .hero p {
             font-size: 1.05rem;
             color: #cbd5e1;
-            max-width: 1200px;
+            line-height: 1.7;
+            max-width: 100%; /* Utilises full space across the banner */
+            margin: 0;
         }
 
-        .stat-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 1.25rem;
-        }
-
-        /* Main Content Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem 4rem;
-        }
-
-        /* Controls: Search + Filters */
+        /* Controls Section (Search & Filter Pills) */
         .controls {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, #e2e8f0);
             border-radius: 16px;
-            padding: 1.5rem;
+            padding: 1.75rem;
             margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
         }
 
         .search-box {
@@ -262,28 +68,29 @@
 
         .search-box i {
             position: absolute;
-            left: 1rem;
+            left: 1.1rem;
             top: 50%;
             transform: translateY(-50%);
-            color: var(--text-muted);
+            color: var(--text-muted, #64748b);
+            font-size: 1rem;
         }
 
         .search-box input {
             width: 100%;
-            padding: 0.75rem 1rem 0.75rem 2.75rem;
-            border: 1px solid var(--border);
+            padding: 0.85rem 1rem 0.85rem 2.85rem;
+            border: 1px solid var(--border, #e2e8f0);
             border-radius: 10px;
             font-family: inherit;
             font-size: 0.95rem;
-            color: var(--text-dark);
-            background: var(--bg-light);
-            transition: border-color 0.2s;
+            color: var(--text-dark, #1e293b);
+            background: var(--bg-light, #f8fafc);
+            transition: border-color 0.2s ease, background 0.2s ease;
         }
 
         .search-box input:focus {
             outline: none;
-            border-color: var(--accent);
-            background: #fff;
+            border-color: var(--accent, #2563eb);
+            background: #ffffff;
         }
 
         .year-filters {
@@ -294,10 +101,10 @@
 
         .year-btn {
             font-family: inherit;
-            border: 1px solid var(--border);
-            background: var(--bg-light);
-            color: var(--text-muted);
-            padding: 0.4rem 0.9rem;
+            border: 1px solid var(--border, #e2e8f0);
+            background: var(--bg-light, #f8fafc);
+            color: var(--text-muted, #64748b);
+            padding: 0.45rem 1rem;
             border-radius: 20px;
             font-size: 0.85rem;
             font-weight: 600;
@@ -306,53 +113,56 @@
         }
 
         .year-btn:hover {
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--accent, #2563eb);
+            color: var(--accent, #2563eb);
         }
 
         .year-btn.active {
-            background: var(--accent);
-            border-color: var(--accent);
-            color: #fff;
+            background: var(--accent, #2563eb);
+            border-color: var(--accent, #2563eb);
+            color: #ffffff;
         }
 
+        /* Results Counter */
         .results-count {
-            font-size: 0.88rem;
-            color: var(--text-muted);
-            margin-bottom: 1.25rem;
+            font-size: 0.92rem;
+            color: var(--text-muted, #64748b);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
         }
 
-        /* Publication List */
+        /* 2 CARDS IN A ROW (CSS Grid) */
         .pub-list {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Exactly 2 cards per row */
+            gap: 1.25rem;
         }
 
         .pub-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--card-bg, #ffffff);
+            border: 1px solid var(--border, #e2e8f0);
             border-radius: 14px;
             padding: 1.5rem;
             display: flex;
             gap: 1.25rem;
             align-items: flex-start;
-            transition: all 0.25s ease;
+            height: 100%; /* Equal card height across the row */
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
         }
 
         .pub-card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 26px rgba(0,0,0,0.06);
-            border-color: rgba(37, 99, 235, 0.3);
+            box-shadow: 0 10px 24px rgba(0, 0, 0, 0.06);
+            border-color: #cbd5e1;
         }
 
         .pub-number {
             flex-shrink: 0;
-            width: 42px;
-            height: 42px;
+            width: 44px;
+            height: 44px;
             border-radius: 10px;
             background: #eff6ff;
-            color: var(--accent);
+            color: var(--accent, #2563eb);
             font-weight: 800;
             font-size: 0.95rem;
             display: flex;
@@ -365,223 +175,190 @@
         }
 
         .pub-title {
-            font-size: 1.08rem;
-            color: var(--primary);
+            font-size: 1.05rem;
+            color: var(--primary, #0f172a);
             font-weight: 700;
             margin-bottom: 0.5rem;
             line-height: 1.4;
         }
 
         .pub-authors {
-            font-size: 0.92rem;
-            color: var(--text-dark);
+            font-size: 0.9rem;
+            color: var(--text-dark, #1e293b);
             margin-bottom: 0.4rem;
             line-height: 1.5;
         }
 
         .pub-venue {
             font-size: 0.85rem;
-            color: var(--text-muted);
+            color: var(--text-muted, #64748b);
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
 
         .pub-venue i {
-            color: var(--ntu-red);
+            color: var(--ntu-red, #c8102e);
         }
 
         .no-results {
             display: none;
             text-align: center;
-            padding: 3rem 1rem;
-            color: var(--text-muted);
+            padding: 3.5rem 1rem;
+            color: var(--text-muted, #64748b);
         }
 
         .no-results i {
             font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: var(--border);
+            color: var(--border, #e2e8f0);
         }
 
-        /* Footer */
-        footer {
-            background: var(--primary);
-            color: #94a3b8;
-            padding: 3rem 2rem 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-            margin-bottom: 2rem;
-        }
-
-        .footer-col h4 {
-            color: #ffffff;
-            font-size: 1.05rem;
-            margin-bottom: 1.2rem;
-            font-weight: 700;
-        }
-
-        .footer-col p, .footer-col ul {
-            font-size: 0.9rem;
-            line-height: 1.7;
-            list-style: none;
-        }
-
-        .footer-col a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-col a:hover {
-            color: #ffffff;
-        }
-
-        .copyright {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            font-size: 0.85rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        /* Responsive Design */
+        /* Responsive Breakpoints */
         @media (max-width: 900px) {
-            .footer-container {
-                grid-template-columns: 1fr;
+            .hero h2 {
+                font-size: 2.1rem;
             }
-            .nav-links {
-                display: none;
+            .pub-list {
+                grid-template-columns: 1fr; /* Switch to 1 card per row on mobile */
             }
-            .page-hero h2 {
-                font-size: 1.7rem;
-            }
+        }
+
+        @media (max-width: 600px) {
             .pub-card {
                 flex-direction: column;
+                gap: 0.75rem;
             }
         }
     </style>
 </head>
 <body>
 
-   <!-- Top Bar -->
-<div class="top-bar">
-    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-        <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-    </a>
-    <div class="top-bar-right">
-        <a href="https://www.ntu.edu.sg/spms" target="_blank">
-            <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
-        </a>
-    </div>
-</div>
-
-<!-- Header & Navigation -->
-<header>
-    <nav>
-        <!-- Mobile & Desktop Top Logo -->
-        <a href="index.html" class="mobile-logo-link">
-            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-        </a>
-
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-		
-		<!-- Navigation Drawer -->
-		
-		<ul class="nav-links">
-            <li class="nav-logo-item">
-                <a href="index.html" class="logo-link">
-                   </a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="news.html">Group</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="lecture.html">Lecture Courses</a></li>
-                    <li><a href="laboratory.html">Laboratory Courses</a></li>
-                    <li><a href="internship.html">Industrial Internships</a></li>
-                    <li><a href="fyp.html">Final Year Projects</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="team.html">Current Group</a></li>
-                    <li><a href="graduated.html">Graduated Students</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="paper.html">Journal Papers</a></li>
-                    <li><a href="conferences.html">Conference Presentations</a></li>
-                    <li><a href="books.html">Books & Book Chapters</a></li>
-                    <li><a href="property.html">Intellectual Property</a></li>
-                </ul>
-            </li>
+    <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
             
-            <li>
-                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="fund.html">Funding Firms</a></li>
-                    <li><a href="collaborations.html">Collaborations</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="opportunity.html">Opportunities</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
 
-   <!-- Page Header Banner -->
-    <section class="page-hero">
-        <div class="page-hero-container">
-            <h2>Conference Presentations</h2>
-            <p>A record of conference talks and posters spanning spin-orbit torque devices, skyrmion dynamics, domain wall physics, resistive switching, and neuromorphic memory.</p>
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html">Journal Papers</a></li>
+                            <li><a href="conferences.html" class="active">Conference Presentations</a></li>
+                            <li><a href="books.html">Books & Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
         </div>
+    </header>
+
+    <!-- Hero Banner (Large Font & Full Width Text) -->
+<section class="hero" style="text-align: left; padding: 40px 20px;">
+<div class="hero-container" style="display: flex; flex-direction: column; align-items: flex-start; gap: 15px; max-width: 1200px; margin: 0 auto;">
+
+<h2 style="margin: 0; font-size: 2.5rem; color: #fff;">Conference Presentations</h2>            
+<p style="margin: 0; color: #cbd5e1; font-size: 1.05rem; max-width: 800px; line-height: 1.5;">
+            A record of conference talks and posters spanning spin-orbit torque devices, skyrmion dynamics, domain wall physics, resistive switching, and neuromorphic memory.
+        </p>        </div>
     </section>
 
     <!-- Main Content Container -->
-    <div class="container">
+    <main class="container">
         <div class="controls">
             <div class="search-box">
                 <i class="fa-solid fa-magnifying-glass"></i>
@@ -612,8 +389,10 @@
             </div>
         </div>
 
-        <p class="results-count" id="resultsCount">Showing all 191 presentations</p>
+        <!-- Dynamic Counter Display -->
+        <p class="results-count" id="resultsCount">Showing 191 out of 191 records</p>
 
+        <!-- 2-Column Presentation Grid -->
         <div class="pub-list" id="pubList">
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">191</div>
@@ -626,7 +405,7 @@
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">190</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Tuneable Coercivity Via Current Compliance in Tunnel Junction Device"</h3>
+                    <h3 class="pub-title">Tuneable Coercivity Via Current Compliance in Tunnel Junction Device</h3>
                     <p class="pub-authors">Funan Tan, Calvin Lee, Tianli Jin, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT2023, Singapore</p>
                 </div>
@@ -634,7 +413,7 @@
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">189</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">High performance, flexible and thermally stable all-solid-state organic electrochemical transistor based on thermoplastic polyurethane ion-gel"</h3>
+                    <h3 class="pub-title">High performance, flexible and thermally stable all-solid-state organic electrochemical transistor based on thermoplastic polyurethane ion-gel</h3>
                     <p class="pub-authors">Kunqi Hou, Wen Siang Lew, Wei Lin Leong</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT2023, Singapore</p>
                 </div>
@@ -642,7 +421,7 @@
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">188</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Topological Insulator Spin Orbit-torque Enhancement Via Insertion Layer and Crystallinity Control of Bisb(012)"</h3>
+                    <h3 class="pub-title">Topological Insulator Spin Orbit-torque Enhancement Via Insertion Layer and Crystallinity Control of Bisb(012)</h3>
                     <p class="pub-authors">H. Y. Poh, C. C. I. Ang, G.J. Lim, W.S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT2023, Singapore</p>
                 </div>
@@ -650,7 +429,7 @@
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">187</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Enhancement of Resistive Switching In HfO2-Based Devices Through Oxygen Plasma Treatment"</h3>
+                    <h3 class="pub-title">Enhancement of Resistive Switching In HfO2-Based Devices Through Oxygen Plasma Treatment</h3>
                     <p class="pub-authors">J.R. Thong, Y.M. Du, E.K. Koh, X.X.C.Lee, H.Y. Poh, W.S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT2023, Singapore</p>
                 </div>
@@ -658,31 +437,31 @@
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">186</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Tuning Spin-Orbit Torque Generation Via Seed/Heavy Metal Interface Modification”</h3>
-                    <p class="pub-authors">Tianli Jin, Wen Siang Lew Sendai, Japan</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023</p>
+                    <h3 class="pub-title">Tuning Spin-Orbit Torque Generation Via Seed/Heavy Metal Interface Modification</h3>
+                    <p class="pub-authors">Tianli Jin, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023, Sendai, Japan</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">185</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Influence of magnetic moments on spin-orbit torque efficiency from topological surface state in TI/FM interfacet”</h3>
-                    <p class="pub-authors">H.Y. Poh, W.S. Lew Sendai, Japan</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023</p>
+                    <h3 class="pub-title">Influence of magnetic moments on spin-orbit torque efficiency from topological surface state in TI/FM interface</h3>
+                    <p class="pub-authors">H.Y. Poh, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023, Sendai, Japan</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2023">
                 <div class="pub-number">184</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Quantification of Spin Accumulation in Ferromagnetic Heterostructure using DC Bias Harmonic Hall Measurement”</h3>
-                    <p class="pub-authors">H. Y. Poh, C. C. I. Ang, G.J. Lim, W.S. Lew Sendai, Japan</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023</p>
+                    <h3 class="pub-title">Quantification of Spin Accumulation in Ferromagnetic Heterostructure using DC Bias Harmonic Hall Measurement</h3>
+                    <p class="pub-authors">H. Y. Poh, C. C. I. Ang, G.J. Lim, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2023, Sendai, Japan</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">183</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">BiSb(012) Crystallinity and Strong Spin Orbit-Torque Enhancement Using Insertion Layer”</h3>
+                    <h3 class="pub-title">BiSb(012) Crystallinity and Strong Spin Orbit-Torque Enhancement Using Insertion Layer</h3>
                     <p class="pub-authors">H. Y. Poh, C. C. I. Ang, S.H. Lee, G.J. Lim, T.L Jin, W.S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 MRS Fall Meeting &amp; Exhibit, Boston, Massachusetts, USA</p>
                 </div>
@@ -690,7 +469,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">182</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Influence of Humidity Level on Synaptic Behaviour of Redox Transistors with Proton Defects Enhanced Electrochemical Reactionle”</h3>
+                    <h3 class="pub-title">Influence of Humidity Level on Synaptic Behaviour of Redox Transistors with Proton Defects Enhanced Electrochemical Reaction</h3>
                     <p class="pub-authors">Lingli Liu, Putu Andhita Dananjaya, Mun Yin Chee, Calvin Lee Xiu Xian, Gerard Joseph Lim, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 MRS Fall Meeting &amp; Exhibit, Boston, Massachusetts, USA</p>
                 </div>
@@ -698,7 +477,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">181</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Operando Direct Observation of Filament Formation in Resistive Switching Devices Enabled by a Topological Transformation Molecule”</h3>
+                    <h3 class="pub-title">Operando Direct Observation of Filament Formation in Resistive Switching Devices Enabled by a Topological Transformation Molecule</h3>
                     <p class="pub-authors">Kunqi Hou, Wen Siang Lew, and Wei Lin Leong</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 MRS Fall Meeting &amp; Exhibit, Boston, Massachusetts, USA</p>
                 </div>
@@ -706,7 +485,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">180</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Stimulation Rate-Dependent 1S1R Synapse with Short-Term Plasticity TiOx-Based Exponential Selector”</h3>
+                    <h3 class="pub-title">Stimulation Rate-Dependent 1S1R Synapse with Short-Term Plasticity TiOx-Based Exponential Selector</h3>
                     <p class="pub-authors">Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Yuanmin Du, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 MRS Fall Meeting &amp; Exhibit, Boston, Massachusetts, USA</p>
                 </div>
@@ -714,7 +493,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">179</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">All-electrical Manipulation of Multiple Magnetization States via Modifying Magnetic Anisotropy for Emulating Synaptic Devices”</h3>
+                    <h3 class="pub-title">All-electrical Manipulation of Multiple Magnetization States via Modifying Magnetic Anisotropy for Emulating Synaptic Devices</h3>
                     <p class="pub-authors">Tianli Jin, F. Tan, H. Y. Poh, S. H. Lee, S. Wu, G. J. Lim, W. S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 Annual Conference on Magnetism and Magnetic Materials (MMM 2022), Minneapolis, USA</p>
                 </div>
@@ -722,7 +501,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">178</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Topological Insulator Spin Orbit-Torque Enhancement via Insertion Layer and Crystallinity Control of BiSb(012)”</h3>
+                    <h3 class="pub-title">Topological Insulator Spin Orbit-Torque Enhancement via Insertion Layer and Crystallinity Control of BiSb(012)</h3>
                     <p class="pub-authors">H. Y. Poh, C. C. I. Ang, S.H. Lee, G.J. Lim, T.L Jin, W.S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2022 Annual Conference on Magnetism and Magnetic Materials (MMM 2022), Minneapolis, USA</p>
                 </div>
@@ -730,7 +509,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">177</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Frequency-dependent 1S1R synapse with a short-term plasticity TiOx-based exponential selector”</h3>
+                    <h3 class="pub-title">Frequency-dependent 1S1R synapse with a short-term plasticity TiOx-based exponential selector</h3>
                     <p class="pub-authors">Mun Yin Chee, Putu Andhita Dananjaya, Gerard Joseph Lim, Yuanmin Du, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2nd International Conference on Materials for Humanity (MH 2022), Singapore</p>
                 </div>
@@ -738,7 +517,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">176</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">Humidity-related synaptic behavior of redox transistors with proton defects enhanced electrochemical reaction"</h3>
+                    <h3 class="pub-title">Humidity-related synaptic behavior of redox transistors with proton defects enhanced electrochemical reaction</h3>
                     <p class="pub-authors">Lingli Liu, Putu Andhita Dananjaya, Mun Yin Chee, Calvin Lee Xiu Xian, Gerard Joseph Lim, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2nd International Conference on Materials for Humanity (MH 2022), Singapore</p>
                 </div>
@@ -754,7 +533,7 @@
             <div class="pub-card" data-year="2022">
                 <div class="pub-number">174</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">All electrical-induced multiple resistant states via modifying magnetic anisotropy for emulating synaptic memory”</h3>
+                    <h3 class="pub-title">All electrical-induced multiple resistant states via modifying magnetic anisotropy for emulating synaptic memory</h3>
                     <p class="pub-authors">Tianli Jin, Funan Tan, Mun Yin Chee, Gerard Joseph Lim, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2nd International Conference on Materials for Humanity (MH 2022), Singapore</p>
                 </div>
@@ -778,7 +557,7 @@
             <div class="pub-card" data-year="2021">
                 <div class="pub-number">171</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">“ Spin reflection induced field-free magnetization switching in perpendicularly magnetized MgO/Pt/Co heterostructures</h3>
+                    <h3 class="pub-title">Spin reflection induced field-free magnetization switching in perpendicularly magnetized MgO/Pt/Co heterostructures</h3>
                     <p class="pub-authors">Tianli Jin, Gerard J. Lim, H. Y. Poh, S. Wu, F. Tan, W. S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> IEEE Magnetics Symposium 2021, IEEE Magnetics Society, Singapore</p>
                 </div>
@@ -786,7 +565,7 @@
             <div class="pub-card" data-year="2021">
                 <div class="pub-number">170</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">“ Quantification of spin accumulation magnetoresistance using DC bias harmonic Hall measurement</h3>
+                    <h3 class="pub-title">Quantification of spin accumulation magnetoresistance using DC bias harmonic Hall measurement</h3>
                     <p class="pub-authors">Han Yin Poh, Calvin Ching Ian Ang, Wei Liang Gan, Gerard Lim, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> IEEE Magnetics Symposium 2021, IEEE Magnetics Society, Singapore</p>
                 </div>
@@ -795,16 +574,16 @@
                 <div class="pub-number">169</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Skyrmion density modulation via current-induced skyrmion-to-stripe transformation</h3>
-                    <p class="pub-authors">Calvin Ching Ian Ang, WeiLiang Gan, Grayson Dao Hwee Wong, Wen Siang Lew, Virtual Conference</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2021</p>
+                    <p class="pub-authors">Calvin Ching Ian Ang, WeiLiang Gan, Grayson Dao Hwee Wong, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2021, Virtual Conference</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2021">
                 <div class="pub-number">168</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Spin Hall conductivity enhancement of tungsten by copper alloying</h3>
-                    <p class="pub-authors">B. Coester, G.D.H Wong, Z. Xu, J. Tang, W.L. Gan, W.S. Lew, Virtual Conference</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2021</p>
+                    <p class="pub-authors">B. Coester, G.D.H Wong, Z. Xu, J. Tang, W.L. Gan, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2021, Virtual Conference</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2020">
@@ -834,7 +613,7 @@
             <div class="pub-card" data-year="2020">
                 <div class="pub-number">164</div>
                 <div class="pub-body">
-                    <h3 class="pub-title">“ Skyrmion density modulation via current-induced skyrmion-stripe transformation</h3>
+                    <h3 class="pub-title">Skyrmion density modulation via current-induced skyrmion-stripe transformation</h3>
                     <p class="pub-authors">Calvin Ching Ian Ang, Wei Liang Gan, Grayson Dao Hwee Wong, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> IEEE Magnetics Symposium 2020, IEEE Magnetics Society, Singapore</p>
                 </div>
@@ -899,7 +678,7 @@
                 <div class="pub-number">156</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Reconfigurable spin orbit torque logic</h3>
-                    <p class="pub-authors">Gerard Joseph Lim,Weiliang Gan, Wen Siang Lew</p>
+                    <p class="pub-authors">Gerard Joseph Lim, Weiliang Gan, Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2019 Annual Conference on Magnetism and Magnetic Materials (MMM 2019), Las Vegas, USA</p>
                 </div>
             </div>
@@ -923,80 +702,80 @@
                 <div class="pub-number">153</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Exploring the Power – Prediction Accuracy Trade-Off in a Deep Learning Neural Network using Wide Compliance RRAM Device</h3>
-                    <p class="pub-authors">Nagaraj Lakshmana Prabhu, Desmond Loy Jia Jun, Putu Andhita Dananjaya, Eng Huat Toh, Wen Siang Lew and Nagarajan Raghavan, Zhengzhou, PR China</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 8th IEEE International Symposium on Next-Generation Electronics (ISNE 2019)</p>
+                    <p class="pub-authors">Nagaraj Lakshmana Prabhu, Desmond Loy Jia Jun, Putu Andhita Dananjaya, Eng Huat Toh, Wen Siang Lew and Nagarajan Raghavan</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 8th IEEE International Symposium on Next-Generation Electronics (ISNE 2019), Zhengzhou, PR China</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2019">
                 <div class="pub-number">152</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Control of domain wall motion with tilted magnetization for domain wall devices</h3>
-                    <p class="pub-authors">T. Jin, F. Tan, C.C. Ang, W. Gan, J. Cao, W.S. Lew and S. Piramanayagam, Washington DC, USA</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint MMM-INTERMAG 2019</p>
+                    <p class="pub-authors">T. Jin, F. Tan, C.C. Ang, W. Gan, J. Cao, W.S. Lew and S. Piramanayagam</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint MMM-INTERMAG 2019, Washington DC, USA</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2019">
                 <div class="pub-number">151</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Electrical detection of artificial skyrmion in synthetic anti-ferromagnetic nanostructures at room temperature</h3>
-                    <p class="pub-authors">F. Ma, Q. Feng, S. Li, Y. Li, X. Jin, Q. Lu and W.S. Lew, Washington DC, USA</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint MMM-INTERMAG 2019</p>
+                    <p class="pub-authors">F. Ma, Q. Feng, S. Li, Y. Li, X. Jin, Q. Lu and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint MMM-INTERMAG 2019, Washington DC, USA</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">150</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Development strategy for pMTJ free layer with high thermal stability at operating temperatures</h3>
-                    <p class="pub-authors">Wai Cheung Law, Tian Li Jin, Grayson Dao Hwee Wong, Ganesh Kolliyil Rajan, Wei Liang Gan, Seet Chim Seng, Alex See, S. N. Piramanayagam and Wen Siang Lew Jeju, Korea</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 5th International Conference of Asian Union of Magnetics Societies 2018</p>
+                    <p class="pub-authors">Wai Cheung Law, Tian Li Jin, Grayson Dao Hwee Wong, Ganesh Kolliyil Rajan, Wei Liang Gan, Seet Chim Seng, Alex See, S. N. Piramanayagam and Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 5th International Conference of Asian Union of Magnetics Societies 2018, Jeju, Korea</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">149</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Role of effective anisotropy in temperature gradient-induced skyrmion motion</h3>
-                    <p class="pub-authors">X. Wang, W. L. Gan, T. L. Tian, and Wen Siang Lew, Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018</p>
+                    <p class="pub-authors">X. Wang, W. L. Gan, T. L. Tian, and Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018, Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">148</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Chiral magnetization switching induced by spin orbit torque in Pt/Co/Ta structure</h3>
-                    <p class="pub-authors">S.H. Li, Wen Siang Lew, Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018</p>
+                    <p class="pub-authors">S.H. Li, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018, Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">147</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Pinning sites with tiled magnetisation for domain wall motion control in racetrack memory</h3>
-                    <p class="pub-authors">T.L. Jin, F.N. Tan, W.L. Gan, J.W. Cao, W. S.Lew, and S. Piramanayagam, Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018</p>
+                    <p class="pub-authors">T.L. Jin, F.N. Tan, W.L. Gan, J.W. Cao, W. S.Lew, and S. Piramanayagam</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018, Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">146</div>
                 <div class="pub-body">
                     <h3 class="pub-title">The effect of inserting a Pt layer in Pt/Co/Ta structure on spin orbit torque</h3>
-                    <p class="pub-authors">S.H. Li, G. J. Lim, Wen Siang Lew, Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018</p>
+                    <p class="pub-authors">S.H. Li, G. J. Lim, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018, Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">145</div>
                 <div class="pub-body">
                     <h3 class="pub-title">High speed bilayer skyrmion transport by voltage controlled magnetic anisotropy gradient</h3>
-                    <p class="pub-authors">C. C.I. Ang, W.L. Gan, Wen Siang Lew, Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018</p>
+                    <p class="pub-authors">C. C.I. Ang, W.L. Gan, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2018, Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2018">
                 <div class="pub-number">144</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Spintronic devices for emerging technologies in memory and biomedical applications</h3>
-                    <p class="pub-authors">Wen Siang Lew 11th India-Singapore Joint Physics Symposium ( ), Singapore</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2018</p>
+                    <p class="pub-authors">Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 11th India-Singapore Joint Physics Symposium (2018), Singapore</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2017">
@@ -1019,8 +798,8 @@
                 <div class="pub-number">141</div>
                 <div class="pub-body">
                     <h3 class="pub-title">In-situ high temperature FMR measurements of pMTJ with various diffusion barrier cap</h3>
-                    <p class="pub-authors">Wai Cheung Law, Taiebeh Tahmasebi, Funan Tan, Weiliang Gan, Gerard Joseph Lim, Seet Chim Seng, Alex See, Wen Siang Lew 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> In-situ 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
+                    <p class="pub-authors">Wai Cheung Law, Taiebeh Tahmasebi, Funan Tan, Weiliang Gan, Gerard Joseph Lim, Seet Chim Seng, Alex See, Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2017">
@@ -1035,8 +814,8 @@
                 <div class="pub-number">139</div>
                 <div class="pub-body">
                     <h3 class="pub-title">HZ Biased Field Modulation of The Harmonic Measurement In The Determination Of The Effective Fields In MgO/CoFeB/W</h3>
-                    <p class="pub-authors">Q.Y. Wong, G.J. Lim, W.L. Gan, W.S. Lew 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> HZ 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
+                    <p class="pub-authors">Q.Y. Wong, G.J. Lim, W.L. Gan, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 62nd Annual Conference on Magnetism and Magnetic Materials (MMM 2017), Pittsburgh, USA</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2017">
@@ -1051,7 +830,7 @@
                 <div class="pub-number">137</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Observation of Large Planar Hall Effect on the Current Induced Spin-orbit Effective Fields in Ta/MgO/CoFeB/Ta</h3>
-                    <p class="pub-authors">Q. Y. Wong, W.L. Gan, F.L Luo, and W.S. Lew*</p>
+                    <p class="pub-authors">Q. Y. Wong, W.L. Gan, F.L Luo, and W.S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2017, Dublin, Ireland</p>
                 </div>
             </div>
@@ -1067,8 +846,8 @@
                 <div class="pub-number">135</div>
                 <div class="pub-body">
                     <h3 class="pub-title">SOT induced magnetization reversal in Pt/[Co/Ni]2/Co/Ta multilayer Hall bars without external magnetic field</h3>
-                    <p class="pub-authors">Sihua Li, Sarjoosing Goolaup, Weiliang Gan and Wen Siang Lew INTERMAG 2017, Dublin, Ireland</p>
-                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 2 INTERMAG 2017, Dublin, Ireland</p>
+                    <p class="pub-authors">Sihua Li, Sarjoosing Goolaup, Weiliang Gan and Wen Siang Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2017, Dublin, Ireland</p>
                 </div>
             </div>
             <div class="pub-card" data-year="2017">
@@ -1155,7 +934,7 @@
                 <div class="pub-number">124</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Effect of the interlayer exchange torque on the domain wall dynamics in perpendicularly magnetized synthetic antiferromagnetic nanowires</h3>
-                    <p class="pub-authors">S. Krishnia, P. Sethi, W. L. Gan, F. N. Kholid, I. Purnama, M. Ramu, T. S. Herng, J. Ding and W. S. Lew*</p>
+                    <p class="pub-authors">S. Krishnia, P. Sethi, W. L. Gan, F. N. Kholid, I. Purnama, M. Ramu, T. S. Herng, J. Ding and W. S. Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 61st Annual Conference on Magnetism and Magnetic Materials (MMM 2016), New Orleans, USA</p>
                 </div>
             </div>
@@ -1235,7 +1014,7 @@
                 <div class="pub-number">114</div>
                 <div class="pub-body">
                     <h3 class="pub-title">Spin orbit torque in Multilayered Stack Structures</h3>
-                    <p class="pub-authors">Sarjoosing Goolaup, Sihua Li, Feilong Luo, Chirstian Engel, and Wen Siang Lew</p>
+                    <p class="pub-authors">Sarjoosing Goolaup, Sihua Li, Feilong Luo, Christian Engel, and Wen Siang Lew</p>
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> IUMRS-International Conference on Electronics Materials 2016, Singapore</p>
                 </div>
             </div>
@@ -1791,60 +1570,457 @@
                     <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint European Magnetic Symposia (JEMS) 2013, Rhodes Island, Greece</p>
                 </div>
             </div>
+
+<div class="pub-card" data-year="2013">
+                <div class="pub-number">44</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Magnetic Nanoparticles synthesised by chemical slicing method</h3>
+                    <p class="pub-authors">W.L. Gan, M. Chandra Sekhar, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint European Magnetic Symposia (JEMS) 2013, Rhodes Island, Greece</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">43</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Polarity-dependent vortex domain wall coupling</h3>
+                    <p class="pub-authors">I. Purnama, R. Shina, M. Chandra Sekhar, T. Tomoyasu, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint European Magnetic Symposia (JEMS) 2013, Rhodes Island, Greece</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">42</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Spin wave emission by domain wall collision</h3>
+                    <p class="pub-authors">R. Maddu, M. Chandra Sekhar, I. Purnama, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint European Magnetic Symposia (JEMS) 2013, Rhodes Island, Greece</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">41</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Anomalous domain wall depinning behaviour in cylindrical nanowires</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, I. Purnama, S. Goolaup and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Joint European Magnetic Symposia (JEMS) 2013, Rhodes Island, Greece</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">40</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Domain wall dynamics in magnetic cylindrical nanowires (invited)</h3>
+                    <p class="pub-authors">W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 4th IEEE Annual Symposium on Magnetics 2013, Singapore</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">39</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Spin wave emission by domain wall collision</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, R. Maddu, I. Purnama, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 4th IEEE Annual Symposium on Magnetics 2013, Singapore</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">38</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Low current domain-wall oscillators</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, I. Purnama, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2013, Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">37</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Spin wave generation due to domain wall collision</h3>
+                    <p class="pub-authors">R. Maddu, M. Chandra Sekhar, I. Purnama, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2013, Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">36</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Multiple remote domain wall motion due to exchange interaction</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2013, Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">35</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Fabrication of NiFe Nanoparticles by Chemically Slicing NiFe Nanowires</h3>
+                    <p class="pub-authors">W.L. Gan, M. Chandra Sekhar, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2013, Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2013">
+                <div class="pub-number">34</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Coupled vortex domain wall transformation and selective motion</h3>
+                    <p class="pub-authors">I. Purnama, R. Shiina, M. Chandra Sekhar, W.S. Lew and T. Taniyama</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2013, Taichung, Taiwan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">33</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Self-assembled quantum antidots and their applications</h3>
+                    <p class="pub-authors">C.K. Chia, G. Vastola, Y.W. Zhang, G.K. Dalapati, Y. Chai, H.K. Hui, Y.B. Cheng, D.Z. Chi, Y.C. Yeo, Z. Xu, S.F. Yoon, Y.P. Liu, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Conference on Nanoscience and Nanotechnology 2012, Perth, Australia</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">32</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Vortex-to-transverse coupled transformation in two-nanowire system</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Magnetic Conference (INTERMAG) 2012, Vancouver, Canada</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">31</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Striped cylindrical nanowire as a magnetic domain wall nanobarcode</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Magnetic Conference (INTERMAG) 2012, Vancouver, Canada</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">30</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Remote barrier and trap induced by neighboring domain walls</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Magnetic Conference (INTERMAG) 2012, Vancouver, Canada</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">29</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Field and current driven domain wall depinning at the notch and anti-notch in cylindrical nanowires</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, I. Purnama, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Magnetic Conference (INTERMAG) 2012, Vancouver, Canada</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2012">
+                <div class="pub-number">28</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Coupled domain wall oscillations in closely spaced cylindrical nanowires</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Magnetic Conference (INTERMAG) 2012, Vancouver, Canada</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">27</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Electrochemical properties of Au and Au/Ni/Au multilayer nanowires for biobarcode applications</h3>
+                    <p class="pub-authors">V. Swaminathan, H.F. Liew, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Conference on Materials for Advanced Technologies (ICMAT) 2011, Singapore</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">26</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Smaller domain wall mass of coupled domain wall system</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, S. Goolaup and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT 2011, Singapore</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">25</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Crossover in domain wall potential polarity as a function of anti-notch geometry</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, I. Purnama, S. Goolaup and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ICMAT 2011, Singapore</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">24</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Effect of interlayer coupling on the reversal process of the differential dual spin valves</h3>
+                    <p class="pub-authors">M. Chandra Sekhar, C.C. Wang, G.C. Han, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> 56th Magnetism and Magnetic Material conference 2011, Scottsdale, US</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">23</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Collective motions assisted by magnetostatic interactions in coupled domain wall system</h3>
+                    <p class="pub-authors">I. Purnama, M. Chandra Sekhar, S. Goolaup and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2011, Taipei</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">22</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Temperature-dependent magneto and electrical transport properties in few-layer graphene</h3>
+                    <p class="pub-authors">Y. P. Liu, S. Goolaup, W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> Intermag 2011, Taipei</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2011">
+                <div class="pub-number">21</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Diameter-modulated magnetic NiFe nanowires</h3>
+                    <p class="pub-authors">H.F. Liew, W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG 2011, Taipei</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">20</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Flux-closure control and domain wall trapping in asymmetric nanorings</h3>
+                    <p class="pub-authors">X. H. Wang, W. Z. Wang, and W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> MMM-INTERMAG conference 2010, Washington DC, USA</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">19</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">High stability magnetic flux-closure in sub-100 nm asymmetric rings</h3>
+                    <p class="pub-authors">X. H. Wang, S. Goolaup and W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> MMM-INTERMAG conference 2010, Washington DC, USA</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">18</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Structural, magnetic and transport properties of reactive-sputtered Fe3O4 thin films</h3>
+                    <p class="pub-authors">X. H. Wang, S. Goolaup, P. Ren, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> MRS Spring Meeting 2010, San Francisco, USA</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">17</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Magnetic vortex configurations in NiFe nanotubes</h3>
+                    <p class="pub-authors">H. F. Liew, W. C. Junus, X. H. Wang, and W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> MRS Spring Meeting 2010, San Francisco, USA</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">16</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Magnetization reversal in NiFenano-triangles</h3>
+                    <p class="pub-authors">X. H. Wang, S. Goolaup, C. X. Cong and W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> MRS Spring Meeting 2010, San Francisco, USA</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">15</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Field-driven domain wall movements in asymmetric nanorings</h3>
+                    <p class="pub-authors">X. H. Wang, I. Purnama, S. Goolaup and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International symposium on advanced magnetic materials and applications (ISAMMA) 2010, Sendai, Japan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">14</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Dependence of pinning on domain wall chirality</h3>
+                    <p class="pub-authors">S. Goolaup, S. C. Low, and W.S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2010, Sendai, Japan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2010">
+                <div class="pub-number">13</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Fabrication and characterization of NiFe composition-modulated nanowires</h3>
+                    <p class="pub-authors">H. F. Liew, S. C. Low, S. Goolaup, X. H. Wang, T.F. Kong, and W. S. Lew</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> ISAMMA 2010, Sendai, Japan</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2006">
+                <div class="pub-number">12</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Fabrication and manipulation of magnetic nanowires</h3>
+                    <p class="pub-authors">F. van Belle, W. S. Lew, and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG, San Diego, May 2006</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2005">
+                <div class="pub-number">11</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Manipulation of Superparamagnetic Beads using On-Chip Striplines Placed on a Ferrite magnet</h3>
+                    <p class="pub-authors">Z. H. Wang, W.S. Lew, and J.A.C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 50th MMM Conference, Baltimore, November 2005</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2004">
+                <div class="pub-number">10</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Highly efficient spin filtering of ballistic electrons in hybrid spin valve/semiconductor structures</h3>
+                    <p class="pub-authors">S. Steinmüller, T. Trypiniotis, A. Hirohata, W. S. Cho, W. S. Lew, C. A. F. Vaz, and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> International Conference on MEMS, Nano and Smart Systems, 2004</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2002">
+                <div class="pub-number">9</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Modulated Magnetic Structures in Chemically Homogeneous Ni Films</h3>
+                    <p class="pub-authors">W. S. Lew, S. P. Li, L. Lopez-Diaz, C. A. F. Vaz, J. A. C. Bland, M. Natali, and Y. Chen</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> INTERMAG, Amsterdam, April 2002</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">8</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Spin Confinement by Anisotropy Modulation</h3>
+                    <p class="pub-authors">W. S. Lew, S. P. Li, L. Lopez-Diaz, C. A. F. Vaz, J. A. C. Bland, M. Natali, and Y. Chen</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 46th MMM Conference, Seattle, November 2001; The ICMFS Conference, Kyoto, 2002</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">7</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Temperature Dependence of The Spin-Wave Behaviour in Co/CoO Bilayers</h3>
+                    <p class="pub-authors">W. S. Lew, A. Ercole, G. Lauhoff, E. T. M. Kernohan, J. Lee, and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 8th Joint MMM-INTERMAG Conference, San Antonio, January 2001</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">6</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Test of Ballistic Spin-Polarized Electron Transport Across Ferromagnet/Semiconductor Schottky Interfaces</h3>
+                    <p class="pub-authors">A. Hirohata, C. Gürtler, W. S. Lew, Y. B. Xu, J. A. C. Bland, and S. N. Holmes</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 46th MMM Conference, Seattle 2001</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">5</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Significant Magnetocurrent due to Ballistic Spin Transport in Spin-Valve /Semiconductor Structures</h3>
+                    <p class="pub-authors">A. Hirohata, W. S. Lew, Y. B. Xu, C. Gürtler, J. A. C. Bland, and S. N. Holmes</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 8th Joint MMM-INTERMAG Conference, San Antonio, January 2001</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">4</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Mirror Domain Structures Induced by Interlayer Magnetic-Wall Coupling</h3>
+                    <p class="pub-authors">W. S. Lew, S. P. Li, L. Lopez-Diaz, D. C. Hatton, and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 46th MMM Conference, Seattle, November 2001</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="2001">
+                <div class="pub-number">3</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Two-Jump Magnetic Switching in Ultrathin Epitaxial Co(001) Films</h3>
+                    <p class="pub-authors">W. S. Lew, S. P. Li, D. C. Hatton, and J.A.C Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 46th MMM Conference, Seattle, November 2001</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="1999">
+                <div class="pub-number">2</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Magnetic Properties of Epitaxial NiFe/Cu/Co Spin-Valve Structures on GaAs(001)</h3>
+                    <p class="pub-authors">W. S. Lew, A. Samad, S. P. Li, L. Lopez-Diaz, G. X. Cheng and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The 44th MMM Conference, San Jose, November 1999</p>
+                </div>
+            </div>
+
+            <div class="pub-card" data-year="1999">
+                <div class="pub-number">1</div>
+                <div class="pub-body">
+                    <h3 class="pub-title">Temperature Dependent Spin-Wave Behaviour in Co/CoO Bilayers</h3>
+                    <p class="pub-authors">W. S. Lew, A. Ercole, G. Lauhoff, E. T. M. Kernohan, J. Lee, and J. A. C. Bland</p>
+                    <p class="pub-venue"><i class="fa-solid fa-location-dot"></i> The CMMP Conference, Leicester, December 1999</p>
+                </div>
+            </div>
         </div>
 
         <div class="no-results" id="noResults">
             <i class="fa-solid fa-folder-open"></i>
             <p>No presentations found matching your search criteria.</p>
         </div>
-    </div>
+    </main>
 
     <!-- Footer -->
-<footer>
-    <div class="footer-container">
-        <div class="footer-col">
-            <h4>Spintronics Device Research Group</h4>
-            <p>Intelligent Materials and Systems Laboratory<br>
-            Division of Physics and Applied Physics<br>
-            School of Physical and Mathematical Sciences<br>
-            Nanyang Technological University Singapore</p>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="topics.html">Research Topics</a></li>
+                    <li><a href="equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="paper.html">Publications</a></li>
+                    <li><a href="team.html">Research Group</a></li>
+                    <li><a href="fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
         </div>
 
-        <div class="footer-col">
-            <h4>Quick Links</h4>
-            <ul>
-                <li><a href="topics.html">Research Topics</a></li>
-                <li><a href="equipment.html">Equipment & Facilities</a></li>
-                <li><a href="paper.html">Publications</a></li>
-                <li><a href="team.html">Research Group</a></li>
-                <li><a href="fund.html">Funding & Collaborators</a></li>
-            </ul>
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: September 2026</div>
         </div>
+    </footer>
 
-        <div class="footer-col">
-            <h4>Location</h4>
-            <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red);"></i> SPMS-04-01<br>
-            21 Nanyang Link<br>
-            School of Physical & Mathematical Sciences<br>
-            Nanyang Technological University<br>
-            Singapore 637371<br>
-            <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Contact</h4>
-            <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
-            <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
-            <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
-        </div>
-    </div>
-
-    <div class="copyright">
-        <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
-        <div>Last updated: September 2026</div>
-    </div>
-</footer>
-    <!-- Interactive Search and Filtering Logic -->
+    <!-- Interactive Search and Filtering Logic with 'x out of y' Counter -->
     <script>
         const searchInput = document.getElementById('searchInput');
         const yearButtons = document.querySelectorAll('.year-btn');
@@ -1852,6 +2028,7 @@
         const resultsCount = document.getElementById('resultsCount');
         const noResults = document.getElementById('noResults');
 
+        const totalRecords = pubCards.length;
         let currentYear = 'all';
 
         function filterPresentations() {
@@ -1873,7 +2050,8 @@
                 }
             });
 
-            resultsCount.textContent = `Showing ${visibleCount} presentation${visibleCount !== 1 ? 's' : ''}`;
+            // Exact counter format requested: 'Showing X out of Y records'
+            resultsCount.textContent = `Showing ${visibleCount} out of ${totalRecords} records`;
             
             if (visibleCount === 0) {
                 noResults.style.display = 'block';
@@ -1894,50 +2072,65 @@
         searchInput.addEventListener('input', filterPresentations);
     </script>
 	
-	<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
-    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+    <!-- Robust Mobile Navigation Drawer Script (Smooth Toggle + Click-Outside Dismiss) -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+        const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
 
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            const isOpen = navMenu.classList.toggle('active');
-            
-            const toggleIcon = toggleBtn.querySelector('i');
-            if (toggleIcon) {
-                if (isOpen) {
-                    toggleIcon.className = 'fa-solid fa-xmark';
-                    toggleIcon.style.color = '#ffffff';
-                    toggleIcon.style.display = 'inline-block';
-                } else {
-                    toggleIcon.className = 'fa-solid fa-bars';
-                    toggleIcon.style.color = '#ffffff';
-                    toggleIcon.style.display = 'inline-block';
+        function closeMobileNav() {
+            if (navMenu && navMenu.classList.contains('active')) {
+                navMenu.classList.remove('active');
+                if (toggleBtn) {
+                    const icon = toggleBtn.querySelector('i');
+                    if (icon) {
+                        icon.classList.remove('fa-xmark');
+                        icon.classList.add('fa-bars');
+                    }
                 }
             }
-        });
-    }
+        }
 
-    const parentLinks = document.querySelectorAll('.nav-links > li > a');
-    parentLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 900) {
-                const parentLi = this.parentElement;
-                const dropdown = parentLi.querySelector('.dropdown');
-
-                if (dropdown) {
-                    e.preventDefault();
-                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
-                        if (item !== parentLi) item.classList.remove('active');
-                    });
-                    parentLi.classList.toggle('active');
+        if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                
+                const toggleIcon = toggleBtn.querySelector('i');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('fa-bars');
+                    toggleIcon.classList.toggle('fa-xmark');
                 }
-            }
+            });
+
+            // Tap anywhere outside the drawer to dismiss
+            document.addEventListener('click', function (e) {
+                if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    closeMobileNav();
+                }
+            });
+        }
+
+        // Accordion dropdowns inside drawer for mobile screens (<= 1150px)
+        const parentLinks = document.querySelectorAll('.nav-links > li > a');
+        parentLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1150) {
+                    const parentLi = this.parentElement;
+                    const dropdown = parentLi.querySelector('.dropdown');
+
+                    if (dropdown) {
+                        e.preventDefault();
+                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                            if (item !== parentLi) item.classList.remove('active');
+                        });
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            });
         });
     });
-});
-</script>
+    </script>
 
 </body>
 </html>

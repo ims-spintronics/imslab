@@ -100,101 +100,118 @@
 
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-        </a>
-        <div class="top-bar-right">
-            <a href="https://www.ntu.edu.sg/spms" target="_blank">
-                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
-            </a>
-        </div>
-    </div>
-
-   <!-- Header & Navigation -->
-<header>
-    <nav>
-        <!-- Mobile & Desktop Top Logo -->
-        <a href="index.html" class="mobile-logo-link">
-            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-        </a>
-
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-		
-		<!-- Navigation Drawer -->
-		
-		<ul class="nav-links">
-            <li class="nav-logo-item">
-                <a href="index.html" class="logo-link">
-                   </a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="news.html">Group</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="lecture.html">Lecture Courses</a></li>
-                    <li><a href="laboratory.html">Laboratory Courses</a></li>
-                    <li><a href="internship.html">Industrial Internships</a></li>
-                    <li><a href="fyp.html">Final Year Projects</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="team.html">Current Group</a></li>
-                    <li><a href="graduated.html">Graduated Students</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="paper.html">Journal Papers</a></li>
-                    <li><a href="conferences.html">Conference Presentations</a></li>
-                    <li><a href="books.html">Books & Book Chapters</a></li>
-                    <li><a href="property.html">Intellectual Property</a></li>
-                </ul>
-            </li>
+ <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
             
-            <li>
-                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="fund.html">Funding Firms</a></li>
-                    <li><a href="collaborations.html">Collaborations</a></li>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html">Journal Papers</a></li>
+                            <li><a href="conferences.html">Conference Presentations</a></li>
+                            <li><a href="books.html">Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="opportunity.html">Opportunities</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
+    </header>
 
     <!-- Mini Hero Banner -->
     <section class="hero">
@@ -221,7 +238,7 @@
 			
 		         <div class="card">
                 <img src="images/sot.jpg" alt="Spin Orbit Torque" class="card-img">
-                <h3> SOT and Orbital Torque</h3>
+                <h3>Spin Orbit Torque (SOT) And Orbit Torque</h3>
                 <p>Probing spin-orbit torque phenomena, field-free switching, and interfacial spin dynamics in ultrathin ferromagnetic/heavy-metal heterostructures.</p>
             </div>
 
@@ -243,20 +260,17 @@
                 <p>Integration of magnetic forces with microfluidic systems for biological cell separation, magnetic characterisation, and functionalisation of nanostructured magnetic materials for hyperthermia and bio-tagging applications.</p>
             </div>
 
-            
             <div class="card">
                 <img src="images/skyrmions-dynamics.jpg" alt="Skyrmions Dynamics" class="card-img">
                 <h3>Skyrmions Dynamics</h3>
                 <p>Exploring room-temperature creation, manipulation, and current-driven motion of nanoscale topological spin structures for ultra-low power memory.</p>
             </div>
+        </div>
 
-           
-        </div> <!-- End of .grid -->
-
-        <!-- Research Publication Highlights Carousel (Placed After Research Areas) -->
+        <!-- Research Publication Highlights Carousel -->
         <div class="carousel-section" style="margin-top: 3rem;">
             <div class="section-header">
-                <h2><i class="fa-solid fa-award" style="color: var(--ntu-red, #c8102e);"></i> Research Publication Highlights</h2>
+                <h2><i class="fa-solid fa-flask-vial" style="color: var(--ntu-red, #c8102e);"></i> Research Publication Highlights</h2>
             </div>
 
             <div class="carousel-card">
@@ -278,8 +292,7 @@
                 <div class="carousel-dots" id="dotsContainer"></div>
             </div>
         </div>
-
-    </main> <!-- End of .container -->
+    </main>
    
     <!-- Footer -->
     <footer>
@@ -328,12 +341,11 @@
     </footer>
 
 <!-- Mobile Navigation Drawer Logic -->
-   <script>
+<script>
 document.addEventListener('DOMContentLoaded', function () {
     const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
     const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
 
-    // Mobile slide menu toggle
     if (toggleBtn && navMenu) {
         toggleBtn.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -347,25 +359,20 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Mobile dropdown accordion handling
     const parentLinks = document.querySelectorAll('.nav-links > li > a');
     parentLinks.forEach(function (link) {
         link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 900) {
+            if (window.innerWidth <= 1150) {
                 const parentLi = this.parentElement;
                 const dropdown = parentLi.querySelector('.dropdown');
 
                 if (dropdown) {
                     e.preventDefault();
-                    
-                    // Close other open accordions
                     document.querySelectorAll('.nav-links > li').forEach(function (item) {
                         if (item !== parentLi) {
                             item.classList.remove('active');
                         }
                     });
-
-                    // Toggle current accordion
                     parentLi.classList.toggle('active');
                 }
             }
@@ -374,48 +381,40 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 </script>
 
+<!-- Carousel Logic -->
 <script>
 document.addEventListener('DOMContentLoaded', function () {
     const slides = [
         { img: 'images/slidingimages/acs2010.jpg', caption: 'ACS Nano (2010)' },
-		
 		{ img: 'images/slidingimages/acs2011.jpg', caption: 'ACS Nano (2011)' },
 		{ img: 'images/slidingimages/apl2011_1.jpg', caption: 'Applied Physics Letters (2011)' },
 		{ img: 'images/slidingimages/micronano2011.jpg', caption: 'Microfluidics & Nanofluidics (2011)' },
-		
 		{ img: 'images/slidingimages/apl2012_1.jpg', caption: 'Applied Physics Letters (2012)' },
 		{ img: 'images/slidingimages/carbon2012.jpg', caption: 'Carbon (2012)' },
-		
 		{ img: 'images/slidingimages/apl2013.jpg', caption: 'Applied Physics Letters (2013)' },
 		{ img: 'images/slidingimages/apl2013_2.jpg', caption: 'Applied Physics Letters (2013)' },
-		
 		{ img: 'images/slidingimages/apex2014.jpg', caption: 'Applied Physics Express (2014)' },
 		{ img: 'images/slidingimages/apl2014_1.jpg', caption: 'Applied Physics Letters (2014)' },
 		{ img: 'images/slidingimages/apl2014_2.jpg', caption: 'Applied Physics Letters (2014)' },
 		{ img: 'images/slidingimages/apl2014_3.jpg', caption: 'Applied Physics Letters (2014)' },
 		{ img: 'images/slidingimages/jap2014.jpg', caption: 'Journal of Applied Physics (2014)' },
 		{ img: 'images/slidingimages/srep2014.jpg', caption: 'Scientific Reports (2014)' },
-		
 		{ img: 'images/slidingimages/jap2015_1.jpg', caption: 'Journal of Applied Physics (2015)' },
 		{ img: 'images/slidingimages/srep2015_1.jpg', caption: 'Scientific Reports (2015)' },
 		{ img: 'images/slidingimages/srep2015_2.jpg', caption: 'Scientific Reports (2015)' },
 		{ img: 'images/slidingimages/srep2015_3.jpg', caption: 'Scientific Reports (2015)' },
-		
 		{ img: 'images/slidingimages/nanoscale2018.jpg', caption: 'Nanoscale Research (2018)' },
-
 		{ img: 'images/slidingimages/acsaem2019.jpg', caption: 'ACS Applied Electronic Materials (2019)' },
         { img: 'images/slidingimages/njp2019_1.jpg', caption: 'Journal of Physics (2019)' },
-		
 		{ img: 'images/slidingimages/aem2020.jpg', caption: 'Advanced Electronic Materials (2020)' },
         { img: 'images/slidingimages/jap2020_1.jpg', caption: 'Journal of Applied Physics (2020)' },
         { img: 'images/slidingimages/jmmm2020_1.jpg', caption: 'Journal of Magnetism and Magnetic Materials (2020)' },
         { img: 'images/slidingimages/jmmm2020_2.jpg', caption: 'Journal of Magnetism and Magnetic Materials (2020)' },
 		{ img: 'images/slidingimages/jpdap2020.jpg', caption: 'Journal of Physics D: Applied Physics (2020)' },
 		{ img: 'images/slidingimages/pra2020.jpg', caption: 'Physical Review Applied (2020)' },
-		{ img: 'images/slidingimages/srep2020.jpg', caption: 'Scientific Reports (2020)' },
+		{ img: 'images/slidingimages/srep2020.jpg', caption: 'Scientific Reports (2020)' }
     ];
 
-	// Preload images into memory immediately
     slides.forEach(slide => {
         const preloadedImg = new Image();
         preloadedImg.src = slide.img;

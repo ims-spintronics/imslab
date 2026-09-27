@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Chapters | Intelligent Materials and Systems Laboratory | NTU</title>
+    <title>Books & Book Chapters | Intelligent Materials and Systems Laboratory | NTU</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="images/logofavicon.png">
@@ -17,90 +17,204 @@
     
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        .book-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+            gap: 25px;
+            margin-bottom: 60px;
+        }
+
+        .book-card {
+            background: #ffffff;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 22px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+            display: flex;
+            gap: 20px;
+            align-items: stretch;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            text-align: left;
+        }
+
+        .book-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .book-cover-wrapper {
+            flex: 0 0 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid #edf2f7;
+        }
+
+        .book-cover-wrapper img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            border-radius: 4px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .book-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .filter-btn {
+            padding: 8px 18px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: var(--text-dark);
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn.active {
+            background: var(--ntu-red, #c8102e) !important;
+            color: #ffffff !important;
+            border-color: var(--ntu-red, #c8102e) !important;
+        }
+
+        @media (max-width: 600px) {
+            .book-grid {
+                grid-template-columns: 1fr;
+            }
+            .book-card {
+                flex-direction: column;
+            }
+            .book-cover-wrapper {
+                flex: 0 0 auto;
+                max-width: 180px;
+                margin: 0 auto;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-        </a>
-        <div class="top-bar-right">
-            <a href="https://www.ntu.edu.sg/spms" target="_blank">
-                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
-            </a>
-        </div>
-    </div>
-
-    <!-- Header & Navigation -->
+    <!-- Unified Sticky Header -->
     <header>
-        <nav>
-            <a href="index.html" class="mobile-logo-link">
-                <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-            </a>
-
-            <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-                <i class="fa-solid fa-bars"></i>
-            </button>
+        <div class="header-container">
             
-            <ul class="nav-links">
-                <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="news.html">Group</a></li>
-                        <li><a href="events.html">Events</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="topics.html">Research Topics</a></li>
-                        <li><a href="equipment.html">Equipment & Facilities</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="lecture.html">Lecture Courses</a></li>
-                        <li><a href="laboratory.html">Laboratory Courses</a></li>
-                        <li><a href="internship.html">Industrial Internships</a></li>
-                        <li><a href="fyp.html">Final Year Projects</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="team.html">Current Group</a></li>
-                        <li><a href="graduated.html">Graduated Students</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="paper.html">Journal Papers</a></li>
-                        <li><a href="conferences.html">Conference Presentations</a></li>
-                        <li><a href="books.html">Books & Book Chapters</a></li>
-                        <li><a href="property.html">Intellectual Property</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="fund.html">Funding Firms</a></li>
-                        <li><a href="collaborations.html">Collaborations</a></li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                    <ul class="dropdown">
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="opportunity.html">Opportunities</a></li>
-                    </ul>
-                </li>
-            </ul>
-        </nav>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html">Journal Papers</a></li>
+                            <li><a href="conferences.html">Conference Presentations</a></li>
+                            <li><a href="books.html">Books & Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
     </header>
 
     <!-- Mini Hero Banner -->
@@ -115,55 +229,54 @@
 
     <!-- Main Container -->
     <main class="container">
-        <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+        <!--<div class="section-header" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px;">
+            <h2><i class="fa-solid fa-book" style="color: var(--ntu-red, #c8102e);"></i> Published Books & Chapters</h2>-->
             <!-- Record Counter -->
-            <div id="record-count" style="font-weight: 600; color: #555; background: #f0f2f5; padding: 6px 14px; border-radius: 20px; font-size: 0.9rem;">
+            <div id="record-count" style="font-weight: 600; color: #475569; background: #e2e8f0; padding: 6px 4px; border-radius: 20px; font-size: 0.9rem;">
                 Showing <span id="active-count">1</span> of <span id="total-count">1</span> records
             </div>
         </div>
 
         <!-- Filter Bar -->
-        <div class="filter-container" style="margin: 25px 0 35px 0; display: flex; gap: 10px; flex-wrap: wrap;">
-            <button class="filter-btn active" data-filter="all" style="padding: 8px 16px; border: 1px solid #ddd; background: var(--ntu-red, #c8102e); color: white; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;">All Years</button>
-            <button class="filter-btn" data-filter="2021" style="padding: 8px 16px; border: 1px solid #ddd; background: #f8f9fa; color: #333; border-radius: 6px; cursor: pointer; font-weight: 600; transition: all 0.2s;">2021</button>
+        <div class="filter-container" style="margin: 20px 0 30px 0; display: flex; gap: 10px; flex-wrap: wrap;">
+            <button class="filter-btn active" data-filter="all">All Years</button>
+            <button class="filter-btn" data-filter="2021">2021</button>
         </div>
 
-        <!-- Book Cards Grid (Widened for Image + Text Layout) -->
-        <div class="book-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(550px, 1fr)); gap: 25px; margin-bottom: 60px;">
+        <!-- Book Cards Grid -->
+        <div class="book-grid">
             
             <!-- Book Card 1 -->
-            <div class="book-card" data-year="2021" style="background: #fff; border: 1px solid #e1e4e8; border-radius: 10px; padding: 25px; box-shadow: 0 4px 6px rgba(0,0,0,0.02); display: flex; gap: 20px; align-items: stretch; transition: transform 0.2s, box-shadow 0.2s; text-align: left;">
-                
+            <div class="book-card" data-year="2021">
                 <!-- Book Cover Thumbnail -->
-                <div style="flex: 0 0 200px; display: flex; align-items: center; justify-content: background; background: #f8f9fa; border-radius: 6px; padding: 8px; border: 1px solid #eaeaea;">
-                    <img src="images/enmt.jpg" alt="Book Cover" style="width: 100%; height: auto; object-fit: cover; border-radius: 4px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+                <div class="book-cover-wrapper">
+                    <img src="images/enmt.jpg" alt="Book Cover">
                 </div>
 
                 <!-- Book Content Details -->
-                <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                <div class="book-details">
                     <div>
                         <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
                             <span style="background: #eef2f7; color: #1d3557; padding: 3px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;"><i class="fa-solid fa-book-bookmark"></i> Book</span>
-                            <span style="color: #6c757d; font-weight: 600; font-size: 0.85rem;"><i class="fa-regular fa-calendar"></i> 2021</span>
+                            <span style="color: #64748b; font-weight: 600; font-size: 0.85rem;"><i class="fa-regular fa-calendar"></i> 2021</span>
                         </div>
-                        <h3 style="font-size: 1.1rem; color: #1a1a1a; margin-bottom: 10px; line-height: 1.35; text-align: left;">
+                        <h3 style="font-size: 1.15rem; color: #0f172a; margin-bottom: 10px; line-height: 1.35; font-weight: 700;">
                             Emerging Non-volatile Memory Technologies: Physics, Engineering, and Applications
                         </h3>
-                        <p style="color: #4a5568; font-size: 0.85rem; margin-bottom: 10px; text-align: left;">
+                        <p style="color: #334155; font-size: 0.9rem; margin-bottom: 8px;">
                             <strong>Authors:</strong> Wen Siang Lew, Gerard Joseph Lim, Putu Andhita Dananjaya
                         </p>
-                        <p style="color: #718096; font-size: 0.83rem; line-height: 1.4; margin-bottom: 15px; text-align: left;">
+                        <p style="color: #64748b; font-size: 0.88rem; line-height: 1.5; margin-bottom: 15px;">
                             Comprehensive guide to core principles, properties, and applications of spintronics-based devices and resistive switching (RRAM) memory systems.
                         </p>
                     </div>
                     <div style="border-top: 1px solid #edf2f7; padding-top: 12px; display: flex; justify-content: space-between; align-items: center;">
-                        <span style="font-size: 0.8rem; color: #718096;">Springer Nature Singapore</span>
-                        <a href="https://dr.ntu.edu.sg/entities/publication/25ec313e-0fac-4f58-a184-bc0c8c937c97" target="_blank" style="color: var(--ntu-red, #c8102e); text-decoration: none; font-weight: 600; font-size: 0.85rem;">
-                            View Record <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.7rem;"></i>
+                        <span style="font-size: 0.85rem; color: #64748b; font-weight: 500;">Springer Nature Singapore</span>
+                        <a href="https://dr.ntu.edu.sg/entities/publication/25ec313e-0fac-4f58-a184-bc0c8c937c97" target="_blank" style="color: var(--ntu-red, #c8102e); text-decoration: none; font-weight: 600; font-size: 0.9rem;">
+                            View Record <i class="fa-solid fa-arrow-up-right-from-square" style="font-size: 0.75rem;"></i>
                         </a>
                     </div>
                 </div>
-
             </div>
 
         </div>
@@ -181,114 +294,4 @@
             </div>
 
             <div class="footer-col">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                    <li><a href="paper.html">Publications</a></li>
-                    <li><a href="team.html">Research Group</a></li>
-                    <li><a href="fund.html">Funding & Collaborators</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-col">
-                <h4>Location</h4>
-                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
-                21 Nanyang Link<br>
-                School of Physical & Mathematical Sciences<br>
-                Nanyang Technological University<br>
-                Singapore 637371<br>
-                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a></p>
-            </div>
-
-            <div class="footer-col">
-                <h4>Contact</h4>
-                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
-                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963</p>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
-            <div>Last updated: September 2026</div>
-        </div>
-    </footer>
-
-    <!-- Interactive Filter & Counter Script -->
-    <script>
-    document.addEventListener('DOMContentLoaded', function () {
-        // Mobile Menu Toggle logic
-        const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
-        const navMenu = document.querySelector('.nav-links');
-
-        if (toggleBtn && navMenu) {
-            toggleBtn.addEventListener('click', function (e) {
-                e.stopPropagation();
-                navMenu.classList.toggle('active');
-                const toggleIcon = toggleBtn.querySelector('i');
-                if (toggleIcon) {
-                    toggleIcon.classList.toggle('fa-bars');
-                    toggleIcon.classList.toggle('fa-xmark');
-                }
-            });
-        }
-
-        // Mobile dropdown accordion handling
-        const parentLinks = document.querySelectorAll('.nav-links > li > a');
-        parentLinks.forEach(function (link) {
-            link.addEventListener('click', function (e) {
-                if (window.innerWidth <= 900) {
-                    const parentLi = this.parentElement;
-                    const dropdown = parentLi.querySelector('.dropdown');
-                    if (dropdown) {
-                        e.preventDefault();
-                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
-                            if (item !== parentLi) item.classList.remove('active');
-                        });
-                        parentLi.classList.toggle('active');
-                    }
-                }
-            });
-        });
-
-        // Book Filtering and Record Counter Logic
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const bookCards = document.querySelectorAll('.book-card');
-        const activeCountSpan = document.getElementById('active-count');
-        const totalCountSpan = document.getElementById('total-count');
-        
-        const totalBooks = bookCards.length;
-        totalCountSpan.textContent = totalBooks;
-
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Update active button styles
-                filterButtons.forEach(btn => {
-                    btn.style.background = '#f8f9fa';
-                    btn.style.color = '#333';
-                    btn.classList.remove('active');
-                });
-                this.style.background = 'var(--ntu-red, #c8102e)';
-                this.style.color = 'white';
-                this.classList.add('active');
-
-                const selectedYear = this.getAttribute('data-filter');
-                let visibleCount = 0;
-
-                bookCards.forEach(card => {
-                    const cardYear = card.getAttribute('data-year');
-                    if (selectedYear === 'all' || cardYear === selectedYear) {
-                        card.style.display = 'flex';
-                        visibleCount++;
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-
-                activeCountSpan.textContent = visibleCount;
-            });
-        });
-    });
-    </script>
-</body>
-</html>
+                <h4>

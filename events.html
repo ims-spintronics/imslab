@@ -341,105 +341,122 @@
 </head>
 <body>
 
-    <!-- Top Bar -->
-    <div class="top-bar">
-        <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
-            <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
-            <span class="top-bar-text">Nanyang Technological University (NTU), Singapore</span>
-        </a>
-        <div class="top-bar-right">
-            <a href="https://www.ntu.edu.sg/spms" target="_blank">
-                <i class="fa-solid fa-graduation-cap"></i> School of Physical and Mathematical Sciences
-            </a>
-        </div>
-    </div>
-
-   <!-- Header & Navigation -->
-<header>
-    <nav>
-        <!-- Mobile & Desktop Top Logo -->
-        <a href="index.html" class="mobile-logo-link">
-            <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
-        </a>
-
-        <!-- Hamburger Toggle Button -->
-        <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-		
-		<!-- Navigation Drawer -->
-		
-		<ul class="nav-links">
-            <li class="nav-logo-item">
-                <a href="index.html" class="logo-link">
-                   </a>
-            </li>
-            <li>
-                <a href="index.html"><i class="fa-solid fa-house"></i> About</a>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="news.html">Group</a></li>
-                    <li><a href="events.html">Events</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="topics.html">Research Topics</a></li>
-                    <li><a href="equipment.html">Equipment & Facilities</a></li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="lecture.html">Lecture Courses</a></li>
-                    <li><a href="laboratory.html">Laboratory Courses</a></li>
-                    <li><a href="internship.html">Industrial Internships</a></li>
-                    <li><a href="fyp.html">Final Year Projects</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="team.html">Current Group</a></li>
-                    <li><a href="graduated.html">Graduated Students</a></li>
-                </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="paper.html">Journal Papers</a></li>
-                    <li><a href="conferences.html">Conference Presentations</a></li>
-                    <li><a href="books.html">Books & Book Chapters</a></li>
-                    <li><a href="property.html">Intellectual Property</a></li>
-                </ul>
-            </li>
+    <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
             
-            <li>
-                <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="fund.html">Funding Firms</a></li>
-                    <li><a href="collaborations.html">Collaborations</a></li>
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="index.html" class="logo-link">
+                        <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#" class="active"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="news.html">Group</a></li>
+                            <li><a href="events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="topics.html">Research Topics</a></li>
+                            <li><a href="equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="lecture.html">Lecture Courses</a></li>
+                            <li><a href="laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="internship.html">Industrial Internships</a></li>
+                            <li><a href="fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="team.html">Current Group</a></li>
+                            <li><a href="graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="paper.html">Journal Papers</a></li>
+                            <li><a href="conferences.html">Conference Presentations</a></li>
+                            <li><a href="books.html">Books & Book Chapters</a></li>
+                            <li><a href="property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="fund.html">Funding Firms</a></li>
+                            <li><a href="collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="contact.html">Contact Us</a></li>
+                            <li><a href="opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-            <li>
-                <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
-                <ul class="dropdown">
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="opportunity.html">Opportunities</a></li>
-                </ul>
-            </li>
-        </ul>
-    </nav>
-</header>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="index.html" class="logo-link">
+                    <img src="images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
+    </header>
 
     <!-- Mini Hero Banner -->
     <section class="hero">
-        <div class="hero-container">
+        <div class="hero-container container" style="padding-top: 0; padding-bottom: 0;">
             <div>
                 <h2>Events & Symposia</h2>
                 <p>Highlights of our academic workshops, national consortium milestones, research exchanges, and group activities.</p>
@@ -624,8 +641,7 @@
     <div class="modal-card">
         <button class="modal-close" onclick="closeModal('modal-celebrate')"><i class="fa-solid fa-xmark"></i></button>
         <div class="modal-body">
-            <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Annual Event</span>-->
-            <h3> Celebrations</h3>
+            <h3>Celebrations</h3>
             <p><strong>Date:</strong> 24th March 2026</p>
 			 <img src="images/events/group-mar2026.jpg" alt="Group Gathering">
             <p>Birthday Celebrations</p>
@@ -639,7 +655,6 @@
     <div class="modal-card">
         <button class="modal-close" onclick="closeModal('modal-group')"><i class="fa-solid fa-xmark"></i></button>
         <div class="modal-body">
-            <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Annual Event</span>-->
             <h3>Annual Meeting</h3>
             <p><strong>Date:</strong> 17th December 2022</p>
 			 <img src="images/events/group-dec2022.jpg" alt="Annual Meeting">
@@ -653,11 +668,10 @@
 		<div class="modal-card">
 			<button class="modal-close" onclick="closeModal('modal-award')"><i class="fa-solid fa-xmark"></i></button>
 			<div class="modal-body">
-				<!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-calendar-days"></i> Award Felicitation</span>-->
 				<h3>Award Ceremony</h3>
 				<p><strong>Date:</strong> 19th September 2019</p>
 				 <img src="images/events/lws-2019.jpg" alt="Awards">
-				<p>From SPMS, NTU, Prof. Lew Wen Siang  being presented with "2019 Nanyang Award for Innovation and Entrepreneurship" by then-NTU President Subra Suresh at Nanyang Auditorium, NTU.</p>
+				<p>From SPMS, NTU, Prof. Lew Wen Siang being presented with "2019 Nanyang Award for Innovation and Entrepreneurship" by then-NTU President Subra Suresh at Nanyang Auditorium, NTU.</p>
 			</div>
 		</div>
 	</div>
@@ -666,7 +680,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-outing')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-utensils"></i> Social Event</span>-->
                 <h3>Group Gathering & Celebration</h3>
                 <p><strong>Date:</strong> 17th December 2016</p>
                 <img src="images/events/group-outing-dec2016.jpg" alt="Group Outing Dinner">
@@ -680,7 +693,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-sgspin')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-handshake"></i> Consortium Milestone</span>-->
                 <h3>Singapore Spintronics Consortium (SG-SPIN) MOU Signing</h3>
                 <p><strong>Date:</strong> 5th December 2014</p>
                 <img src="images/events/sg-spin-dec2014.jpg" alt="MOU Signing Ceremony">
@@ -703,7 +715,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-workshop1')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-chalkboard-user"></i> Academic Workshop</span>-->
                 <h3>1st Workshop on Non-Volatile Logic and Magnetic Devices</h3>
                 <p><strong>Date:</strong> 1st August 2013</p>
                 
@@ -750,7 +761,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-seminar-july2016')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-briefcase"></i> Industry Seminar</span>-->
                 <h3>Industry Networking Seminar</h3>
                 <p><strong>Date:</strong> 15th July 2016</p>
                 <p>Special collaborative session focused on <em>"Advanced Memory and Sensor for Embedded Systems"</em>, fostering direct interactions between researchers, postgraduate scholars, and microelectronics industry leaders.</p>
@@ -763,7 +773,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-sgspin-tech2016')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-flask"></i> Technical Seminar</span>-->
                 <h3>SG-SPIN Technical Seminar</h3>
                 <p><strong>Date:</strong> 15th July 2016</p>
                 <p>Consortium update seminar presenting technological progress in spin-torque magnetic logic and spin transfer torque MRAM (STT-MRAM) devices.</p>
@@ -776,7 +785,6 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-sgspin-symp2015')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-users"></i> Research Symposium</span>-->
                 <h3>SG-SPIN Research Symposium</h3>
                 <p><strong>Date:</strong> 5th May 2015</p>
                 <p>Annual consortium research symposium hosting exchange presentations among researchers from NTU, NUS, A*STAR, and industrial partners.</p>
@@ -789,30 +797,12 @@
         <div class="modal-card">
             <button class="modal-close" onclick="closeModal('modal-workshop2')"><i class="fa-solid fa-xmark"></i></button>
             <div class="modal-body">
-                <!--<span class="grant-badge" style="margin-bottom: 0.5rem;"><i class="fa-solid fa-chalkboard-user"></i> Academic Workshop</span>-->
                 <h3>2nd Workshop on Non-Volatile Logic and Magnetic Devices</h3>
                 <p><strong>Date:</strong> May 2014</p>
                 <p>The 2nd edition of the workshop series, continuing discussions on spin dynamics, domain wall memory, and low-power magnetic IC design.</p>
             </div>
         </div>
     </div>
-
-    <!-- Modal Script -->
-    <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-        }
-
-        function closeModal(id) {
-            document.getElementById(id).classList.remove('active');
-        }
-
-        window.onclick = function(event) {
-            if (event.target.classList.contains('modal')) {
-                event.target.classList.remove('active');
-            }
-        }
-    </script>
 
     <!-- Footer -->
     <footer>
@@ -860,51 +850,63 @@
         </div>
     </footer>
 
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-    const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
-    const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+    <!-- Modal Script -->
+    <script>
+        function openModal(id) {
+            document.getElementById(id).classList.add('active');
+        }
 
-    // Mobile slide menu toggle
-    if (toggleBtn && navMenu) {
-        toggleBtn.addEventListener('click', function (e) {
-            e.stopPropagation();
-            navMenu.classList.toggle('active');
-            
-            const toggleIcon = toggleBtn.querySelector('i');
-            if (toggleIcon) {
-                toggleIcon.classList.toggle('fa-bars');
-                toggleIcon.classList.toggle('fa-xmark');
+        function closeModal(id) {
+            document.getElementById(id).classList.remove('active');
+        }
+
+        window.onclick = function(event) {
+            if (event.target.classList.contains('modal')) {
+                event.target.classList.remove('active');
             }
-        });
-    }
+        }
+    </script>
+	
+    <!-- Mobile Drawer Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('hamburger-toggle');
+        const navMenu = document.getElementById('nav-menu');
 
-    // Mobile dropdown accordion handling
-    const parentLinks = document.querySelectorAll('.nav-links > li > a');
-    parentLinks.forEach(function (link) {
-        link.addEventListener('click', function (e) {
-            if (window.innerWidth <= 900) {
-                const parentLi = this.parentElement;
-                const dropdown = parentLi.querySelector('.dropdown');
-
-                if (dropdown) {
-                    e.preventDefault();
-                    
-                    // Close other open accordions
-                    document.querySelectorAll('.nav-links > li').forEach(function (item) {
-                        if (item !== parentLi) {
-                            item.classList.remove('active');
-                        }
-                    });
-
-                    // Toggle current accordion
-                    parentLi.classList.toggle('active');
+        if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                
+                const toggleIcon = toggleBtn.querySelector('i');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('fa-bars');
+                    toggleIcon.classList.toggle('fa-xmark');
                 }
-            }
+            });
+        }
+
+        const parentLinks = document.querySelectorAll('.nav-links > li > a');
+        parentLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1150) {
+                    const parentLi = this.parentElement;
+                    const dropdown = parentLi.querySelector('.dropdown');
+
+                    if (dropdown) {
+                        e.preventDefault();
+                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                            if (item !== parentLi) {
+                                item.classList.remove('active');
+                            }
+                        });
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            });
         });
     });
-});
-</script>
+    </script>
 
 </body>
 </html>
