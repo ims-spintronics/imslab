@@ -21,7 +21,7 @@ html, body {
     /* Note: overflow-x: clip prevents horizontal scroll without breaking position: sticky */
     overflow-x: clip;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color: var(--text-dark);
+ w   color: var(--text-dark);
     background-color: var(--bg-light);
     line-height: 1.6;
 }
