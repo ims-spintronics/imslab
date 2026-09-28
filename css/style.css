@@ -401,14 +401,14 @@ nav {
 /* About Layout */
 .about-card.about-layout {
     display: grid;
-    grid-template-columns: 1.3fr 0.9fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.1fr 1.1fr;
+    gap: 2rem;
     align-items: center;
     background: #ffffff;
     border: 1px solid var(--border);
     border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
