@@ -18,8 +18,50 @@
     <!-- Google Font -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-<!-- Carousel Component Styles -->
+<!-- Carousel & Card Equalization Styles -->
     <style>
+        /* Card Grid Equalization Fixes */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            align-items: stretch;
+        }
+        .grid .card {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+            border: 1px solid #e2e8f0;
+        }
+        .grid .card .card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            object-position: center;
+        }
+        .grid .card .card-content {
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            padding: 1.5rem;
+        }
+        .grid .card .card-content h3 {
+            margin-top: 0;
+            margin-bottom: 0.75rem;
+            font-size: 1.15rem;
+        }
+        .grid .card .card-content p {
+            margin: 0;
+            color: #475569;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        /* Carousel Component Styles */
         .carousel-section {
             margin-bottom: 2.5rem;
         }
@@ -232,38 +274,50 @@
         <div class="grid">
              <div class="card">
                 <img src="images/rram.jpg" alt="Resistive Random Access Memory (RRAM)" class="card-img">
-                <h3>Resistive Random Access Memory (RRAM)</h3>
-                <p>Research on oxide-based resistive switching devices, endurance mechanisms, and memristive synapses for energy-efficient neuromorphic hardware.</p>
+                <div class="card-content">               
+                    <h3>Resistive Random Access Memory (RRAM)</h3>               
+                    <p>Research on oxide-based resistive switching devices, endurance mechanisms, and memristive synapses for energy-efficient neuromorphic hardware.</p>           
+                </div>
             </div>
 			
-		         <div class="card">
+		    <div class="card">
                 <img src="images/sot.jpg" alt="Spin Orbit Torque" class="card-img">
-                <h3>Spin Orbit Torque (SOT) And Orbit Torque</h3>
-                <p>Probing spin-orbit torque phenomena, field-free switching, and interfacial spin dynamics in ultrathin ferromagnetic/heavy-metal heterostructures.</p>
+                <div class="card-content">               
+                    <h3>Spin Orbit Torque (SOT) And Orbit Torque</h3>               
+                    <p>Probing spin-orbit torque phenomena, field-free switching, and interfacial spin dynamics in ultrathin ferromagnetic/heavy-metal heterostructures.</p>           
+                </div>
             </div>
 
             <div class="card">
                 <img src="images/magnetoresistive-sensors.jpg" alt="Magnetoresistive Sensors" class="card-img">
-                <h3>Magnetoresistive Sensors</h3>
-                <p>Development of ultra-sensitive Tunnel Magnetoresistance (TMR) and Giant Magnetoresistance (GMR) sensors for industrial and biomedical applications.</p>
+                <div class="card-content">               
+                    <h3>Magnetoresistive Sensors</h3>               
+                    <p>Development of ultra-sensitive Tunnel Magnetoresistance (TMR) and Giant Magnetoresistance (GMR) sensors for industrial and biomedical applications.</p>           
+                </div>
             </div>
 
             <div class="card">
                 <img src="images/neuro-computing.jpg" alt="Neuromorphic Computing" class="card-img">
-                <h3>Neuromorphic Computing</h3>
-                <p> Bridges the gap between biological efficiency and digital hardware by developing event-driven algorithms and intelligent systems capable of learning from real-world data in real time.</p>
+                <div class="card-content">               
+                    <h3>Neuromorphic Computing</h3>               
+                    <p>Bridges the gap between biological efficiency and digital hardware by developing event-driven algorithms and intelligent systems capable of learning from real-world data in real time.</p>           
+                </div>
             </div>
 			
 			<div class="card">
                 <img src="images/magneto-fluidics.jpg" alt="Magneto-Fluidics And Nanoparticles" class="card-img">
-                <h3>Magneto-Fluidics And Nanoparticles</h3>
-                <p>Integration of magnetic forces with microfluidic systems for biological cell separation, magnetic characterisation, and functionalisation of nanostructured magnetic materials for hyperthermia and bio-tagging applications.</p>
+                <div class="card-content">               
+                    <h3>Magneto-Fluidics And Nanoparticles</h3>               
+                    <p>Integration of magnetic forces with microfluidic systems for biological cell separation, magnetic characterisation, and functionalisation of nanostructured magnetic materials for hyperthermia and bio-tagging applications.</p>           
+                </div>
             </div>
 
             <div class="card">
                 <img src="images/skyrmions-dynamics.jpg" alt="Skyrmions Dynamics" class="card-img">
-                <h3>Skyrmions Dynamics</h3>
-                <p>Exploring room-temperature creation, manipulation, and current-driven motion of nanoscale topological spin structures for ultra-low power memory.</p>
+                <div class="card-content">               
+                    <h3>Skyrmions Dynamics</h3>               
+                    <p>Exploring room-temperature creation, manipulation, and current-driven motion of nanoscale topological spin structures for ultra-low power memory.</p>           
+                </div>
             </div>
         </div>
 
@@ -412,7 +466,7 @@ document.addEventListener('DOMContentLoaded', function () {
         { img: 'images/slidingimages/jmmm2020_2.jpg', caption: 'Journal of Magnetism and Magnetic Materials (2020)' },
 		{ img: 'images/slidingimages/jpdap2020.jpg', caption: 'Journal of Physics D: Applied Physics (2020)' },
 		{ img: 'images/slidingimages/pra2020.jpg', caption: 'Physical Review Applied (2020)' },
-		{ img: 'images/slidingimages/srep2020.jpg', caption: 'Scientific Reports (2020)' }
+		{ img: 'info/srep2020.jpg', caption: 'Scientific Reports (2020)' }
     ];
 
     slides.forEach(slide => {

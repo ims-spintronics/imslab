@@ -174,8 +174,9 @@ nav {
 }
 
 .logo-link {
-    display: block;
+    display: inline-block;
     text-decoration: none;
+    align-self: center;
 }
 
 .nav-ims-logo {
