@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PH3601 - Fabrication of Micro- and Nano-electronic Devices | IMS Lab | NTU</title>
+    
+	<!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/logofavicon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+	
+    <!-- Link to standardized external stylesheet -->
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Custom Page Styling -->
+    <style>
+        .course-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 0.75rem 1rem;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+
+        .info-grid strong {
+            color: #0f172a;
+            font-weight: 700;
+        }
+
+        .info-grid span {
+            color: #334155;
+        }
+
+        .section-title {
+            color: #0f172a;
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin: 1.75rem 0 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .table-card {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            margin: 1rem 0 2rem;
+        }
+
+        .custom-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.92rem;
+            text-align: left;
+        }
+
+        .custom-table th {
+            background-color: #f8fafc;
+            color: #0f172a;
+            font-weight: 700;
+            padding: 1rem 1.25rem;
+            border-bottom: 2px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 0.78rem;
+            letter-spacing: 0.5px;
+        }
+
+        .custom-table td {
+            padding: 0.9rem 1.25rem;
+            border-bottom: 1px solid #edf2f7;
+            color: #334155;
+            vertical-align: middle;
+        }
+
+        .custom-table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .custom-table tbody tr:nth-child(even) {
+            background-color: #f9fafb;
+        }
+
+        .custom-table tbody tr:hover {
+            background-color: #f1f5f9;
+            transition: background-color 0.2s ease;
+        }
+
+        .code-badge {
+            background: #eff6ff;
+            color: #2563eb;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            display: inline-block;
+        }
+
+        .book-list {
+            line-height: 1.8;
+            color: #334155;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 1.25rem 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1.5rem;
+        }
+
+        .body-text { color: #334155; margin-bottom: 1rem; line-height: 1.7; }
+        .plain-list { margin: 0; padding-left: 1.2rem; }
+        .plain-list li { margin-bottom: 0.4rem; }
+        .note-text { font-size: 0.88rem; color: #64748b; margin: 0.75rem 0 0; }
+        .activity-badge, .test-badge {
+            display: inline-block; font-size: 0.78rem; font-weight: 700;
+            padding: 0.2rem 0.55rem; border-radius: 6px; white-space: nowrap;
+        }
+        .activity-badge { background: #ecfdf5; color: #047857; border: 1px solid rgba(4,120,87,0.2); }
+        .test-badge { background: #fef2f2; color: #c8102e; border: 1px solid rgba(200,16,46,0.2); }
+        @media (max-width: 640px) {
+            .info-grid { grid-template-columns: 1fr; gap: 0.25rem; }
+            .info-grid strong { margin-top: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Unified Sticky Header -->
+    <header>
+        <div class="header-container">
+            
+            <!-- DESKTOP LEFT: NTU Logo & School Subtext -->
+            <div class="header-left">
+                <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                    <img src="../images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                </a>
+                <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                    <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                </a>
+            </div>
+
+            <!-- MOBILE ROW 1: Both Logos Side-by-Side -->
+            <div class="header-row-1">
+                <div class="header-left">
+                    <a href="https://www.ntu.edu.sg" target="_blank" class="top-bar-brand">
+                        <img src="../images/ntu-logo.jpg" alt="NTU Logo" class="top-bar-ntu-logo">
+                    </a>
+                    <a href="https://www.ntu.edu.sg/spms" target="_blank" class="school-subtext">
+                        <i class="fa-solid fa-graduation-cap" style="font-size: 0.75rem;"></i> Division of PAP | SPMS
+                    </a>
+                </div>
+                <div class="header-right">
+                    <a href="../index.html" class="logo-link">
+                        <img src="../images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                    </a>
+                    <a href="../index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+                </div>
+            </div>
+
+            <!-- CENTER: Navigation Menu -->
+            <nav>
+                <ul class="nav-links" id="nav-menu">
+                    <li><a href="../index.html"><i class="fa-solid fa-house"></i> About</a></li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-bullhorn"></i> Updates <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../news.html">Group</a></li>
+                            <li><a href="../events.html">Events</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-flask"></i> Research <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../topics.html">Research Topics</a></li>
+                            <li><a href="../equipment.html">Equipment & Facilities</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-book-open"></i> Teaching <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../lecture.html" class="active">Lecture Courses</a></li>
+                            <li><a href="../laboratory.html">Laboratory Courses</a></li>
+                            <li><a href="../internship.html">Industrial Internships</a></li>
+                            <li><a href="../fyp.html">Final Year Projects</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-users"></i> Team <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../team.html">Current Group</a></li>
+                            <li><a href="../graduated.html">Graduated Students</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-file-lines"></i> Publications <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../paper.html">Journal Papers</a></li>
+                            <li><a href="../conferences.html">Conference Presentations</a></li>
+                            <li><a href="../books.html">Books & Book Chapters</a></li>
+                            <li><a href="../property.html">Intellectual Property</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-dollar-sign"></i> Support <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../fund.html">Funding Firms</a></li>
+                            <li><a href="../collaborations.html">Collaborations</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa-solid fa-envelope"></i> Connect <i class="fa-solid fa-chevron-down" style="font-size: 0.7em;"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="../contact.html">Contact Us</a></li>
+                            <li><a href="../opportunity.html">Opportunities</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- DESKTOP RIGHT: IMS Lab Logo & Subtitle -->
+            <div class="header-right">
+                <a href="../index.html" class="logo-link">
+                    <img src="../images/ims-logo.jpg" alt="IMS Logo" class="nav-ims-logo">
+                </a>
+                <a href="../index.html" class="lab-subtext">Intelligent Materials and Systems Lab</a>
+            </div>
+
+            <!-- MOBILE ROW 2: Home Icon & Hamburger Menu -->
+            <div class="header-row-2">
+                <a href="../index.html" class="mobile-home-icon">
+                    <i class="fa-solid fa-house"></i> Home
+                </a>
+                <button class="hamburger-toggle" id="hamburger-toggle" aria-label="Toggle Navigation">
+                    <i class="fa-solid fa-bars"></i> Menu
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Mini Hero Banner -->
+    <section class="hero">
+        <div class="hero-container">
+            <div>
+                <h2><span class="code-badge" style="font-size: 1.2rem; color: #fff; background: rgba(255,255,255,0.2); border: none;">PH3601</span> Fabrication of Micro- and Nano-electronic Devices</h2>
+                <p>Course syllabus and operational details for PH3601, AY2025-2026 Semester 1.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Container -->
+    <main class="container">
+        <div class="course-card">
+            <div class="section-header">
+                <h2><i class="fa-solid fa-circle-info" style="color: var(--ntu-red, #c8102e);"></i> Course Information</h2>
+            </div>
+
+            <div class="info-grid">
+                <strong>Course Code:</strong> <span>PH3601</span>
+                <strong>Course Title:</strong> <span>Fabrication of Micro- and Nano-electronic Devices</span>
+                <strong>Academic Year:</strong> <span>AY2025-2026, Semester 1</span>
+                <strong>Academic Units:</strong> <span>3 AU</span>
+                <strong>Contact Hours:</strong> <span>39</span>
+                <strong>Pre-requisite:</strong> <span>PH2102 Electromagnetism</span>
+                <strong>Instructor:</strong> <span>Lew Wen Siang</span>
+                <strong>Office:</strong> <span>SPMS-PAP-03-04</span>
+                <strong>Phone:</strong> <span>6316 2963</span>
+                <strong>Email:</strong> <span>wensiang@ntu.edu.sg</span>
+                <strong>Lab Demonstration:</strong> <span>SPMS/PAP Microfabrication Cleanroom Laboratory</span>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-bullseye" style="color: #2563eb;"></i> Course Aims</h3>
+            <p class="body-text">This course aims to provide a comprehensive introduction to the fabrication technologies of micro- and nano-structured electronic devices. The fabrication techniques discussed in the course are relevant for micro- and nano-devices in the fields of semiconductor, magnetics, optoelectronics, micro- and nano-electro-mechanical systems (MEMS/NEMS), and biomedical applications. The course covers essential topics including principles, fabrication and applications. The working principles of each fabrication technique are explained in detail, and the combination of these techniques into a complete process flow for making different microdevices is discussed.</p>
+            <p class="body-text">The course also aims to familiarise students with the semiconductor processing techniques employed in the advanced manufacturing industry, so that they acquire direct applied knowledge before embarking on an engineering career in the semiconductor industry.</p>
+
+            <h3 class="section-title"><i class="fa-solid fa-graduation-cap" style="color: #2563eb;"></i> Intended Learning Outcomes (ILOs)</h3>
+            <p class="body-text">Upon successful completion of this course, students should be able to:</p>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 110px;">ILO</th>
+                            <th>Learning Outcome</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><span class="code-badge">ILO 1</span></td><td>Identify and describe the basic building blocks of semiconductor devices.</td></tr>
+                        <tr><td><span class="code-badge">ILO 2</span></td><td>Present a general view of the trend of semiconductor technology development and its technological ecosystem.</td></tr>
+                        <tr><td><span class="code-badge">ILO 3</span></td><td>Explain the importance of contamination control and apply the relevant approach in semiconductor processing.</td></tr>
+                        <tr><td><span class="code-badge">ILO 4</span></td><td>Describe the techniques of optical lithography, resolution enhancement, and the working mechanism of photoresist.</td></tr>
+                        <tr><td><span class="code-badge">ILO 5</span></td><td>Identify the properties of non-optical lithography techniques, and apply the lithography process in building microfluidic devices.</td></tr>
+                        <tr><td><span class="code-badge">ILO 6</span></td><td>Describe wet and dry etching and apply the process conditions to achieve the lithography minimum feature size.</td></tr>
+                        <tr><td><span class="code-badge">ILO 7</span></td><td>Explain the physics of doping and apply the diffusion or ion implantation conditions.</td></tr>
+                        <tr><td><span class="code-badge">ILO 8</span></td><td>Design the doping concentration in bulk silicon wafer growth.</td></tr>
+                        <tr><td><span class="code-badge">ILO 9</span></td><td>Explain vacuum technology and design a desired vacuum condition by selecting suitable pumps and gauges.</td></tr>
+                        <tr><td><span class="code-badge">ILO 10</span></td><td>Describe metallic and dielectric film deposition processes and apply suitable tools to grow films.</td></tr>
+                        <tr><td><span class="code-badge">ILO 11</span></td><td>Use appropriate metallic layers for the interconnect metallisation process.</td></tr>
+                        <tr><td><span class="code-badge">ILO 12</span></td><td>Design probing configurations for device electrical measurement techniques.</td></tr>
+                        <tr><td><span class="code-badge">ILO 13</span></td><td>Describe the device packaging process and apply a suitable model for manufacturing yield calculation.</td></tr>
+                        <tr><td><span class="code-badge">ILO 14</span></td><td>Design an integrated process to complete CMOS transistor fabrication.</td></tr>
+                        <tr><td><span class="code-badge">ILO 15</span></td><td>Search relevant references and review technical topics.</td></tr>
+                        <tr><td><span class="code-badge">ILO 16</span></td><td>Write technical review reports and give a technical presentation on the surveyed topics.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> Course Content</h3>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 150px;">Lecture</th>
+                            <th>Topic</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Lecture 1</td><td>Semiconductor Technology and Devices</td></tr>
+                        <tr><td>Lecture 2</td><td>Lithography</td></tr>
+                        <tr><td>Lecture 3</td><td>Etching and Pattern Transfer</td></tr>
+                        <tr><td>Lecture 4</td><td>Impurity Doping</td></tr>
+                        <tr><td>Lecture 5</td><td>Semiconductor Wafer and Thermal Oxidation</td></tr>
+                        <tr><td>Lecture 6</td><td>Vacuum Science and Technology</td></tr>
+                        <tr><td>Lecture 7</td><td>Film Deposition Techniques</td></tr>
+                        <tr><td>Lecture 8</td><td>Interconnections and Contacts</td></tr>
+                        <tr><td>Lecture 9</td><td>Device Packaging and Yield Models</td></tr>
+                        <tr><td>Lecture 10</td><td>Device Fabrication</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-calendar-week" style="color: #2563eb;"></i> Planned Schedule</h3>
+            <p class="body-text">All sessions are delivered in person.</p>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 80px;">Week</th>
+                            <th>Topics</th>
+                            <th style="width: 110px;">ILO</th>
+                            <th>Readings</th>
+                            <th style="width: 120px;">Activities</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Course Introduction; Lecture 1 (Semiconductor Technology and Devices)</td><td>ILO 1-2</td><td>Lecture note 1</td><td></td></tr>
+                        <tr><td>2</td><td>Lectures 1 and 2 (Lithography)</td><td>ILO 2-3</td><td>Lecture notes 1 and 2</td><td></td></tr>
+                        <tr><td>3</td><td>Lecture 2</td><td>ILO 4</td><td>Lecture note 2</td><td></td></tr>
+                        <tr><td>4</td><td>Lectures 2 and 3 (Etching and Pattern Transfer)</td><td>ILO 5-6</td><td>Lecture notes 2 and 3</td><td><span class="activity-badge">Lab Demo</span></td></tr>
+                        <tr><td>5</td><td>Lectures 3 and 4 (Impurity Doping)</td><td>ILO 6-7</td><td>Lecture notes 3 and 4</td><td><span class="activity-badge">Lab Demo</span></td></tr>
+                        <tr><td>6</td><td>Lectures 4 and 5 (Semiconductor Wafer and Thermal Oxidation)</td><td>ILO 7-8</td><td>Lecture notes 4 and 5</td><td><span class="activity-badge">Lab Demo</span></td></tr>
+                        <tr><td>7</td><td>Lecture 5; Midterm Test 1</td><td>ILO 8</td><td>Lecture note 5</td><td><span class="test-badge">Test 1</span></td></tr>
+                        <tr><td>8</td><td>Lecture 6 (Vacuum Science and Technology)</td><td>ILO 9</td><td>Lecture note 6</td><td><span class="activity-badge">Lab Demo</span></td></tr>
+                        <tr><td>9</td><td>Lecture 7 (Film Deposition Techniques)</td><td>ILO 10-11</td><td>Lecture note 7</td><td></td></tr>
+                        <tr><td>10</td><td>Lectures 7 and 8 (Interconnections and Contacts)</td><td>ILO 10-12</td><td>Lecture notes 7 and 8</td><td></td></tr>
+                        <tr><td>11</td><td>Lectures 8 and 9 (Device Packaging and Yield Models)</td><td>ILO 12-14</td><td>Lecture notes 8 and 9</td><td></td></tr>
+                        <tr><td>12</td><td>Lecture 9; Midterm Test 2</td><td>ILO 14</td><td>Lecture note 9</td><td><span class="test-badge">Test 2</span></td></tr>
+                        <tr><td>13</td><td>Lecture 10 (Device Fabrication); Assignment Presentations</td><td>ILO 15-16</td><td>Lecture note 10</td><td><span class="activity-badge">Presentation</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-chalkboard-user" style="color: #2563eb;"></i> Learning and Teaching Approach</h3>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th style="width: 200px;">Approach</th>
+                            <th>How It Supports the Learning Outcomes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td><strong>Lectures</strong></td><td>Students are first motivated with the relevant technology and processing techniques of electronic devices, followed by lectures that explain the working principles and physics. Wrap-up questions are provided.</td></tr>
+                        <tr><td><strong>Tutorials</strong></td><td>Discussion of tutorial questions helps to consolidate understanding of the main concepts learned in lectures.</td></tr>
+                        <tr><td><strong>Lab Demonstrations</strong></td><td>Held at the SPMS/PAP Microfabrication Cleanroom Laboratory, giving students first-hand experience of device microfabrication processes. Techniques such as photolithography, physical vapour deposition and etching are demonstrated, and students are encouraged to ask questions so that the field experience reinforces the lectures.</td></tr>
+                        <tr><td><strong>Technology-enhanced Learning</strong></td><td>Extended learning is facilitated by online materials, including recorded lectures and videos of fabrication techniques and processes.</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-chart-pie" style="color: #2563eb;"></i> Assessment</h3>
+            <div class="table-card">
+                <table class="custom-table">
+                    <thead>
+                        <tr>
+                            <th>Assessment Component</th>
+                            <th>Coverage</th>
+                            <th>Weightage</th>
+                            <th>Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Final Examination</td><td>All lectures</td><td>50%</td><td>Restricted open book, individual</td></tr>
+                        <tr><td>CA1: Assignment</td><td>Literature survey</td><td>20%</td><td>Report + Presentation</td></tr>
+                        <tr><td>CA2: Midterm Test 1</td><td>Typically Lectures 1-5</td><td>15%</td><td>Restricted open book, individual</td></tr>
+                        <tr><td>CA3: Midterm Test 2</td><td>Typically Lectures 6-10</td><td>15%</td><td>Restricted open book, individual</td></tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-file-pen" style="color: #2563eb;"></i> Assignment (CA1)</h3>
+            <div class="book-list">
+                <ul class="plain-list">
+                    <li>Conduct a literature survey on a topic relevant to micro- and nano-fabrication, or micro- and nano-electronic devices, chosen from a list of topics provided. A self-proposed topic relevant to the course objectives is also allowed.</li>
+                    <li>Report length: 3,500 to 20,000 words.</li>
+                    <li>Students may work in pairs on the same topic; however, each student must submit an individual report, and reports within a pair cannot be identical.</li>
+                    <li>After report submission, each student gives a 20-minute oral presentation. A joint presentation by a pair is allowed, with 30 minutes given.</li>
+                    <li>The report is assessed on: quality of write-up; structure and organisation; quality of information gathering and references; presentation and discussion of surveyed information; and logical analysis and conclusion.</li>
+                    <li>The presentation is assessed on: quality of work presented; ability to give technical explanations; quality of presentation materials; clarity, language use and accuracy; and questions and answers.</li>
+                </ul>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-comments" style="color: #2563eb;"></i> Formative Feedback</h3>
+            <div class="book-list">
+                <ul class="plain-list">
+                    <li>Feedback through discussion within tutorial lessons.</li>
+                    <li>Written and/or oral feedback on the assignment report and presentation.</li>
+                    <li>Feedback after each term test on common mistakes and the level of difficulty of the problems.</li>
+                    <li>Past examination questions and previous examiner's reports are discussed in lectures.</li>
+                </ul>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-book" style="color: #2563eb;"></i> Reference Books</h3>
+            <div class="book-list">
+                1. S. A. Campbell, <em>Fabrication Engineering at the Micro- and Nanoscale</em>, 4th ed., Oxford University Press (2012). ISBN 978-0195320176.<br>
+                2. M. J. Madou, <em>Fundamentals of Microfabrication and Nanotechnology, Vol. II: Manufacturing Techniques for Microfabrication and Nanotechnology</em>, 3rd ed., CRC Press (2011). ISBN 978-1420055191.<br>
+                3. S. M. Sze and M.-K. Lee, <em>Semiconductor Devices: Physics and Technology</em>, 3rd ed., Wiley (2012). ISBN 978-0470537947.<br>
+                4. S. Franssila, <em>Introduction to Microfabrication</em>, 2nd ed., Wiley (2010). ISBN 978-0470749838.
+                <p class="note-text">These are the foundational readings for the course. More up-to-date readings will be provided when available.</p>
+            </div>
+
+            <h3 class="section-title"><i class="fa-solid fa-scale-balanced" style="color: #2563eb;"></i> Course Policies</h3>
+            <div class="book-list">
+                <p><strong>Academic Integrity.</strong> Students are expected to uphold the NTU Honour Code and avoid all forms of academic dishonesty, including plagiarism, academic fraud, collusion and cheating. On the use of technological tools such as Generative AI, refer to the specific assignment instructions or consult the instructor.</p>
+                <p><strong>Attendance.</strong> Students are encouraged to attend from the start of the course. Although lectures are recorded, lab demonstrations offer first-hand experience of the systems and equipment discussed in lectures, and later lectures build on earlier content.</p>
+                <p><strong>Absence.</strong> If you are unable to attend a class (particularly a midterm test) due to illness, email the instructor and submit the original medical certificate, issued in Singapore by a registered medical practitioner, to the administrator. A make-up test is conducted only for students absent from both midterm tests with valid reasons.</p>
+                <p style="margin-bottom: 0;"><strong>Diversity and Inclusion.</strong> The course aims to provide an inclusive and collaborative learning environment. If your learning is being affected by any circumstance, please speak to the teaching team or the school pastoral officer. All members of the class are expected to respect one another and adhere to the NTU anti-harassment policy.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Spintronics Device Research Group</h4>
+                <p>Intelligent Materials and Systems Laboratory<br>
+                Division of Physics and Applied Physics<br>
+                School of Physical and Mathematical Sciences<br>
+                Nanyang Technological University Singapore</p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="../topics.html">Research Topics</a></li>
+                    <li><a href="../equipment.html">Equipment & Facilities</a></li>
+                    <li><a href="../paper.html">Publications</a></li>
+                    <li><a href="../team.html">Research Group</a></li>
+                    <li><a href="../fund.html">Funding & Collaborators</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p><i class="fa-solid fa-location-dot" style="color: var(--ntu-red, #c8102e);"></i> SPMS-04-01<br>
+                21 Nanyang Link<br>
+                School of Physical & Mathematical Sciences<br>
+                Nanyang Technological University<br>
+                Singapore 637371<br>
+                <a href="https://maps.ntu.edu.sg/" target="_blank">NTU Campus Map</a> | <a href="https://maps.google.com" target="_blank">Google Maps</a></p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <p><i class="fa-solid fa-envelope"></i> E-mail: wensiang@ntu.edu.sg<br>
+                <i class="fa-solid fa-phone"></i> Phone: (65) 6316 2963<br>
+                <i class="fa-solid fa-fax"></i> Fax: (65) 6795 7981</p>
+            </div>
+        </div>
+
+        <div class="copyright">
+            <div>&copy; Copyright | Division of Physics and Applied Physics | SPMS | Nanyang Technological University | Singapore</div>
+            <div>Last updated: October 2026</div>
+        </div>
+    </footer>
+
+    <!-- Mobile Navigation Drawer Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const toggleBtn = document.getElementById('hamburger-toggle') || document.querySelector('.hamburger-toggle');
+        const navMenu = document.getElementById('nav-menu') || document.querySelector('.nav-links');
+
+        // Mobile slide menu toggle
+        if (toggleBtn && navMenu) {
+            toggleBtn.addEventListener('click', function (e) {
+                e.stopPropagation();
+                navMenu.classList.toggle('active');
+                
+                const toggleIcon = toggleBtn.querySelector('i');
+                if (toggleIcon) {
+                    toggleIcon.classList.toggle('fa-bars');
+                    toggleIcon.classList.toggle('fa-xmark');
+                }
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!navMenu.contains(e.target) && !toggleBtn.contains(e.target)) {
+                    if (navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        const toggleIcon = toggleBtn.querySelector('i');
+                        if (toggleIcon) {
+                            toggleIcon.classList.remove('fa-xmark');
+                            toggleIcon.classList.add('fa-bars');
+                        }
+                    }
+                }
+            });
+        }
+
+        // Mobile dropdown accordion handling
+        const parentLinks = document.querySelectorAll('.nav-links > li > a');
+        parentLinks.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                if (window.innerWidth <= 1150) {
+                    const parentLi = this.parentElement;
+                    const dropdown = parentLi.querySelector('.dropdown');
+
+                    if (dropdown) {
+                        e.preventDefault();
+                        
+                        // Close other open accordions
+                        document.querySelectorAll('.nav-links > li').forEach(function (item) {
+                            if (item !== parentLi) {
+                                item.classList.remove('active');
+                            }
+                        });
+
+                        // Toggle current accordion
+                        parentLi.classList.toggle('active');
+                    }
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>
