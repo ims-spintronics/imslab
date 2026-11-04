@@ -2,7 +2,7 @@
 $currentDate = Get-Date -Format "MMMM yyyy"
 Write-Host "Updating all HTML footers to: Last updated: $currentDate" -ForegroundColor Cyan
 
-$files = Get-ChildItem -Path "$PSScriptRoot\*.html"
+$files = Get-ChildItem -Path "$PSScriptRoot" -Filter "*.html" -Recurse
 $updatedCount = 0
 
 foreach ($f in $files) {
