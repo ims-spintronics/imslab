@@ -42,59 +42,42 @@
             margin-bottom: 0;
         }
 
-        /* Table Card Styling */
-        .table-card {
-            background: #ffffff;
+        /* Notice Card */
+        .notice-card {
+            background: #f8fafc;
+            border: 1px dashed #cbd5e1;
             border-radius: 16px;
-            border: 1px solid #e2e8f0;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+            padding: 2rem 2.5rem;
             margin-bottom: 3rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
-        .custom-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.92rem;
-            text-align: left;
-        }
-
-        .custom-table th {
-            background-color: #f8fafc;
-            color: #0f172a;
-            font-weight: 700;
-            padding: 1rem 1.25rem;
-            border-bottom: 2px solid #e2e8f0;
-            text-transform: uppercase;
-            font-size: 0.78rem;
-            letter-spacing: 0.5px;
-        }
-
-        .custom-table td {
-            padding: 0.9rem 1.25rem;
-            border-bottom: 1px solid #edf2f7;
-            color: #334155;
-            vertical-align: middle;
-        }
-
-        .custom-table tbody tr:last-child td {
-            border-bottom: none;
-        }
-
-        .custom-table tbody tr:nth-child(even) {
-            background-color: #f9fafb;
-        }
-
-        .custom-table tbody tr:hover {
-            background-color: #f1f5f9;
-            transition: background-color 0.2s ease;
-        }
-
-        .project-num {
-            font-weight: 700;
+        .notice-card i {
+            font-size: 1.5rem;
             color: #2563eb;
-            text-align: center;
+            flex-shrink: 0;
+        }
+
+        .notice-card p {
+            font-size: 1.02rem;
+            color: #334155;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .notice-card a {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .notice-card {
+                padding: 1.5rem;
+                flex-direction: column;
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
@@ -218,7 +201,7 @@
         <div class="hero-container">
             <div>
                 <h2>Final Year Project (FYP)</h2>
-                <p>PH4405 - 10 AU, Two-semester frontier research projects in experimental, theoretical, and computational spintronics.</p>
+                <p>PH4421 and PH4422: one- or two-semester research projects in experimental, theoretical and computational spintronics.</p>
             </div>
         </div>
     </section>
@@ -232,9 +215,9 @@
         </div>
 
         <div class="about-card">
-            <p>In this course, registered students undertake a research project over two semesters. FYP assessments include supervisor input, thesis report, viva examination, and oral presentation.</p>
-            <p>Our research group constantly accepts undergraduate students for experimental, theoretical, and modeling projects. Our state-of-the-art nano- and micro-fabrication laboratory, computation workstation facility, and supportive guidance from full-time researchers provide quality science and engineering training. Both technical skills (mechanical, electrical, electronics) and research methodology/analysis receive special emphasis. We aim to produce quality graduates who possess strong analytical skills and hands-on groundwork experience. Our FYP physics students routinely produce international conference and peer-reviewed journal papers.</p>
-            <p>We have trained more than 20 FYP students who have embarked on careers in microelectronics engineering, manufacturing engineering, defense research, materials research, ICT, teaching, civil defense, and beyond.</p>
+            <p>Registered students carry out a research project over one semester (<a href="https://www.ntu.edu.sg/spms/about-us/physics/undergrad/course-info#PH4422" target="_blank">PH4422</a>, for students admitted in AY2024/25 and later) or two semesters (<a href="https://www.ntu.edu.sg/spms/about-us/physics/undergrad/fyp#Content_C009_Col00" target="_blank">PH4421</a>, for students admitted from AY2019/20 to AY2023/24). Students are assessed on supervisor evaluation, a written thesis, a viva examination and an oral presentation.</p>
+            <p>Our group welcomes undergraduate students every year for experimental, theoretical and modelling projects. Students train in our nano- and micro-fabrication laboratory and computational workstation facility, with close guidance from full-time researchers. We emphasise hands-on technical skills (mechanical, electrical and electronic) as much as research methodology and data analysis, so our graduates leave with strong analytical ability and practical laboratory experience. Our FYP students regularly co-author papers at international conferences and in peer-reviewed journals.</p>
+            <p>We have trained more than 50 FYP students. Our alumni now work in microelectronics, manufacturing engineering, defence research, materials research, ICT, education, civil defence and other fields.</p>
         </div>
 
         <!-- Offered Research Projects Section -->
@@ -242,25 +225,9 @@
             <h2><i class="fa-solid fa-list-check" style="color: #2563eb;"></i> Offered Research Projects</h2>
         </div>
 
-        <div class="table-card">
-            <table class="custom-table">
-                <thead>
-                    <tr>
-                        <th style="width: 80px; text-align: center;">No</th>
-                        <th>Project Title</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td class="project-num">1</td><td>Novel high anisotropy perpendicular magnetic anisotropy materials for Spin Transfer Torque-Magnetoresistance Random Access Memory (STT-MRAM) applications</td></tr>
-                    <tr><td class="project-num">2</td><td>Current-driven skyrmion dynamics for magnetic memory applications</td></tr>
-                    <tr><td class="project-num">3</td><td>Fabrication and characterisation of oxide-based resistive random access memory device</td></tr>
-                    <tr><td class="project-num">4</td><td>Current-driven domain wall motion in PMA multilayers with Dzyaloshinskii-Moriya interaction for magnetic memory applications</td></tr>
-                    <tr><td class="project-num">5</td><td>Deterministic spin-orbit torque induced magnetization reversal</td></tr>
-                    <tr><td class="project-num">6</td><td>Characterization of novel materials with perpendicular anisotropy through ferromagnetic resonance spectroscopy</td></tr>
-                    <tr><td class="project-num">7</td><td>Highly synergistic cancer treatment with nanomagnets</td></tr>
-                    <tr><td class="project-num">8</td><td>Dynamics of magnetic particles on a ferromagnetic network structure</td></tr>
-                </tbody>
-            </table>
+        <div class="notice-card">
+            <i class="fa-solid fa-hourglass-half"></i>
+            <p>New FYP projects for the coming academic year will be posted here soon. Interested students are welcome to <a href="contact.html">contact us</a> in the meantime to discuss possible topics.</p>
         </div>
 
     </main>
